@@ -1,0 +1,9 @@
+{
+    "cSpell.languageSettings": [],
+    "xml.fileAssociations": [
+        {
+            "pattern": "**/source/**.ptx",
+            "systemId": "c:\\Users\\lemos\\.vscode\\extensions\\oscarlevin.pretext-tools-0.34.0\\assets\\schema\\pretext.rng"
+        }
+    ]
+}
