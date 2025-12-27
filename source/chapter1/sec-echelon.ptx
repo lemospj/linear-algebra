@@ -1,0 +1,405 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-echelon" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>The reduced echelon form of a linear system</title>
+
+  <p>
+    I already mentioned in the previous section that we will make a systematic use of three operations to reduce a linear system to a simpler equivalent one. These are called <term>elementary row operations</term>. Let me remind you what they are:
+
+    <ol>
+        <li>
+            <p>
+                Multiplication of an equation in the system by a non-zero constant.
+            </p>
+        </li>
+        <li>
+            <p>
+                Equation swapping.
+            </p>
+        </li>
+        <li>
+            <p>
+                Addition of a constant multiple of an equation to another equation.
+            </p>
+        </li>
+    </ol>
+  </p>
+  <p>
+    When solving a linear system of equations, we do not need to carry around all the variables involved. We can instead organize all the coefficients in an array (which we will call a <em>matrix</em>) where each column corresponds to a variable, except for the last one, which will contain the numbers that appear on the right-hand side of the linear equations that form the system.
+  </p>
+<definition xml:id="def-matrix">
+    <title>Matrix</title>
+    <notation>
+        <usage><m>(a_{ij})_{ij}</m></usage>
+      <description>Matrix whose <m>(i,j)</m> entry is the number <m>a_{ij}</m>.</description>
+    </notation>
+    <statement>
+        <p>
+            If <m>m</m> and <m>n</m> are positive integers, an <m>m\times n</m> <term>matrix</term> is an array of number with <m>m</m> rows and <m>n</m> columns. If <m>m=n</m>, then we say that the matrix is a <term>square matrix</term>.
+        </p>
+    </statement>
+</definition>
+<p>
+    An <m>m\times n</m> matrix is usually written in the form
+    <me>
+        \begin{pmatrix}
+            a_{11} \amp a_{12} \amp \cdots \amp a_{1n}\\
+            a_{21} \amp a_{22} \amp \cdots \amp a_{2n}\\
+            \vdots \amp \vdots \amp \ddots \amp \vdots \\
+            a_{m1} \amp a_{m2} \amp \cdots \amp a_{mn}
+        \end{pmatrix}
+    </me>
+    where each <m>a_{ij}</m> (<m>1\leq i \leq m</m>, <m>1\leq j\leq n</m>) is a (real or complex) number. Note the similarity with the notation that was used to describe a generic linear system in the previous section: <m>a_{ij}</m> is the entry in row <m>i</m> and column <m>j</m>.
+    
+</p>
+<example>
+    <p>
+        For example, 
+        <me>
+            \begin{pmatrix}
+                1 \amp 3 \amp \pi \\
+                0 \amp 1 \amp -3
+            \end{pmatrix}
+        </me>
+        is a <m>2\times 3</m> matrix whose entries are real numbers.
+    </p>
+</example>
+<example>
+    <p>
+        The matrix
+        <me>
+            \begin{pmatrix}
+                1 \amp 0 \\
+                0 \amp 1 
+            \end{pmatrix}
+        </me>
+        is called the <m>2\times 2</m> <term>identity matrix</term>. In general, the <m>m\times m</m> <term>identity matrix</term> is the square matrix with <m>1</m>'s along the main diagonal and <m>0</m>'s everywhere else (i.e. <m>a_{ij}=1</m> if <m>i=j</m> and <m>a_{ij}=0</m> if <m>i\neq j</m>). For instance, the <m>3\times 3</m> identity matrix is the matrix
+        <me>
+            \begin{pmatrix}
+            1 \amp 0 \amp 0 \\
+            0 \amp 1 \amp 0 \\
+            0 \amp 0 \amp 1
+            \end{pmatrix}
+        </me>
+    </p>
+</example>
+<p>
+    Now consider a system of linear equations in the variables <m>x_1,\ldots,x_n</m> with <m>m</m> equations:
+    <me>
+        \left\{
+        \begin{alignedat}{9}
+            \amp a_{11}x_1 \amp\amp+ \amp\amp a_{12}x_2  \amp\amp+  \amp\amp\quad \ldots \amp\amp +  \amp\amp\; a_{1n}x_n   \amp\amp = \amp\amp \; b_1\\
+            \amp a_{21}x_1 \amp\amp + \amp\amp a_{22}x_2 \amp\amp+ \amp\amp\quad \ldots \amp\amp + \amp\amp \; a_{2n}x_n \amp\amp = \amp\amp \; b_2\\
+            \amp \quad\vdots \quad \amp\amp \quad \amp\amp\quad\vdots \quad \amp\amp \amp\amp\quad \ldots \quad \amp\amp \amp\amp\quad\vdots \quad \amp\amp  \amp\amp\; \vdots\\
+            \amp a_{m1}x_1  \amp\amp +  \amp\amp a_{m2}x_2  \amp\amp +  \amp\amp\quad \ldots \amp\amp +  \amp\amp\; a_{mn}x_n  \amp\amp =  \amp\amp \; b_m
+        \end{alignedat}
+        \right.
+    </me>
+    To this system we will associate the <m>m\times (n+1)</m> matrix <m>(m_{ij})_{ij}</m> whose entry <m>m_{ij}</m> equals <m>a_{ij}</m> when <m>j\leq n</m> and equals <m>b_i</m> when <m>j=n+1</m>:
+    <me>
+        \left(
+        \begin{array}{cccc|c}
+            a_{11} \amp a_{12} \amp \cdots \amp a_{1n} \amp b_1\\
+            a_{21} \amp a_{22} \amp \cdots \amp a_{2n} \amp b_2\\
+            \vdots \amp \vdots \amp \ddots \amp \vdots \amp \vdots\\
+            a_{m1} \amp a_{m2} \amp \cdots \amp a_{mn} \amp b_m
+        \end{array}
+        \right)
+    </me>
+    
+    Note that each of the first <m>n</m> columns of this matrix corresponds to one variable. So, the first column corresponds to the variable <m>x_1</m>, the second column corresponds to the variable <m>x_2</m>, and so on. The last column is reserved for the <m>b_i</m>'s. Each of the <m>m</m> rows corresponds to an equation. I used a vertical line between the <m>n</m>th and <m>(n+1)</m>th column as a visual aid to help us separate the columns associated to the elements of the linear system to the left of the equal signs from those associated to the elements to the right. This is called the <term>augmented matrix</term> associated to the linear system. The use of the term <em>augmented</em> is related to the fact that we assigned a column to the <m>b_i</m>'s.
+</p>
+<remark>
+    <p>
+        Implicit in the definition of the augmented matrix associated to a linear system is the fact that an order for the variables has been chosen. Indeed, if we keep the same system but reorder the variables, we may end up with a different matrix. In most of what follows, the chosen order of variables will be obvious. In those cases where it is not, it will be explicitly described.
+    </p>
+</remark>
+
+<example>
+    <p>
+      The augmented matrix associated to the linear system
+      <me>
+        \left\{
+            \begin{aligned}
+                3x-2y \amp = -1\\
+                -y + z \amp = \pi
+            \end{aligned}
+        \right.
+      </me>
+    in the variables <m>x,y,z</m> is the matrix
+    <me>
+        \left(
+            \begin{array}{ccc|c}
+                3 \amp -2 \amp 0 \amp -1 \\
+                0 \amp -1 \amp 1 \amp \pi
+            \end{array}    
+        \right)
+    </me>
+    </p>
+</example>
+<example>
+    <p>
+        The augmented matrix associated to the linear system
+        <me>
+            \left\{
+                \begin{aligned}
+                    x \amp =1\\
+                    y \amp =0\\
+                    z \amp =3 \\
+                    w \amp =-4
+                \end{aligned}
+            \right.
+        </me>
+    in the variables <m>x,y,z,w</m> (in this order) is the matrix
+    <me>
+        \left(
+            \begin{array}{cccc|c}
+                1 \amp 0 \amp 0 \amp 0 \amp 1 \\
+                0 \amp 1 \amp 0 \amp 0 \amp 0 \\
+                0 \amp 0 \amp 1 \amp 0 \amp 3 \\
+                0 \amp 0 \amp 0 \amp 1 \amp -4    
+            \end{array}
+        \right)
+    </me>
+    </p>
+</example>
+<example>
+    <p>
+        If a set of ordered variables is fixed from the outset, we can conversely go from a matrix with at least two columns to the linear system of equations that has that matrix as its augmented matrix. For example, in the variables <m>x,y,z</m> the linear system corresponding to
+        <me>
+            \left(
+                \begin{array}{ccc|c}
+                    0 \amp 2 \amp 1 \amp 1 \\
+                    -1 \amp -2 \amp 0 \amp 0 \\
+                    2 \amp 2 \amp 2 \amp 2
+                \end{array}
+            \right)
+        </me>            
+        is
+        <me>
+            \left\{
+                \begin{alignedat}{9}
+                    \aa \aa 2y \aa + \aa z \amp = \aa 1 \\
+                    \aa -\aa x \aa - \aa 2y \amp = \aa 0 \\
+                    2x \aa + \aa 2y \aa + \aa 2z \amp = \aa 2
+                \end{alignedat}
+            \right.
+        </me>
+    </p>
+</example>
+<p>
+    What you should take away from this discussion is that the information contained in a linear system and in its associated augmented matrix is exactly the same.
+</p>
+
+<definition xml:id="def-echelon">
+    <title>Reduced echelon form</title>
+    
+    
+    <statement>
+        <p>
+            The augmented matrix associated to a linear system is said to be in <term>reduced echelon form</term> if it satisfies all the following properties:
+            <ol>
+                <li>
+                    <p>
+                        Every row consists entirely of zeroes or the first non-zero element is a <m>1</m>. This <m>1</m> is called the row's <term>leading <m>1</m></term>.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        All rows consisting entirely of zeroes are grouped together at the bottom of the matrix.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        If two consecutive rows do not consist entirely of zeroes, the the leading <m>1</m> in the lower of the two occurs farther to the right than the lading <m>1</m> in the higher row.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        A column containing a leading <m>1</m> has zeroes everywhere else.
+                    </p>
+                </li>
+            </ol>
+            The columns containing the leading <m>1</m>'s are called the <term>pivot columns</term>, and the positions where the <m>1</m>'s occur are called the <term>pivot positions</term>. A linear system is said to be in <term>reduced echelon form</term> if its associated augmented matrix is in reduced echelon form.
+        </p>
+    </statement>
+</definition>
+<example>
+    <p>
+        The matrix
+        <me>
+            \left(
+                \begin{array}{ccc|c}
+                    1 \amp 2 \amp 0 \amp 2\\
+                    0 \amp 0 \amp 1 \amp 3\\
+                    0 \amp 0 \amp 0 \amp 0\\
+                    0 \amp 0 \amp 0 \amp 0
+                \end{array}
+            \right)
+        </me>
+        is in reduced echelon form. The pivot columns are <m>1</m> and <m>3</m> and the pivot positions are <m>(1,1)</m> and <m>(2,3)</m>. In the variables <m>x,y,z</m>, the corresponding linear system is 
+        <me>
+            \left\{
+                \begin{alignedat}{5}
+                    x \aa + \aa 2y \amp = \aa 2\\
+                    \aa \aa z \amp= \aa 3\\
+                    \aa \aa 0 \amp = \aa 0\\
+                    \aa \aa 0 \amp = \aa 0
+                \end{alignedat}
+            \right.
+        </me>
+        The leading variables are <m>x</m> and <m>z</m>. The remaining variables are called <term>free variables</term>. Free variables can be treated as parameters, i.e. we may assign any real numbers to them and solve the equations in the system with respect to the leading ones. For instance, since <m>y</m> is a free variable, we may assign any real number <m>t</m> to it. We then necessarily have <m>x=2-2t</m> and <m>z=3</m>. Therefore, the solution set for this system is given parametrically by
+        <me>
+            x=2-2t, \quad y=t,\quad z=3\qquad (t\in\R).
+        </me>
+    </p>
+</example>
+<definition xml:id="def-leadfreevar">
+    <title>Leading and free variables</title>
+    
+    
+    <statement>
+        <p>
+            The variables in a consistent linear system in reduced echelon form that correspond to pivot columns are called <term>leading variables</term>. The remaining variables are called <term>free variables</term>.
+        </p>
+    </statement>
+</definition>
+<p>
+    Note that part of the definition of free and leading variables is the requirement that the linear system in question is consistent. If a consistent linear system has free variables, then it will have infinitely many solutions. Indeed, we will be free to assign any real value to these, and the values of the leading variables will then be uniquely determined.
+</p>
+<p>
+    Let's see another example of a linear system with infinitely many solutions.
+</p>
+<example>
+    <p>
+        Consider the linear system
+        <me>
+            \left\{
+                \begin{alignedat}{5}
+                    x \aa - \aa z \amp = \aa 2\\
+                    \aa \aa y \amp = \aa 1
+                \end{alignedat}
+            \right.
+        </me>.
+        The associated augmented matrix is
+        <me>
+            \left(
+                \begin{array}{ccc|c}
+                    1 \amp 0 \amp -1 \amp 2\\
+                    0 \amp 1 \amp 0 \amp 1
+                \end{array}
+            \right)
+        </me>.
+        It is clear that this system is in reduced echelon form. The pivot columns are columns <m>1</m> and <m>2</m> which correspond to variables <m>x</m> and <m>y</m>, respectively. So, by definition, <m>x</m> and <m>y</m> are the leading variables and <m>z</m> is the free variable. So we know that the system will have infinitely many solutions. The solution set will have to be described parametrically. To do that, we solve every equation with respect to the free variables. We end up with
+        <me>
+            x=2+t,\quad y=1,\quad z=t
+        </me>
+        where <m>t\in\R</m>.
+    </p>
+</example>
+<lemma xml:id="lem-nfree">
+    <statement>
+        <p>
+            A consistent linear system in reduced echelon form with <m>n</m> equations has at most <m>n</m> leading variables.
+        </p>
+    </statement>
+    <proof>
+        <p>
+            Each equation corresponds to a row of the associated augmented matrix, and each row has at most one leading variable. Therefore, our system admits at most <m>n</m> leading variables.
+        </p>
+    </proof>
+</lemma>
+<example>
+    <p>
+        Consider the matrix
+        <me>
+            \left(
+                \begin{array}{cc|c}
+                    1 \amp 2 \amp 0\\
+                    0 \amp 0 \amp 1
+                \end{array}
+            \right)
+        </me>.
+        This matrix is in reduced echelon form. The corresponding linear system in the variables <m>x,y</m> is
+        <me>
+            \left\{
+                \begin{alignedat}{5}
+                    x \aa + \aa 2y \amp = \aa 0\\
+                    \aa \aa 0 \amp = \aa 1
+                \end{alignedat}
+            \right.
+        </me>
+        which obviously has no solutions.
+    </p>
+</example>
+<example>
+    <p>
+        The matrix
+        <me>
+            \left(
+                \begin{array}{cc|c}
+                    1 \amp 0 \amp 6\\
+                    0 \amp 1 \amp 0
+                \end{array}
+            \right)
+        </me>
+        is also in reduced echelon form. The corresponding linear system in the variables <m>x,y</m> is
+        <me>
+            \left\{
+                \begin{aligned}
+                    x \amp = 6\\
+                    y \amp = 0
+                \end{aligned}
+            \right.
+        </me>
+        which has exactly one solution.
+    </p>
+</example>
+<p>
+    As you can see from the examples above, linear systems in reduced echelon form are easy to solve. (In a way, they are already solved!) In the next section, you will learn about a procedure known as Gauss--Jordan elimination to transform linear systems into equivalent linear systems in reduced echelon form.
+</p>
+<p>
+    Before getting into it, let's familiarize ourselves a little bit more with the concept of reduced echelon form. The most useful examples in this case are those of augmented matrices that are <em>not</em> in reduced echelon form.
+</p>
+<example>
+    <p>
+        The following matrices are <em>not</em> in reduced echelon form:
+        <me>
+            \left(
+            \begin{array}{cc|c}
+                1 \amp 1 \amp 1\\
+                0 \amp 1 \amp 0
+            \end{array}\right),
+            \quad
+            \left(\begin{array}{ccc|c}
+                0 \amp 1 \amp 3 \amp 4\\
+                1 \amp 0 \amp 0 \amp 5
+            \end{array}\right),
+            \quad
+            \left(
+            \begin{array}{ccc|c}
+                0 \amp 0 \amp 0 \amp 0\\
+                1 \amp 3 \amp 0 \amp 2\\
+                0 \amp 2 \amp 3 \amp 0
+            \end{array}\right),
+            \quad
+            \left(\begin{array}{cc|c}
+                1 \amp 3 \amp 1\\
+                1 \amp 2 \amp 1
+            \end{array}\right)
+        </me>.
+    </p>
+    <p>
+        Column <m>2</m> is a pivot column for the first matrix. However, that column contains non-trivial entries away from the pivot position.
+    </p>
+    <p>
+        The leading <m>1</m> in the first row of the second matrix appears in the second column, but the leading <m>1</m> in the second row appears in the first column, which clashes with condition <m>3</m> of the definition of reduced echelon form. If the rows were swapped, the matrix would then be in reduced echelon form.
+    </p>
+    <p>
+        The third matrix is not in reduced echelon form for two reasons. First, we find a row consisting entirely of zeroes appearing above non-zero rows. Then the first entry in the last row is not a <m>1</m>.
+    </p>
+    <p>
+        Finally, the only pivot column in the last fourth matrix is column <m>1</m>. However, it contains non-zero elements in more than one position.
+    </p>
+</example>
+</section>
