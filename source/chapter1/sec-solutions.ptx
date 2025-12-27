@@ -1,0 +1,481 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-solutions" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Solutions to systems of linear equations</title>
+
+  <p>
+    I will start by defining what I mean by a linear equation and a system of linear equations. When mathematicians use a mathematical concept, they always mean something very precise. Humpty Dumpty, the character in Lewis Carroll's <em>Through the Looking Glass</em> famously said, "When I use a word,... it means just what I choose it to mean --- neither more nor less." Humpty Dumpty must have been a mathematician. (Lewis Carroll certainly was!) For this reason, it is very important to clearly define a concept before using it, and anyone learning mathematics at any level must pay close attention to what a definition says and to what it does not say. The best way to understand a definition is to find and come up with examples and counter-examples. You should train yourself to always want examples after a definition. If the text that you are reading does not provide one, come up with examples and counter-examples yourself!
+  </p>
+  <definition xml:id="def-linear-equation">
+    <statement>
+      <p>
+        A <term>linear equation</term> in the variables <m>x_1,\ldots, x_n</m> is an equation that can be written in the form
+        <me>
+          a_1x_1+a_2x_2+\ldots+a_nx_n=b
+        </me>
+        where <m>b,a_1,\ldots,a_n\in\R</m> are real constants. The real numbers <m>b,a_1,\ldots,a_n</m> are called the <term>coefficients</term> of the linear equation. If <m>b=0</m>, we say that the linear equation is <term>homogeneous</term>.
+      </p>
+    </statement>
+  </definition>
+
+  <example>
+      <p>
+        The equation <m>5x+4y=2</m> is a linear equation in the variables <m>x,y</m>.
+      </p>
+  </example>
+  <example>
+      <p>
+        The equation <m>\sqrt{2}x-\pi y=ez</m> is a linear equation in the variables <m>x,y,z</m> because we can rewrite it in the form <m>\sqrt{2}x-\pi y - ez=0</m>. In fact, it is a homogeneous linear equation.
+      </p>
+  </example>
+  <example>
+      <p>
+        On the other hand, the equation <m>2\sqrt{x}+5y=1</m> is <em>not</em> linear because it involves the non-linear term <m>\sqrt{x}</m>. For a similar reason, the equation <m>x^2=y^2-1</m> is not linear either.
+      </p>
+  </example>  
+  <example>
+      <p>
+        Even though <m>4x-3z+1=1</m> may not seem to be a homogeneous linear equation at first sight, note that once we subtract <m>1</m> from both sides of the equation we end up with <m>4x-3z=0</m>. Therefore, this is a homogeneous linear equation.
+      </p>
+  </example>
+  <definition xml:id="def-linear-system">
+    <statement>
+      <p>
+        A <term>system of linear equations</term> (also called a <term>linear system</term>) is a finite set of linear equations. The variables occurring in the system are called the <term>unknowns</term>. If all the linear equations in this system are homogeneous, we say that the system itself is <term>homogeneous</term>. Otherwise, we say that the system is called <term>inhomogeneous</term>.
+      </p>
+    </statement>
+  </definition>
+  <p>
+    When we write down a system of linear equations, we typically write each of the finitely many equations forming it in a line of their own. For example,
+    <men xml:id="system1">
+      \left\{
+        \begin{alignedat}{5}
+          3x \amp\amp\; + \amp\amp\; 2y \amp = \amp\amp\; -7\\
+          2y \amp\amp\; - \amp\amp\; z \amp = \amp\amp\; 0\\
+          \amp\amp \amp\amp w \amp = \amp\amp\; 0
+        \end{alignedat}  
+      \right.
+    </men>
+    is a non-homogeneous system of linear equation with unknowns <m>x,y,z,w</m>. It consists of three linear equations: <m>3x+2y=-7</m>, <m>2y-z=0</m> and <m>w=0</m>.
+  </p>
+  <p>
+    In general, a system with <m>m</m> equations and <m>n</m> unknowns <m>x_1,\ldots,x_n</m> can be written in the form
+    <me>
+      \left\{
+      \begin{alignedat}{9}
+            \amp a_{11}x_1 \amp\amp+ \amp\amp a_{12}x_2  \amp\amp+  \amp\amp\quad \ldots \amp\amp +  \amp\amp\; a_{1n}x_n   \amp\amp = \amp\amp \; b_1\\
+            \amp a_{21}x_1 \amp\amp + \amp\amp a_{22}x_2 \amp\amp+ \amp\amp\quad \ldots \amp\amp + \amp\amp \; a_{2n}x_n \amp\amp = \amp\amp \; b_2\\
+            \amp \quad\vdots \quad \amp\amp \quad \amp\amp\quad\vdots \quad \amp\amp \amp\amp\quad \ldots \quad \amp\amp \amp\amp\quad\vdots \quad \amp\amp  \amp\amp\; \vdots\\
+            \amp a_{m1}x_1  \amp\amp +  \amp\amp a_{m2}x_2  \amp\amp +  \amp\amp\quad \ldots \amp\amp +  \amp\amp\; a_{mn}x_n  \amp\amp =  \amp\amp \; b_m
+        \end{alignedat}\right.
+    </me>
+    This way of writing a linear system is extremely helpful. Each column to the left-hand side of the equal sign corresponds to an unknown. More precisely, the <m>k</m>th column corresponds to the variable <m>x_k</m>. The coefficients of the system are the constants <m>a_{ij}</m>, where <m>1\leq i\leq m</m> and <m>1\leq j\leq n</m>. Note that the pair <m>(i,j)</m> gives you the position of <m>a_{ij}</m> in the linear system above: the coefficient <m>a_{ij}</m> is located in the <m>i</m>th row of the <m>j</m>th column.
+  </p>
+  <p>
+    The linear system <xref ref="system1"/> can be written in the form above by introducing zeros whenever a variable is not present in one of the linear equations forming the system:
+    <men>
+      \left\{
+        \begin{alignedat}{9}
+          3x \amp\amp\; + \amp\amp\; 2y \amp\amp\; +\amp\amp\; 0z \amp\amp\; + \amp\amp\; 0w \amp = \amp\amp\; -7\\
+          0x \amp\amp\; + \amp\amp\; 2y \amp\amp\; - \amp\amp\; z \amp\amp\; + \amp\amp\; 0w \amp = \amp\amp\; 0\\
+          0x \amp\amp\; + \amp\amp\; 0y \amp\amp\; + \amp\amp\; 0z \amp\amp\; + \amp\amp\; w \amp = \amp\amp\; 0
+        \end{alignedat}  
+      \right.
+    </men>
+  </p>
+
+  <definition xml:id="def-sols-lineqs">
+    <statement>
+      <p>
+        A <term>solution</term> to a linear system
+        <me>
+          \left\{
+          \begin{alignedat}{9}
+                \amp a_{11}x_1 \amp\amp+ \amp\amp a_{12}x_2  \amp\amp+  \amp\amp\quad \ldots \amp\amp +  \amp\amp\; a_{1n}x_n   \amp\amp = \amp\amp \; b_1\\
+                \amp a_{21}x_1 \amp\amp + \amp\amp a_{22}x_2 \amp\amp+ \amp\amp\quad \ldots \amp\amp + \amp\amp \; a_{2n}x_n \amp\amp = \amp\amp \; b_2\\
+                \amp \quad\vdots \quad \amp\amp \quad \amp\amp\quad\vdots \quad \amp\amp \amp\amp\quad \ldots \quad \amp\amp \amp\amp\quad\vdots \quad \amp\amp  \amp\amp\; \vdots\\
+                \amp a_{m1}x_1  \amp\amp +  \amp\amp a_{m2}x_2  \amp\amp +  \amp\amp\quad \ldots \amp\amp +  \amp\amp\; a_{mn}x_n  \amp\amp =  \amp\amp \; b_m
+            \end{alignedat}\right.
+        </me>
+        in the variables <m>x_1,\ldots,x_n</m> is an <m>n</m>-tuple <m>(s_1,\ldots,s_n)\in\R^n</m> that is a solution to every linear equation in the system. This means that 
+        <me>
+          a_{r1}s_1+a_{r2}s_2+\ldots+a_{rn}s_n=b_r
+        </me>
+        for every <m>r</m> in the set <m>\{1,\ldots,m\}</m>. The collection of solutions to a linear system is called its <term>solution set</term>.
+      </p>
+    </statement>
+  </definition>
+
+  <definition xml:id="def-consistent">
+    <statement>
+      <p>
+        A linear system is said to be <term>consistent</term> if it has at least one solution. A linear system without solutions is called <term>inconsistent</term>.
+      </p>
+    </statement>
+  </definition>
+  <p>
+    Much of what we will be doing in this chapter is learning ways of transforming linear systems into simpler linear systems while preserving the solution set of the initial system.
+  </p>
+  <definition xml:id="def-equivalent">
+    <statement>
+      <p>
+        Two linear systems are said to be <term>equivalent</term> if they have the same solution set.
+      </p>
+    </statement>
+  </definition>
+  <example>
+      <p>
+        Let's consider the case of a linear equation in two variables. (If you have a look at the definition of linear systems, you will notice that I never required a linear system to have more than one equation!) For instance, we can consider the equation
+        <me>2x-3y=1</me>.
+        There are infinitely many solutions to this equation. Indeed, solving for the equation for <m>y</m>, we get
+        <me>
+          y=\frac{2}{3}x-\frac{1}{3}
+        </me>.
+        We may now freely choose a real value <m>t</m> for <m>x</m>, and for each such value, 
+        <men xml:id="parametric1">
+          x=t,\quad y=\frac{2}{3}t-\frac{1}{3}\qquad (t\in\R)
+        </men>
+        is a solution to the equation. For example, you could choose <m>x=3</m>, and this would force <m>y</m> to be <m>\frac{5}{3}</m>, meaning that <m>(3,5/3)</m> is a solution to the linear equation. Indeed, <m>2\times 3 - 3\times \frac{5}{3}=1</m>. Therefore, equation <xref ref="parametric1"/> is a recipe to cook up solutions to our linear equation. When there are infinitely many solutions to linear equations, a recipe like this is the best we can hope for. We call this a <term>parametric solution</term>. In this case, the solution has a single parameter <m>t</m>.
+      </p>
+      <p>
+        When working with systems of at most three variables, we can attempt to visualize the solution sets of our linear systems. I would strongly encourage you to do this as often as possible. This practice will greatly improve your geometric thinking and build your intuition, both of which are invaluable assets in mathematics.
+      </p>
+      <p>
+        Let's plot the solutions to the equation <m>2x-3y=1</m> of our previous example.
+      </p>
+      <figure xml:id="fig-lineq">
+        <caption>Graph of <m>2x-3y=1</m>.</caption>
+        <image width="80%">
+          <shortdescription>Graph of line defined by 2x-3y=1.</shortdescription>
+          <prefigure xmlns="https://prefigure.org" label="fig-line1">
+            <diagram dimensions="(300,300)" margins="5">
+              <definition>f(x,y)=2*x-3*y</definition>
+              <coordinates bbox="(-4,-4,4,4)">
+                <grid-axes xlabel="x" ylabel="y"/>
+                <implicit-curve function="f" k="1" stroke="orange" />
+              </coordinates>
+            </diagram>
+          </prefigure>
+        </image>
+      </figure>
+
+      It is no surprise that the plot shows a line. But it is clear from this picture that there are infinitely many solutions.
+  </example>
+
+  <p>
+    There are a few important operations that we can perform on linear systems that preserve the solution set, i.e. that turn one linear system into an equivalent one. We will be using these operations systematically to simplify any given system. These operations are:
+    <ol>
+      <li>
+        <p>
+          Multiplication of one of the equations by a non-zero constant.
+        </p>
+      </li>
+      <li>
+        <p>
+          Equation swapping.
+        </p>
+      </li>
+      <li>
+        <p>
+          Addition of a constant multiple of one equation to another equation in the system.
+        </p>
+      </li>
+    </ol>
+
+    These three operations are known as <term>elementary row operations</term>.
+  </p>
+
+  <example>
+      <p>
+        Consider the following linear system:
+        <men xml:id="sys-intersection">
+          \left\{
+            \begin{alignedat}{5}
+              x \amp\amp\; + \amp\amp\; y \amp = \amp\amp\; -1\\
+              2x \amp\amp\; - \amp\amp\; 3y \amp = \amp\amp\; 1
+            \end{alignedat}  
+          \right.
+        </men>
+        Let's find all the solutions to this linear system. You may feel tempted to solve the second equation for <m>y</m> or <m>x</m> and then substitute in the first. That will work. However, for larger systems, that turns out to be a slow and cumbersome method. Since one of our main aims in this first chapter is to find an efficient method to systematically solve systems of linear equations, I will use this particular example to explain how one can use the elementary row operations described above to simplify and solve a linear system. The idea is to eliminate one of the variables of the first equation by adding a suitable multiple of the second equation. An important aspect of this method is that <em>we never move variables to the right-hand side</em>. Let's remove the term <m>2x</m> from the second equation. In order to do that, we will subtract <m>2</m> times the first equation from the second. We get the equivalent linear system
+        <me>
+          \left\{
+            \begin{alignedat}{5}
+              x \amp\amp\; + \amp\amp\; y \amp = \amp\amp\; -1\\
+               \amp\amp  -\amp\amp\; 5y \amp = \amp\amp\; 3
+            \end{alignedat}  
+          \right.
+        </me>
+        We can now multiply the second equation by <m>-1/5</m>. This gives us
+        <me>
+          \left\{
+            \begin{alignedat}{5}
+              x \amp\amp\; + \amp\amp\; y \amp = \amp\amp\; -1\\
+               \amp\amp  \amp\amp y \amp = \amp\amp\; -\frac{3}{5}
+            \end{alignedat}  
+          \right.
+        </me>
+        Finally, if we subtract the second equation from the first we obtain
+        <me>
+          \left\{
+            \begin{aligned}
+              x \amp = -\frac{2}{5}\\
+              y \amp = -\frac{3}{5}
+            \end{aligned}  
+          \right.
+        </me>
+
+        Therefore, the solution to our linear system is <m>(x,y)=(-2/5,-3/5)</m>.
+      </p>
+
+      <p>
+        Let's plot both equations of the linear system above in the same Cartesian plane to have a geometrical picture of the situation.
+
+        <figure xml:id="fig-twolines">
+          <caption>Solution sets of <m>2x-3y=1</m> (in blue) and of <m>x+y=-1</m> (in orange).</caption>
+          <image width="80%">
+            <shortdescription>Graphical representation of the solution sets of 2x-3y=1 and x+y=-1. These are two lines intersecting at a single point.</shortdescription>
+            <prefigure xmlns="https://prefigure.org" label="prefig-lines">
+              <diagram dimensions="(300,300)" margins="2">
+                <definition>f(x,y)=2*x-3*y</definition>
+                <definition>g(x,y)=x+y</definition>
+                <coordinates bbox="(-4,-4,4,4)">
+                  <grid-axes xlabel="x" ylabel="y"/>
+                  <implicit-curve at="blue-function" function="f" k="1" stroke="blue" />
+                  <implicit-curve at="orange-function" function="g" k="-1" stroke="orange" />
+                  <point at="point" p="(-2/5,-3/5)" />
+                </coordinates>
+                <!-- <annotations>
+                  <annotation ref="figure" text="Graphical representation of the solution sets of 2x-3y=1 and x+y=-1. These are two lines intersecting at a single point.">
+                    <annotation ref="lines-group" text="Lines intersecting at a point">
+                      <annotation ref="blue-function" text="The line 2x-3y=1." />
+                      <annotation ref="orange-function" text="The line x+y=-1." />
+                      <annotation ref="point" text="The point of intersection -2/5 comma -3/5." />
+                    </annotation>
+                  </annotation>
+                </annotations> -->
+              </diagram>
+            </prefigure>
+          </image>
+        </figure>
+        The solution set of <m>2x-3y=1</m> is represented by the blue line in the picture above. The solution set of <m>x+y=-1</m> is represented by the orange line. These two lines intersect at precisely one point. That point is necessarily a common solution to these two linear equations. In other words, it is the only solution to the linear system <xref ref="sys-intersection"/>, which we already know to be the point <m>(-2/5,-3/5)</m>.
+      </p>
+  </example>
+  <p>
+    You can start to see why geometry may be useful when finding solutions to linear systems. In a system with two equations and two unknowns, three situations may occur:
+    <ol>
+      <li>
+        <p>
+          The lines corresponding to the solution sets of the two equations are not parallel, and so they meet at exactly one point. In this situation, there is exactly one solution to the system.
+        </p>
+      </li>
+      <li>
+        <p>
+          The lines corresponding to the solution sets of the two equations are parallel and distinct, and so they never meet. In this case, there are no solutions to the system.
+        </p>
+      </li>
+      <li>
+        <p>
+          The lines corresponding to the solution sets of the two equations are the same line. In this case, there are infinitely many solutions.
+        </p>
+      </li>
+    </ol>
+  </p>
+  
+  <p>A good exercise is to use this insight to prove the following theorem.</p>
+
+  <theorem xml:id="thm-linsys-twoeqs">
+    <statement>
+      <p>
+        Consider the linear system in the unknowns <m>x,y</m> given by
+        <me>
+          \left\{
+            \begin{aligned}
+              ax+by \amp = b_1\\
+              cx+dy \amp = b_2
+            \end{aligned}  
+          \right.
+        </me>
+        where <m>a,b,c,d,b_1,b_2\in \R</m> are constants. If <m>ad-bc\neq 0</m>, then this system has precisely one solution. If, otherwise, <m>ad-bc=0</m>, then this system has either none or infinitely many solutions.
+      </p>
+    </statement>
+    <proof>
+      <p>Let's first treat the case where <m>ad-bc\neq 0</m>. In this case, either <m>b\neq 0</m> or <m>d\neq 0</m>. We may assume without loss of generality that <m>b\neq 0</m>, because we can always swap the two equations and rename the coefficients. Then the line <m>\ell_1</m> corresponding to the solution set of the first equation has slope <m>-a/b</m>.</p>
+      
+      <p>Since we are assuming that <m>ad-bc\neq 0</m>, it must also be the case that <m>c\neq 0</m> or <m>d\neq 0</m>. It follows that the solution set <m>\ell_2</m> of <m>cx+dy=b_2</m> is either a vertical line, or a line with slope <m>-c/d</m>. All we need to do now is to show that the lines <m>\ell_1</m> and <m>\ell_2</m> intersect at a single point. It will suffice to show that they are not parallel.</p>
+
+      <p>If <m>\ell_2</m> is a vertical line, then it is clear that <m>\ell_1</m> and <m>\ell_2</m> are not parallel because <m>\ell_1</m> is not vertical. The other situation is that where <m>d\neq 0</m> and <m>\ell_2</m> has slope <m>-c/d</m>. If the lines <m>\ell_1</m> and <m>\ell_2</m> were parallel, then their slopes would match:
+        <me>
+          -\frac{a}{b}=-\frac{c}{d}
+        </me>.
+        But this is equivalent to <m>ad-bc=0</m>, which contradicts our assumption. Therefore, <m>\ell_1</m> and <m>\ell_2</m> cannot be parallel and therefore meet at exactly one point.
+      </p>
+
+      <p>Let's now assume that <m>ad-bc=0</m>. First, we should deal with two degenerate situations. The first occurs when <m>a=b=c=d=0</m>. If both <m>b_1</m> and <m>b_2</m> are also <m>0</m>, then the system has infinitely many solutions. But if one of the <m>b_i</m> is not <m>0</m>, then the system is inconsistent.</p>
+
+      <p>The second degenerate situation occurs when either <m>a=b=0</m> or <m>c=d=0</m>, but not both. Say that <m>a=d=0</m> (the other case is dealt with in a similar manner). If <m>b_1=0</m>, the first equation is then <m>0=0</m> and imposes no conditions. The solution set will therefore be the line defined by the second linear equation, yielding infinitely many solutions. On the other hand, if <m>b_1\neq 0</m>, there are no solutions.</p>
+
+      <p>Finally, the non-degenerate case is that where the solution set of each linear equation is a line. Let's first assume that <m>b=0</m>. Then the solution set <m>\ell_1</m> of the first equation is a vertical line. Since <m>ad-bc=0</m>, we must have <m>d=0</m> as well, and the solution set <m>\ell_2</m> of the second equation must also be a vertical line. They are either parallel (no solutions), or they are exactly the same line (infinitely many solutions).</p>
+
+      <p>If <m>b\neq 0</m>, then the slope of <m>\ell_1</m> is <m>-a/b</m>. Since <m>ad-bc=0</m>, if <m>d=0</m>, then <m>c=0</m>, contradicting the hypothesis that we are not in a degenerate case. The slope of <m>\ell_2</m> is then <m>-c/d</m>. Since <m>ad-bc=0</m>, the two slopes are then equal, and so the solution sets are either parallel and distinct (no solutions), or are the same (infinitely many solutions).</p>
+    </proof>
+  </theorem>
+  
+  <p>Once you learn about Jordan--Gauss elimination, you will be able to give a purely algebraic proof of the statement above. In fact, this will be one of the exercises in one of your problem sheets. But I strongly encourage you to study the geometric proof above. A good geometric intuition is an invaluable tool for a mathematician.</p>
+
+  <remark>
+    <p>
+      A few remarks about this theorem are in order.
+
+      <ol>
+        <li>
+          <p>
+            This theorem says that the solution set of a linear systems like the one above is either empty (i.e. no solutions), infinite or consists of a single point. There is no linear system with two equations and two variables that has exactly two solutions. If you can find two solutions, you can find infinitely many. Actually, this property is true of <em>every</em>> linear system. (See Theorem <xref ref="thm-sols-gensys"/>)   
+          </p>
+        </li>
+        <li>
+          <p>
+            Another curious aspect of this theorem is that it tells us that we can decide whether the system has exactly one solution or not simply by looking at the coefficients on the left-hand side of the equal signs. This means that <m>b_1</m> and <m>b_2</m> are irrelevant to the question of whether the system has exactly one solution. However, they are important when determining whether the system has none or infinitely many solutions. Again, this is a special case of a phenomenon that holds true for more general linear systems.   
+          </p>
+        </li>
+      </ol>
+    </p>
+  </remark>
+
+  <p>For the remainder of the section, we will see a few more instances of the following theorem in systems with three equations. We will see a proof of this result much later in the course.</p>
+
+  <theorem xml:id="thm-sols-gensys">
+    <statement>
+      <p>
+        The solution set of a linear system is either empty, infinite or consists of a single point.    
+      </p>
+    </statement>
+  </theorem>
+  
+  <example>
+    <p>
+      Consider the linear system given by
+      <me>
+        \left\{
+        \begin{alignedat}{7}
+          3x \amp\amp\; + \amp\amp\; 2y \amp\amp\; - \amp\amp\; z \amp = \amp\amp\; 0 \\
+          \amp\amp \amp\amp 2y\amp\amp\; + \amp\amp\; z \amp = \amp\amp\; 3 \\
+          \amp\amp \amp\amp \amp\amp \amp\amp 3z \amp = \amp\amp\; 6
+        \end{alignedat}
+        \right.
+      </me>
+      Dividing both sides of the last equation by <m>3</m>, we immediately get <m>z=2</m>. We can now subtract the equation <m>z=2</m> from the second equation to get
+      <me>
+        \left\{
+        \begin{alignedat}{7}
+          3x \amp\amp\; + \amp\amp\; 2y \amp\amp\; - \amp\amp\; z \amp = \amp\amp\; 0 \\
+          \amp\amp \amp\amp \amp\amp \amp\amp 2y \amp = \amp\amp\; 1 \\
+          \amp\amp \amp\amp \amp\amp \amp\amp z \amp = \amp\amp\; 2
+        \end{alignedat}
+        \right.
+      </me>
+      Dividing both sides of the second equation by <m>2</m>, we get <m>y=1/2</m>. Finally, we can subtract each side of <m>2y=1</m> from each side of the first equation, and also add each side of <m>z=2</m> to each side of the same first equation. We obtain
+      <me>
+        \left\{
+        \begin{aligned}
+          3x \amp = 1 \\
+          y \amp = \frac{1}{2} \\
+          z \amp = 2
+        \end{aligned}
+        \right.
+      </me>
+      So, the only solution to this linear system is <m>(x,y,z)=(1/3,1/2,2)</m>.
+    </p>
+    <p>
+      Geometrically, this is the intersection of three planes. The first plane is given by the equation <m>3x+2y-z=0</m>. We will see later in the course that this is the only plane that is perpendicular to the vector <m>(3,2,-1)</m> and that contains the origin. The second plane is defined by the equation <m>2y+z=3</m>, and the third plane by <m>3z=6</m>. The only point of intersection of these three planes is the point <m>(1/3,1/2,2)</m> that we found above.
+    </p>
+  </example>
+
+  <example>
+    <p>
+      Let's now find all the solutions to the linear system
+      <me>
+        \left\{
+        \begin{alignedat}{7}
+          2x \amp\amp\; - \amp\amp\; y \amp\amp\; + \amp\amp\; 3z \amp = \amp\amp\; 1 \\
+          4x \amp\amp\; - \amp\amp\; - \amp\amp\; 2y \amp\amp\; + \amp\amp\; 6x \amp = \amp\amp\; 0 \\
+          \amp\amp \amp\amp \amp\amp y \amp\amp\; - \amp\amp\; 2z \amp = \amp\amp\; 1
+        \end{alignedat}
+        \right.
+      </me>
+      Note that the expression <m>4x-2y+6z</m> is twice the expression <m>2x-y+3z</m>. Therefore, if we multiply both sides of the first equation by <m>2</m> and subtract each side from each side of the first equation, we end up with the second equation being <m>0=-2</m>, which is clearly absurd. This means that this linear system has no solutions.      
+    </p>
+    <p>
+      Geometrically, the solution set of <m>2x-y+3z=1</m> describes a plane that is parallel and distinct to the plane formed by the solution set of <m>4x-2y+6z=0</m>. Therefore, they never intersect, so there is no common solution.
+    </p>
+  </example>
+
+  <example>
+    <p>
+      The next linear system is an example of a linear system of three linear equations in three variables that has no solutions but where, unlike the previous example, the system formed by any two equations has infinitely many solutions:
+      <me>
+        \left\{
+          \begin{alignedat}{5}
+            x \aa - \aa z \amp = \aa 1 \\
+            x \aa + \aa y \amp = \aa 0 \\
+            y \aa + \aa z \amp = \aa 0
+          \end{alignedat}
+        \right.
+      </me>
+      Our first move will be to subtract the last equation from the second one. We obtain the equivalent system
+      <me>
+        \left\{
+          \begin{alignedat}{5}
+            x \aa - \aa z \amp = \aa 1 \\
+            x \aa - \aa z \amp = \aa 0 \\
+            y \aa + \aa z \amp = \aa 0
+          \end{alignedat}
+        \right.
+      </me>
+      It is immediately clear from this new system that there are no solutions, since the first two equations are contradictory. However, looking back at our original system, it is easy to see that any two equations have infinitely many solutions. Take for example the first two:
+      <men xml:id="sys-subsystem">
+        \left\{
+          \begin{alignedat}{5}
+            x \aa - \aa z \amp = \aa 1 \\
+            x \aa + \aa y \amp = \aa 0 \\
+          \end{alignedat}
+        \right.
+      </men>
+      This is a linear system with two equations and three unknowns. Note that if we allow <m>x</m> be any real number <m>t</m>, then we always get a solution. Indeed, we only need to set <m>y=-t</m> and <m>z=t-1</m>. In other words, the triple <m>(t,-t,t-1)</m> is always a solution to the linear system <xref ref="sys-subsystem"/>, independently of the real number <m>t</m> that we choose.
+    </p>
+  </example>
+
+  <example>
+    <p>
+      Our final example in this section will be that of a system linear equations whose solution set is a two-parameter family. This will be a system of two linear equations on the variables <m>x,y,z,w</m>.
+      <men xml:id="sys-twoparam">
+        \left\{
+          \begin{alignedat}{9}
+            x \aa + \aa y \aa + \aa z \aa + \aa w \amp = \aa 0 \\
+            \aa \aa \aa \aa x \aa + \aa w \amp =  \aa 1
+          \end{alignedat}
+        \right.
+      </men>
+      Subtracting each side of the second equation from each side of the first, we obtain the equivalent system
+      <me>
+        \left\{
+          \begin{aligned}
+            y+z \amp = -1\\
+            x+w \amp = 0
+          \end{aligned}
+        \right.
+      </me>
+      We can freely set <m>x</m> to be any real value <m>t</m>, and freely set <m>y</m> to be any real value <m>s</m> This leads to <m>w=-t</m> and <m>z=-1-s</m>. Therefore, the solution set of this system is given by the two-parameter solution
+      <me>
+        x=t,\quad y=s,\quad z=-1-s,\quad w=-t\qquad (s,t\in\R)
+      </me>.
+    </p>
+  </example>
+
+  <remark>
+    <p>
+      Let me observe that the parametric solution <m>(t,s,-1-s,-t)</m> can be decomposed as
+    <me>(t,s,-1-s,-t)=(0,0,-1,0) + t\cdot (1,0,0,-1) + s\cdot (0,1,-1,0)</me>.
+    The geometric interpretation of this is the following. The solution set of the system <xref ref="sys-twoparam"/> is the plane in <m>\R^4</m> that contains the point <m>(0,0,-1,0)</m> and is generated by the two vectors <m>(1,0,0,-1)</m> and <m>(0,1,-1,0)</m>.
+    </p>
+  </remark>
+</section>

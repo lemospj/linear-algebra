@@ -1,1 +1,7 @@
+.cache
 .vscode
+
+assets
+generated-assets
+logs
+output

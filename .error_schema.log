@@ -1,0 +1,5 @@
+<string>:127:0:ERROR:RELAXNGV:RELAXNG_ERR_NOELEM: Expecting an element nbsp, got nothing
+<string>:126:0:ERROR:RELAXNGV:RELAXNG_ERR_ELEMNAME: Expecting element blockquote, got p
+<string>:150:0:ERROR:RELAXNGV:RELAXNG_ERR_EXTRACONTENT: Element image has extra content: prefigure
+<string>:150:0:ERROR:RELAXNGV:RELAXNG_ERR_INTERSEQ: Invalid sequence in interleave
+<string>:148:0:ERROR:RELAXNGV:RELAXNG_ERR_CONTENTVALID: Element image failed to validate content

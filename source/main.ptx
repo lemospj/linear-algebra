@@ -5,14 +5,14 @@
   <xi:include href="./docinfo.ptx" />
 
   <book xml:id="my-great-book">
-    <title>My Great Book</title>
-    <subtitle>An example to get you started</subtitle>
+    <title>MATH2101: Linear Algebra</title>
+    <subtitle>Lecture Notes</subtitle>
 
     <!-- Include frontmatter -->
     <xi:include href="./frontmatter.ptx" />
 
     <!-- Include chapters -->
-    <xi:include href="./ch-chapter-title.ptx" />
+    <xi:include href="./chapter1/ch-linear-equations.ptx" />
 
 
     <!-- Include backmatter -->

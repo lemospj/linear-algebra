@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<chapter xml:id="ch-linear-equations" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Systems of linear equations</title>
+
+  <introduction>
+    <p> You are probably familiar with the notion of linear equation, at least when only two variables are involved. If not for better reasons, linear equations feature prominently in undergraduate Calculus courses. A linear equation in two variables is an equation of the form
+      <me>
+        ax+by=c.
+      </me>
+    If not both <m>a</m> and <m>b</m> equal <m>0</m> and if you plot the solutions to this equation in the Cartesian plane, you will see a line, hence the name of linear equation.
+    </p>
+
+    <p> You may also have some familiarity with systems of linear equations like the following:
+      <md alignment="alignat">
+        <mrow> 2x  - y \amp = 3 </mrow>
+        <mrow> x  +  y \amp = 5 </mrow>
+      </md>
+      and you may have no trouble realizing that the only solution to this system is given by the point <m>(x,y)=\left(\frac{8}{3},\frac{7}{3}\right)</m>. However, systems of linear equations will typically involve more than two unknowns and more than two equations, and the number of calculations needed to solve these systems will grow with its size. The good news is that the method to solve these systems remains unchanged! The purpose of this chapter is to learn a systematic method to solve such systems.
+    </p>
+  </introduction>
+
+  <!-- include sections -->
+  <xi:include href="sec-solutions.ptx" />
+
+</chapter>
