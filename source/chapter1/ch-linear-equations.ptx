@@ -27,5 +27,6 @@
   <!-- include sections -->
   <xi:include href="sec-solutions.ptx" />
   <xi:include href="sec-echelon.ptx" />
+  <xi:include href="sec-gauss.ptx" />
 
 </chapter>
