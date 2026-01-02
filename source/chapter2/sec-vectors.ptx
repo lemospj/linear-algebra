@@ -1,0 +1,342 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-vectors" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>Vectors</title>
+    
+    <p>
+        You may be familiar with most of the material in this section. We will review some fairly fundamental properties of vectors in <m>\R^n</m>. A <term>vector</term> in <m>\R^n</m> is simply an element of <m>\R^n</m>, or, in other words, an <m>n</m>-tuple <m>(a_1,\ldots,a_n)\in\R^n</m>. So this definition coincides with the definition of a point in <m>\R^n</m>. We use different words when we want to think of these objects in different ways. Whenever I use the word <em>point</em>, you should think of an actual single point in <m>\R^n</m>. However, vectors are usually represented by an arrow based at the origin and ending in the coordinates given by the vector.
+    </p>
+    <example>
+        <p>
+            For example, <m>(1,2)</m> is a vector in <m>\R^2</m>. It is graphically represented as follows:
+        </p>
+        <figure xml:id="fig-vector">
+                <caption>The vector <m>(1,2)</m>.</caption>
+                <image width="80%">
+                    <shortdescription>The vector 1 comma 2</shortdescription>
+                    <prefigure xmlns="https://prefigure.org" label="prefig-vector">
+                        <diagram dimensions="(300,300)" margins="5">
+                            <coordinates bbox="(-1,-1, 3, 3)">
+                                <grid-axes xlabel="x" ylabel="y" />
+                                <vector v="(1,2)" stroke="blue" thickness="2" />
+                            </coordinates>
+                        </diagram>
+                    </prefigure>                    
+                </image>
+            </figure>
+    </example>
+    <p>
+        We will often work with <term>column vectors</term>. This means that instead of writing vectors horizontally, we will write them vertically. For example, the vector <m>(1,2)</m> will be written as <m>\colvec{1 \\ 2}</m>. This is a standard convention in linear algebra. I will explain the reason for this choice after we introduce matrix multiplication in the next section. I will extend this convention to points as well, i.e. from now on I will organize the coordinates of a point vertically.
+    </p>
+    <p>
+        It is possible to multiply vectors by a <term>scalar</term>, i.e., by a real number. If <m>\lambda</m> is a real number and 
+        <me>\bv=\colvec{a_1 \\ a_2 \\ \vdots \\ a_n}</me> is a vector in <m>\R^n</m>, then we define <m>\lambda \bv</m> to be the vector <me>\colvec{\lambda a_1 \\ \lambda a_2 \\ \vdots \\ \lambda a_n}</me>. In other words, the <m>i</m>th coordinate of <m>\lambda \bv</m> is defined to be <m>\lambda</m> times the <m>i</m>th coordinate of <m>\bv</m>.
+    </p>
+    <example>
+        <p>
+            For instance, <m>2\cdot \colvec{1 \\ 2}=\colvec{2 \\ 4}</m>. In the figure below, the vector <m>\colvec{1 \\ 2}</m> is represented in blue, and the vector <m>2\cdot\colvec{1 \\ 2}</m> is represented in orange. In the image, the vector <m>\colvec{1 \\ 2}</m> is translucent so that it is clear that the representation of <m>2\cdot \colvec{1 \\ 2}</m> is based at the origin.
+        </p>
+        <figure xml:id="fig-scalar">
+            <caption>The vectors <m>\colvec{1 \\ 2}</m> and <m>2\cdot \colvec{1 \\ 2}</m>.</caption>
+            <image width="80%">
+                <shortdescription>The vector 1 comma 2 in blue, and the vector 2 times 1 comma 2 in orange.</shortdescription>
+                <prefigure xmlns="https://prefigure.org" label="prefig-scalar">
+                    <diagram dimensions="(300,300)" margins="5">
+                        <coordinates bbox="(-1,-1, 5, 5)">
+                            <grid-axes xlabel="x" ylabel="y" />
+                            <vector v="(2,4)" stroke="orange" thickness="2" />
+                            <vector v="(1,2)" stroke="blue" thickness="2" opacity="0.5" />
+                        </coordinates>
+                    </diagram>
+                </prefigure>                    
+            </image>
+        </figure>
+        <p>
+            It should come as no surprise that these two vectors lie in the same line through the origin. But more on this later.
+        </p>
+    </example>
+    <p>
+        Instead of writing <m>(-1)\cdot\bv</m>, we will often use the shorthand notation <m>-\bv</m>.
+    </p>
+    <p>
+        We can also add two vectors in <m>\R^n</m>. If <me>\bv=\colvec{a_1 \\ a_2 \\ \vdots \\ a_n}\quad \text{ and }\quad \bw=\colvec{b_1 \\ b_2 \\ \vdots \\ b_n}</me> are two vectors in <m>\R^n</m>, then their sum is the vector whose <m>i</m>th coordinate is <m>a_i+b_i</m>:
+        <me>
+            \bv + \bw = \colvec{a_1+b_1 \\ a_2+b_2 \\ \vdots \\ a_n+b_n}
+        </me>.
+    </p>
+    <example>
+        <p>
+            If <m>\bv=\colvec{2 \\ 1}</m> and <m>\bw=\colvec{-1 \\ 1}</m>, then <m>\bv+\bw=\colvec{1 \\ 2}</m>. Graphically, the sum of <m>\bv</m> and <m>\bw</m> can be obtained via the parallelogram rule.
+        </p>
+        <figure xml:id="fig-vector-sum">
+            <caption>The parallelogram rule.</caption>
+                <image width="80%">
+                    <shortdescription>The vector 2 comma 1 in orange, the vector minus 1 comma 1 in blue, and their sum in green.</shortdescription>
+                    <prefigure xmlns="https://prefigure.org" label="prefig-vector-sum">
+                        <diagram dimensions="(300,300)" margins="5">
+                            <definition>v=(2,1)</definition>
+                            <definition>w=(-1,1)</definition>
+                            <definition>u=v+w</definition>
+                            <coordinates bbox="(-1.5,-1, 2.5, 3)">
+                                <grid-axes xlabel="x" ylabel="y" />
+                                <vector v="v" stroke="orange" thickness="2" />
+                                <vector v="w" stroke="blue" thickness="2" />
+                                <vector v="v" stroke="orange" dash="9 9" thickness="2" tail="w" opacity="0.6" />
+                                <vector v="w" stroke="blue" dash="9 9" thickness="2" tail="v" opacity="0.6" />
+                                <vector v="u" stroke="green" thickness="2" />
+                            </coordinates>
+                        </diagram>
+                    </prefigure>                    
+                </image>
+        </figure>
+        <p>
+            In the figure above, the vector <m>\bv</m> is depicted in orange, the vector <m>\bw</m> in blue, and the sum of the two in green.
+        </p>
+    </example>
+    <p>
+        We also define <m>\bv-\bw</m> to mean <m>\bv + (-\bw)</m>, so that if <me>\bv=\colvec{a_1 \\ a_2 \\ \vdots \\ a_n}\quad \text{and}\quad\bw=\colvec{b_1 \\ b_2 \\ \vdots \\ b_n}</me>, then
+        <me>
+            \bv-\bw=\colvec{a_1-b_1 \\ a_2-b_2 \\ \vdots \\ a_n-b_n}
+        </me>.
+    </p>
+    <p>
+        Since, formally, vector and points in <m>\R^n</m> are the same thing, the rules of vector addition allow us to add two points or a point and a vector. By convention, we think of the addition of a vector to a point as another point: point + vector = point. The idea is that the vector represents the displacement of the point.
+    </p>
+    <example>
+        <p>
+            Let's consider the point <m>\colvec{1 \\ 1}</m> in <m>\R^2</m> and the vector <m>\colvec{-1 \\ 1}</m>. Then
+            <me>
+                \colvec{1 \\ 1} + \colvec{-1 \\ 1}=\colvec{0 \\ 2}
+            </me>,
+            and we should think of <m>\colvec{0 \\ 2}</m> as the point obtained by displacing the point <m>\colvec{1 \\ 1}</m> by the vector <m>\colvec{-1 \\ 1}</m>.
+        </p>
+        <figure xml:id="fig-point-disp">
+            <caption>Displacement of the point <m>\colvec{1 \\ 1}</m> by the vector <m>\colvec{-1 \\ 1}</m>.</caption>
+            <image width="80%">
+                <shortdescription>The vector minus 1 comma 1, the point 1 comma 1 and the displacement of 1 comma 1 by the vector minus 1 comma 1.</shortdescription>
+                <prefigure xmlns="https://prefigure.org" label="prefig-point-disp">
+                    <diagram dimensions="(300,300)" margins="5">
+                        <definition>v=(-1,1)</definition>
+                        <definition>p=(1,1)</definition>
+                        <definition>q=p+v</definition>
+                        <coordinates bbox="(-2,-1, 2, 3)">
+                            <grid-axes xlabel="x" ylabel="y" />
+                            <point p="p" fill="green" stroke="none" thickness="2" />
+                            <point p="q" fill="red" stroke="none" thickness="2" />
+                            <vector v="v" stroke="blue" thickness="2" />
+                            <vector v="v" stroke="blue" dash="9 9" thickness="2" tail="p" />
+                        </coordinates>
+                    </diagram>
+                </prefigure>                    
+            </image>
+        </figure>
+        <p>
+            In the figure above, the vector <m>\colvec{-1 \\ 1}</m> is represented in blue, and the point <m>\colvec{1 \\ 1}</m> is in green. After adding <m>\colvec{-1 \\ 1}</m> to the point <m>\colvec{1 \\ 1}</m>, we end up with the point <m>\colvec{0 \\ 2}</m>, graphically represented in red. The dashed blue arrow is the vector <m>\colvec{-1 \\ 1}</m> based on the point <m>\colvec{1 \\ 1}</m> so that its interpretation as displacement can be clearly seen.
+        </p>
+    </example>
+    <p>
+        A line in <m>\R^n</m> is determined by two pieces of data: a point through which the line passes and a direction. Directions are encoded by vectors. So we can define a line as the set of points obtained by adding scalar multiples of a vector to a fixed point. In other words, it is the set of points that you can get to by adding scalar multiples of a fixed vector to a fixed point.
+    </p>
+    <definition xml:id="def-line">
+        <statement>
+            <p>
+            Fix a point <m>p\in \R^n</m> and a non-zero vector <m>\bv\in\R^n</m>. The <term>line passing through <m>p</m> with direction <m>\bv</m></term> is the set of points in <m>\R^n</m> that can be written in the form <m>p+\lambda\bv</m> for some <m>\lambda\in\R</m>.
+            </p>
+        </statement>
+    </definition>
+    <example>
+        <p>
+            Consider the vector <m>\bv=\colvec{2 \\ 1}</m> and the point <m>p=\colvec{-1 \\ 0}</m> in <m>\R^2</m>. The line passing through <m>p</m> with direction <m>\bv</m> is depicted in orange in the figure below. If we change the initial point to <m>q=\colvec{0 \\ 0}</m> but keep the direction, we obtain the parallel line in blue.
+        </p>
+        <figure xml:id="fig-lines-vector">
+            <caption>Parallel lines defined by vector <m>\colvec{2 \\ 1}</m>.</caption>
+            <image width="80%">
+                <shortdescription>Two parallel lines defined by vector 2 comma 1. One of them passes through the point negative 1 comma 0, while the other passes through 0 comma 0.</shortdescription>
+                <prefigure xmlns="https://prefigure.org" label="prefig-lines-vector">
+                    <diagram dimensions="(300,300)" margins="5">
+                        <definition>v=(2,1)</definition>
+                        <definition>p=(-1,0)</definition>
+                        <definition>p1=p+v</definition>
+                        <definition>q=(0,0)</definition>
+                        <definition>q1=q+v</definition>
+                        <coordinates bbox="(-2,-1, 3, 4)">
+                            <grid-axes xlabel="x" ylabel="y" />
+                            <line p1="p" p2="p1" stroke="orange" infinite="yes" />
+                            <vector v="v" stroke="black" opacity="0.6" thickness="2" dash="9 9" tail="p" />
+                            <point p="p" fill="white" stroke="black" thickness="2" />
+                            <line p1="q" p2="q1" stroke="blue" infinite="yes" />
+                            <vector v="v" stroke="black" opacity="0.6" thickness="2" />
+                            <point p="q" fill="white" stroke="black" thickness="2" />
+                        </coordinates>
+                    </diagram>
+                </prefigure>                    
+            </image>
+        </figure>
+    </example>
+    <p>
+        Lines (or planes and hyperplanes) that pass through the origin have a very special place in linear algebra. These are examples of <term>linear subspaces</term>. It will be a while before we see the formal definition of a vector space, but I will now list a series of properties that make <m>\R^n</m> one. Proving that these properties do hold is an instructive exercise that you should attempt. Most of the properties follow immediately from the definitions of scalar multiplication and vector addition. At the very least, you should try out a few examples. I will include proofs for some of the properties that you can use as a source of inspiration.
+
+        <ol>
+            <li>
+                <p>
+                    <em>Associativity of vector addition</em>: <m>\bv + (\bw+\bu)=(\bv+\bw)+\bu</m> for all vectors <m>\bv,\bw,\bu\in \R^n</m>.
+                </p>
+                <p>
+                    This follows from the associativity of addition of real numbers. What this property says is that if we first add <m>\bw</m> to <m>\bu</m> and then add the result to <m>\bv</m>, the result that we obtain will be the same that we get if we choose to first add <m>\bv</m> and <m>\bw</m> together and then add <m>\bu</m>. Indeed, let <me>\bv=\colvec{a_1 \\ a_2 \\ \vdots \\ a_n},\quad \bw=\colvec{b_1 \\ b_2 \\ \vdots \\ b_n}\quad \text{and}\quad\bu=\colvec{c_1 \\ c_2 \\ \vdots \\ c_n}</me>. Then, by definition
+                    <me>
+                        \bw+\bu=\colvec{b_1+c_1 \\ b_2+c_2 \\ \vdots \\ b_n+c_n}
+                    </me>
+                    and so
+                    <me>
+                        \bv+(\bw+\bu)=\colvec{a_1+(b_1+c_1) \\ a_2+(b_2+c_2) \\ \vdots \\ a_n+(b_n+c_n)}
+                    </me>.
+                    Similarly, we can show that
+                    <me>
+                        (\bv+\bw)+\bu=\colvec{(a_1+b_1)+c_1 \\  (a_2+b_2)+c_2 \\ \vdots \\ (a_n+b_n)+c_n}
+                    </me>.
+                    Since <m>a_i+(b_i+c_i)=(a_i+b_i)+c_i</m> for all <m>i</m> due to the associativity property of the addition of real numbers, we conclude that <m>\bv+(\bw+\bu)=(\bv+\bw)+\bu</m>.
+                </p>
+            </li>
+            <li>
+                <p>
+                    <em>Commutativity of vector addition</em>: <m>\bv+\bw=\bw+\bv</m> for all vectors <m>\bv,\bw\in\R^n</m>.
+                </p>
+            </li>
+            <li>
+                <p>
+                    <em>Existence of identity element for vector addition</em>: the zero vector <m>\bz</m> in <m>\R^n</m>(i.e. the vector in <m>\R^n</m> whose entries are all <m>0</m>) satisfies <m>\bv + \bz=\bv</m>.
+                </p>
+            </li>
+            <li>
+                <p>
+                    <em>Existence of inverse element for vector addition</em>: we have <m>\bv+(-\bv)=\bz</m> for every vector <m>\bv\in\R^n</m>.
+                </p>
+            </li>
+            <li>
+                <p>
+                    <em>Compatibility of real number multiplication with scalar multiplication</em>: <m>\lambda(\mu\bv)=(\lambda\mu)\bv</m> for every vector <m>\bv\in\R^n</m> and real numbers <m>\lambda,\mu\in \R</m>.
+                </p>
+            </li>
+            <li>
+                <p>
+                    <em>Existence of identity for scalar multiplication</em>: we have <m>1\cdot\bv=\bv</m> for every vector <m>\bv\in\R^n</m>.
+                </p>
+            </li>
+            <li>
+                <p>
+                    <em>Distributivity of scalar multiplication with respect to vector addition</em>: <m>\lambda(\bv+\bw)=\lambda\bv+\lambda\bw</m> for all vectors <m>\bv,\bw\in\R^n</m> and any real number <m>\lambda\in\R</m>.
+                </p>
+            </li>
+            <li>
+                <p>
+                    <em>Distributivity of scalar multiplication with respect to addition of real numbers</em>: <m>(\lambda+\mu)\bv=\lambda\bv+\mu\bv</m> for all real numbers <m>\lambda,\mu\in\R</m> and any vector <m>\bv\in\R^n</m>.
+                </p>
+            </li>
+        </ol>
+        We will re-encounter these eight properties later in the course.
+    </p>
+    <p>
+        The last operation that I need to mention in this section is the <term>dot product</term> between two vectors in the same space. If <me>\bv=\colvec{a_1 \\ a_2 \\ \vdots \\ a_n}\quad \text{and} \quad\bw=\colvec{b_1 \\ b_2 \\ \vdots \\ b_n}</me> are two vectors in <m>\R^n</m> then the <term>dot product</term> between them, denoted by <m>\bv\cdot\bw</m>, is the <em>real number</em> defined by
+        <me>
+            \bv\cdot\bw=\sum_{i=1}^n a_ib_i=a_1b_1+a_2b_2+\ldots+a_nb_n.
+        </me>
+        In other words, we multiply the <m>i</m>th coordinate of <m>\bv</m> by the <m>i</m>th coordinate of <m>\bw</m> for each <m>i</m> and then we add all these products together.
+    </p>
+    <example>
+        <p>
+            Consider the vectors
+            <me>
+                \bv=\colvec{1 \\ -2 \\ 3}\quad\text{and}\quad \bw=\colvec{0 \\ 2 \\ 5}
+            </me>
+            in <m>\R^3</m>. Their dot product is
+            <me>
+                \bv\cdot\bw = 1\times 0 + (-2)\times 2 + 3\times 5=-4+15=11
+            </me>.
+        </p>
+    </example>
+    <p>
+        While it is clearly true that <m>\bv\cdot\bz=\bz\cdot\bv=0</m> for every vector <m>\bv\in\R^n</m>, you should be aware of the fact that it is possible to have <m>\bv\cdot\bw=0</m> with neither <m>\bv</m> nor <m>\bw</m> be the zero vector. For example,
+        <me>
+            \colvec{1 \\ 2}\cdot \colvec{2 \\ -1}=1\times 2 + 2\times (-1)=2-2=0
+        </me>.
+        We will later see that this happens precisely when the vectors are perpendicular to each other.
+    </p>
+    <p>
+        The following proposition lists a few important properties of the dot product. Showing that these properties hold is not too hard, and you should try to come up with a proof by yourself. If are not able to prove these three properties, do not worry. Just have a look at the proof that I wrote. You will learn a great deal from earnestly trying to do something even if you fail.    
+    </p>
+    <proposition xml:id="prop-dot-product">
+        <statement>
+            <p>
+                The following properties hold for all vectors <m>\bv,\bw,\bu\in\R^n</m> and all real numbers <m>\lambda,\mu</m>:
+                <ol>
+                    <li>
+                        <p>
+                            <m>\bv\cdot\bw=\bw\cdot\bv</m>.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <m>(\lambda\bv+\mu\bw)\cdot \bu=\lambda(\bv\cdot \bu)+\mu(\bw\cdot \bu)</m>.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            If <m>\bv</m> is not the zero vector, then <m>\bv\cdot\bv > 0</m>.
+                        </p>
+                    </li>
+                </ol>
+            </p>
+        </statement>
+        <proof>
+            <p>
+                Let
+                <me>
+                   \bv=\colvec{a_1 \\ \vdots \\ a_n},\quad\bw=\colvec{b_1 \\ \vdots \\ b_n}\quad\text{and}\quad\bu=\colvec{c_1 \\ \vdots \\ c_n}
+                </me>
+                be three vectors in <m>\R^n</m>, and let <m>\lambda</m> and <m>\mu</m> be two real numbers
+            </p>
+            <p>
+                The first property is a straightforward consequence of the definition of dot product. Indeed,
+                <me>
+                    \bv\cdot\bw=\sum_{i=1}^n a_ib_i
+                </me>.
+                Since multiplication is commutative, we have
+                <me>
+                    \bv\cdot\bw=\sum_{i=1}^n a_ib_i=\sum_{i=1}^n b_ia_i
+                </me>.
+                But the right-hand side of this expression is precisely the definition of <m>\bw\cdot\bv</m>.
+            </p>
+            <p>
+                In order to prove the second property, start by noting that, for <m>1\leq i\leq n</m>, the <m>i</m>th coordinate of <m>\lambda\bv+\mu\bw</m> is <m>\lambda a_i + \mu b_i</m>. Therefore,
+                <me>
+                    \begin{aligned}
+                        (\lambda \bv + \mu \bw)\cdot \bu \amp= \sum_{i=1}^n(\lambda a_i + \mu b_i)c_i\\
+                        \amp=\sum_{i=1}^n(\lambda a_ic_i + \mu b_ic_i)\\
+                        \amp=\sum_{i=1}^n \lambda a_ic_i + \sum_{i=1}^n \mu b_ic_i\\
+                        \amp= \lambda\sum_{i=1}^n a_ic_i+\mu\sum_{i=1}^n b_ic_i.
+                    \end{aligned}
+                </me>.
+                Since 
+                <me>
+                    \bv\cdot\bu = \sum_{i=1}^n a_ic_i\quad \text{and}\quad \bw\cdot\bu=\sum_{i=1}^n b_ic_i
+                </me>,
+                we have
+                <me>
+                    \lambda\sum_{i=1}^n a_ic_i+\mu\sum_{i=1}^n b_ic_i=\lambda(\bv\cdot\bu)+\mu(\bw\cdot \bu)
+                </me>,
+                as we wanted.
+            </p>
+            <p>
+                We will now prove the third and last property in the statement of the proposition. To do that, we will assume that <m>\bv</m> is non-zero. This means that at least one of its coordinates is not zero, i.e. <m>a_k\neq 0</m> for some <m>k\in\{1,2\ldots,n\}</m>. We have
+                <me>
+                    \bv\cdot\bv = \sum_{i=1}^n a_ia_i=\sum_{i=1}^n a_i^2
+                </me>
+                by the definition of dot product. Every term in this sum is non-negative because it is a square of a real number. Therefore,
+                <me>
+                    \sum_{i=1}^n a_ia_i=\sum_{i=1}^n a_i^2\geq a_k^2
+                </me>.
+                Since <m>a_k\neq 0</m>, we have <m>a_k^2 > 0</m>, yielding <m>\bv\cdot\bv > 0</m>.
+            </p>
+        </proof>
+    </proposition>
+</section>

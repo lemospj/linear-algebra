@@ -13,6 +13,7 @@
 
     <!-- Include chapters -->
     <xi:include href="./chapter1/ch-linear-equations.ptx" />
+    <xi:include href="./chapter2/ch-vectors-matrices.ptx" />
 
 
     <!-- Include backmatter -->
