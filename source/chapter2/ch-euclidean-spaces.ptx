@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<chapter xml:id="ch-vectors-matrices" xmlns:xi="http://www.w3.org/2001/XInclude">
-  <title>Vectors and Matrices</title>
+<chapter xml:id="ch-euclidean-spaces" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Euclidean spaces</title>
 
   <introduction>
     <p> 
@@ -11,5 +11,6 @@
 
   <!-- include sections -->
   <xi:include href="sec-vectors.ptx" />
+  <xi:include href="sec-matrices.ptx" />
 
 </chapter>
