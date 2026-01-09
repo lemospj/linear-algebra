@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-linear-dependence" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>Linear dependence</title>
+    <definition xml:id="def-linear-combination">
+        <statement>
+            <p>
+                Let <m>\bv_1,\bv_2,\ldots,\bv_m</m> be vectors in <m>\R^n</m>. A <term>linear combination</term> of <m>\bv_1,\bv_2,\ldots,\bv_m</m> is an expression of the form
+                <me>
+                    \lambda_1\bv_1+\lambda_2\bv_2+\ldots+\lambda_m\bv_m
+                </me>,
+                where <m>\lambda_1,\lambda_2,\ldots,\lambda_m</m> are real numbers. The scalars <m>\lambda_1,\lambda_2,\ldots,\lambda_m</m> are called the <term>coefficients</term> of the linear combination.
+            </p>
+        </statement>
+    </definition>
+    <p>
+        The linear combination is the <em>expression</em> itself. Two different linear combinations can give rise to the same vector.
+    </p>
+    <example xml:id="ex-lin-comb77">
+        <p>
+            The expression
+            <me>
+                2\colvec{1 \\ -1} + 3\colvec{2 \\ 3} - \colvec{1 \\ 0}
+            </me>
+            is a linear combination of the vectors <m>\colvec{1 \\ -1}</m>, <m>\colvec{2 \\ 3}</m> and <m>\colvec{-1 \\ 0}</m> in <m>\R^2</m>. The resulting vector is 
+            <me>
+               2\colvec{1 \\ -1} + 3\colvec{2 \\ 3}-\colvec{1 \\ 0}=\colvec{2 \\ -2} + \colvec{6 \\ 9}-\colvec{1 \\ 0}=\colvec{7 \\ 7}
+            </me>.
+            Here is a different linear combination of the same vectors that also gives rise to <m>\colvec{7 \\ 7}</m>:
+            <me>
+                -\colvec{1 \\ -1} + 2\colvec{2 \\ 3} + 4\colvec{1 \\ 0} = \colvec{-1 \\ 1} + \colvec{4 \\ 6} + \colvec{4 \\ 0}=\colvec{7 \\ 7}
+            </me>.
+        </p>
+    </example>
+    <example xml:id="ex-lin-comb77-unique">
+        <p>
+            In <xref ref="ex-lin-comb77"/> we saw that it is possible to express <m>\colvec{7 \\ 7}</m> in more than one way as linear combination of the vectors <m>\colvec{1 \\ -1}, \colvec{2 \\ 3}</m> and <m>\colvec{1 \\ 0}</m>. However, there is only one linear combination of the vectors <m>\be_1=\colvec{1 \\ 0}</m> and <m>\be_2=\colvec{0 \\ 1}</m> that results in <m>\colvec{7 \\ 7}</m>. Indeed, the problem is that of finding real numbers <m>\lambda_1</m> and <m>\lambda_2</m> such that
+            <me>
+                \lambda_1\be_1+\lambda_2\be_2=\colvec{7 \\ 7}
+            </me>.
+            However, 
+            <me>
+                \lambda_1\be_1+\lambda_2\be_2= \lambda_1\colvec{1 \\ 0}+\lambda_2\colvec{0 \\ 1}= \colvec{\lambda_1 \\ \lambda_2}
+            </me>,
+            which means that we must have <m>\lambda_1=\lambda_2=7</m>.
+        </p>
+    </example>
+    <example>
+        <p>
+            Sometimes it is not possible to represent a vector as a linear combination of prescribed vectors. For example, the vector
+            <me>
+                \bv=\colvec{3 \\ 2 \\ 1}
+            </me>
+            in <m>\R^3</m> cannot be represented as a linear combination of the vectors
+            <me>
+                \bw=\colvec{2 \\ 1 \\ 0}\quad \text{and}\quad \bu=\colvec{1 \\ 5 \\ 0}
+            </me>
+            because any linear combination of the vectors <m>\bw</m> and <m>\bu</m> will have <m>0</m> as its third coordinate.
+        </p>
+    </example>
+    <p>
+        <xref ref="ex-lin-comb77-unique"/> shows that sometimes there is at most one way to represent a vector as a linear combination of prescribed vectors. This phenomenon occurs when there are no linear relationships among the vectors that are to be combined.
+    </p>
+    <definition xml:id="def-linear-independence">
+        <statement>
+            <p>
+                We say that the vectors <m>\bv_1,\bv_2,\ldots,\bv_m\in\R^n</m> are said to be <term>linearly dependent</term> if there exist real numbers <m>\lambda_1,\lambda_2,\ldots,\lambda_m</m>, <em>not all zero</em>, such that
+                <me>
+                    \lambda_1\bv_1+\lambda_2\bv_2+\ldots+\lambda_m\bv_m=\bz
+                </me>.
+                If the vectors <m>\bv_1,\bv_2,\ldots,\bv_m</m> are not linearly dependent, then we say that they are <term>linearly independent</term>.
+            </p>
+        </statement>
+    </definition>
+    <p>
+        The condition that the coefficients of the linear combination above are not all zero in the definition of linear dependence is crucial. Indeed, for any given set of vectors <m>\bv_1,\bv_2,\ldots,\bv_m</m>, it is always possible to find a trivial linear combination that represents the zero vector. All we need to do is to choose every coefficient to be <m>0</m>:
+        <me>
+            0\cdot\bv_1+0\cdot\bv_2+\ldots+0\cdot\bv_m=\bz
+        </me>.
+        The vectors  <m>\bv_1,\bv_2,\ldots,\bv_m</m> are only linearly dependent if there exists a linear combination of these vectors representing the zero vector <em>other</em> than the trivial one.
+    </p>
+</section>
