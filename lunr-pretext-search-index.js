@@ -1,6 +1,15 @@
 var ptx_lunr_search_style = "textbook";
 var ptx_lunr_docs = [
 {
+  "id": "frontmatter-3",
+  "level": "1",
+  "url": "frontmatter-3.html",
+  "type": "Preface",
+  "number": "",
+  "title": "Preface",
+  "body": " These are partially written lecture notes for an introductory course to linear algebra. I will be updating this website very frequently in order to ensure that the notes remain up to date with the content being introduced in the linear algebra course I am currently teaching at Temple University. It is very likely that mistakes and typos will be introduced in these notes from time to time. If you spot one, please contact me!  "
+},
+{
   "id": "sec-solutions",
   "level": "1",
   "url": "sec-solutions.html",
