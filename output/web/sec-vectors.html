@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: default-modern                 *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Vectors</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+<link href="_static/pretext/css/theme.css" rel="stylesheet" type="text/css">
+<script>
+var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  "tex": {
+    "inlineMath": [
+      [
+        "\\(",
+        "\\)"
+      ]
+    ],
+    "tags": "none",
+    "tagSide": "right",
+    "tagIndent": ".8em",
+    "packages": {
+      "[+]": [
+        "base",
+        "extpfeil",
+        "ams",
+        "amscd",
+        "color",
+        "newcommand",
+        "knowl"
+      ]
+    }
+  },
+  "options": {
+    "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
+    "processHtmlClass": "process-math"
+  },
+  "chtml": {
+    "scale": 0.98,
+    "mtextInheritFont": true
+  },
+  "loader": {
+    "load": [
+      "input/asciimath",
+      "[tex]/extpfeil",
+      "[tex]/amscd",
+      "[tex]/color",
+      "[tex]/newcommand",
+      "[pretext]/mathjaxknowl3.js"
+    ],
+    "paths": {
+      "pretext": "_static/pretext/js/lib"
+    }
+  },
+  "startup": {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+  }
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="MATH2101: Linear Algebra">
+<meta property="book:author" content="Pedro Lemos">
+<script src="_static/pretext/js/lib/jquery.min.js"></script><script src="_static/pretext/js/lib/jquery.sticky.js"></script><script src="_static/pretext/js/lib/jquery.espy.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><script src="_static/pretext/js/user_preferences.js"></script><!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX_Course_Title_Here';
+eBookConfig.basecourse = 'PTX_Base_Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.runestone_version = '7.11.5';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script src="_static/prefix-runtime.42217a82c75796c8.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.7e141ad8414abf4a.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.f4ab138da65f4203.css">
+<script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script>
+</head>
+<body id="changeme" class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner"><div class="title-container">
+<h1 class="heading"><a href="my-great-book.html"><span class="title">MATH2101: Linear Algebra</span> <span class="subtitle">Lecture Notes</span></a></h1>
+<p class="byline">Pedro Lemos</p>
+</div></div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
+<button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="searchbox">
+<div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
+<div class="search-results-controls">
+<input aria-label="Search term" id="ptxsearch" class="ptxsearch" type="text" name="terms" placeholder="Search term"><button title="Close search" id="closesearchresults" class="closesearchresults"><span class="material-symbols-outlined">close</span></button>
+</div>
+<h2 class="search-results-heading">Search Results: </h2>
+<div id="searchempty" class="searchempty"><span>No results.</span></div>
+<ol id="searchresults" class="searchresults"></ol>
+</div>
+</div>
+<span class="nav-other-controls"><button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="ch-euclidean-spaces.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-euclidean-spaces.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="sec-linear-dependence.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+</div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\be}{{\bf e}}
+\newcommand{\bv}{{\bf v}}
+\newcommand{\bw}{{\bf w}}
+\newcommand{\bu}{{\bf u}}
+\newcommand{\bz}{{\bf 0}}
+\newcommand{\colvec}[1]{
+  \begin{pmatrix} #1 \end{pmatrix}
+}
+\newcommand{\N}{\mathbb N} 
+\newcommand{\Z}{\mathbb Z} 
+\newcommand{\Q}{\mathbb Q} 
+\newcommand{\R}{\mathbb R}
+\newcommand{\aa}{\amp\amp\;}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2 focused" data-preexpanded-levels="0" data-max-levels="2"><ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-frontmatter"><div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div></li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-linear-equations.html" class="internal"><span class="codenumber">1</span> <span class="title">Systems of linear equations</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-solutions.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Solutions to systems of linear equations</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-echelon.html" class="internal"><span class="codenumber">1.2</span> <span class="title">The reduced echelon form of a linear system</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-gauss.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Gauss--Jordan elimination</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter contains-active">
+<div class="toc-title-box"><a href="ch-euclidean-spaces.html" class="internal"><span class="codenumber">2</span> <span class="title">Euclidean spaces</span></a></div>
+<ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-section active"><div class="toc-title-box"><a href="sec-vectors.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Vectors</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-linear-dependence.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Linear dependence</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-linear-subspaces.html" class="internal"><span class="codenumber">2.3</span> <span class="title">Linear subspaces</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-matrices.html" class="internal"><span class="codenumber">2.4</span> <span class="title">Matrices</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-linear-maps.html" class="internal"><span class="codenumber">2.5</span> <span class="title">Linear maps</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-backmatter"><div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div></li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec-vectors"><h2 class="heading hide-type">
+<span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.1</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Vectors</span>
+</h2>
+<div class="para" id="sec-vectors-2">You may be familiar with most of the material in this section. We will review some fairly fundamental properties of vectors in <span class="process-math">\(\R^n\text{.}\)</span> A <dfn class="terminology">vector</dfn> in <span class="process-math">\(\R^n\)</span> is simply an element of <span class="process-math">\(\R^n\text{,}\)</span> or, in other words, an <span class="process-math">\(n\)</span>-tuple <span class="process-math">\((a_1,\ldots,a_n)\in\R^n\text{.}\)</span> So this definition coincides with the definition of a point in <span class="process-math">\(\R^n\text{.}\)</span> We use different words when we want to think of these objects in different ways. Whenever I use the word <em class="emphasis">point</em>, you should think of an actual single point in <span class="process-math">\(\R^n\text{.}\)</span> However, vectors are usually represented by an arrow based at the origin and ending in the coordinates given by the vector.<div class="autopermalink" data-description="Paragraph"><a href="#sec-vectors-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<details id="sec-vectors-3" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.1.1</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3></summary><article class="example example-like knowl__content"><div class="para" id="sec-vectors-3-1">For example, <span class="process-math">\((1,2)\)</span> is a vector in <span class="process-math">\(\R^2\text{.}\)</span> It is graphically represented as follows:<div class="autopermalink" data-description="Paragraph"><a href="#sec-vectors-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<figure class="figure figure-like" id="fig-vector"><div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="generated/prefigure/prefig-vector.svg" role="img" class="contained" alt="The vector 1 comma 2"></div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.1.2<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>The vector <span class="process-math">\((1,2)\text{.}\)</span><div class="autopermalink" data-description="Figure 2.1.2"><a href="#fig-vector" title="Copy heading and permalink for Figure 2.1.2" aria-label="Copy heading and permalink for Figure 2.1.2">🔗</a></div></figcaption></figure><div class="autopermalink" data-description="Example 2.1.1"><a href="#sec-vectors-3" title="Copy heading and permalink for Example 2.1.1" aria-label="Copy heading and permalink for Example 2.1.1">🔗</a></div></article></details><div class="para" id="sec-vectors-4">We will often work with <dfn class="terminology">column vectors</dfn>. This means that instead of writing vectors horizontally, we will write them vertically. For example, the vector <span class="process-math">\((1,2)\)</span> will be written as <span class="process-math">\(\colvec{1 \\ 2}\text{.}\)</span> This is a standard convention in linear algebra. I will explain the reason for this choice after we introduce matrix multiplication in the next section. I will extend this convention to points as well, i.e. from now on I will organize the coordinates of a point vertically.<div class="autopermalink" data-description="Paragraph"><a href="#sec-vectors-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="sec-vectors-5">
+<div class="para">It is possible to multiply vectors by a <dfn class="terminology">scalar</dfn>, i.e., by a real number. If <span class="process-math">\(\lambda\)</span> is a real number and</div>
+<div class="displaymath process-math" id="sec-vectors-5-3">
+\begin{equation*}
+\bv=\colvec{a_1 \\ a_2 \\ \vdots \\ a_n}
+\end{equation*}
+</div>
+<div class="para">is a vector in <span class="process-math">\(\R^n\text{,}\)</span> then we define <span class="process-math">\(\lambda \bv\)</span> to be the vector</div>
+<div class="displaymath process-math" id="sec-vectors-5-6">
+\begin{equation*}
+\colvec{\lambda a_1 \\ \lambda a_2 \\ \vdots \\ \lambda a_n}\text{.}
+\end{equation*}
+</div>
+<div class="para">In other words, the <span class="process-math">\(i\)</span>th coordinate of <span class="process-math">\(\lambda \bv\)</span> is defined to be <span class="process-math">\(\lambda\)</span> times the <span class="process-math">\(i\)</span>th coordinate of <span class="process-math">\(\bv\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-vectors-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<details id="sec-vectors-6" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.1.3</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3></summary><article class="example example-like knowl__content"><div class="para" id="sec-vectors-6-1">For instance, <span class="process-math">\(2\cdot \colvec{1 \\ 2}=\colvec{2 \\ 4}\text{.}\)</span> In the figure below, the vector <span class="process-math">\(\colvec{1 \\ 2}\)</span> is represented in blue, and the vector <span class="process-math">\(2\cdot\colvec{1 \\ 2}\)</span> is represented in orange. In the image, the vector <span class="process-math">\(\colvec{1 \\ 2}\)</span> is translucent so that it is clear that the representation of <span class="process-math">\(2\cdot \colvec{1 \\ 2}\)</span> is based at the origin.<div class="autopermalink" data-description="Paragraph"><a href="#sec-vectors-6-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<figure class="figure figure-like" id="fig-scalar"><div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="generated/prefigure/prefig-scalar.svg" role="img" class="contained" alt="The vector 1 comma 2 in blue, and the vector 2 times 1 comma 2 in orange."></div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.1.4<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>The vectors <span class="process-math">\(\colvec{1 \\ 2}\)</span> and <span class="process-math">\(2\cdot \colvec{1 \\ 2}\text{.}\)</span><div class="autopermalink" data-description="Figure 2.1.4"><a href="#fig-scalar" title="Copy heading and permalink for Figure 2.1.4" aria-label="Copy heading and permalink for Figure 2.1.4">🔗</a></div></figcaption></figure><div class="para" id="sec-vectors-6-3">It should come as no surprise that these two vectors lie in the same line through the origin. But more on this later.<div class="autopermalink" data-description="Paragraph"><a href="#sec-vectors-6-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Example 2.1.3"><a href="#sec-vectors-6" title="Copy heading and permalink for Example 2.1.3" aria-label="Copy heading and permalink for Example 2.1.3">🔗</a></div></article></details><div class="para" id="sec-vectors-7">Instead of writing <span class="process-math">\((-1)\cdot\bv\text{,}\)</span> we will often use the shorthand notation <span class="process-math">\(-\bv\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-vectors-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="sec-vectors-8">
+<div class="para">We can also add two vectors in <span class="process-math">\(\R^n\text{.}\)</span> If</div>
+<div class="displaymath process-math" id="sec-vectors-8-2">
+\begin{equation*}
+\bv=\colvec{a_1 \\ a_2 \\ \vdots \\ a_n}\quad \text{ and }\quad \bw=\colvec{b_1 \\ b_2 \\ \vdots \\ b_n}
+\end{equation*}
+</div>
+<div class="para">are two vectors in <span class="process-math">\(\R^n\text{,}\)</span> then their sum is the vector whose <span class="process-math">\(i\)</span>th coordinate is <span class="process-math">\(a_i+b_i\text{:}\)</span>
+</div>
+<div class="displaymath process-math" id="sec-vectors-8-6">
+\begin{equation*}
+\bv + \bw = \colvec{a_1+b_1 \\ a_2+b_2 \\ \vdots \\ a_n+b_n}\text{.}
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-vectors-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<details id="sec-vectors-9" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.1.5</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3></summary><article class="example example-like knowl__content"><div class="para" id="sec-vectors-9-1">If <span class="process-math">\(\bv=\colvec{2 \\ 1}\)</span> and <span class="process-math">\(\bw=\colvec{-1 \\ 1}\text{,}\)</span> then <span class="process-math">\(\bv+\bw=\colvec{1 \\ 2}\text{.}\)</span> Graphically, the sum of <span class="process-math">\(\bv\)</span> and <span class="process-math">\(\bw\)</span> can be obtained via the parallelogram rule.<div class="autopermalink" data-description="Paragraph"><a href="#sec-vectors-9-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<figure class="figure figure-like" id="fig-vector-sum"><div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="generated/prefigure/prefig-vector-sum.svg" role="img" class="contained" alt="The vector 2 comma 1 in orange, the vector minus 1 comma 1 in blue, and their sum in green."></div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.1.6<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>The parallelogram rule.<div class="autopermalink" data-description="Figure 2.1.6"><a href="#fig-vector-sum" title="Copy heading and permalink for Figure 2.1.6" aria-label="Copy heading and permalink for Figure 2.1.6">🔗</a></div></figcaption></figure><div class="para" id="sec-vectors-9-3">In the figure above, the vector <span class="process-math">\(\bv\)</span> is depicted in orange, the vector <span class="process-math">\(\bw\)</span> in blue, and the sum of the two in green.<div class="autopermalink" data-description="Paragraph"><a href="#sec-vectors-9-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Example 2.1.5"><a href="#sec-vectors-9" title="Copy heading and permalink for Example 2.1.5" aria-label="Copy heading and permalink for Example 2.1.5">🔗</a></div></article></details><div class="para logical" id="sec-vectors-10">
+<div class="para">We also define <span class="process-math">\(\bv-\bw\)</span> to mean <span class="process-math">\(\bv + (-\bw)\text{,}\)</span> so that if</div>
+<div class="displaymath process-math" id="sec-vectors-10-3">
+\begin{equation*}
+\bv=\colvec{a_1 \\ a_2 \\ \vdots \\ a_n}\quad \text{and}\quad\bw=\colvec{b_1 \\ b_2 \\ \vdots \\ b_n}\text{,}
+\end{equation*}
+</div>
+<div class="para">then</div>
+<div class="displaymath process-math" id="sec-vectors-10-4">
+\begin{equation*}
+\bv-\bw=\colvec{a_1-b_1 \\ a_2-b_2 \\ \vdots \\ a_n-b_n}\text{.}
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-vectors-10" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-vectors-11">Since, formally, vector and points in <span class="process-math">\(\R^n\)</span> are the same thing, the rules of vector addition allow us to add two points or a point and a vector. By convention, we think of the addition of a vector to a point as another point: point + vector = point. The idea is that the vector represents the displacement of the point.<div class="autopermalink" data-description="Paragraph"><a href="#sec-vectors-11" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<details id="sec-vectors-12" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.1.7</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3></summary><article class="example example-like knowl__content"><div class="para logical" id="sec-vectors-12-1">
+<div class="para">Let’s consider the point <span class="process-math">\(\colvec{1 \\ 1}\)</span> in <span class="process-math">\(\R^2\)</span> and the vector <span class="process-math">\(\colvec{-1 \\ 1}\text{.}\)</span> Then</div>
+<div class="displaymath process-math" id="sec-vectors-12-1-4">
+\begin{equation*}
+\colvec{1 \\ 1} + \colvec{-1 \\ 1}=\colvec{0 \\ 2}\text{,}
+\end{equation*}
+</div>
+<div class="para">and we should think of <span class="process-math">\(\colvec{0 \\ 2}\)</span> as the point obtained by displacing the point <span class="process-math">\(\colvec{1 \\ 1}\)</span> by the vector <span class="process-math">\(\colvec{-1 \\ 1}\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-vectors-12-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<figure class="figure figure-like" id="fig-point-disp"><div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="generated/prefigure/prefig-point-disp.svg" role="img" class="contained" alt="The vector minus 1 comma 1, the point 1 comma 1 and the displacement of 1 comma 1 by the vector minus 1 comma 1."></div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.1.8<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Displacement of the point <span class="process-math">\(\colvec{1 \\ 1}\)</span> by the vector <span class="process-math">\(\colvec{-1 \\ 1}\text{.}\)</span><div class="autopermalink" data-description="Figure 2.1.8"><a href="#fig-point-disp" title="Copy heading and permalink for Figure 2.1.8" aria-label="Copy heading and permalink for Figure 2.1.8">🔗</a></div></figcaption></figure><div class="para" id="sec-vectors-12-3">In the figure above, the vector <span class="process-math">\(\colvec{-1 \\ 1}\)</span> is represented in blue, and the point <span class="process-math">\(\colvec{1 \\ 1}\)</span> is in green. After adding <span class="process-math">\(\colvec{-1 \\ 1}\)</span> to the point <span class="process-math">\(\colvec{1 \\ 1}\text{,}\)</span> we end up with the point <span class="process-math">\(\colvec{0 \\ 2}\text{,}\)</span> graphically represented in red. The dashed blue arrow is the vector <span class="process-math">\(\colvec{-1 \\ 1}\)</span> based on the point <span class="process-math">\(\colvec{1 \\ 1}\)</span> so that its interpretation as displacement can be clearly seen.<div class="autopermalink" data-description="Paragraph"><a href="#sec-vectors-12-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Example 2.1.7"><a href="#sec-vectors-12" title="Copy heading and permalink for Example 2.1.7" aria-label="Copy heading and permalink for Example 2.1.7">🔗</a></div></article></details><div class="para" id="sec-vectors-13">A line in <span class="process-math">\(\R^n\)</span> is determined by two pieces of data: a point through which the line passes and a direction. Directions are encoded by vectors. So we can define a line as the set of points obtained by adding scalar multiples of a vector to a fixed point. In other words, it is the set of points that you can get to by adding scalar multiples of a fixed vector to a fixed point.<div class="autopermalink" data-description="Paragraph"><a href="#sec-vectors-13" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="definition definition-like" id="def-line"><h3 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.1.9</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para" id="def-line-1-1">Fix a point <span class="process-math">\(p\in \R^n\)</span> and a non-zero vector <span class="process-math">\(\bv\in\R^n\text{.}\)</span> The <dfn class="terminology">line passing through <span class="process-math">\(p\)</span> with direction <span class="process-math">\(\bv\)</span></dfn> is the set of points in <span class="process-math">\(\R^n\)</span> that can be written in the form <span class="process-math">\(p+\lambda\bv\)</span> for some <span class="process-math">\(\lambda\in\R\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#def-line-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Definition 2.1.9"><a href="#def-line" title="Copy heading and permalink for Definition 2.1.9" aria-label="Copy heading and permalink for Definition 2.1.9">🔗</a></div></article><details id="sec-vectors-15" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.1.10</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3></summary><article class="example example-like knowl__content"><div class="para" id="sec-vectors-15-1">Consider the vector <span class="process-math">\(\bv=\colvec{2 \\ 1}\)</span> and the point <span class="process-math">\(p=\colvec{-1 \\ 0}\)</span> in <span class="process-math">\(\R^2\text{.}\)</span> The line passing through <span class="process-math">\(p\)</span> with direction <span class="process-math">\(\bv\)</span> is depicted in orange in the figure below. If we change the initial point to <span class="process-math">\(q=\colvec{0 \\ 0}\)</span> but keep the direction, we obtain the parallel line in blue.<div class="autopermalink" data-description="Paragraph"><a href="#sec-vectors-15-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<figure class="figure figure-like" id="fig-lines-vector"><div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="generated/prefigure/prefig-lines-vector.svg" role="img" class="contained" alt="Two parallel lines defined by vector 2 comma 1. One of them passes through the point negative 1 comma 0, while the other passes through 0 comma 0."></div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.1.11<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Parallel lines defined by vector <span class="process-math">\(\colvec{2 \\ 1}\text{.}\)</span><div class="autopermalink" data-description="Figure 2.1.11"><a href="#fig-lines-vector" title="Copy heading and permalink for Figure 2.1.11" aria-label="Copy heading and permalink for Figure 2.1.11">🔗</a></div></figcaption></figure><div class="autopermalink" data-description="Example 2.1.10"><a href="#sec-vectors-15" title="Copy heading and permalink for Example 2.1.10" aria-label="Copy heading and permalink for Example 2.1.10">🔗</a></div></article></details><div class="para logical" id="sec-vectors-16">
+<div class="para">Lines (or planes and hyperplanes) that pass through the origin have a very special place in linear algebra. These are examples of <dfn class="terminology">linear subspaces</dfn>. It will be a while before we see the formal definition of a vector space, but I will now list a series of properties that make <span class="process-math">\(\R^n\)</span> one. Proving that these properties do hold is an instructive exercise that you should attempt. Most of the properties follow immediately from the definitions of scalar multiplication and vector addition. At the very least, you should try out a few examples. I will include proofs for some of the properties that you can use as a source of inspiration.</div>
+<ol class="decimal" id="sec-vectors-16-3">
+<li id="sec-vectors-16-3-1">
+<div class="para" id="sec-vectors-16-3-1-1">
+<em class="emphasis">Associativity of vector addition</em>: <span class="process-math">\(\bv + (\bw+\bu)=(\bv+\bw)+\bu\)</span> for all vectors <span class="process-math">\(\bv,\bw,\bu\in \R^n\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-vectors-16-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="sec-vectors-16-3-1-2">
+<div class="para">This follows from the associativity of addition of real numbers. What this property says is that if we first add <span class="process-math">\(\bw\)</span> to <span class="process-math">\(\bu\)</span> and then add the result to <span class="process-math">\(\bv\text{,}\)</span> the result that we obtain will be the same that we get if we choose to first add <span class="process-math">\(\bv\)</span> and <span class="process-math">\(\bw\)</span> together and then add <span class="process-math">\(\bu\text{.}\)</span> Indeed, let</div>
+<div class="displaymath process-math" id="sec-vectors-16-3-1-2-7">
+\begin{equation*}
+\bv=\colvec{a_1 \\ a_2 \\ \vdots \\ a_n},\quad \bw=\colvec{b_1 \\ b_2 \\ \vdots \\ b_n}\quad \text{and}\quad\bu=\colvec{c_1 \\ c_2 \\ \vdots \\ c_n}\text{.}
+\end{equation*}
+</div>
+<div class="para">Then, by definition</div>
+<div class="displaymath process-math" id="sec-vectors-16-3-1-2-8">
+\begin{equation*}
+\bw+\bu=\colvec{b_1+c_1 \\ b_2+c_2 \\ \vdots \\ b_n+c_n}
+\end{equation*}
+</div>
+<div class="para">and so</div>
+<div class="displaymath process-math" id="sec-vectors-16-3-1-2-9">
+\begin{equation*}
+\bv+(\bw+\bu)=\colvec{a_1+(b_1+c_1) \\ a_2+(b_2+c_2) \\ \vdots \\ a_n+(b_n+c_n)}\text{.}
+\end{equation*}
+</div>
+<div class="para">Similarly, we can show that</div>
+<div class="displaymath process-math" id="sec-vectors-16-3-1-2-10">
+\begin{equation*}
+(\bv+\bw)+\bu=\colvec{(a_1+b_1)+c_1 \\  (a_2+b_2)+c_2 \\ \vdots \\ (a_n+b_n)+c_n}\text{.}
+\end{equation*}
+</div>
+<div class="para">Since <span class="process-math">\(a_i+(b_i+c_i)=(a_i+b_i)+c_i\)</span> for all <span class="process-math">\(i\)</span> due to the associativity property of the addition of real numbers, we conclude that <span class="process-math">\(\bv+(\bw+\bu)=(\bv+\bw)+\bu\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-vectors-16-3-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 1"><a href="#sec-vectors-16-3-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
+</li>
+<li id="sec-vectors-16-3-2">
+<div class="para" id="sec-vectors-16-3-2-1">
+<em class="emphasis">Commutativity of vector addition</em>: <span class="process-math">\(\bv+\bw=\bw+\bv\)</span> for all vectors <span class="process-math">\(\bv,\bw\in\R^n\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-vectors-16-3-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 2"><a href="#sec-vectors-16-3-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
+</li>
+<li id="sec-vectors-16-3-3">
+<div class="para" id="sec-vectors-16-3-3-1">
+<em class="emphasis">Existence of identity element for vector addition</em>: the zero vector <span class="process-math">\(\bz\)</span> in <span class="process-math">\(\R^n\)</span>(i.e. the vector in <span class="process-math">\(\R^n\)</span> whose entries are all <span class="process-math">\(0\)</span>) satisfies <span class="process-math">\(\bv + \bz=\bv\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-vectors-16-3-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 3"><a href="#sec-vectors-16-3-3" title="Copy heading and permalink for Item 3" aria-label="Copy heading and permalink for Item 3">🔗</a></div>
+</li>
+<li id="sec-vectors-16-3-4">
+<div class="para" id="sec-vectors-16-3-4-1">
+<em class="emphasis">Existence of inverse element for vector addition</em>: we have <span class="process-math">\(\bv+(-\bv)=\bz\)</span> for every vector <span class="process-math">\(\bv\in\R^n\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-vectors-16-3-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 4"><a href="#sec-vectors-16-3-4" title="Copy heading and permalink for Item 4" aria-label="Copy heading and permalink for Item 4">🔗</a></div>
+</li>
+<li id="sec-vectors-16-3-5">
+<div class="para" id="sec-vectors-16-3-5-1">
+<em class="emphasis">Compatibility of real number multiplication with scalar multiplication</em>: <span class="process-math">\(\lambda(\mu\bv)=(\lambda\mu)\bv\)</span> for every vector <span class="process-math">\(\bv\in\R^n\)</span> and real numbers <span class="process-math">\(\lambda,\mu\in \R\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-vectors-16-3-5-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 5"><a href="#sec-vectors-16-3-5" title="Copy heading and permalink for Item 5" aria-label="Copy heading and permalink for Item 5">🔗</a></div>
+</li>
+<li id="sec-vectors-16-3-6">
+<div class="para" id="sec-vectors-16-3-6-1">
+<em class="emphasis">Existence of identity for scalar multiplication</em>: we have <span class="process-math">\(1\cdot\bv=\bv\)</span> for every vector <span class="process-math">\(\bv\in\R^n\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-vectors-16-3-6-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 6"><a href="#sec-vectors-16-3-6" title="Copy heading and permalink for Item 6" aria-label="Copy heading and permalink for Item 6">🔗</a></div>
+</li>
+<li id="sec-vectors-16-3-7">
+<div class="para" id="sec-vectors-16-3-7-1">
+<em class="emphasis">Distributivity of scalar multiplication with respect to vector addition</em>: <span class="process-math">\(\lambda(\bv+\bw)=\lambda\bv+\lambda\bw\)</span> for all vectors <span class="process-math">\(\bv,\bw\in\R^n\)</span> and any real number <span class="process-math">\(\lambda\in\R\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-vectors-16-3-7-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 7"><a href="#sec-vectors-16-3-7" title="Copy heading and permalink for Item 7" aria-label="Copy heading and permalink for Item 7">🔗</a></div>
+</li>
+<li id="sec-vectors-16-3-8">
+<div class="para" id="sec-vectors-16-3-8-1">
+<em class="emphasis">Distributivity of scalar multiplication with respect to addition of real numbers</em>: <span class="process-math">\((\lambda+\mu)\bv=\lambda\bv+\mu\bv\)</span> for all real numbers <span class="process-math">\(\lambda,\mu\in\R\)</span> and any vector <span class="process-math">\(\bv\in\R^n\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-vectors-16-3-8-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 8"><a href="#sec-vectors-16-3-8" title="Copy heading and permalink for Item 8" aria-label="Copy heading and permalink for Item 8">🔗</a></div>
+</li>
+</ol>
+<div class="para">We will re-encounter these eight properties later in the course.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-vectors-16" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="sec-vectors-17">
+<div class="para">The last operation that I need to mention in this section is the <dfn class="terminology">dot product</dfn> between two vectors in the same space. If</div>
+<div class="displaymath process-math" id="sec-vectors-17-2">
+\begin{equation*}
+\bv=\colvec{a_1 \\ a_2 \\ \vdots \\ a_n}\quad \text{and} \quad\bw=\colvec{b_1 \\ b_2 \\ \vdots \\ b_n}
+\end{equation*}
+</div>
+<div class="para">are two vectors in <span class="process-math">\(\R^n\)</span> then the <dfn class="terminology">dot product</dfn> between them, denoted by <span class="process-math">\(\bv\cdot\bw\text{,}\)</span> is the <em class="emphasis">real number</em> defined by</div>
+<div class="displaymath process-math" id="sec-vectors-17-7">
+\begin{equation*}
+\bv\cdot\bw=\sum_{i=1}^n a_ib_i=a_1b_1+a_2b_2+\ldots+a_nb_n.
+\end{equation*}
+</div>
+<div class="para">In other words, we multiply the <span class="process-math">\(i\)</span>th coordinate of <span class="process-math">\(\bv\)</span> by the <span class="process-math">\(i\)</span>th coordinate of <span class="process-math">\(\bw\)</span> for each <span class="process-math">\(i\)</span> and then we add all these products together.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-vectors-17" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<details id="sec-vectors-18" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.1.12</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3></summary><article class="example example-like knowl__content"><div class="para logical" id="sec-vectors-18-1">
+<div class="para">Consider the vectors</div>
+<div class="displaymath process-math" id="sec-vectors-18-1-1">
+\begin{equation*}
+\bv=\colvec{1 \\ -2 \\ 3}\quad\text{and}\quad \bw=\colvec{0 \\ 2 \\ 5}
+\end{equation*}
+</div>
+<div class="para">in <span class="process-math">\(\R^3\text{.}\)</span> Their dot product is</div>
+<div class="displaymath process-math" id="sec-vectors-18-1-3">
+\begin{equation*}
+\bv\cdot\bw = 1\times 0 + (-2)\times 2 + 3\times 5=-4+15=11\text{.}
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-vectors-18-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Example 2.1.12"><a href="#sec-vectors-18" title="Copy heading and permalink for Example 2.1.12" aria-label="Copy heading and permalink for Example 2.1.12">🔗</a></div></article></details><div class="para logical" id="sec-vectors-19">
+<div class="para">While it is clearly true that <span class="process-math">\(\bv\cdot\bz=\bz\cdot\bv=0\)</span> for every vector <span class="process-math">\(\bv\in\R^n\text{,}\)</span> you should be aware of the fact that it is possible to have <span class="process-math">\(\bv\cdot\bw=0\)</span> with neither <span class="process-math">\(\bv\)</span> nor <span class="process-math">\(\bw\)</span> be the zero vector. For example,</div>
+<div class="displaymath process-math" id="sec-vectors-19-6">
+\begin{equation*}
+\colvec{1 \\ 2}\cdot \colvec{2 \\ -1}=1\times 2 + 2\times (-1)=2-2=0\text{.}
+\end{equation*}
+</div>
+<div class="para">We will later see that this happens precisely when the vectors are perpendicular to each other.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-vectors-19" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-vectors-20">The following proposition lists a few important properties of the dot product. Showing that these properties hold is not too hard, and you should try to come up with a proof by yourself. If are not able to prove these three properties, do not worry. Just have a look at the proof that I wrote. You will learn a great deal from earnestly trying to do something even if you fail.<div class="autopermalink" data-description="Paragraph"><a href="#sec-vectors-20" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="proposition theorem-like" id="prop-dot-product"><h3 class="heading">
+<span class="type">Proposition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.1.13</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para logical" id="prop-dot-product-1-1">
+<div class="para">The following properties hold for all vectors <span class="process-math">\(\bv,\bw,\bu\in\R^n\)</span> and all real numbers <span class="process-math">\(\lambda,\mu\text{:}\)</span>
+</div>
+<ol class="decimal" id="prop-dot-product-1-1-3">
+<li id="prop-dot-product-1-1-3-1">
+<div class="para" id="prop-dot-product-1-1-3-1-1">
+<span class="process-math">\(\bv\cdot\bw=\bw\cdot\bv\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#prop-dot-product-1-1-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 1"><a href="#prop-dot-product-1-1-3-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
+</li>
+<li id="prop-dot-product-1-1-3-2">
+<div class="para" id="prop-dot-product-1-1-3-2-1">
+<span class="process-math">\((\lambda\bv+\mu\bw)\cdot \bu=\lambda(\bv\cdot \bu)+\mu(\bw\cdot \bu)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#prop-dot-product-1-1-3-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 2"><a href="#prop-dot-product-1-1-3-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
+</li>
+<li id="prop-dot-product-1-1-3-3">
+<div class="para" id="prop-dot-product-1-1-3-3-1">If <span class="process-math">\(\bv\)</span> is not the zero vector, then <span class="process-math">\(\bv\cdot\bv &gt; 0\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#prop-dot-product-1-1-3-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 3"><a href="#prop-dot-product-1-1-3-3" title="Copy heading and permalink for Item 3" aria-label="Copy heading and permalink for Item 3">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" data-description="Paragraph"><a href="#prop-dot-product-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proposition 2.1.13"><a href="#prop-dot-product" title="Copy heading and permalink for Proposition 2.1.13" aria-label="Copy heading and permalink for Proposition 2.1.13">🔗</a></div></article><details id="prop-dot-product-2" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para logical" id="prop-dot-product-2-1">
+<div class="para">Let</div>
+<div class="displaymath process-math" id="prop-dot-product-2-1-1">
+\begin{equation*}
+\bv=\colvec{a_1 \\ \vdots \\ a_n},\quad\bw=\colvec{b_1 \\ \vdots \\ b_n}\quad\text{and}\quad\bu=\colvec{c_1 \\ \vdots \\ c_n}
+\end{equation*}
+</div>
+<div class="para">be three vectors in <span class="process-math">\(\R^n\text{,}\)</span> and let <span class="process-math">\(\lambda\)</span> and <span class="process-math">\(\mu\)</span> be two real numbers</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#prop-dot-product-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="prop-dot-product-2-2">
+<div class="para">The first property is a straightforward consequence of the definition of dot product. Indeed,</div>
+<div class="displaymath process-math" id="prop-dot-product-2-2-1">
+\begin{equation*}
+\bv\cdot\bw=\sum_{i=1}^n a_ib_i\text{.}
+\end{equation*}
+</div>
+<div class="para">Since multiplication is commutative, we have</div>
+<div class="displaymath process-math" id="prop-dot-product-2-2-2">
+\begin{equation*}
+\bv\cdot\bw=\sum_{i=1}^n a_ib_i=\sum_{i=1}^n b_ia_i\text{.}
+\end{equation*}
+</div>
+<div class="para">But the right-hand side of this expression is precisely the definition of <span class="process-math">\(\bw\cdot\bv\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#prop-dot-product-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="prop-dot-product-2-3">
+<div class="para">In order to prove the second property, start by noting that, for <span class="process-math">\(1\leq i\leq n\text{,}\)</span> the <span class="process-math">\(i\)</span>th coordinate of <span class="process-math">\(\lambda\bv+\mu\bw\)</span> is <span class="process-math">\(\lambda a_i + \mu b_i\text{.}\)</span> Therefore,</div>
+<div class="displaymath process-math" id="prop-dot-product-2-3-5">
+\begin{equation*}
+\begin{aligned}
+(\lambda \bv + \mu \bw)\cdot \bu \amp= \sum_{i=1}^n(\lambda a_i + \mu b_i)c_i\\
+\amp=\sum_{i=1}^n(\lambda a_ic_i + \mu b_ic_i)\\
+\amp=\sum_{i=1}^n \lambda a_ic_i + \sum_{i=1}^n \mu b_ic_i\\
+\amp= \lambda\sum_{i=1}^n a_ic_i+\mu\sum_{i=1}^n b_ic_i.
+\end{aligned}\text{.}
+\end{equation*}
+</div>
+<div class="para">Since</div>
+<div class="displaymath process-math" id="prop-dot-product-2-3-6">
+\begin{equation*}
+\bv\cdot\bu = \sum_{i=1}^n a_ic_i\quad \text{and}\quad \bw\cdot\bu=\sum_{i=1}^n b_ic_i\text{,}
+\end{equation*}
+</div>
+<div class="para">we have</div>
+<div class="displaymath process-math" id="prop-dot-product-2-3-7">
+\begin{equation*}
+\lambda\sum_{i=1}^n a_ic_i+\mu\sum_{i=1}^n b_ic_i=\lambda(\bv\cdot\bu)+\mu(\bw\cdot \bu)\text{,}
+\end{equation*}
+</div>
+<div class="para">as we wanted.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#prop-dot-product-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="prop-dot-product-2-4">
+<div class="para">We will now prove the third and last property in the statement of the proposition. To do that, we will assume that <span class="process-math">\(\bv\)</span> is non-zero. This means that at least one of its coordinates is not zero, i.e. <span class="process-math">\(a_k\neq 0\)</span> for some <span class="process-math">\(k\in\{1,2\ldots,n\}\text{.}\)</span> We have</div>
+<div class="displaymath process-math" id="prop-dot-product-2-4-4">
+\begin{equation*}
+\bv\cdot\bv = \sum_{i=1}^n a_ia_i=\sum_{i=1}^n a_i^2
+\end{equation*}
+</div>
+<div class="para">by the definition of dot product. Every term in this sum is non-negative because it is a square of a real number. Therefore,</div>
+<div class="displaymath process-math" id="prop-dot-product-2-4-5">
+\begin{equation*}
+\sum_{i=1}^n a_ia_i=\sum_{i=1}^n a_i^2\geq a_k^2\text{.}
+\end{equation*}
+</div>
+<div class="para">Since <span class="process-math">\(a_k\neq 0\text{,}\)</span> we have <span class="process-math">\(a_k^2 &gt; 0\text{,}\)</span> yielding <span class="process-math">\(\bv\cdot\bv &gt; 0\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#prop-dot-product-2-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 2.1.13.1"><a href="#prop-dot-product-2" title="Copy heading and permalink for Proof 2.1.13.1" aria-label="Copy heading and permalink for Proof 2.1.13.1">🔗</a></div></article></details><div class="autopermalink" data-description="Section 2.1: Vectors"><a href="#sec-vectors" title="Copy heading and permalink for Section 2.1: Vectors" aria-label="Copy heading and permalink for Section 2.1: Vectors">🔗</a></div></section></div>
+<div id="ptx-content-footer" class="ptx-content-footer">
+<a class="previous-button button" href="ch-euclidean-spaces.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec-linear-dependence.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+</div></main>
+</div>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="338 3000 8772 6866" role="img"><title>PreTeXt logo</title><g style="stroke-width:.025in; stroke:currentColor; fill:none"><polyline points="472,3590 472,9732 " style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png" alt="Runstone Academy logo"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png" alt="MathJax logo"></a>
+</div>
+</body>
+</html>

@@ -1,0 +1,1 @@
+{"source/main.ptx": ["my-great-book", "frontmatter", "front-colophon", "backmatter"], "source/chapter1/ch-linear-equations.ptx": ["ch-linear-equations", "sec-solutions", "sec-echelon", "sec-gauss"], "source/chapter2/ch-euclidean-spaces.ptx": ["ch-euclidean-spaces", "sec-vectors", "sec-linear-dependence", "sec-linear-subspaces", "sec-matrices", "sec-linear-maps"]}
