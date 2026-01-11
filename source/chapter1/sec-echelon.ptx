@@ -402,4 +402,159 @@
         Finally, the only pivot column in the last fourth matrix is column <m>1</m>. However, it contains non-zero elements in more than one position.
     </p>
 </example>
+<exercises xml:id="exercises-ch1-sec2">
+    <exercise>
+        <statement>
+            <p>
+                For each of the following linear systems, find the corresponding augmented matrix. Use the order of variables <m>x,y,z,w</m>. You may have to reorder the terms in each equation before attempting to determine the augmented matrix.
+            </p>
+            <ol marker="(a)">
+                <li>
+                    <p>
+                        <me>
+                            \left\{
+                            \begin{alignedat}{5}
+                                3x \aa - \aa y \amp =  \aa 3\\
+                                -5x\aa +\aa 2y \amp = \aa 1
+                            \end{alignedat}
+                            \right.
+                        </me>
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <me>
+                            \left\{
+                            \begin{alignedat}{5}
+                                x \aa - \aa y \amp =  \aa 3\\
+                                \aa \aa 2x \amp = \aa 1
+                            \end{alignedat}
+                            \right.
+                        </me>
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <me>
+                            \left\{
+                            \begin{alignedat}{7}
+                                x \aa - \aa y \aa-\aa z\amp =  \aa 3\\
+                                \aa\aa\aa\aa 3w \amp = \aa 0
+                            \end{alignedat}
+                            \right.
+                        </me>
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <me>
+                            \left\{
+                            \begin{alignedat}{9}
+                                y \aa - \aa x \aa + \aa 5w \aa - \aa 2z \amp = \aa 1\\
+                                \aa\aa x \aa - \aa y \aa-\aa z\amp =  \aa 3\\
+                                \aa\aa\aa\aa y\aa -\aa 3w \amp = \aa 0\\
+                            \end{alignedat}
+                            \right.
+                        </me>
+                    </p>
+                </li>
+            </ol>
+        </statement>
+    </exercise>
+    <exercise>
+        <statement>
+            <p>
+                Determine whether each of the following linear systems is in reduced row echelon form. Use the order of variables <m>x,y,z,w</m>. For each system that <em>is not</em> in reduced row echelon form, give at least one reason for why that is the case. For each system that <em>is</em> in reduced row echelon form, determine the free and leading variables.
+            </p>
+            <ol marker="(a)">
+                <li>
+                    <p>
+                        <me>
+                            \left\{
+                            \begin{alignedat}{5}
+                                2x \aa + \aa y \amp = \aa 0\\
+                                \aa\aa y \amp =  \aa 1
+                            \end{alignedat}
+                            \right.
+                        </me>
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <me>
+                            \left\{
+                            \begin{alignedat}{5}
+                                x \aa + \aa y \amp = \aa 0\\
+                                \aa\aa y \amp =  \aa 0
+                            \end{alignedat}
+                            \right.
+                        </me>
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <me>
+                            \left\{
+                            \begin{alignedat}{5}
+                                x \aa + \aa y \amp = \aa 0\\
+                                \aa\aa z \amp =  \aa 0
+                            \end{alignedat}
+                            \right.
+                        </me>
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <me>
+                            \left\{
+                            \begin{alignedat}{3}
+                                x \amp = \aa 0\\
+                                 y \amp =  \aa 2
+                            \end{alignedat}
+                            \right.
+                        </me>
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <me>
+                            \left\{
+                            \begin{alignedat}{5}
+                                x \aa + \aa 2z \amp = \aa 3\\
+                                \aa\aa y \amp =  \aa 4
+                            \end{alignedat}
+                            \right.
+                        </me>
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <me>
+                            \left\{
+                            \begin{alignedat}{5}
+                                x \aa +\aa 3z \amp = \aa 0\\
+                                y \aa - \aa 5z\amp =  \aa 1\\
+                                \aa\aa w \amp = \aa 3
+                            \end{alignedat}
+                            \right.
+                        </me>
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <me>
+                            \left\{
+                            \begin{alignedat}{5}
+                                x \aa +\aa 3z \amp = \aa 0\\
+                                y \aa - \aa 5z\amp =  \aa 1\\
+                                \aa\aa 0 \amp = \aa 1
+                            \end{alignedat}
+                            \right.
+                        </me>
+                    </p>
+                </li>
+            </ol>
+        </statement>
+    </exercise>
+</exercises>
 </section>
