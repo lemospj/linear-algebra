@@ -14,7 +14,7 @@
 <!--******************************************-->
 <head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Gauss--Jordan elimination</title>
+<title>Gauss-Jordan elimination</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
@@ -167,7 +167,10 @@ eBookConfig.enable_chatcodes =  false;
 <div class="toc-title-box"><a href="sec-echelon.html" class="internal"><span class="codenumber">1.2</span> <span class="title">The reduced echelon form of a linear system</span></a></div>
 <ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-echelon.html#exercises-ch1-sec2" class="internal"><span class="codenumber">1.2</span> <span class="title">Exercises</span></a></div></li></ul>
 </li>
-<li class="toc-item toc-section active"><div class="toc-title-box"><a href="sec-gauss.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Gauss--Jordan elimination</span></a></div></li>
+<li class="toc-item toc-section contains-active">
+<div class="toc-title-box"><a href="sec-gauss.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Gauss-Jordan elimination</span></a></div>
+<ul class="structural toc-item-list active"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-gauss.html#exercises-ch1-sec3" class="internal"><span class="codenumber">1.3</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
 </ul>
 </li>
 <li class="toc-item toc-chapter">
@@ -183,7 +186,7 @@ eBookConfig.enable_chatcodes =  false;
 <li class="toc-item toc-backmatter"><div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div></li>
 </ul></nav></div>
 <main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec-gauss"><h2 class="heading hide-type">
-<span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.3</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Gauss--Jordan elimination</span>
+<span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.3</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Gauss-Jordan elimination</span>
 </h2>
 <div class="para" id="sec-gauss-2">By this point I hope that you are convinced that solutions to linear systems in reduced echelon form are easy to find. The question now is whether and how we can put a linear system in reduced echelon form. We can always do so using elementary row operations. The process is known as <em class="emphasis">Gauss-Jordan elimination</em>.<div class="autopermalink" data-description="Paragraph"><a href="#sec-gauss-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
@@ -202,7 +205,7 @@ eBookConfig.enable_chatcodes =  false;
 \left(
 \begin{array}{cccc|c}
 0 \amp 3 \amp -2 \amp 1 \amp 0\\
-2 \amp 3 \amp 1 \amp 0 \amp 0\\
+2 \amp 3 \amp 1 \amp 0 \amp 1\\
 3 \amp 0 \amp 0 \amp 2 \amp 3\\
 \end{array}
 \right)\text{.}
@@ -245,27 +248,8 @@ eBookConfig.enable_chatcodes =  false;
 \left\{
 \begin{alignedat}{7}
 x \aa + \aa \frac{3}{2}y \aa + \aa \frac{1}{2}z \amp = \aa \frac{1}{2}\\
-3y \aa - \aa 2z \aa + \aa w \amp = \aa 3\\
-\aa \aa 3x \aa + \aa 2w \amp = \aa 3
-\end{alignedat}
-\right.\qquad\qquad\qquad
-\left(
-\begin{array}{cccc|c}
-1 \amp \frac{3}{2} \amp \frac{1}{2} \amp 0 \amp \frac{1}{2}\\
-0 \amp 3 \amp -2 \amp 1 \amp 0\\
-3 \amp 0 \amp 0 \amp 2 \amp 3
-\end{array}
-\right)\text{.}
-\end{equation*}
-</div>
-<div class="para">The first entry in the first column is a <span class="process-math">\(2\text{,}\)</span> so we will need to divide the top row by <span class="process-math">\(2\text{.}\)</span> After performing this operation, we obtain</div>
-<div class="displaymath process-math" id="sec-gauss-8-6">
-\begin{equation*}
-\left\{
-\begin{alignedat}{7}
-x \aa + \aa \frac{3}{2}y \aa + \aa \frac{1}{2}z \amp \aa \frac{1}{2}\\
 3y \aa - \aa 2z \aa + \aa w \amp = \aa 0\\
-\aa \aa 3x \aa + \aa 2w \amp = \aa 3\\
+\aa \aa 3x \aa + \aa 2w \amp = \aa 3
 \end{alignedat}
 \right.\qquad\qquad\qquad
 \left(
@@ -327,8 +311,8 @@ y \aa - \aa \frac{2}{3}z \aa + \aa \frac{1}{3}w \amp = \aa 0\\
 \right)\text{.}
 \end{equation*}
 </div>
-<div class="para">Now we will need to add $9/2$ times the second row of our matrix to the last row. After doing that, we obtain</div>
-<div class="displaymath process-math" id="sec-gauss-12-6">
+<div class="para">Now we will need to add <span class="process-math">\(9/2\)</span> times the second row of our matrix to the last row. After doing that, we obtain</div>
+<div class="displaymath process-math" id="sec-gauss-12-7">
 \begin{equation*}
 \left\{
 \begin{alignedat}{7}
@@ -347,7 +331,7 @@ y \aa - \aa \frac{2}{3}z \aa + \aa \frac{1}{3}w \amp = \aa 0\\
 \end{equation*}
 </div>
 <div class="para">Finally, we need to multiply the last row of the matrix by <span class="process-math">\(-2/9\)</span> to get</div>
-<div class="displaymath process-math" id="sec-gauss-12-8">
+<div class="displaymath process-math" id="sec-gauss-12-9">
 \begin{equation*}
 \left\{
 \begin{alignedat}{7}
@@ -377,14 +361,14 @@ y \aa - \aa \frac{2}{3}z \aa + \aa \frac{1}{3}w \amp = \aa 0\\
 \left\{
 \begin{alignedat}{7}
 x \aa + \aa \frac{3}{2}y \aa + \aa \frac{7}{18}w \amp = \aa \frac{2}{3}\\
-\aa \aa y \aa + \aa \frac{13}{18}w \amp = \aa \frac{1}{6}\\
-\aa \aa z \aa - \aa \frac{7}{9}w \amp = \aa -\frac{1}{3}
+\aa \aa y \aa - \aa \frac{5}{27}w \amp = -\aa \frac{2}{9}\\
+\aa \aa z \aa - \aa \frac{7}{9}w \amp = -\aa \frac{1}{3}
 \end{alignedat}
 \right.\qquad\qquad\qquad
 \left(
 \begin{array}{cccc|c}
 1 \amp \frac{3}{2} \amp 0 \amp \frac{7}{18} \amp \frac{2}{3}\\[6pt]
-0 \amp 1 \amp 0 \amp \frac{13}{18} \amp \frac{1}{6}\\[6pt]
+0 \amp 1 \amp 0 \amp -\frac{5}{27} \amp -\frac{2}{9}\\[6pt]
 0 \amp 0 \amp 1 \amp -\frac{7}{9} \amp -\frac{1}{3}
 \end{array}
 \right)\text{.}
@@ -395,15 +379,15 @@ x \aa + \aa \frac{3}{2}y \aa + \aa \frac{7}{18}w \amp = \aa \frac{2}{3}\\
 \begin{equation*}
 \left\{
 \begin{aligned}
-x-\frac{25}{36}w \amp =\frac{5}{12}\\
-y+\frac{13}{18}w \amp =\frac{1}{6}\\
+x+\frac{2}{3}w \amp =1\\
+y-\frac{5}{27}w \amp =-\frac{2}{9}\\
 z-\frac{7}{9}w \amp =-\frac{1}{3}
 \end{aligned}
 \right.\qquad\qquad\qquad
 \left(
 \begin{array}{cccc|c}
-1 \amp 0 \amp 0 \amp -\frac{25}{36} \amp \frac{5}{12}\\[6pt]
-0 \amp 1 \amp 0 \amp \frac{13}{18} \amp \frac{1}{6}\\[6pt]
+1 \amp 0 \amp 0 \amp \frac{2}{3} \amp 1\\[6pt]
+0 \amp 1 \amp 0 \amp -\frac{5}{27} \amp -\frac{2}{9}\\[6pt]
 0 \amp 0 \amp 1 \amp -\frac{7}{9} \amp -\frac{1}{3}
 \end{array}
 \right)\text{.}
@@ -415,7 +399,7 @@ z-\frac{7}{9}w \amp =-\frac{1}{3}
 <div class="para">Now that we have reduced the system to one the reduced echelon form, we can easily find all the solutions. First note that there are three leading variables, <span class="process-math">\(x,y\)</span> and <span class="process-math">\(z\text{,}\)</span> and one free variable, <span class="process-math">\(w\text{.}\)</span> This means that all the solutions to this system of linear equations are given parametrically by</div>
 <div class="displaymath process-math" id="sec-gauss-15-4">
 \begin{equation*}
-x=\frac{5}{12}+\frac{25}{36}t,\quad y=\frac{1}{6}-\frac{13}{18}t,\quad z=-\frac{1}{3}+\frac{7}{9}t,\quad w=t
+x=1-\frac{2}{3}t,\quad y=-\frac{2}{9}+\frac{5}{27}t,\quad z=-\frac{1}{3}+\frac{7}{9}t,\quad w=t
 \end{equation*}
 </div>
 <div class="para">where <span class="process-math">\(t\in\R\text{.}\)</span>
@@ -543,7 +527,12 @@ x \aa + \aa y \aa - \aa z \amp = \aa 0\\
 </div>
 <div class="para" id="thm-homoginf-2-2">Since such a system is homogeneous, it must be consistent, i.e. it must have at least one solution, namely the trivial solution where all the variables are assigned the value <span class="process-math">\(0\text{.}\)</span> From <a href="sec-echelon.html#lem-nfree" class="xref" data-knowl="./knowl/xref/lem-nfree.html" data-reveal-label="Reveal" data-close-label="Close" title="Lemma 1.2.12">Lemma 1.2.12</a> we know that this system has at most $n$ leading variables, and so the remaining variables are free. By assumption, the number of variables <span class="process-math">\(m\)</span> is strictly larger than <span class="process-math">\(n\)</span> so our linear system has at least one free variable, and so will admit infinitely many solutions.<div class="autopermalink" data-description="Paragraph"><a href="#thm-homoginf-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Proof 1.3.3.1"><a href="#thm-homoginf-2" title="Copy heading and permalink for Proof 1.3.3.1" aria-label="Copy heading and permalink for Proof 1.3.3.1">🔗</a></div></article></details><div class="autopermalink" data-description="Section 1.3: Gauss--Jordan elimination"><a href="#sec-gauss" title="Copy heading and permalink for Section 1.3: Gauss--Jordan elimination" aria-label="Copy heading and permalink for Section 1.3: Gauss--Jordan elimination">🔗</a></div></section></div>
+<div class="autopermalink" data-description="Proof 1.3.3.1"><a href="#thm-homoginf-2" title="Copy heading and permalink for Proof 1.3.3.1" aria-label="Copy heading and permalink for Proof 1.3.3.1">🔗</a></div></article></details><section class="exercises" id="exercises-ch1-sec3"><h3 class="heading hide-type">
+<span class="type">Exercises</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Exercises</span>
+</h3>
+<article class="exercise exercise-like" id="exercises-ch1-sec3-1"><h4 class="heading"><span class="codenumber">1<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="para" id="exercises-ch1-sec3-1-1-1"><div class="autopermalink" data-description="Paragraph"><a href="#exercises-ch1-sec3-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div></div>
+<div class="autopermalink" data-description="Exercise 1.3.1"><a href="#exercises-ch1-sec3-1" title="Copy heading and permalink for Exercise 1.3.1" aria-label="Copy heading and permalink for Exercise 1.3.1">🔗</a></div></article><div class="autopermalink" data-description="Exercises 1.3"><a href="#exercises-ch1-sec3" title="Copy heading and permalink for Exercises 1.3" aria-label="Copy heading and permalink for Exercises 1.3">🔗</a></div></section><div class="autopermalink" data-description="Section 1.3: Gauss-Jordan elimination"><a href="#sec-gauss" title="Copy heading and permalink for Section 1.3: Gauss-Jordan elimination" aria-label="Copy heading and permalink for Section 1.3: Gauss-Jordan elimination">🔗</a></div></section></div>
 <div id="ptx-content-footer" class="ptx-content-footer">
 <a class="previous-button button" href="sec-echelon.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="ch-euclidean-spaces.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
