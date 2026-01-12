@@ -270,7 +270,7 @@
             \end{array}
             \right)
         </me>.
-        We are almost there. We now need to add <m>2/3</m>$ times the last row to the second one and add the last row to the first row.
+        We are almost there. We now need to add <m>2/3</m> times the last row to the second one and add the last row to the first row.
         <me>
             \left(
             \begin{array}{ccc|c}
@@ -374,8 +374,8 @@
                         <me>
                             \left\{
                                 \begin{alignedat}{5}
-                                    y \ampp - \ampp z  \amp = -\ampp 1\\
-                                    x \ampp + \ampp 2y \amp = \ampp 2\\
+                                    y \ampp + \ampp 2z  \amp = -\ampp 1\\
+                                    3y \ampp + \ampp 2w \amp = \ampp 2\\
                                     2x \ampp - \ampp w \amp = \ampp 0
                                 \end{alignedat}
                             \right.
@@ -400,10 +400,10 @@
                     <p>
                         <me>
                             \left\{
-                                \begin{alignedat}{5}
-                                    x \ampp - \ampp z  \amp = \ampp 1\\
-                                    x \ampp + \ampp y \amp = \ampp 0\\
-                                    y \ampp + \ampp z \amp = \ampp 0
+                                \begin{alignedat}{7}
+                                    \ampp \ampp x \ampp - \ampp z  \amp = \ampp 1\\
+                                    \ampp \ampp x \ampp + \ampp y \amp = \ampp 0\\
+                                    x \ampp - \ampp y \ampp - \ampp 2z \amp = \ampp 2
                                 \end{alignedat}
                             \right.
                         </me>
