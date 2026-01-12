@@ -96,7 +96,7 @@
     <alert>Step 4.</alert> Now consider the submatrix obtained from the original matrix after removing the top row. Perform steps <m>1</m> to <m>4</m> on that submatrix.
 </p>
 <p>
-    This is usually the longest step. In our example, the submatrix in question is <m>\left(\begin{array}{ccc|c}0 \amp 3 \amp -2 \amp 1 \amp 0\\0 \amp -\frac{9}{2} \amp -\frac{3}{2} \amp 2 \amp \frac{3}{2}\end{array}\right)</m>. The leftmost column with non-zero entries is column <m>2</m>, and the top row of that column is already non-zero. This means that we can go immediately to step <m>2</m> and divide the top row of the submatrix (second row of original matrix) by <m>3</m>. We get
+    This is usually the longest step. In our example, the submatrix in question is <m>\left(\begin{array}{cccc|c}0 \amp 3 \amp -2 \amp 1 \amp 0\\0 \amp -\frac{9}{2} \amp -\frac{3}{2} \amp 2 \amp \frac{3}{2}\end{array}\right)</m>. The leftmost column with non-zero entries is column <m>2</m>, and the top row of that column is already non-zero. This means that we can go immediately to step <m>2</m> and divide the top row of the submatrix (second row of original matrix) by <m>3</m>. We get
     <me>
         \left\{
             \begin{alignedat}{7}
