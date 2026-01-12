@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <section xml:id="sec-gauss" xmlns:xi="http://www.w3.org/2001/XInclude">
-  <title>Gauss--Jordan elimination</title>
+  <title>Gauss-Jordan elimination</title>
   <p>
     By this point I hope that you are convinced that solutions to linear systems in reduced echelon form are easy to find. The question now is whether and how we can put a linear system in reduced echelon form. We can always do so using elementary row operations. The process is known as <em>Gauss-Jordan elimination</em>.
   </p>
@@ -20,7 +20,7 @@
         \left(
         \begin{array}{cccc|c}
             0 \amp 3 \amp -2 \amp 1 \amp 0\\
-            2 \amp 3 \amp 1 \amp 0 \amp 0\\
+            2 \amp 3 \amp 1 \amp 0 \amp 1\\
             3 \amp 0 \amp 0 \amp 2 \amp 3\\
         \end{array}
         \right)
@@ -57,7 +57,7 @@
         \left\{
             \begin{alignedat}{7}
                 x \aa + \aa \frac{3}{2}y \aa + \aa \frac{1}{2}z \amp = \aa \frac{1}{2}\\
-                3y \aa - \aa 2z \aa + \aa w \amp = \aa 3\\
+                3y \aa - \aa 2z \aa + \aa w \amp = \aa 0\\
                 \aa \aa 3x \aa + \aa 2w \amp = \aa 3
             \end{alignedat}
         \right.\qquad\qquad\qquad
@@ -66,23 +66,6 @@
             1 \amp \frac{3}{2} \amp \frac{1}{2} \amp 0 \amp \frac{1}{2}\\
             0 \amp 3 \amp -2 \amp 1 \amp 0\\
             3 \amp 0 \amp 0 \amp 2 \amp 3
-            \end{array}
-        \right)
-    </me>.
-    The first entry in the first column is a <m>2</m>, so we will need to divide the top row by <m>2</m>. After performing this operation, we obtain
-    <me>
-        \left\{
-            \begin{alignedat}{7}
-                x \aa + \aa \frac{3}{2}y \aa + \aa \frac{1}{2}z \amp \aa \frac{1}{2}\\
-                3y \aa - \aa 2z \aa + \aa w \amp = \aa 0\\
-                \aa \aa 3x \aa + \aa 2w \amp = \aa 3\\
-            \end{alignedat}
-        \right.\qquad\qquad\qquad
-        \left(
-            \begin{array}{cccc|c}
-                1 \amp \frac{3}{2} \amp \frac{1}{2} \amp 0 \amp \frac{1}{2}\\
-                0 \amp 3 \amp -2 \amp 1 \amp 0\\
-                3 \amp 0 \amp 0 \amp 2 \amp 3
             \end{array}
         \right)
     </me>.
@@ -130,7 +113,7 @@
             \end{array}
         \right)
     </me>.
-    Now we will need to add $9/2$ times the second row of our matrix to the last row. After doing that, we obtain
+    Now we will need to add <m>9/2</m> times the second row of our matrix to the last row. After doing that, we obtain
     <me>
         \left\{
             \begin{alignedat}{7}
@@ -174,14 +157,14 @@
         \left\{
             \begin{alignedat}{7}
                 x \aa + \aa \frac{3}{2}y \aa + \aa \frac{7}{18}w \amp = \aa \frac{2}{3}\\
-                \aa \aa y \aa + \aa \frac{13}{18}w \amp = \aa \frac{1}{6}\\
-                \aa \aa z \aa - \aa \frac{7}{9}w \amp = \aa -\frac{1}{3}
+                \aa \aa y \aa - \aa \frac{5}{27}w \amp = -\aa \frac{2}{9}\\
+                \aa \aa z \aa - \aa \frac{7}{9}w \amp = -\aa \frac{1}{3}
             \end{alignedat}
         \right.\qquad\qquad\qquad
         \left(
             \begin{array}{cccc|c}
             1 \amp \frac{3}{2} \amp 0 \amp \frac{7}{18} \amp \frac{2}{3}\\[6pt]
-            0 \amp 1 \amp 0 \amp \frac{13}{18} \amp \frac{1}{6}\\[6pt]
+            0 \amp 1 \amp 0 \amp -\frac{5}{27} \amp -\frac{2}{9}\\[6pt]
             0 \amp 0 \amp 1 \amp -\frac{7}{9} \amp -\frac{1}{3}
             \end{array}
         \right)
@@ -190,15 +173,15 @@
     <me>
         \left\{
             \begin{aligned}
-                x-\frac{25}{36}w \amp =\frac{5}{12}\\
-                y+\frac{13}{18}w \amp =\frac{1}{6}\\
+                x+\frac{2}{3}w \amp =1\\
+                y-\frac{5}{27}w \amp =-\frac{2}{9}\\
                 z-\frac{7}{9}w \amp =-\frac{1}{3}
             \end{aligned}
         \right.\qquad\qquad\qquad
         \left(
             \begin{array}{cccc|c}
-            1 \amp 0 \amp 0 \amp -\frac{25}{36} \amp \frac{5}{12}\\[6pt]
-            0 \amp 1 \amp 0 \amp \frac{13}{18} \amp \frac{1}{6}\\[6pt]
+            1 \amp 0 \amp 0 \amp \frac{2}{3} \amp 1\\[6pt]
+            0 \amp 1 \amp 0 \amp -\frac{5}{27} \amp -\frac{2}{9}\\[6pt]
             0 \amp 0 \amp 1 \amp -\frac{7}{9} \amp -\frac{1}{3}
             \end{array}
         \right)
@@ -207,7 +190,7 @@
 <p>
     Now that we have reduced the system to one the reduced echelon form, we can easily find all the solutions. First note that there are three leading variables, <m>x,y</m> and <m>z</m>, and one free variable, <m>w</m>. This means that all the solutions to this system of linear equations are given parametrically by
     <me>
-        x=\frac{5}{12}+\frac{25}{36}t,\quad y=\frac{1}{6}-\frac{13}{18}t,\quad z=-\frac{1}{3}+\frac{7}{9}t,\quad w=t
+        x=1-\frac{2}{3}t,\quad y=-\frac{2}{9}+\frac{5}{27}t,\quad z=-\frac{1}{3}+\frac{7}{9}t,\quad w=t
     </me>
     where <m>t\in\R</m>.
 </p>
@@ -220,7 +203,7 @@
     
     <statement>
         <p>
-            A linear system with <m>m</m> variables and <m>n</m> equations is equivalent to a linear system with <m>m</m> variables and <m>n</m> equations in reduced echelon form.  Moreover, a homogeneous linear system with $m$ variables and $n$ equations is equivalent to a homogeneous linear system with $m$ variables and $n$ equations.
+            A linear system with <m>m</m> variables and <m>n</m> equations is equivalent to a linear system with <m>m</m> variables and <m>n</m> equations in reduced echelon form.  Moreover, a homogeneous linear system with <m>m</m> variables and <n>n</m> equations is equivalent to a homogeneous linear system with <m>m</m> variables and <m>n</m> equations.
         </p>
     </statement>
 </theorem>
@@ -326,5 +309,13 @@
         </p>
     </proof>
 </theorem>
-
+<exercises xml:id="exercises-ch1-sec3">
+    <exercise>
+        <statement>
+            <p>
+                
+            </p>
+        </statement>
+    </exercise>
+</exercises>
 </section>
