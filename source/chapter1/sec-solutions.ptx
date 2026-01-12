@@ -397,7 +397,7 @@
         \left\{
         \begin{alignedat}{7}
           2x \amp\amp\; - \amp\amp\; y \amp\amp\; + \amp\amp\; 3z \amp = \amp\amp\; 1 \\
-          4x \amp\amp\; - \amp\amp\; - \amp\amp\; 2y \amp\amp\; + \amp\amp\; 6x \amp = \amp\amp\; 0 \\
+          4x \amp\amp\; - \amp\amp\; 2y \amp\amp\; + \amp\amp\; 6x \amp = \amp\amp\; 0 \\
           \amp\amp \amp\amp \amp\amp y \amp\amp\; - \amp\amp\; 2z \amp = \amp\amp\; 1
         \end{alignedat}
         \right.

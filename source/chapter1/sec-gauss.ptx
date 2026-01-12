@@ -203,7 +203,7 @@
     
     <statement>
         <p>
-            A linear system with <m>m</m> variables and <m>n</m> equations is equivalent to a linear system with <m>m</m> variables and <m>n</m> equations in reduced echelon form.  Moreover, a homogeneous linear system with <m>m</m> variables and <n>n</m> equations is equivalent to a homogeneous linear system with <m>m</m> variables and <m>n</m> equations.
+            A linear system with <m>m</m> variables and <m>n</m> equations is equivalent to a linear system with <m>m</m> variables and <m>n</m> equations in reduced echelon form.  Moreover, a homogeneous linear system with <m>m</m> variables and <m>n</m> equations is equivalent to a homogeneous linear system with <m>m</m> variables and <m>n</m> equations.
         </p>
     </statement>
 </theorem>
@@ -305,7 +305,7 @@
             Let <m>m</m> be the number of variables and <m>n</m> the number of equations. We have <m>m>n</m>. We know from <xref ref="thm-gauss"/> that this system is equivalent to a homogeneous linear system with <m>m</m> equations and <m>n</m> variables in reduced echelon form. So all we need to do is to show that a homogeneous linear system in reduced echelon form that has more variables than equations admits infinitely many solutions. It will suffice to show that such a system has at least one free variable.
         </p>
         <p>
-            Since such a system is homogeneous, it must be consistent, i.e. it must have at least one solution, namely the trivial solution where all the variables are assigned the value <m>0</m>. From <xref ref="lem-nfree"/> we know that this system has at most $n$ leading variables, and so the remaining variables are free. By assumption, the number of variables <m>m</m> is strictly larger than <m>n</m> so our linear system has at least one free variable, and so will admit infinitely many solutions.
+            Since such a system is homogeneous, it must be consistent, i.e. it must have at least one solution, namely the trivial solution where all the variables are assigned the value <m>0</m>. From <xref ref="lem-nfree"/> we know that this system has at most <m>n</m> leading variables, and so the remaining variables are free. By assumption, the number of variables <m>m</m> is strictly larger than <m>n</m>, so our linear system has at least one free variable, and so will admit infinitely many solutions.
         </p>
     </proof>
 </theorem>
@@ -313,8 +313,116 @@
     <exercise>
         <statement>
             <p>
-                
+                Use Gauss-Jordan elimination to solve the following linear systems of equations.
             </p>
+            <ol marker="(a)">
+                <li>
+                    <p>
+                        <me>
+                            \left\{
+                                \begin{alignedat}{5}
+                                    x \aa - \aa 2y  \amp = \aa 2\\
+                                    2x \aa + \aa 3y \amp = \aa 1
+                                \end{alignedat}
+                            \right.
+                        </me>
+                    </p>
+                </li>
+
+                <li>
+                    <p>
+                        <me>
+                            \left\{
+                                \begin{alignedat}{5}
+                                    3x \aa + \aa y  \amp = \aa 1\\
+                                    6x \aa + \aa 2y \amp = \aa 1
+                                \end{alignedat}
+                            \right.
+                        </me>
+                    </p>
+                </li>
+
+                <li>
+                    <p>
+                        <me>
+                            \left\{
+                                \begin{alignedat}{5}
+                                    3x \aa + \aa y  \amp = \aa 1\\
+                                    6x \aa + \aa 2y \amp = \aa 2
+                                \end{alignedat}
+                            \right.
+                        </me>
+                    </p>
+                </li>
+
+                <li>
+                    <p>
+                        <me>
+                            \left\{
+                                \begin{alignedat}{5}
+                                    y \aa - \aa z  \amp = -\aa 1\\
+                                    x \aa + \aa 2y \amp = \aa 2\\
+                                    2x \aa - \aa z \amp = \aa 0
+                                \end{alignedat}
+                            \right.
+                        </me>
+                    </p>
+                </li>
+
+                <li>
+                    <p>
+                        <me>
+                            \left\{
+                                \begin{alignedat}{5}
+                                    y \aa - \aa z  \amp = -\aa 1\\
+                                    x \aa + \aa 2y \amp = \aa 2\\
+                                    2x \aa - \aa w \amp = \aa 0
+                                \end{alignedat}
+                            \right.
+                        </me>
+                    </p>
+                </li>
+
+                <li>
+                    <p>
+                        <me>
+                            \left\{
+                                \begin{alignedat}{5}
+                                    x \aa - \aa z  \amp = \aa 1\\
+                                    x \aa + \aa y \amp = \aa 0\\
+                                    y \aa + \aa z \amp = \aa 0
+                                \end{alignedat}
+                            \right.
+                        </me>
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <me>
+                            \left\{
+                                \begin{alignedat}{5}
+                                    x \aa - \aa z  \amp = \aa 1\\
+                                    x \aa + \aa y \amp = \aa 0\\
+                                    y \aa + \aa z \amp = \aa 0
+                                \end{alignedat}
+                            \right.
+                        </me>
+                    </p>
+                </li>
+
+                <li>
+                    <p>
+                        <me>
+                            \left\{
+                                \begin{alignedat}{7}
+                                    y \aa + \aa z \aa + \aa w  \amp = \aa 1\\
+                                    x \aa + \aa 2y \aa +\aa w \amp = \aa 0
+                                \end{alignedat}
+                            \right.
+                        </me>
+                    </p>
+                </li>
+            </ol>
         </statement>
     </exercise>
 </exercises>
