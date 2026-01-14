@@ -4,7 +4,7 @@
     <title>Vectors</title>
     
     <p>
-        You may be familiar with most of the material in this section. We will review some fairly fundamental properties of vectors in <m>\R^n</m>. A <term>vector</term> in <m>\R^n</m> is simply an element of <m>\R^n</m>, or, in other words, an <m>n</m>-tuple <m>(a_1,\ldots,a_n)\in\R^n</m>. So this definition coincides with the definition of a point in <m>\R^n</m>. We use different words when we want to think of these objects in different ways. Whenever I use the word <em>point</em>, you should think of an actual single point in <m>\R^n</m>. However, vectors are usually represented by an arrow based at the origin and ending in the coordinates given by the vector.
+        You may be familiar with most of the material in this section. We will review some fairly fundamental properties of vectors in <m>\R^n</m>. A <term>vector</term> in <m>\R^n</m> is simply an element of <m>\R^n</m>, or, in other words, an <m>n</m>-tuple <m>(a_1,\ldots,a_n)\in\R^n</m>. So this definition coincides with the definition of a point in <m>\R^n</m>. We use different words when we want to think of these objects in different ways. Whenever I use the word <em>point</em>, you should visualize a dot in <m>\R^n</m>. However, vectors are usually represented by an arrow based at the origin and ending in the coordinates given by the vector.
     </p>
     <example>
         <p>
@@ -29,8 +29,41 @@
         We will often work with <term>column vectors</term>. This means that instead of writing vectors horizontally, we will write them vertically. For example, the vector <m>(1,2)</m> will be written as <m>\colvec{1 \\ 2}</m>. This is a standard convention in linear algebra. I will explain the reason for this choice after we introduce matrix multiplication in the next section. I will extend this convention to points as well, i.e. from now on I will organize the coordinates of a point vertically.
     </p>
     <p>
+        All vectors have a length, often called the <term>norm</term>.
+    </p>
+    <definition xml:id="def-vector-norm">
+        <statement>
+            <p>
+                The <term>norm</term> of the vector
+                <me>
+                    \bv=\colvec{a_1 \\ a_2 \\ \vdots \\ a_n}
+                </me>
+                is defined to be the number
+                <me>
+                    \sqrt{\sum_{i=1}^n a_i^2}=\sqrt{a_1^2+a_2^2+\ldots+a_n^2}
+                </me>.
+                We denote the norm of <m>\bv</m> by <m>\lVert\bv\rVert</m>.
+            </p>
+        </statement>
+    </definition>
+    <example>
+        <p>
+            The norm of the vector
+            <me>
+                \bv=\colvec{1 \\ -1 \\ -2 \\ 3}
+            </me>
+            in <m>\R^4</m> is 
+            <me>
+                \lVert\bv\rVert = \sqrt{1^2 + (-1)^2 + (-2)^2 + 3^2}=\sqrt{1 + 1 + 4 + 9}=\sqrt{15}
+            </me>.
+        </p>
+    </example>
+    <p>
+        Note that this notion of norm is consistent with the familiar notions of Euclidean distance and length. 
+    </p>
+    <p>
         It is possible to multiply vectors by a <term>scalar</term>, i.e., by a real number. If <m>\lambda</m> is a real number and 
-        <me>\bv=\colvec{a_1 \\ a_2 \\ \vdots \\ a_n}</me> is a vector in <m>\R^n</m>, then we define <m>\lambda \bv</m> to be the vector <me>\colvec{\lambda a_1 \\ \lambda a_2 \\ \vdots \\ \lambda a_n}</me>. In other words, the <m>i</m>th coordinate of <m>\lambda \bv</m> is defined to be <m>\lambda</m> times the <m>i</m>th coordinate of <m>\bv</m>.
+        <me>\bv=\colvec{a_1 \\ a_2 \\ \vdots \\ a_n}</me> is a vector in <m>\R^n</m>, then we define <m>\lambda \bv</m> to be the vector <me>\colvec{\lambda a_1 \\ \lambda a_2 \\ \vdots \\ \lambda a_n}</me>. In other words, the <m>i</m>th coordinate of <m>\lambda \bv</m> is defined to be <m>\lambda</m> times the <m>i</m>th coordinate of <m>\bv</m>. Geometrically, this corresponds to stretching the vector&#8212;if <m>\lambda > 1</m>&#8212;or contracting it&#8212;if <m>0\leq\lambda &lt; 1</m>). When <m>\lambda=1</m>, the vector is not altered by multiplication by <m>\lambda</m>. If <m>\lambda</m> is a negative real number, than the direction of the vector is changed.
     </p>
     <example>
         <p>
@@ -262,7 +295,7 @@
         We will later see that this happens precisely when the vectors are perpendicular to each other.
     </p>
     <p>
-        The following proposition lists a few important properties of the dot product. Showing that these properties hold is not too hard, and you should try to come up with a proof by yourself. If are not able to prove these three properties, do not worry. Just have a look at the proof that I wrote. You will learn a great deal from earnestly trying to do something even if you fail.    
+        The following proposition lists a few important properties of the dot product. Showing that these properties hold is not too hard, and you should try to come up with a proof by yourself. If are not able to prove these three properties, do not worry. Just have a look at the proof that I wrote. But try to find an argument yourself first. You will learn a great deal from earnestly trying to do something even if you fail.    
     </p>
     <proposition xml:id="prop-dot-product">
         <statement>
@@ -339,4 +372,71 @@
             </p>
         </proof>
     </proposition>
+    <exercises xml:id="exercises-chapter2-section1">
+        <exercise>
+            <statement>
+                <p>
+                    Evaluate each of the following expressions.
+                </p>
+                <ol marker="(a)">
+                    <li>
+                        <p>
+                            <m>3\colvec{1 \\ 2} - 2\colvec{3\\ -1}</m>
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <m>-2\left(\colvec{1 \\ 2\\ 4} + 3\colvec{-3 \\ 5 \\ 2}\right)</m>
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <m>5\colvec{1 \\ 2}-4\colvec{3 \\ -3} + 2\colvec{1 \\ 1}</m>
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <m>\colvec{2 \\ -2 \\3}\cdot\colvec{2 \\ 1 \\ 3}</m>
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <m>3\colvec{1 \\ 2}\cdot\left(2\colvec{3 \\ -1} - 3\colvec{1 \\ -1}\right)</m>
+                        </p>
+                    </li>
+                </ol>
+            </statement>
+        </exercise>
+        <exercise>
+            <title>The parametric equation of a line</title>
+            <statement>
+                <p>
+                    Consider a line <m>\ell</m> in the plane given by the equation <m>ax+by=c</m>, where <m>a,b,c\in\R</m> and either <m>a\neq 0</m> or <m>b\neq 0</m>. Let <m>P=(x_0,y_0)</m> be a point in the line <m>\ell</m>. Also, let <m>\bv</m> be a non-zero vector that is parallel to <m>\ell</m>.
+                </p>
+                <ol marker="(a)">
+                    <li>
+                        <p>
+                            Show that if <m>t\in\R</m> then the point <m>P+t\bv</m> is a point in <m>\ell</m>.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            Show that if <m>R=(x_1,y_1)</m> is another point in <m>\ell</m>, then there exists <m>t\in\R</m> such that <m>R=P+t\bv</m>.
+                        </p>
+                    </li>
+                </ol>
+                <p>
+                    What this means is that the line <m>\ell</m> can be described as the set of points of the form <m>P+t\bv</m> where <m>P</m> is a point on the line, <m>\bv</m> is a vector parallel to the line, and <m>t\in\R</m> is a real parameter. This is known as the <term>parametric equation of a line</term>.
+                </p>
+            </statement>
+        </exercise>
+        <exercise>
+            <title>&#9733; Cauchy-Schwarz inequality in <m>\R^2</m></title>
+            <statement>
+                <p>
+                    Show that <m>\bv\cdot\bw\leq \lVert\bv\rVert\lVert\bw\rVert</m> for all vectors <m>\bv,\bw\in\R^2</m>.
+                </p>
+            </statement>
+        </exercise>
+    </exercises>
 </section>
