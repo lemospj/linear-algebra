@@ -79,4 +79,84 @@
         </me>.
         The vectors  <m>\bv_1,\bv_2,\ldots,\bv_m</m> are only linearly dependent if there exists a linear combination of these vectors representing the zero vector <em>other</em> than the trivial one.
     </p>
+    <example>
+        <p>
+            If <m>\bv\in\R^n</m> is non-zero, then the set consisting only of <m>\bv</m> is linearly independent. Indeed, if <m>\lambda\bv=0</m>, then we must have <m>\lambda=0</m> because, by assumption, <m>\bv\neq \bz</m>.
+        </p>
+    </example>
+    <example>
+        <p>
+            The vectors <m>\colvec{1 \\ 2}</m> and <m>\colvec{2 \\ 4}</m> are linearly dependent. Indeed,
+            <me>
+                2\colvec{1 \\ 2}-\colvec{2 \\ 4}=\bz
+            </me>.
+        </p>
+    </example>
+    <example xml:id="example-standard-units">
+        <p>
+            The set formed by the vectors <m>\be_1:=\colvec{1 \\ 0}</m> and <m>\be_2:=\colvec{0 \\ 1}</m> is linearly independent. Indeed, say that <m>\lambda_1,\lambda_2\in\R</m> are real numbers satisfying
+            <me>
+                \lambda_1\be_1+\lambda_2\be_2=\bz
+            </me>.
+            Let's start by evaluating the left-hand side of the equation above:
+            <me>
+                \lambda_1\be_1+\lambda_2\be_2=\lambda_1\colvec{1 \\ 0}+\lambda_2\colvec{0 \\ 1}=\colvec{\lambda_1 \\ \lambda_2}
+            </me>.
+            So we have
+            <me>
+                \colvec{\lambda_1 \\ \lambda_2}= \colvec{0 \\ 0}
+            </me>,
+            which means that <m>\lambda_1=0</m> and <m>\lambda_2=0</m>. This shows that <m>\be_1</m> and <m>\be_2</m> are linearly independent.
+        </p>
+    </example>
+    <example>
+        <p>
+            The vectors <m>\colvec{1 \\ 2 \\ 3}</m> and <m>\colvec{2 \\ 1 \\ 3}</m> are linearly independent. To see this, let <m>\lambda</m> and <m>\mu</m> be real scalars such that
+            <me>
+                \lambda\colvec{1 \\ 2 \\ 3} + \mu\colvec{2 \\ 1 \\ 3} = \colvec{0 \\ 0 \\ 0}
+            </me>.
+            Then
+            <me>
+                \colvec{\lambda + 2\mu \\ 2\lambda + \mu \\ 3\lambda + 3\mu} = \colvec{0 \\ 0 \\ 0}
+            </me>.
+            In other words, we need to solve the system
+            <me>
+                \left\{
+                    \begin{alignedat}{5}
+                        \lambda \ampp + \ampp 2\mu  \amp = \ampp 0 \\
+                        2\lambda \ampp + \ampp \mu  \amp = \ampp 0 \\
+                        3\lambda \ampp + \ampp 3\mu \amp = \ampp 0
+                    \end{alignedat}
+                \right.
+            </me>
+            in the variables <m>\lambda</m> and <m>\mu</m>. But it is easy to see that the only solution to this system is given by <m>\lambda=0</m> and <m>\mu=0</m>.
+        </p>
+    </example>
+    <p>
+        Let me mention an important generalization of <xref ref="example-standard-units"/>. The unit vectors
+        <me>
+            \be_1=\colvec{1 \\ 0 \\ 0 \\ \vdots \\0},\qquad\be_2=\colvec{0 \\ 1 \\ 0 \\ \vdots \\0},\cdots,\be_n=\colvec{0 \\ 0 \\ 0 \\ \vdots \\1}
+        </me>
+        in <m>\R^n</m> are called the <term>standard unit vectors</term> of <m>\R^n</m>. To be completely clear regarding their definition, <m>\R^n</m> contains exactly <m>n</m> standard unit vectors. For each integer <m>i</m> between <m>1</m> and <m>n</m>, the standard unit vector <m>\be_i</m> is the only vector with <m>i</m>th entry equal to <m>1</m> and every other entry equal to <m>0</m>.
+    </p>
+    <lemma xml:id="lem-standard-ind">
+        <statement>
+            <p>
+                The set of standard unit vectors in <m>\R^n</m> is linearly independent.
+            </p>
+        </statement>
+        <proof>
+            <p>
+                Let <m>\lambda_1,\ldots,\lambda_n\in\R</m> be real numbers. If we denote by <m>e_{ij}</m> the <m>j</m>th entry of <m>\be_i</m>, then the <m>j</m>th entry of <m>\lambda_1\be_1+\ldots+\lambda_n\be_n</m> is <m>\lambda_1e_{1j}+\lambda_2e_{2j}+\ldots+\lambda_ne_{nj}</m>. By the definition of standard unit vectors, we have <m>e_{ij}=0</m> whenever <m>i\neq j</m>, and <m>e_{ii}=1</m> for every <m>i</m>. Therefore, the <m>j</m>th entry of <m>\lambda_1\be_1+\ldots+\lambda_n\be_n</m> is
+                <me>
+                    \lambda_1e_{1j}+\lambda_2e_{2j}+\ldots+\lambda_ne_{nj}=\lambda_j
+                </me>.
+                If we suppose that the <m>\lambda_i</m> are such that
+                <me>
+                    \lambda_1\be_1 + \lambda_2\be_2 + \ldots + \lambda_n \be_n=\bz
+                </me>,
+                we conclude that <m>\lambda_j=0</m> for every <m>1\leq j\leq n</m>.
+            </p>
+        </proof>
+    </lemma>
 </section>

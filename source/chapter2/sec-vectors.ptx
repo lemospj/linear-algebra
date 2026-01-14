@@ -408,6 +408,11 @@
             </statement>
         </exercise>
         <exercise>
+            <p>
+                Show that if <m>\bv\in\R^n</m> is a vector and <m>\lambda\in\R</m> is a scalar satisfying <m>\lambda\bv=0</m>, then either <m>\lambda=0</m> or <m>\bv=\bz</m>.
+            </p>
+        </exercise>
+        <exercise>
             <statement>
                 <p>
                     Are there real numbers <m>\lambda</m> and <m>\mu</m> such that
