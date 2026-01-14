@@ -408,6 +408,27 @@
             </statement>
         </exercise>
         <exercise>
+            <statement>
+                <p>
+                    Are there real numbers <m>\lambda</m> and <m>\mu</m> such that
+                    <me>
+                        \lambda\colvec{1 \\ 2} + \mu\colvec{2 \\ 4}=\colvec{3 \\ 0}
+                    </me>?
+                    Justify your answer.                    
+                </p>
+            </statement>
+        </exercise>
+        <exercise>
+            <statement>
+                <p>
+                    Find real numbers <m>\lambda</m> and <m>\mu</m> such that
+                    <me>
+                        \lambda\colvec{3 \\ 2} + \mu\colvec{2 \\ 3} = \colvec{1 \\ 0}
+                    </me>.                    
+                </p>
+            </statement>
+        </exercise>
+        <exercise>
             <title>The parametric equation of a line</title>
             <statement>
                 <p>
