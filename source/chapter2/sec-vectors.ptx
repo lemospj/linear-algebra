@@ -89,7 +89,15 @@
         </p>
     </example>
     <p>
-        Instead of writing <m>(-1)\cdot\bv</m>, we will often use the shorthand notation <m>-\bv</m>.
+        If <m>\bv</m> is the vector
+        <me>
+            \bv=\colvec{a_1 \\ a_2 \\ vdots \\ a_n}
+        </me>
+        in <m>\R^n</m>, we define <m>-\bv</m> to be
+        <me>
+            -\bv:=\colvec{-a_1 \\ -a_2 \\ vdots \\ -a_n}
+        </me>.
+        It is easy to check (do it!) that <m>(-1)\cdot\bv=-\bv</m>.
     </p>
     <p>
         We can also add two vectors in <m>\R^n</m>. If <me>\bv=\colvec{a_1 \\ a_2 \\ \vdots \\ a_n}\quad \text{ and }\quad \bw=\colvec{b_1 \\ b_2 \\ \vdots \\ b_n}</me> are two vectors in <m>\R^n</m>, then their sum is the vector whose <m>i</m>th coordinate is <m>a_i+b_i</m>:

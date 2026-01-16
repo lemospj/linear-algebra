@@ -77,7 +77,11 @@
         <me>
             0\cdot\bv_1+0\cdot\bv_2+\ldots+0\cdot\bv_m=\bz
         </me>.
-        The vectors  <m>\bv_1,\bv_2,\ldots,\bv_m</m> are only linearly dependent if there exists a linear combination of these vectors representing the zero vector <em>other</em> than the trivial one.
+        The vectors  <m>\bv_1,\bv_2,\ldots,\bv_m</m> are only linearly dependent if there exists a linear combination of these vectors representing the zero vector <em>other</em> than the trivial one. In particular, if you wish to prove that a given set of vectors <m>\bv_1,\bv_2,\ldots,\bv_n</m> is linearly independent, all you need to do is to show that if <m>\lambda_1,\lambda_2,\ldots,\lambda_n</m> are real numbers such that
+        <me>
+            \lambda_1\bv_1+\lambda_2\bv_2+\ldots+\lambda_n\bv_n=\bz,
+        </me>
+        then all the <m>\lambda_i</m> equal <m>0</m>.
     </p>
     <example>
         <p>
@@ -91,6 +95,23 @@
                 2\colvec{1 \\ 2}-\colvec{2 \\ 4}=\bz
             </me>.
         </p>
+        <figure xml:id="fig-lin-dep">
+            <caption>The standard unit vectors in <m>\R^2</m>.</caption>
+                <image width="80%">
+                    <shortdescription>The standard unit vectors of r two.</shortdescription>
+                    <prefigure xmlns="https://prefigure.org" label="prefig-lin-dep">
+                        <diagram dimensions="(300,300)" margins="5">
+                            <definition>v=(1,2)</definition>
+                            <definition>w=(2,4)</definition>
+                            <coordinates bbox="(-1.5,-1.5, 4.5, 4.5)">
+                                <grid-axes xlabel="x" ylabel="y" />
+                                <vector v="w" stroke="orange" thickness="3" />
+                                <vector v="v" stroke="blue" thickness="3" opacity="0.5"/>
+                            </coordinates>
+                        </diagram>
+                    </prefigure>                    
+                </image>
+        </figure>
     </example>
     <example xml:id="example-standard-units">
         <p>
@@ -108,6 +129,23 @@
             </me>,
             which means that <m>\lambda_1=0</m> and <m>\lambda_2=0</m>. This shows that <m>\be_1</m> and <m>\be_2</m> are linearly independent.
         </p>
+        <figure xml:id="fig-standard-unit">
+            <caption>The standard unit vectors in <m>\R^2</m>.</caption>
+                <image width="80%">
+                    <shortdescription>The standard unit vectors of r two.</shortdescription>
+                    <prefigure xmlns="https://prefigure.org" label="prefig-standard-unit">
+                        <diagram dimensions="(300,300)" margins="5">
+                            <definition>e1=(1,0)</definition>
+                            <definition>e2=(0,1)</definition>
+                            <coordinates bbox="(-1.5,-1.5, 1.5, 1.5)">
+                                <grid-axes xlabel="x" ylabel="y" />
+                                <vector v="e1" stroke="orange" thickness="3" />
+                                <vector v="e2" stroke="#7497F1" thickness="3" />
+                            </coordinates>
+                        </diagram>
+                    </prefigure>                    
+                </image>
+        </figure>
     </example>
     <example>
         <p>
@@ -135,7 +173,7 @@
     <p>
         Let me mention an important generalization of <xref ref="example-standard-units"/>. The unit vectors
         <me>
-            \be_1=\colvec{1 \\ 0 \\ 0 \\ \vdots \\0},\qquad\be_2=\colvec{0 \\ 1 \\ 0 \\ \vdots \\0},\cdots,\be_n=\colvec{0 \\ 0 \\ 0 \\ \vdots \\1}
+            \be_1=\colvec{1 \\ 0 \\ 0 \\ \vdots \\0},\qquad\be_2=\colvec{0 \\ 1 \\ 0 \\ \vdots \\0},\qquad\cdots\qquad,\be_n=\colvec{0 \\ 0 \\ 0 \\ \vdots \\1}
         </me>
         in <m>\R^n</m> are called the <term>standard unit vectors</term> of <m>\R^n</m>. To be completely clear regarding their definition, <m>\R^n</m> contains exactly <m>n</m> standard unit vectors. For each integer <m>i</m> between <m>1</m> and <m>n</m>, the standard unit vector <m>\be_i</m> is the only vector with <m>i</m>th entry equal to <m>1</m> and every other entry equal to <m>0</m>.
     </p>
@@ -159,4 +197,202 @@
             </p>
         </proof>
     </lemma>
+    <lemma xml:id="lem-unique-lin-comb">
+        <statement>
+            <p>
+                Let <m>\bw</m> be a vector in <m>\R^n</m>, and let <m>\bv_1,\ldots,\bv_m\in\R^n</m> be a set of <m>m</m> linearly independent vectors in <m>\R^n</m>. Then there is at most one linear combination <m>\lambda_1\bv_1+\ldots+\lambda_m\bv_m</m> of these <m>m</m> linearly independent vectors such that
+                <me>
+                    \bw=\lambda_1\bv_1+\ldots+\lambda_m\bv_m
+                </me>.
+            </p>
+        </statement>
+        <proof>
+            <p>
+                Note that there may well be no linear combination of the linearly independent vectors that represents <m>\bw</m>. The claim is that if there is one, that is the only one. To prove this, suppose that we have two linear combinations of <m>\bv_1,\ldots,\bv_m</m> representing <m>\bw</m>:
+                <me>
+                    \lambda_1\bv_1+\lambda_2\bv_2+\ldots+\lambda_m\bv_m=\bw
+                </me>
+                and
+                <me>
+                    \mu_1\bv_1+\mu_2\bv_2+\ldots+\mu_m\bv_m=\bw
+                </me>,
+                where <m>\lambda_1,\lambda_2,\ldots,\lambda_m,\mu_1,\mu_2,\ldots,\mu_m\in\R</m>. If we subtract the second linear combination from the first we end up with
+                <me>
+                    (\lambda_1-\mu_1)\bv_1+(\lambda_2-\mu_2)\bv_2+\ldots+(\lambda_m-\mu_m)\bv_m=\bw-\bw=\bz
+                </me>.
+                Since the set <m>\bv_1,\ldots,\bv_m</m> is linearly independent, we must have <m>\lambda_i-\mu_i=0</m> for all <m>i</m>. Put differently, <m>\lambda_i=\mu_i</m> for all <m>i</m>. This means that the two linear combinations are actually the same.
+            </p>
+        </proof>
+    </lemma>
+    <p>
+        To be absolutely clear, <xref ref="lem-unique-lin-comb"/> <em>does not</em> say that you will be capable of representing any vector in <m>\R^n</m> using linear combinations of a given linearly independent set of vectors. For example, the set consisting of the vector <m>\be_1=\colvec{1 \\ 0}\in\R^2</m> alone is linearly independent. Linear combinations involving only <m>\be_1</m> are of the form <m>\lambda\be_1</m>, where <m>\lambda\in\R</m>. This means that the only vectors in <m>\R^2</m> that can be represented as linear combinations of <m>\be_1</m> are of the form <m>\colvec{\lambda \\ 0}</m>. This leaves out vectors like <m>\be_2</m>.
+    </p>
+    <p>
+        What <xref ref="lem-unique-lin-comb"/> does say is that if it is possible to represent a vector using a linear combination of linearly independent vectors, then there is only one way of doing so.
+    </p>
+    <p>
+        Linearly independent sets of vectors of <m>\R^n</m> that are capable of representing any other vector in <m>\R^n</m> are very special and very important in linear algebra. We will discuss these sets in a later section.
+    </p>
+    <p>
+        Before finishing this section, I will state one more useful result. As with every result in these lecture notes, you should attempt to convince yourself of the truthfulness of the statement before looking at the proof. Sometimes you may be able to prove the results yourself, and you will learn a great deal by doing so. But at the very least, work out a couple of examples. The next lemma, in particular, is relatively easy to prove, so you could regard it as an exercise.
+    </p>
+    <lemma xml:id="lem-lin-dep-comb">
+        <statement>
+            <p>
+                Let <m>m\geq 2</m> be an integer. If <m>\bv_1,\bv_2,\ldots,\bv_m\in\R^n</m> is a linearly dependent set of vectors, then at least one of these vectors can be written as a linear combination of the other vectors in the set.
+            </p>
+        </statement>
+        <proof>
+            <p>
+                If one of the vectors is the zero vector, then the result is trivial. Indeed, the zero vector can always be expressed as the trivial linear combination (i.e. coefficients are all <m>0</m>) of any finite set of vectors. We are therefore reduced to the case where all the vectors are non-zero.
+            </p>
+            <p>
+                Suppose that all the vectors <m>\bv_1,\bv_2,\ldots,\bv_m</m> are non-zero. Since they are linearly dependent, there is a set of <m>m</m> scalars <m>\lambda_1,\lambda_2,\ldots,\lambda_m</m>, not all zero, such that
+                <men xml:id="equation-lin-comb">
+                    \lambda_1\bv_1+\lambda_2\bv_2+\ldots+\lambda_m\bv_m=\bz
+                </men>.
+                We may assume, without loss of generality, that <m>\lambda_1\neq 0</m>, because if this is not the case we can just reorder the vectors in the set and the scalars. (In other words, the labels that we assigned to the vectors are completely arbitrary and irrelevant.) But then, Equation <xref ref="equation-lin-comb"/> is equivalent to
+                <me>
+                    \lambda_2\bv_2+\ldots+\lambda_m\bv_m=-\lambda_1\bv_1
+                </me>.
+                Since <m>\lambda_1\neq 0</m>, we may divide both sides by <m>-\lambda_1</m>, from where we get
+                <me>
+                    \bv_1=-\frac{\lambda_2}{\lambda_1}\bv_2-\ldots-\frac{\lambda_m}{\lambda_1}\bv_m
+                </me>.
+                In other words, we wrote <m>\bv_1</m> as a linear combination of the other vectors in the set.
+            </p>
+        </proof>
+    </lemma>
+    <exercises xml:id="exercises-chapter2-section2">
+        <exercise>
+            <statement>
+                <p>
+                    For each subquestion, determine whether the given set of vectors is linearly independent. If not, find a non-trivial linear combination representing the zero vector.
+                </p>
+                <ol marker="(a)">
+                    <li>
+                        <p>
+                            <m>\colvec{1 \\ 2},\colvec{-1 \\ -5}</m>
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <m>\colvec{0 \\ 3},\colvec{-2 \\ 3},\colvec{1 \\ 0}</m>
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <m>\colvec{1 \\ 2 \\ 0},\colvec{3 \\ 0 \\ -1},\colvec{1 \\ 1 \\ 1}</m>
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <m>\colvec{1 \\ 0 \\ -1},\colvec{2 \\ 1 \\ 0}, \colvec{3 \\ 1 \\ -1}</m>
+                        </p>
+                    </li>
+                </ol>
+            </statement>
+        </exercise>
+        <exercise>
+            <p>
+                In each subquestion, you will be given a vector <m>\bw</m> and a list of vectors <m>\bv_1, \bv_2,\ldots</m>. Determine whether it is possible to write the vector <m>\bw</m> as a linear combination of the vectors <m>\bv_i</m>. If it is, find one such linear combination.
+            </p>
+            <ol marker="(a)">
+                <li>
+                    <p>
+                        <m>\bw=\colvec{1 \\ 0}, \quad \bv_1=\colvec{2 \\ 1}, \bv_2=\colvec{3 \\ 1}</m>
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <m>\bw=\colvec{0 \\ 1},\quad \bv_1=\colvec{2 \\ 1}, \bv_2=\colvec{3 \\ 1}</m>
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <m>\bw=\colvec{1 \\ 0},\quad \bv_1=\colvec{2 \\ 1}, \bv_2=\colvec{-4 \\ -2}</m>
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <m>\bw = \colvec{1 \\ 2 \\ 0},\quad \bv_1=\colvec{1 \\ -1 \\ 3},\bv_2=\colvec{0 \\ 1 \\ -1}</m>
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <m>\bw=\colvec{1 \\ 2 \\ 0},\quad \bv_1=\colvec{1 \\ -1 \\ 3},\bv_2=\colvec{-3 \\ 1 \\ 0}</m>
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <m>\bw=\colvec{1 \\ 1 \\ 1},\quad \bv_1=\colvec{1 \\ -1 \\ 0},\bv_2=\colvec{-1 \\ 2 \\ 0}, \bv_3=\colvec{0 \\ 2 \\ -1}</m>
+                    </p>
+                </li>
+            </ol>
+        </exercise>
+        <exercise>
+            <statement>
+                <p>
+                    Consider the vectors <m>\bv=\colvec{3 \\ 1 \\ -1}</m> and <m>\bw=\colvec{1 \\ 2 \\ 1}</m> in <m>\R^3</m>.
+                </p>
+                <ol marker="(a)">
+                    <li>
+                        <p>
+                            Show that the vectors <m>\bv</m> and <m>\bw</m> are linearly independent.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            Find a vector <m>\bu_1\in\R^3</m> such that the set formed by the vectors <m>\bv,\bw</m> and <m>\bu_1</m> is still linearly independent.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            Find a vector <m>\bu_2\in\R^3</m> such that the set formed by the vectors <m>\bv,\bw</m> and <m>\bu_2</m> is linearly dependent.
+                        </p>
+                    </li>
+                </ol>
+            </statement>
+        </exercise>
+        <exercise>
+            <statement>
+                <p>
+                    Suppose that <m>S=\{\bv_1,\bv_2,\ldots,\bv_m\}\subseteq \R^n</m> is a linearly independent set of vectors. Is it possible to find a subset of <m>S</m> that is linearly dependent?
+                </p>
+            </statement>
+        </exercise>
+        <exercise>
+            <statement>
+                <p>
+                    Show that two vectors in <m>\R^n</m> are linearly independent if and only if one of them is a scalar multiple of the other.
+                </p>
+            </statement>
+        </exercise>
+        <exercise>
+            <statement>
+                <p>
+                    Find an example of a linearly independent set in <m>\R^2</m> consisting of more than one vector such that none of them is a scalar multiple of another vector in the set.
+                </p>
+            </statement>
+        </exercise>
+        <exercise xml:id="exercise-ortho-lin-ind">
+            <statement>
+                <p>
+                    &#9733; Show that if <m>\bv,\bw\in\R^n</m> are two non-zero vectors such that <m>\bv\cdot\bw=0</m>, then they are linearly independent.
+                </p>
+            </statement>
+            <hint>
+                <p>
+                    Use the properties of the dot product to simplify <m>(\lambda\bv + \mu\bw)\cdot\bv</m> and <m>(\lambda\bv+\mu\bw)\cdot\bw</m>, where <m>\lambda,\mu\in\R</m> are scalars.
+                </p>
+            </hint>
+        </exercise>
+        <exercise>
+            <statement>
+                <p>
+                    The converse of <xref ref="exercise-ortho-lin-ind"/> does not hold. Give an example of two linearly independent vectors in <m>\R^2</m> such that <m>\bv\cdot \bw\neq 0</m>.
+                </p>
+            </statement>
+        </exercise>
+    </exercises>
 </section>
