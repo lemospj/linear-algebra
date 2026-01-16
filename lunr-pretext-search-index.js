@@ -475,7 +475,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "2.1",
   "title": "Vectors",
-  "body": " Vectors  You may be familiar with most of the material in this section. We will review some fairly fundamental properties of vectors in . A vector in is simply an element of , or, in other words, an -tuple . So this definition coincides with the definition of a point in . We use different words when we want to think of these objects in different ways. Whenever I use the word point , you should visualize a dot in . However, vectors are usually represented by an arrow based at the origin and ending in the coordinates given by the vector.   For example, is a vector in . It is graphically represented as follows:   The vector .   The vector 1 comma 2             We will often work with column vectors . This means that instead of writing vectors horizontally, we will write them vertically. For example, the vector will be written as . This is a standard convention in linear algebra. I will explain the reason for this choice after we introduce matrix multiplication in the next section. I will extend this convention to points as well, i.e. from now on I will organize the coordinates of a point vertically.  All vectors have a length, often called the norm .    The norm of the vector is defined to be the number . We denote the norm of by .     The norm of the vector in is .   Note that this notion of norm is consistent with the familiar notions of Euclidean distance and length.  It is possible to multiply vectors by a scalar , i.e., by a real number. If is a real number and is a vector in , then we define to be the vector . In other words, the th coordinate of is defined to be times the th coordinate of . Geometrically, this corresponds to stretching the vector—if —or contracting it—if ). When , the vector is not altered by multiplication by . If is a negative real number, than the direction of the vector is changed.   For instance, . In the figure below, the vector is represented in blue, and the vector is represented in orange. In the image, the vector is translucent so that it is clear that the representation of is based at the origin.   The vectors and .   The vector 1 comma 2 in blue, and the vector 2 times 1 comma 2 in orange.             It should come as no surprise that these two vectors lie in the same line through the origin. But more on this later.   Instead of writing , we will often use the shorthand notation .  We can also add two vectors in . If are two vectors in , then their sum is the vector whose th coordinate is : .   If and , then . Graphically, the sum of and can be obtained via the parallelogram rule.   The parallelogram rule.   The vector 2 comma 1 in orange, the vector minus 1 comma 1 in blue, and their sum in green.    v=(2,1)  w=(-1,1)  u=v+w              In the figure above, the vector is depicted in orange, the vector in blue, and the sum of the two in green.   We also define to mean , so that if , then .  Since, formally, vector and points in are the same thing, the rules of vector addition allow us to add two points or a point and a vector. By convention, we think of the addition of a vector to a point as another point: point + vector = point. The idea is that the vector represents the displacement of the point.   Let's consider the point in and the vector . Then , and we should think of as the point obtained by displacing the point by the vector .   Displacement of the point by the vector .   The vector minus 1 comma 1, the point 1 comma 1 and the displacement of 1 comma 1 by the vector minus 1 comma 1.    v=(-1,1)  p=(1,1)  q=p+v             In the figure above, the vector is represented in blue, and the point is in green. After adding to the point , we end up with the point , graphically represented in red. The dashed blue arrow is the vector based on the point so that its interpretation as displacement can be clearly seen.   A line in is determined by two pieces of data: a point through which the line passes and a direction. Directions are encoded by vectors. So we can define a line as the set of points obtained by adding scalar multiples of a vector to a fixed point. In other words, it is the set of points that you can get to by adding scalar multiples of a fixed vector to a fixed point.    Fix a point and a non-zero vector . The line passing through with direction is the set of points in that can be written in the form for some .     Consider the vector and the point in . The line passing through with direction is depicted in orange in the figure below. If we change the initial point to but keep the direction, we obtain the parallel line in blue.   Parallel lines defined by vector .   Two parallel lines defined by vector 2 comma 1. One of them passes through the point negative 1 comma 0, while the other passes through 0 comma 0.    v=(2,1)  p=(-1,0)  p1=p+v  q=(0,0)  q1=q+v                Lines (or planes and hyperplanes) that pass through the origin have a very special place in linear algebra. These are examples of linear subspaces . It will be a while before we see the formal definition of a vector space, but I will now list a series of properties that make one. Proving that these properties do hold is an instructive exercise that you should attempt. Most of the properties follow immediately from the definitions of scalar multiplication and vector addition. At the very least, you should try out a few examples. I will include proofs for some of the properties that you can use as a source of inspiration.    Associativity of vector addition : for all vectors .  This follows from the associativity of addition of real numbers. What this property says is that if we first add to and then add the result to , the result that we obtain will be the same that we get if we choose to first add and together and then add . Indeed, let . Then, by definition and so . Similarly, we can show that . Since for all due to the associativity property of the addition of real numbers, we conclude that .     Commutativity of vector addition : for all vectors .     Existence of identity element for vector addition : the zero vector in (i.e. the vector in whose entries are all ) satisfies .     Existence of inverse element for vector addition : we have for every vector .     Compatibility of real number multiplication with scalar multiplication : for every vector and real numbers .     Existence of identity for scalar multiplication : we have for every vector .     Distributivity of scalar multiplication with respect to vector addition : for all vectors and any real number .     Distributivity of scalar multiplication with respect to addition of real numbers : for all real numbers and any vector .   We will re-encounter these eight properties later in the course.  The last operation that I need to mention in this section is the dot product between two vectors in the same space. If are two vectors in then the dot product between them, denoted by , is the real number defined by In other words, we multiply the th coordinate of by the th coordinate of for each and then we add all these products together.   Consider the vectors in . Their dot product is .   While it is clearly true that for every vector , you should be aware of the fact that it is possible to have with neither nor be the zero vector. For example, . We will later see that this happens precisely when the vectors are perpendicular to each other.  The following proposition lists a few important properties of the dot product. Showing that these properties hold is not too hard, and you should try to come up with a proof by yourself. If are not able to prove these three properties, do not worry. Just have a look at the proof that I wrote. But try to find an argument yourself first. You will learn a great deal from earnestly trying to do something even if you fail.    The following properties hold for all vectors and all real numbers :    .     .    If is not the zero vector, then .       Let be three vectors in , and let and be two real numbers  The first property is a straightforward consequence of the definition of dot product. Indeed, . Since multiplication is commutative, we have . But the right-hand side of this expression is precisely the definition of .  In order to prove the second property, start by noting that, for , the th coordinate of is . Therefore, . Since , we have , as we wanted.  We will now prove the third and last property in the statement of the proposition. To do that, we will assume that is non-zero. This means that at least one of its coordinates is not zero, i.e. for some . We have by the definition of dot product. Every term in this sum is non-negative because it is a square of a real number. Therefore, . Since , we have , yielding .       Evaluate each of the following expressions.                                 Are there real numbers and such that ? Justify your answer.      Find real numbers and such that .     The parametric equation of a line   Consider a line in the plane given by the equation , where and either or . Let be a point in the line . Also, let be a non-zero vector that is parallel to .    Show that if then the point is a point in .    Show that if is another point in , then there exists such that .    What this means is that the line can be described as the set of points of the form where is a point on the line, is a vector parallel to the line, and is a real parameter. This is known as the parametric equation of a line .     ★ Cauchy-Schwarz inequality in   Show that for all vectors .     "
+  "body": " Vectors  You may be familiar with most of the material in this section. We will review some fairly fundamental properties of vectors in . A vector in is simply an element of , or, in other words, an -tuple . So this definition coincides with the definition of a point in . We use different words when we want to think of these objects in different ways. Whenever I use the word point , you should visualize a dot in . However, vectors are usually represented by an arrow based at the origin and ending in the coordinates given by the vector.   For example, is a vector in . It is graphically represented as follows:   The vector .   The vector 1 comma 2             We will often work with column vectors . This means that instead of writing vectors horizontally, we will write them vertically. For example, the vector will be written as . This is a standard convention in linear algebra. I will explain the reason for this choice after we introduce matrix multiplication in the next section. I will extend this convention to points as well, i.e. from now on I will organize the coordinates of a point vertically.  All vectors have a length, often called the norm .    The norm of the vector is defined to be the number . We denote the norm of by .     The norm of the vector in is .   Note that this notion of norm is consistent with the familiar notions of Euclidean distance and length.  It is possible to multiply vectors by a scalar , i.e., by a real number. If is a real number and is a vector in , then we define to be the vector . In other words, the th coordinate of is defined to be times the th coordinate of . Geometrically, this corresponds to stretching the vector—if —or contracting it—if ). When , the vector is not altered by multiplication by . If is a negative real number, than the direction of the vector is changed.   For instance, . In the figure below, the vector is represented in blue, and the vector is represented in orange. In the image, the vector is translucent so that it is clear that the representation of is based at the origin.   The vectors and .   The vector 1 comma 2 in blue, and the vector 2 times 1 comma 2 in orange.             It should come as no surprise that these two vectors lie in the same line through the origin. But more on this later.   If is the vector in , we define to be . It is easy to check (do it!) that .  We can also add two vectors in . If are two vectors in , then their sum is the vector whose th coordinate is : .   If and , then . Graphically, the sum of and can be obtained via the parallelogram rule.   The parallelogram rule.   The vector 2 comma 1 in orange, the vector minus 1 comma 1 in blue, and their sum in green.    v=(2,1)  w=(-1,1)  u=v+w              In the figure above, the vector is depicted in orange, the vector in blue, and the sum of the two in green.   We also define to mean , so that if , then .  Since, formally, vector and points in are the same thing, the rules of vector addition allow us to add two points or a point and a vector. By convention, we think of the addition of a vector to a point as another point: point + vector = point. The idea is that the vector represents the displacement of the point.   Let's consider the point in and the vector . Then , and we should think of as the point obtained by displacing the point by the vector .   Displacement of the point by the vector .   The vector minus 1 comma 1, the point 1 comma 1 and the displacement of 1 comma 1 by the vector minus 1 comma 1.    v=(-1,1)  p=(1,1)  q=p+v             In the figure above, the vector is represented in blue, and the point is in green. After adding to the point , we end up with the point , graphically represented in red. The dashed blue arrow is the vector based on the point so that its interpretation as displacement can be clearly seen.   A line in is determined by two pieces of data: a point through which the line passes and a direction. Directions are encoded by vectors. So we can define a line as the set of points obtained by adding scalar multiples of a vector to a fixed point. In other words, it is the set of points that you can get to by adding scalar multiples of a fixed vector to a fixed point.    Fix a point and a non-zero vector . The line passing through with direction is the set of points in that can be written in the form for some .     Consider the vector and the point in . The line passing through with direction is depicted in orange in the figure below. If we change the initial point to but keep the direction, we obtain the parallel line in blue.   Parallel lines defined by vector .   Two parallel lines defined by vector 2 comma 1. One of them passes through the point negative 1 comma 0, while the other passes through 0 comma 0.    v=(2,1)  p=(-1,0)  p1=p+v  q=(0,0)  q1=q+v                Lines (or planes and hyperplanes) that pass through the origin have a very special place in linear algebra. These are examples of linear subspaces . It will be a while before we see the formal definition of a vector space, but I will now list a series of properties that make one. Proving that these properties do hold is an instructive exercise that you should attempt. Most of the properties follow immediately from the definitions of scalar multiplication and vector addition. At the very least, you should try out a few examples. I will include proofs for some of the properties that you can use as a source of inspiration.    Associativity of vector addition : for all vectors .  This follows from the associativity of addition of real numbers. What this property says is that if we first add to and then add the result to , the result that we obtain will be the same that we get if we choose to first add and together and then add . Indeed, let . Then, by definition and so . Similarly, we can show that . Since for all due to the associativity property of the addition of real numbers, we conclude that .     Commutativity of vector addition : for all vectors .     Existence of identity element for vector addition : the zero vector in (i.e. the vector in whose entries are all ) satisfies .     Existence of inverse element for vector addition : we have for every vector .     Compatibility of real number multiplication with scalar multiplication : for every vector and real numbers .     Existence of identity for scalar multiplication : we have for every vector .     Distributivity of scalar multiplication with respect to vector addition : for all vectors and any real number .     Distributivity of scalar multiplication with respect to addition of real numbers : for all real numbers and any vector .   We will re-encounter these eight properties later in the course.  The last operation that I need to mention in this section is the dot product between two vectors in the same space. If are two vectors in then the dot product between them, denoted by , is the real number defined by In other words, we multiply the th coordinate of by the th coordinate of for each and then we add all these products together.   Consider the vectors in . Their dot product is .   While it is clearly true that for every vector , you should be aware of the fact that it is possible to have with neither nor be the zero vector. For example, . We will later see that this happens precisely when the vectors are perpendicular to each other.  The following proposition lists a few important properties of the dot product. Showing that these properties hold is not too hard, and you should try to come up with a proof by yourself. If are not able to prove these three properties, do not worry. Just have a look at the proof that I wrote. But try to find an argument yourself first. You will learn a great deal from earnestly trying to do something even if you fail.    The following properties hold for all vectors and all real numbers :    .     .    If is not the zero vector, then .       Let be three vectors in , and let and be two real numbers  The first property is a straightforward consequence of the definition of dot product. Indeed, . Since multiplication is commutative, we have . But the right-hand side of this expression is precisely the definition of .  In order to prove the second property, start by noting that, for , the th coordinate of is . Therefore, . Since , we have , as we wanted.  We will now prove the third and last property in the statement of the proposition. To do that, we will assume that is non-zero. This means that at least one of its coordinates is not zero, i.e. for some . We have by the definition of dot product. Every term in this sum is non-negative because it is a square of a real number. Therefore, . Since , we have , yielding .       Evaluate each of the following expressions.                                Show that if is a vector and is a scalar satisfying , then either or .     Are there real numbers and such that ? Justify your answer.      Find real numbers and such that .     The parametric equation of a line   Consider a line in the plane given by the equation , where and either or . Let be a point in the line . Also, let be a non-zero vector that is parallel to .    Show that if then the point is a point in .    Show that if is another point in , then there exists such that .    What this means is that the line can be described as the set of points of the form where is a point on the line, is a vector parallel to the line, and is a real parameter. This is known as the parametric equation of a line .     ★ Cauchy-Schwarz inequality in   Show that for all vectors .     "
 },
 {
   "id": "sec-vectors-2",
@@ -637,7 +637,7 @@ var ptx_lunr_docs = [
   "type": "Exercise",
   "number": "2.1.2",
   "title": "",
-  "body": "  Are there real numbers and such that ? Justify your answer.   "
+  "body": " Show that if is a vector and is a scalar satisfying , then either or .  "
 },
 {
   "id": "exercises-chapter2-section1-3",
@@ -646,7 +646,7 @@ var ptx_lunr_docs = [
   "type": "Exercise",
   "number": "2.1.3",
   "title": "",
-  "body": "  Find real numbers and such that .   "
+  "body": "  Are there real numbers and such that ? Justify your answer.   "
 },
 {
   "id": "exercises-chapter2-section1-4",
@@ -654,8 +654,8 @@ var ptx_lunr_docs = [
   "url": "sec-vectors.html#exercises-chapter2-section1-4",
   "type": "Exercise",
   "number": "2.1.4",
-  "title": "The parametric equation of a line.",
-  "body": " The parametric equation of a line   Consider a line in the plane given by the equation , where and either or . Let be a point in the line . Also, let be a non-zero vector that is parallel to .    Show that if then the point is a point in .    Show that if is another point in , then there exists such that .    What this means is that the line can be described as the set of points of the form where is a point on the line, is a vector parallel to the line, and is a real parameter. This is known as the parametric equation of a line .   "
+  "title": "",
+  "body": "  Find real numbers and such that .   "
 },
 {
   "id": "exercises-chapter2-section1-5",
@@ -663,6 +663,15 @@ var ptx_lunr_docs = [
   "url": "sec-vectors.html#exercises-chapter2-section1-5",
   "type": "Exercise",
   "number": "2.1.5",
+  "title": "The parametric equation of a line.",
+  "body": " The parametric equation of a line   Consider a line in the plane given by the equation , where and either or . Let be a point in the line . Also, let be a non-zero vector that is parallel to .    Show that if then the point is a point in .    Show that if is another point in , then there exists such that .    What this means is that the line can be described as the set of points of the form where is a point on the line, is a vector parallel to the line, and is a real parameter. This is known as the parametric equation of a line .   "
+},
+{
+  "id": "exercises-chapter2-section1-6",
+  "level": "2",
+  "url": "sec-vectors.html#exercises-chapter2-section1-6",
+  "type": "Exercise",
+  "number": "2.1.6",
   "title": "★ Cauchy-Schwarz inequality in <span class=\"process-math\">\\(\\R^2\\)<\/span>.",
   "body": " ★ Cauchy-Schwarz inequality in   Show that for all vectors .   "
 },
@@ -673,7 +682,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "2.2",
   "title": "Linear dependence",
-  "body": " Linear dependence    Let be vectors in . A linear combination of is an expression of the form , where are real numbers. The scalars are called the coefficients of the linear combination.    The linear combination is the expression itself. Two different linear combinations can give rise to the same vector.   The expression is a linear combination of the vectors , and in . The resulting vector is . Here is a different linear combination of the same vectors that also gives rise to : .    In we saw that it is possible to express in more than one way as linear combination of the vectors and . However, there is only one linear combination of the vectors and that results in . Indeed, the problem is that of finding real numbers and such that . However, , which means that we must have .    Sometimes it is not possible to represent a vector as a linear combination of prescribed vectors. For example, the vector in cannot be represented as a linear combination of the vectors because any linear combination of the vectors and will have as its third coordinate.    shows that sometimes there is at most one way to represent a vector as a linear combination of prescribed vectors. This phenomenon occurs when there are no linear relationships among the vectors that are to be combined.    We say that the vectors are said to be linearly dependent if there exist real numbers , not all zero , such that . If the vectors are not linearly dependent, then we say that they are linearly independent .    The condition that the coefficients of the linear combination above are not all zero in the definition of linear dependence is crucial. Indeed, for any given set of vectors , it is always possible to find a trivial linear combination that represents the zero vector. All we need to do is to choose every coefficient to be : . The vectors are only linearly dependent if there exists a linear combination of these vectors representing the zero vector other than the trivial one.  "
+  "body": " Linear dependence    Let be vectors in . A linear combination of is an expression of the form , where are real numbers. The scalars are called the coefficients of the linear combination.    The linear combination is the expression itself. Two different linear combinations can give rise to the same vector.   The expression is a linear combination of the vectors , and in . The resulting vector is . Here is a different linear combination of the same vectors that also gives rise to : .    In we saw that it is possible to express in more than one way as linear combination of the vectors and . However, there is only one linear combination of the vectors and that results in . Indeed, the problem is that of finding real numbers and such that . However, , which means that we must have .    Sometimes it is not possible to represent a vector as a linear combination of prescribed vectors. For example, the vector in cannot be represented as a linear combination of the vectors because any linear combination of the vectors and will have as its third coordinate.    shows that sometimes there is at most one way to represent a vector as a linear combination of prescribed vectors. This phenomenon occurs when there are no linear relationships among the vectors that are to be combined.    We say that the vectors are said to be linearly dependent if there exist real numbers , not all zero , such that . If the vectors are not linearly dependent, then we say that they are linearly independent .    The condition that the coefficients of the linear combination above are not all zero in the definition of linear dependence is crucial. Indeed, for any given set of vectors , it is always possible to find a trivial linear combination that represents the zero vector. All we need to do is to choose every coefficient to be : . The vectors are only linearly dependent if there exists a linear combination of these vectors representing the zero vector other than the trivial one. In particular, if you wish to prove that a given set of vectors is linearly independent, all you need to do is to show that if are real numbers such that then all the equal .   If is non-zero, then the set consisting only of is linearly independent. Indeed, if , then we must have because, by assumption, .    The vectors and are linearly dependent. Indeed, .   The standard unit vectors in .   The standard unit vectors of r two.    v=(1,2)  w=(2,4)             The set formed by the vectors and is linearly independent. Indeed, say that are real numbers satisfying . Let's start by evaluating the left-hand side of the equation above: . So we have , which means that and . This shows that and are linearly independent.   The standard unit vectors in .   The standard unit vectors of r two.    e1=(1,0)  e2=(0,1)             The vectors and are linearly independent. To see this, let and be real scalars such that . Then . In other words, we need to solve the system in the variables and . But it is easy to see that the only solution to this system is given by and .   Let me mention an important generalization of . The unit vectors in are called the standard unit vectors of . To be completely clear regarding their definition, contains exactly standard unit vectors. For each integer between and , the standard unit vector is the only vector with th entry equal to and every other entry equal to .    The set of standard unit vectors in is linearly independent.    Let be real numbers. If we denote by the th entry of , then the th entry of is . By the definition of standard unit vectors, we have whenever , and for every . Therefore, the th entry of is . If we suppose that the are such that , we conclude that for every .      Let be a vector in , and let be a set of linearly independent vectors in . Then there is at most one linear combination of these linearly independent vectors such that .    Note that there may well be no linear combination of the linearly independent vectors that represents . The claim is that if there is one, that is the only one. To prove this, suppose that we have two linear combinations of representing : and , where . If we subtract the second linear combination from the first we end up with . Since the set is linearly independent, we must have for all . Put differently, for all . This means that the two linear combinations are actually the same.    To be absolutely clear,  does not say that you will be capable of representing any vector in using linear combinations of a given linearly independent set of vectors. For example, the set consisting of the vector alone is linearly independent. Linear combinations involving only are of the form , where . This means that the only vectors in that can be represented as linear combinations of are of the form . This leaves out vectors like .  What does say is that if it is possible to represent a vector using a linear combination of linearly independent vectors, then there is only one way of doing so.  Linearly independent sets of vectors of that are capable of representing any other vector in are very special and very important in linear algebra. We will discuss these sets in a later section.  Before finishing this section, I will state one more useful result. As with every result in these lecture notes, you should attempt to convince yourself of the truthfulness of the statement before looking at the proof. Sometimes you may be able to prove the results yourself, and you will learn a great deal by doing so. But at the very least, work out a couple of examples. The next lemma, in particular, is relatively easy to prove, so you could regard it as an exercise.    Let be an integer. If is a linearly dependent set of vectors, then at least one of these vectors can be written as a linear combination of the other vectors in the set.    If one of the vectors is the zero vector, then the result is trivial. Indeed, the zero vector can always be expressed as the trivial linear combination (i.e. coefficients are all ) of any finite set of vectors. We are therefore reduced to the case where all the vectors are non-zero.  Suppose that all the vectors are non-zero. Since they are linearly dependent, there is a set of scalars , not all zero, such that . We may assume, without loss of generality, that , because if this is not the case we can just reorder the vectors in the set and the scalars. (In other words, the labels that we assigned to the vectors are completely arbitrary and irrelevant.) But then, Equation is equivalent to . Since , we may divide both sides by , from where we get . In other words, we wrote as a linear combination of the other vectors in the set.       For each subquestion, determine whether the given set of vectors is linearly independent. If not, find a non-trivial linear combination representing the zero vector.                           In each subquestion, you will be given a vector and a list of vectors . Determine whether it is possible to write the vector as a linear combination of the vectors . If it is, find one such linear combination.                                     Consider the vectors and in .    Show that the vectors and are linearly independent.    Find a vector such that the set formed by the vectors and is still linearly independent.    Find a vector such that the set formed by the vectors and is linearly dependent.        Suppose that is a linearly independent set of vectors. Is it possible to find a subset of that is linearly dependent?      Show that two vectors in are linearly independent if and only if one of them is a scalar multiple of the other.      Find an example of a linearly independent set in consisting of more than one vector such that none of them is a scalar multiple of another vector in the set.      ★ Show that if are two non-zero vectors such that , then they are linearly independent.    Use the properties of the dot product to simplify and , where are scalars.      The converse of does not hold. Give an example of two linearly independent vectors in such that .     "
 },
 {
   "id": "def-linear-combination",
@@ -719,6 +728,150 @@ var ptx_lunr_docs = [
   "number": "2.2.5",
   "title": "",
   "body": "  We say that the vectors are said to be linearly dependent if there exist real numbers , not all zero , such that . If the vectors are not linearly dependent, then we say that they are linearly independent .   "
+},
+{
+  "id": "sec-linear-dependence-10",
+  "level": "2",
+  "url": "sec-linear-dependence.html#sec-linear-dependence-10",
+  "type": "Example",
+  "number": "2.2.6",
+  "title": "",
+  "body": " If is non-zero, then the set consisting only of is linearly independent. Indeed, if , then we must have because, by assumption, .  "
+},
+{
+  "id": "sec-linear-dependence-11",
+  "level": "2",
+  "url": "sec-linear-dependence.html#sec-linear-dependence-11",
+  "type": "Example",
+  "number": "2.2.7",
+  "title": "",
+  "body": " The vectors and are linearly dependent. Indeed, .   The standard unit vectors in .   The standard unit vectors of r two.    v=(1,2)  w=(2,4)           "
+},
+{
+  "id": "example-standard-units",
+  "level": "2",
+  "url": "sec-linear-dependence.html#example-standard-units",
+  "type": "Example",
+  "number": "2.2.9",
+  "title": "",
+  "body": " The set formed by the vectors and is linearly independent. Indeed, say that are real numbers satisfying . Let's start by evaluating the left-hand side of the equation above: . So we have , which means that and . This shows that and are linearly independent.   The standard unit vectors in .   The standard unit vectors of r two.    e1=(1,0)  e2=(0,1)           "
+},
+{
+  "id": "sec-linear-dependence-13",
+  "level": "2",
+  "url": "sec-linear-dependence.html#sec-linear-dependence-13",
+  "type": "Example",
+  "number": "2.2.11",
+  "title": "",
+  "body": " The vectors and are linearly independent. To see this, let and be real scalars such that . Then . In other words, we need to solve the system in the variables and . But it is easy to see that the only solution to this system is given by and .  "
+},
+{
+  "id": "sec-linear-dependence-14",
+  "level": "2",
+  "url": "sec-linear-dependence.html#sec-linear-dependence-14",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "standard unit vectors "
+},
+{
+  "id": "lem-standard-ind",
+  "level": "2",
+  "url": "sec-linear-dependence.html#lem-standard-ind",
+  "type": "Lemma",
+  "number": "2.2.12",
+  "title": "",
+  "body": "  The set of standard unit vectors in is linearly independent.    Let be real numbers. If we denote by the th entry of , then the th entry of is . By the definition of standard unit vectors, we have whenever , and for every . Therefore, the th entry of is . If we suppose that the are such that , we conclude that for every .   "
+},
+{
+  "id": "lem-unique-lin-comb",
+  "level": "2",
+  "url": "sec-linear-dependence.html#lem-unique-lin-comb",
+  "type": "Lemma",
+  "number": "2.2.13",
+  "title": "",
+  "body": "  Let be a vector in , and let be a set of linearly independent vectors in . Then there is at most one linear combination of these linearly independent vectors such that .    Note that there may well be no linear combination of the linearly independent vectors that represents . The claim is that if there is one, that is the only one. To prove this, suppose that we have two linear combinations of representing : and , where . If we subtract the second linear combination from the first we end up with . Since the set is linearly independent, we must have for all . Put differently, for all . This means that the two linear combinations are actually the same.   "
+},
+{
+  "id": "lem-lin-dep-comb",
+  "level": "2",
+  "url": "sec-linear-dependence.html#lem-lin-dep-comb",
+  "type": "Lemma",
+  "number": "2.2.14",
+  "title": "",
+  "body": "  Let be an integer. If is a linearly dependent set of vectors, then at least one of these vectors can be written as a linear combination of the other vectors in the set.    If one of the vectors is the zero vector, then the result is trivial. Indeed, the zero vector can always be expressed as the trivial linear combination (i.e. coefficients are all ) of any finite set of vectors. We are therefore reduced to the case where all the vectors are non-zero.  Suppose that all the vectors are non-zero. Since they are linearly dependent, there is a set of scalars , not all zero, such that . We may assume, without loss of generality, that , because if this is not the case we can just reorder the vectors in the set and the scalars. (In other words, the labels that we assigned to the vectors are completely arbitrary and irrelevant.) But then, Equation is equivalent to . Since , we may divide both sides by , from where we get . In other words, we wrote as a linear combination of the other vectors in the set.   "
+},
+{
+  "id": "exercises-chapter2-section2-1",
+  "level": "2",
+  "url": "sec-linear-dependence.html#exercises-chapter2-section2-1",
+  "type": "Exercise",
+  "number": "2.2.1",
+  "title": "",
+  "body": "  For each subquestion, determine whether the given set of vectors is linearly independent. If not, find a non-trivial linear combination representing the zero vector.                         "
+},
+{
+  "id": "exercises-chapter2-section2-2",
+  "level": "2",
+  "url": "sec-linear-dependence.html#exercises-chapter2-section2-2",
+  "type": "Exercise",
+  "number": "2.2.2",
+  "title": "",
+  "body": " In each subquestion, you will be given a vector and a list of vectors . Determine whether it is possible to write the vector as a linear combination of the vectors . If it is, find one such linear combination.                                  "
+},
+{
+  "id": "exercises-chapter2-section2-3",
+  "level": "2",
+  "url": "sec-linear-dependence.html#exercises-chapter2-section2-3",
+  "type": "Exercise",
+  "number": "2.2.3",
+  "title": "",
+  "body": "  Consider the vectors and in .    Show that the vectors and are linearly independent.    Find a vector such that the set formed by the vectors and is still linearly independent.    Find a vector such that the set formed by the vectors and is linearly dependent.     "
+},
+{
+  "id": "exercises-chapter2-section2-4",
+  "level": "2",
+  "url": "sec-linear-dependence.html#exercises-chapter2-section2-4",
+  "type": "Exercise",
+  "number": "2.2.4",
+  "title": "",
+  "body": "  Suppose that is a linearly independent set of vectors. Is it possible to find a subset of that is linearly dependent?   "
+},
+{
+  "id": "exercises-chapter2-section2-5",
+  "level": "2",
+  "url": "sec-linear-dependence.html#exercises-chapter2-section2-5",
+  "type": "Exercise",
+  "number": "2.2.5",
+  "title": "",
+  "body": "  Show that two vectors in are linearly independent if and only if one of them is a scalar multiple of the other.   "
+},
+{
+  "id": "exercises-chapter2-section2-6",
+  "level": "2",
+  "url": "sec-linear-dependence.html#exercises-chapter2-section2-6",
+  "type": "Exercise",
+  "number": "2.2.6",
+  "title": "",
+  "body": "  Find an example of a linearly independent set in consisting of more than one vector such that none of them is a scalar multiple of another vector in the set.   "
+},
+{
+  "id": "exercise-ortho-lin-ind",
+  "level": "2",
+  "url": "sec-linear-dependence.html#exercise-ortho-lin-ind",
+  "type": "Exercise",
+  "number": "2.2.7",
+  "title": "",
+  "body": "  ★ Show that if are two non-zero vectors such that , then they are linearly independent.    Use the properties of the dot product to simplify and , where are scalars.   "
+},
+{
+  "id": "exercises-chapter2-section2-8",
+  "level": "2",
+  "url": "sec-linear-dependence.html#exercises-chapter2-section2-8",
+  "type": "Exercise",
+  "number": "2.2.8",
+  "title": "",
+  "body": "  The converse of does not hold. Give an example of two linearly independent vectors in such that .   "
 },
 {
   "id": "sec-linear-subspaces",
