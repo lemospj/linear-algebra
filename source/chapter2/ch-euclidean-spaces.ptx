@@ -11,9 +11,9 @@
 
   <!-- include sections -->
   <xi:include href="sec-vectors.ptx" />
+  <xi:include href="sec-matrices.ptx" />
   <xi:include href="sec-linear-dependence.ptx" />
   <xi:include href="sec-linear-subspaces.ptx" />
-  <xi:include href="sec-matrices.ptx" />
   <xi:include href="sec-linear-maps.ptx" />
 
 </chapter>

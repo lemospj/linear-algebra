@@ -28,6 +28,7 @@
     \newcommand{\colvec}[1]{
       \begin{pmatrix} #1 \end{pmatrix}
     }
+    \newcommand{\Mat}{\mathrm{Mat}}
     \newcommand{\N}{\mathbb N} 
     \newcommand{\Z}{\mathbb Z} 
     \newcommand{\Q}{\mathbb Q} 

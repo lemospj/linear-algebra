@@ -3,6 +3,72 @@
 <section xml:id="sec-matrices" xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>Matrices</title>
     <p>
-        
+        We already discussed matrices briefly when we studied the Gauss--Jordan elimination algorithm. In that setting, the main purpose of assigning a matrix to a linear system was to simplify notation and clarify the operations required to transform the given system into one in reduced row echelon form. However, matrices play a much more important role in linear algebra. As we will soon see, an <m>m\times n</m> matrix encodes the information required to describe a particular kind of function from <m>\R^n</m> to <m>\R^m</m>: a <em>linear map</em>. But before we speak about linear maps, we need to discuss matrix addition and multiplication.
+    </p>
+    <p>
+        If the number of rows of a matrix <m>A</m> is the same as the number of rows of a matrix <m>B</m>, and if the same is true of the number of columns, then it is possible to define the sum <m>A+B</m> of <m>A</m> and <m>B</m>. This sum will also be a matrix with the same number of rows of <m>A</m> (and of <m>B</m>) and the same number of columns of <m>A</m> (and of <m>B</m>). Let's see the formal description of matrix addition.
+    </p>
+    <definition xml:id="def-matrix-addition">
+        <title>Matrix addition</title>
+        <statement>
+            <p>
+                Let <m>m</m> and <m>n</m> be two positive integers, and let <m>A=(a_{ij})_{ij}</m> and <m>B=(b_{ij})_{ij}</m> be two <m>m\times n</m> matrices. Recall that this short-hand notation means that the entry in row <m>i</m> and column <m>j</m> of matrix <m>A</m> is <m>a_{ij}</m>, and the entry in row <m>i</m> and column <m>j</m> of matrix <m>B</m> is <m>b_{ij}</m>. The matrix <m>A+B</m> is the <m>m\times n</m> matrix whose <m>(i,j)</m> entry is given by <m>a_{ij}+b_{ij}</m>. Visually,
+                <me>
+                    \left(
+                    \begin{array}{cccc}
+                        a_{11} \amp a_{12} \amp \cdots \amp a_{1n}\\
+                        a_{21} \amp a_{22} \amp \cdots \amp a_{2n}\\
+                        \vdots \amp \vdots \amp \ddots \amp \vdots \\
+                        a_{m1} \amp a_{m2} \amp \cdots \amp a_{mn}
+                    \end{array}\right) +
+                    \left(
+                    \begin{array}{cccc}
+                        b_{11} \amp b_{12} \amp \cdots \amp b_{1n}\\
+                        b_{21} \amp b_{22} \amp \cdots \amp b_{2n}\\
+                        \vdots \amp \vdots \amp \ddots \amp \vdots \\
+                        b_{m1} \amp b_{m2} \amp \cdots \amp b_{mn}
+                    \end{array}\right) =
+                    \left(
+                    \begin{array}{cccc}
+                        a_{11} + b_{11} \amp a_{12} + b_{12} \amp \cdots \amp a_{1n} + b_{1n}\\
+                        a_{21} + b_{21} \amp a_{22} + b_{22} \amp \cdots \amp a_{2n}+ b_{2n}\\
+                        \vdots \amp \vdots \amp \ddots \amp \vdots \\
+                        a_{m1} + b_{m1}\amp a_{m2}+b_{m2} \amp \cdots \amp a_{mn} + b_{mn}
+                    \end{array}\right)
+                </me>.
+            </p>
+        </statement>
+    </definition>
+    <example>
+        <p>
+            If <m>A=\left(\begin{array}{ccc} 1 \amp -2 \amp 0 \\ 3 \amp 7 \amp -5\end{array}\right)</m> and <m>B=\left(\begin{array}{ccc} 3 \amp 0 \amp -4 \\ -\sqrt{2} \amp 3 \amp 1\end{array}\right)</m>, then
+            <me>
+                A+B=\left(\begin{array}{ccc} 4 \amp -2 \amp -4 \\ 3-\sqrt{2} \amp 10 \amp -4\end{array}\right)
+            </me>.
+        </p>
+    </example>
+    <example>
+        <p>
+            Vectors of <m>\R^n</m> are a special kind of matrix. Indeed, they can be regarded as <m>n\times 1</m> matrices, i.e. matrices with <m>n</m> rows and a single column. Under this interpretation, matrix addition and vector addition are compatible.
+        </p>
+    </example>
+    <p>
+        We will denote the set of <m>m\times n</m> matrices by <m>\Mat_{m\times n}</m>. So, <m>A\in\Mat_{m\times n}</m> means that <m>A</m> is an <m>m\times n</m> matrix.
+    </p>
+    <p>
+        If <m>A=(a_{ij})_{ij}</m> is an <m>m\times n</m> matrix, then we define <m>-A</m> to be the matrix <m>(-a_{ij})_{ij}</m>. It is easy to check (you should do it!) that <m>A+(-A)=0</m>, the zero matrix.
+    </p>
+    <p>
+        It is also possible to multiply matrices by a scalar.
+    </p>
+    <definition xml:id="def-matrix-scalar-multiplication">
+        <statement>
+            <p>
+                If <m>\lambda\in \R</m> is a scalar and <m>A=(a_{ij})_{ij}</m> is an <m>m\times n</m> matrix, the matrix <m>\lambda A</m> is defined to be the matrix <m>(\lambda a_{ij})_{ij}</m>. In other words, it is the <m>m\times n</m> matrix obtained from <m>A</m> by multiplying each entry by <m>\lambda</m>.
+            </p>
+        </statement>
+    </definition>
+    <p>
+        You should check that, as in the case of vectors, we have the equality <m>(-1)\cdot A=-A</m>.
     </p>
 </section>

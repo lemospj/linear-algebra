@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <section xml:id="sec-echelon" xmlns:xi="http://www.w3.org/2001/XInclude">
-  <title>The reduced echelon form of a linear system</title>
+  <title>The reduced row echelon form of a linear system</title>
 
   <p>
     I already mentioned in the previous section that we will make a systematic use of three operations to reduce a linear system to a simpler equivalent one. These are called <term>elementary row operations</term>. Let me remind you what they are:
@@ -192,12 +192,12 @@
 </p>
 
 <definition xml:id="def-echelon">
-    <title>Reduced echelon form</title>
+    <title>Reduced row echelon form</title>
     
     
     <statement>
         <p>
-            The augmented matrix associated to a linear system is said to be in <term>reduced echelon form</term> if it satisfies all the following properties:
+            The augmented matrix associated to a linear system is said to be in <term>reduced row echelon form</term> if it satisfies all the following properties:
             <ol>
                 <li>
                     <p>
@@ -220,7 +220,7 @@
                     </p>
                 </li>
             </ol>
-            The columns containing the leading <m>1</m>'s are called the <term>pivot columns</term>, and the positions where the <m>1</m>'s occur are called the <term>pivot positions</term>. A linear system is said to be in <term>reduced echelon form</term> if its associated augmented matrix is in reduced echelon form.
+            The columns containing the leading <m>1</m>'s are called the <term>pivot columns</term>, and the positions where the <m>1</m>'s occur are called the <term>pivot positions</term>. A linear system is said to be in <term>reduced row echelon form</term> if its associated augmented matrix is in reduced row echelon form.
         </p>
     </statement>
 </definition>
@@ -237,7 +237,7 @@
                 \end{array}
             \right)
         </me>
-        is in reduced echelon form. The pivot columns are <m>1</m> and <m>3</m> and the pivot positions are <m>(1,1)</m> and <m>(2,3)</m>. In the variables <m>x,y,z</m>, the corresponding linear system is 
+        is in reduced row echelon form. The pivot columns are <m>1</m> and <m>3</m> and the pivot positions are <m>(1,1)</m> and <m>(2,3)</m>. In the variables <m>x,y,z</m>, the corresponding linear system is 
         <me>
             \left\{
                 \begin{alignedat}{5}
@@ -260,7 +260,7 @@
     
     <statement>
         <p>
-            The variables in a consistent linear system in reduced echelon form that correspond to pivot columns are called <term>leading variables</term>. The remaining variables are called <term>free variables</term>.
+            The variables in a consistent linear system in reduced row echelon form that correspond to pivot columns are called <term>leading variables</term>. The remaining variables are called <term>free variables</term>.
         </p>
     </statement>
 </definition>
@@ -290,7 +290,7 @@
                 \end{array}
             \right)
         </me>.
-        It is clear that this system is in reduced echelon form. The pivot columns are columns <m>1</m> and <m>2</m> which correspond to variables <m>x</m> and <m>y</m>, respectively. So, by definition, <m>x</m> and <m>y</m> are the leading variables and <m>z</m> is the free variable. So we know that the system will have infinitely many solutions. The solution set will have to be described parametrically. To do that, we solve every equation with respect to the free variables. We end up with
+        It is clear that this system is in reduced row echelon form. The pivot columns are columns <m>1</m> and <m>2</m> which correspond to variables <m>x</m> and <m>y</m>, respectively. So, by definition, <m>x</m> and <m>y</m> are the leading variables and <m>z</m> is the free variable. So we know that the system will have infinitely many solutions. The solution set will have to be described parametrically. To do that, we solve every equation with respect to the free variables. We end up with
         <me>
             x=2+t,\quad y=1,\quad z=t
         </me>
@@ -300,7 +300,7 @@
 <lemma xml:id="lem-nfree">
     <statement>
         <p>
-            A consistent linear system in reduced echelon form with <m>n</m> equations has at most <m>n</m> leading variables.
+            A consistent linear system in reduced row echelon form with <m>n</m> equations has at most <m>n</m> leading variables.
         </p>
     </statement>
     <proof>
@@ -320,7 +320,7 @@
                 \end{array}
             \right)
         </me>.
-        This matrix is in reduced echelon form. The corresponding linear system in the variables <m>x,y</m> is
+        This matrix is in reduced row echelon form. The corresponding linear system in the variables <m>x,y</m> is
         <me>
             \left\{
                 \begin{alignedat}{5}
@@ -343,7 +343,7 @@
                 \end{array}
             \right)
         </me>
-        is also in reduced echelon form. The corresponding linear system in the variables <m>x,y</m> is
+        is also in reduced row echelon form. The corresponding linear system in the variables <m>x,y</m> is
         <me>
             \left\{
                 \begin{aligned}
@@ -356,14 +356,14 @@
     </p>
 </example>
 <p>
-    As you can see from the examples above, linear systems in reduced echelon form are easy to solve. (In a way, they are already solved!) In the next section, you will learn about a procedure known as Gauss--Jordan elimination to transform linear systems into equivalent linear systems in reduced echelon form.
+    As you can see from the examples above, linear systems in reduced row echelon form are easy to solve. (In a way, they are already solved!) In the next section, you will learn about a procedure known as Gauss--Jordan elimination to transform linear systems into equivalent linear systems in reduced row echelon form.
 </p>
 <p>
-    Before getting into it, let's familiarize ourselves a little bit more with the concept of reduced echelon form. The most useful examples in this case are those of augmented matrices that are <em>not</em> in reduced echelon form.
+    Before getting into it, let's familiarize ourselves a little bit more with the concept of reduced row echelon form. The most useful examples in this case are those of augmented matrices that are <em>not</em> in reduced row echelon form.
 </p>
 <example>
     <p>
-        The following matrices are <em>not</em> in reduced echelon form:
+        The following matrices are <em>not</em> in reduced row echelon form:
         <me>
             \left(
             \begin{array}{cc|c}
@@ -393,10 +393,10 @@
         Column <m>2</m> is a pivot column for the first matrix. However, that column contains non-trivial entries away from the pivot position.
     </p>
     <p>
-        The leading <m>1</m> in the first row of the second matrix appears in the second column, but the leading <m>1</m> in the second row appears in the first column, which clashes with condition <m>3</m> of the definition of reduced echelon form. If the rows were swapped, the matrix would then be in reduced echelon form.
+        The leading <m>1</m> in the first row of the second matrix appears in the second column, but the leading <m>1</m> in the second row appears in the first column, which clashes with condition <m>3</m> of the definition of reduced row echelon form. If the rows were swapped, the matrix would then be in reduced row echelon form.
     </p>
     <p>
-        The third matrix is not in reduced echelon form for two reasons. First, we find a row consisting entirely of zeroes appearing above non-zero rows. Then the first entry in the last row is not a <m>1</m>.
+        The third matrix is not in reduced row echelon form for two reasons. First, we find a row consisting entirely of zeroes appearing above non-zero rows. Then the first entry in the last row is not a <m>1</m>.
     </p>
     <p>
         Finally, the only pivot column in the last fourth matrix is column <m>1</m>. However, it contains non-zero elements in more than one position.

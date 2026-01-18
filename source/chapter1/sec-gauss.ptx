@@ -3,7 +3,7 @@
 <section xml:id="sec-gauss" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Gauss-Jordan elimination</title>
   <p>
-    By this point I hope that you are convinced that solutions to linear systems in reduced echelon form are easy to find. The question now is whether and how we can put a linear system in reduced echelon form. We can always do so using elementary row operations. The process is known as <em>Gauss-Jordan elimination</em>.
+    By this point I hope that you are convinced that solutions to linear systems in reduced row echelon form are easy to find. The question now is whether and how we can put a linear system in reduced row echelon form. We can always do so using elementary row operations. The process is known as <em>Gauss-Jordan elimination</em>.
   </p>
   <p>
     This process consists of several steps. I will describe them now in full generality, but will use a concrete matrix so that we can see how the matrix is changed along the way. Since the purpose of this algorithm is to solve systems of linear equations, I will also display alongside the matrix the corresponding system of linear equations that we get at each step. In practice, we would not write the linear system every step of the way. We would work solely with the matrix, and we would translate the information in the last matrix back in terms of the variables in the initial system. 
@@ -169,7 +169,7 @@
             \end{array}
         \right)
     </me>.
-    Now we only need to add <m>-3/2</m> times the second row to the first row to get the linear system in reduced echelon form that we were seeking:
+    Now we only need to add <m>-3/2</m> times the second row to the first row to get the linear system in reduced row echelon form that we were seeking:
     <me>
         \left\{
             \begin{aligned}
@@ -188,7 +188,7 @@
     </me>.
 </p>
 <p>
-    Now that we have reduced the system to one the reduced echelon form, we can easily find all the solutions. First note that there are three leading variables, <m>x,y</m> and <m>z</m>, and one free variable, <m>w</m>. This means that all the solutions to this system of linear equations are given parametrically by
+    Now that we have reduced the system to one the reduced row echelon form, we can easily find all the solutions. First note that there are three leading variables, <m>x,y</m> and <m>z</m>, and one free variable, <m>w</m>. This means that all the solutions to this system of linear equations are given parametrically by
     <me>
         x=1-\frac{2}{3}t,\quad y=-\frac{2}{9}+\frac{5}{27}t,\quad z=-\frac{1}{3}+\frac{7}{9}t,\quad w=t
     </me>
@@ -203,7 +203,7 @@
     
     <statement>
         <p>
-            A linear system with <m>m</m> variables and <m>n</m> equations is equivalent to a linear system with <m>m</m> variables and <m>n</m> equations in reduced echelon form.  Moreover, a homogeneous linear system with <m>m</m> variables and <m>n</m> equations is equivalent to a homogeneous linear system with <m>m</m> variables and <m>n</m> equations.
+            A linear system with <m>m</m> variables and <m>n</m> equations is equivalent to a linear system with <m>m</m> variables and <m>n</m> equations in reduced row echelon form.  Moreover, a homogeneous linear system with <m>m</m> variables and <m>n</m> equations is equivalent to a homogeneous linear system with <m>m</m> variables and <m>n</m> equations.
         </p>
     </statement>
 </theorem>
@@ -280,7 +280,7 @@
             \end{array}
             \right)
         </me>.
-        Finally, we only need to subtract the second row from the first, and we get the following augmented matrix in reduced echelon form:
+        Finally, we only need to subtract the second row from the first, and we get the following augmented matrix in reduced row echelon form:
         <me>
             \left(
             \begin{array}{ccc|c}
@@ -302,7 +302,7 @@
     </statement>
     <proof>
         <p>
-            Let <m>m</m> be the number of variables and <m>n</m> the number of equations. We have <m>m>n</m>. We know from <xref ref="thm-gauss"/> that this system is equivalent to a homogeneous linear system with <m>m</m> equations and <m>n</m> variables in reduced echelon form. So all we need to do is to show that a homogeneous linear system in reduced echelon form that has more variables than equations admits infinitely many solutions. It will suffice to show that such a system has at least one free variable.
+            Let <m>m</m> be the number of variables and <m>n</m> the number of equations. We have <m>m>n</m>. We know from <xref ref="thm-gauss"/> that this system is equivalent to a homogeneous linear system with <m>m</m> equations and <m>n</m> variables in reduced row echelon form. So all we need to do is to show that a homogeneous linear system in reduced row echelon form that has more variables than equations admits infinitely many solutions. It will suffice to show that such a system has at least one free variable.
         </p>
         <p>
             Since such a system is homogeneous, it must be consistent, i.e. it must have at least one solution, namely the trivial solution where all the variables are assigned the value <m>0</m>. From <xref ref="lem-nfree"/> we know that this system has at most <m>n</m> leading variables, and so the remaining variables are free. By assumption, the number of variables <m>m</m> is strictly larger than <m>n</m>, so our linear system has at least one free variable, and so will admit infinitely many solutions.
