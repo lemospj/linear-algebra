@@ -20,14 +20,18 @@
   <!-- to define these semantically, so that the macro relates to what-->
   <!-- it defines. -->
   <macros> 
+    \newcommand{\bc}{{\bf c}}
     \newcommand{\be}{{\bf e}}
+    \newcommand{\br}{{\bf r}}
+    \newcommand{\bu}{{\bf u}}
     \newcommand{\bv}{{\bf v}}
     \newcommand{\bw}{{\bf w}}
-    \newcommand{\bu}{{\bf u}}
     \newcommand{\bz}{{\bf 0}}
     \newcommand{\colvec}[1]{
       \begin{pmatrix} #1 \end{pmatrix}
     }
+
+    \DeclareMathOperator{\diag}{\mathrm{diag}}
     \newcommand{\Mat}{\mathrm{Mat}}
     \newcommand{\N}{\mathbb N} 
     \newcommand{\Z}{\mathbb Z} 

@@ -62,6 +62,13 @@
         Note that this notion of norm is consistent with the familiar notions of Euclidean distance and length. 
     </p>
     <p>
+        Vectors of norm <m>1</m> are called <term>unit vectors</term>. Among all the unit vectors in <m>\R^n</m> there is a collection of <m>n</m> that are especially important. The unit vectors
+        <me>
+            \be_1=\colvec{1 \\ 0 \\ 0 \\ \vdots \\0},\qquad\be_2=\colvec{0 \\ 1 \\ 0 \\ \vdots \\0},\qquad\cdots\qquad,\be_n=\colvec{0 \\ 0 \\ 0 \\ \vdots \\1}
+        </me>
+        in <m>\R^n</m> are called the <term>standard unit vectors</term> of <m>\R^n</m>. To be completely clear regarding their definition, <m>\R^n</m> contains exactly <m>n</m> standard unit vectors. For each integer <m>i</m> between <m>1</m> and <m>n</m>, the standard unit vector <m>\be_i</m> is the only vector with <m>i</m>th entry equal to <m>1</m> and every other entry equal to <m>0</m>.
+    </p>
+    <p>
         It is possible to multiply vectors by a <term>scalar</term>, i.e., by a real number. If <m>\lambda</m> is a real number and 
         <me>\bv=\colvec{a_1 \\ a_2 \\ \vdots \\ a_n}</me> is a vector in <m>\R^n</m>, then we define <m>\lambda \bv</m> to be the vector <me>\colvec{\lambda a_1 \\ \lambda a_2 \\ \vdots \\ \lambda a_n}</me>. In other words, the <m>i</m>th coordinate of <m>\lambda \bv</m> is defined to be <m>\lambda</m> times the <m>i</m>th coordinate of <m>\bv</m>. Geometrically, this corresponds to stretching the vector&#8212;if <m>\lambda > 1</m>&#8212;or contracting it&#8212;if <m>0\leq\lambda &lt; 1</m>). When <m>\lambda=1</m>, the vector is not altered by multiplication by <m>\lambda</m>. If <m>\lambda</m> is a negative real number, than the direction of the vector is changed.
     </p>
@@ -91,11 +98,11 @@
     <p>
         If <m>\bv</m> is the vector
         <me>
-            \bv=\colvec{a_1 \\ a_2 \\ vdots \\ a_n}
+            \bv=\colvec{a_1 \\ a_2 \\ \vdots \\ a_n}
         </me>
         in <m>\R^n</m>, we define <m>-\bv</m> to be
         <me>
-            -\bv:=\colvec{-a_1 \\ -a_2 \\ vdots \\ -a_n}
+            -\bv:=\colvec{-a_1 \\ -a_2 \\ \vdots \\ -a_n}
         </me>.
         It is easy to check (do it!) that <m>(-1)\cdot\bv=-\bv</m>.
     </p>
@@ -175,7 +182,7 @@
             In the figure above, the vector <m>\colvec{-1 \\ 1}</m> is represented in blue, and the point <m>\colvec{1 \\ 1}</m> is in green. After adding <m>\colvec{-1 \\ 1}</m> to the point <m>\colvec{1 \\ 1}</m>, we end up with the point <m>\colvec{0 \\ 2}</m>, graphically represented in red. The dashed blue arrow is the vector <m>\colvec{-1 \\ 1}</m> based on the point <m>\colvec{1 \\ 1}</m> so that its interpretation as displacement can be clearly seen.
         </p>
     </example>
-    <p>
+    <!-- <p>
         A line in <m>\R^n</m> is determined by two pieces of data: a point through which the line passes and a direction. Directions are encoded by vectors. So we can define a line as the set of points obtained by adding scalar multiples of a vector to a fixed point. In other words, it is the set of points that you can get to by adding scalar multiples of a fixed vector to a fixed point.
     </p>
     <definition xml:id="def-line">
@@ -213,9 +220,9 @@
                 </prefigure>                    
             </image>
         </figure>
-    </example>
+    </example> -->
     <p>
-        Lines (or planes and hyperplanes) that pass through the origin have a very special place in linear algebra. These are examples of <term>linear subspaces</term>. It will be a while before we see the formal definition of a vector space, but I will now list a series of properties that make <m>\R^n</m> one. Proving that these properties do hold is an instructive exercise that you should attempt. Most of the properties follow immediately from the definitions of scalar multiplication and vector addition. At the very least, you should try out a few examples. I will include proofs for some of the properties that you can use as a source of inspiration.
+        The space <m>\R^n</m> is an example of a <term>vector space</term>. It will be a while before we see the formal definition of a vector space, but I will now list a series of properties that make <m>\R^n</m> one. Proving that these properties do hold is an instructive exercise that you should attempt. Most of the properties follow immediately from the definitions of scalar multiplication and vector addition. At the very least, you should try out a few examples. I will include proofs for some of the properties that you can use as a source of inspiration.
 
         <ol>
             <li>
@@ -283,6 +290,11 @@
         </me>
         In other words, we multiply the <m>i</m>th coordinate of <m>\bv</m> by the <m>i</m>th coordinate of <m>\bw</m> for each <m>i</m> and then we add all these products together.
     </p>
+    <exercise>
+        <p>
+            Show that if <m>\bv\in\R^n</m> is a vector, then <m>v\cdot v=\lVert v\rVert^2</m>.
+        </p>
+    </exercise>
     <example>
         <p>
             Consider the vectors

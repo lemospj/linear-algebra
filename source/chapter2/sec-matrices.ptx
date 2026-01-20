@@ -68,7 +68,261 @@
             </p>
         </statement>
     </definition>
+    <example>
+        <p>
+            If <m>A=\begin{pmatrix} 1 \amp 3 \amp -1 \\ -2 \amp 0 \amp 4\end{pmatrix}</m>, then
+            <me>
+                3A=\begin{pmatrix} 3 \amp 9 \amp -3 \\ -6 \amp 0 \amp 12 \end{pmatrix}
+            </me>.
+        </p>
+    </example>
+    <exercise>
+        <p>
+            Show that <m>(-1)\cdot A=-A</m> for any matrix <m>A</m>.
+        </p>
+    </exercise>
     <p>
-        You should check that, as in the case of vectors, we have the equality <m>(-1)\cdot A=-A</m>.
+        The properties of matrix addition listed in the following lemma follow almost immediately from the corresponding properties of real number addition, and you should prove them yourself.
     </p>
+    <lemma xml:id="lem-matrix-addition-props">
+        <statement>
+            <p>
+                Let <m>m</m> and <m>n</m> be positive real numbers. Let <m>A,B</m> and <m>C</m> be <m>m\times n</m> matrices and <m>\lambda,\mu\in\R</m> scalars. The following properties hold:
+                <ol>
+                    <li>
+                        <p>
+                            <m>A+B=B+A</m>.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <m>(A+B)+C=A+(B+C)</m>.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <m>\lambda(A+B)=\lambda A+\lambda B</m>.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <m>(\lambda+\mu)A=\lambda A + \mu A</m>.
+                        </p>
+                    </li>
+                </ol>
+            </p>
+        </statement>
+    </lemma>
+    <p>
+        Another important operation that one can perform on matrices is that of <em>transposition</em>.
+    </p>
+    <definition xml:id="def-matrix-transposition">
+        <title>Transpose</title>
+        
+        
+        <statement>
+            <p>
+                If <m>A=(a_{ij})_{ij}</m> is an <m>m\times n</m> matrix, then the <em>transpose</em> of <m>A</m>, denoted <m>A^T</m>, is the <m>n\times m</m> matrix <m>A^T:=(a_{ji})_{ij}</m>. In other words, the <m>(i,j)</m> entry of <m>A^T</m> is defined to be the <m>(j,i)</m> entry of <m>A</m>.
+            </p>
+        </statement>
+    </definition>
+    <example>
+        <p>
+            If <m>A=\begin{pmatrix} 1 \amp 2 \amp 3 \\ 4 \amp 5 \amp 6\end{pmatrix}</m>, then the transpose of <m>A</m> is
+            <me>
+                A^T=\begin{pmatrix} 1 \amp 4 \\ 2 \amp 5 \\ 3 \amp 6 \end{pmatrix}
+            </me>.
+        </p>
+    </example>
+    <example>
+        <p>
+            If <m>A=\begin{pmatrix} 1 \amp 2 \\ 3 \amp 4\end{pmatrix}</m>, then the transpose of <m>A</m> is
+            <me>
+                A^T=\begin{pmatrix} 1 \amp 3 \\ 2 \amp 4\end{pmatrix}
+            </me>.
+        </p>
+    </example>
+    <example xml:id="example-transpose-vector">
+        <p>
+            Regard the vector <m>\bv=\colvec{1 \\ 2 \\ 3}</m> as a <m>3\times 1</m> matrix. Then we can consider its transpose
+            <me>
+                \bv^T=\begin{pmatrix} 1 \amp 2 \amp 3\end{pmatrix}
+            </me>.
+        </p>
+    </example>
+    <p>
+        I want to point out an important subtlety related to Example <xref ref="example-transpose-vector"/>. As you know, a vector in <m>\R^n</m> is simply an ordered collection of <m>n</m> real numbers. A single vector may be represented in many different ways. For reasons that are going to become apparent before the end of this section, we chose to represent vectors vertically. However, this is simply a choice and the vector <m>\colvec{1 \\ 2}</m> for example, <em>as a vector</em>, is the same as the vector <m>(1,2)</m> or <m>\begin{pmatrix} 1 \amp 2\end{pmatrix}</m>. (In the same way that the number <em>five</em> may be represented by the Arabic numeral <m>5</m> or by the Roman numeral V.) But while <m>\begin{pmatrix} 1 \amp 2\end{pmatrix}</m> and <m>\colvec{1 \\ 2}</m> represent the same vector, they <em>do not</em> represent the same matrix. Matrices have a certain number of rows and a certain number of columns, and both these numbers and the entries are important.
+    </p>
+    <p>
+        This being said, you may sometimes encounter the expressions <em>row vector</em> and <em>column vector</em>. These expressions actually refer to two types of <em>matrices</em>. A <em>row vector</em> is a <m>1\times n</m> matrix, while a <em>columns vector</em> is an <m>n\times 1</m> matrix. As mentioned before, we will choose to represent vectors using column vectors.
+    </p>
+    <example>
+        <p>
+            If instead of starting with a column vector as in Example <xref ref="example-transpose-vector"/> we start with a row vector like <m>\bw=\begin{pmatrix}1 \amp 2 \amp 3\end{pmatrix}</m>, then the transpose of <m>\bw</m> is the column vector
+            <me>
+                \bw^T=\colvec{1 \\ 2 \\ 3}
+            </me>.
+        </p>
+    </example>
+    <p>
+        Since the transpose of a matrix is a matrix again, one is able to transpose the transpose! You should have no trouble checking that <m>(A^T)^T=A</m>. In other words, the transpose of a transpose is initial matrix.
+    </p>
+    <exercise>
+        <p>
+            Show that if <m>A</m> is a matrix, then <m>(A^T)^T=A</m>.
+        </p>
+    </exercise>
+    <p>
+        We finally come to the question of matrix multiplication. Matrix multiplication is a curious operation. Some natural properties of real number multiplication simply do not hold in general in the case of matrices. Perhaps the most shocking property not satisfied by matrix multiplication is commutativity. We will soon see that it is not necessarily true that <m>AB=BA</m>. In fact, it may happen that only the product <m>AB</m> is defined and that it is not possible to multiply <m>B</m> by <m>A</m> at all!
+    </p>
+    <definition xml:id="def-matrix-multiplication">
+        <title>Matrix multiplication</title>
+        
+        
+        <statement>
+            <p>
+                Let <m>m,n</m> and <m>r</m> be positive integers. If <m>A=(a_{ij})_{ij}</m> is an <m>m\times n</m> matrix and <m>B=(b_{ij})_{ij}</m> is an <m>n\times r</m> matrix, then the product <m>AB</m> is the <m>m\times r</m> matrix whose <m>(i,j)</m> entry <m>c_{ij}</m> is defined to be 
+                <me>
+                    c_{ij}=\sum_{k=1}^n a_{ik}b_{kj}=a_{i1}b_{1j}+a_{i2}b_{2j}+\ldots+a_{in}b_{nj}
+                </me>.
+            </p>
+        </statement>
+    </definition>
+    <p>
+        The definition may not be very transparent when you first read it. Here is a better way of describing <m>AB</m>. In order to calculate the entry in the <m>i</m>th row and <m>j</m>th column of <m>AB</m>, start by considering the vector <m>\br_i</m> formed by the <m>i</m>th row of the matrix <m>A</m>, and also consider the column vector <m>\bc_j</m> formed by the <m>j</m>th column of <m>B</m>. The entry in the <m>i</m>th row and <m>j</m>th column of <m>AB</m> is then the dot product <m>\br_i\cdot\bc_j</m>.
+    </p>
+    <example xml:id="example-matrix-multiplication-first">
+        <p>
+            Consider the matrices <m>A=\begin{pmatrix}1 \amp 3 \amp 4 \\ 2 \amp -1 \amp -2 \end{pmatrix}</m> and <m>B=\begin{pmatrix}-1 \amp 0 \amp 1 \\ 2 \amp 1 \amp 0 \\ 3\amp -2 \amp 1\end{pmatrix}</m>. Since <m>A</m> has <m>3</m> columns and <m>B</m> has <m>3</m> rows, the product <m>AB</m> is defined. However, we cannot take the product <m>BA</m> because the number of columns of <m>B</m> is <m>3</m>, while the number of rows of <m>A</m> is <m>2</m>.
+        </p>
+        <p>
+            Let's calculate <m>AB</m>. For starters, we know that the product <m>AB</m> is going to be a <m>2\times 3</m> matrix: the number of rows matches the number of rows of <m>A</m>, while the number of columns is the number of columns of <m>B</m>. Let's denote by <m>c_{ij}</m> the <m>(i,j)</m> entry of <m>AB</m>. Then <m>c_{11}</m> is the dot product of the vector formed by the first row of <m>A</m> and the one formed by the first column of <m>B</m>:
+            <me>
+                c_{11}=\colvec{1 \\ 3 \\ 4}\cdot \colvec{-1 \\ 2 \\ 3}=-1+6+12=17
+            </me>.
+            The entry <m>c_{12}</m> is the dot product of the first row of <m>A</m> and the second column of <m>B</m>:
+            <me>
+                c_{12}=\colvec{1 \\ 3 \\ 4}\cdot \colvec{0 \\ 1 \\ -2}=3-8=-5
+            </me>.
+            Similarly, to compute <m>c_{13}</m> one must take the dot product between the vector formed by the first row of <m>A</m> and the third column of <m>B</m>:
+            <me>
+                c_{13}=\colvec{1 \\ 3 \\ 4} \cdot \colvec{1 \\ 0 \\ 1}=1 + 4=5
+            </me>.
+            We then proceed in a similar manner with the second row of <m>A</m>. We eventually find 
+            <me>
+                AB=\begin{pmatrix}17 \amp -5 \amp 5 \\ -10 \amp 3 \amp 0\end{pmatrix}
+            </me>.
+        </p>
+    </example>
+    <p>
+        <xref ref="example-matrix-multiplication-first"/> provides a first glimpse of the phenomenon I alluded to a few paragraphs ago. Here we have a pair of matrices <m>A</m> and <m>B</m> for which the product <m>AB</m> is defined and the product <m>BA</m> is not. The issue here is that the product of two matrices is only defined if the number of columns of the first matrix equals the number of columns of the second.
+    </p>
+    <p>
+        If matrix <m>A</m> is an <m>m\times n</m> matrix and <m>B</m> is an <m>n\times m</m> matrix, then both <m>AB</m> and <m>BA</m> are defined. Yet, even in this situation, we will often have <m>AB\neq BA</m>.
+    </p>
+    <example>
+        <p>
+            Let <m>A=\begin{pmatrix}1 \amp 2 \\ 3 \amp 4\end{pmatrix}</m> and <m>B=\begin{pmatrix} -1 \amp 1 \\ 3 \amp 0\end{pmatrix}</m>. Then
+            <me>
+                AB=\begin{pmatrix}5 \amp 1 \\ 9 \amp 3\end{pmatrix}
+            </me>,
+            but
+            <me>
+                BA=\begin{pmatrix}2 \amp 2 \\ 3 \amp 6\end{pmatrix}
+            </me>.
+        </p>
+    </example>
+    <p>
+        Despite the failure of commutativity in general, there are a few familiar properties that matrix multiplication satisfies. Again, I encourage you to prove the following properties using the definition of matrix multiplication.
+    </p>
+    <lemma xml:id="lem-matrix-multiplication-props">
+        <statement>
+            <p>
+                Let <m>m,n,r</m> and <m>s</m> be positive integers. Let <m>A</m> be an <m>m\times n</m> matrix, <m>B</m> and <m>C</m> two <m>n\times r</m> matrices, and <m>D</m> an <m>r\times s</m> matrix. Let <m>\lambda\in \R</m> be a scalar. The following properties hold.
+                <ol>
+                    <li>
+                        <p>
+                            <m>A(B+C)=AB+AC</m> and <m>(B+C)D=BD+CD</m>.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <m>A(BD)=(AB)D</m>.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <m>\lambda(AB)=(\lambda A)B=A(\lambda B)</m>.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <m>(AB)^T=B^TA^T</m>.
+                        </p>
+                    </li>
+                </ol>
+            </p>
+        </statement>
+        <proof>
+            <p>
+                As an example, I will prove property number <m>4</m>.
+            </p>
+            <p>
+                Say that the <m>(i,j)</m> entry of <m>A</m> is <m>a_{ij}</m>, that of <m>B</m> is <m>b_{ij}</m>, that of <m>AB</m> is <m>c_{ij}</m>, and that of <m>B^TA^T</m> is <m>d_{ij}</m>. By the definition of matrix multiplication, we have
+                <me>
+                    c_{ij}=\sum_{k=1}^n a_{ik}b_{kj}
+                </me>.
+                Therefore, the <m>(i,j)</m> entry of <m>(AB)^T</m> is 
+                <me>
+                    c_{ji} = \sum_{k=1}^n a_{jk}b_{ki}
+                </me>.
+                Let's now calculate the <m>(i,j)</m> entry of <m>B^T A^T</m> and check that it matches the expression for <m>c_{ji}</m>. The <m>(i,j)</m> entry of <m>A^T</m> is <m>a_{ji}</m> and that of <m>B^T</m> is <m>b_{ji}</m>. It follows that the <m>(i,j)</m> entry of <m>B^TA^T</m>, which we chose to call <m>d_{ij}</m> is given by the expression
+                <me>
+                    d_{ij}=\sum_{k=1}^n b_{ki}a_{jk}=\sum_{k=1}^n a_{jk}b_{ki}=c_{ji}
+                </me>,
+                as we wanted.
+            </p>
+            <p>
+                If you wanted, you could use the interpretation of matrix multiplication as a collection of dot products of the vectors formed by the rows of the first matrix and columns of the second to give an alternative proof of property <m>4</m>. Indeed, denote by <m>\br_i</m> the <m>i</m>th row of <m>A</m> and by <m>\bc_j</m> the <m>j</m>th column of <m>B</m>. Then, for any <m>1\leq i\leq m</m> and <m>1\leq j\leq r</m>, the <m>(i,j)</m> entry of <m>AB</m> is the dot product <m>\br_i\cdot \bc_j</m>. This means that for <m>1\leq i\leq r</m> and <m>1\leq j\leq m</m> the <m>(i,j)</m> entry of <m>(AB)^T</m> is <m>\br_j\cdot \bc_i</m>.
+            </p>
+            <p>
+                Now note that the vector defined by the <m>j</m>th column of <m>A^T</m> is precisely <m>\br_j</m>, while the vector defined by the <m>i</m>th row of <m>B^T</m> is <m>\bc_i</m>. Therefore, the <m>(i,j)</m> entry of <m>B^TA^T</m> is the dot product <m>\bc_i\cdot \br_j</m>. By the commutativity of the dot product, we conclude that this is the same as <m>\br_j\cdot \bc_i</m>.
+            </p>
+        </proof>
+    </lemma>
+    <p>
+        It should be pointed out that property <m>3</m> in <xref ref="lem-matrix-multiplication-props"/> is a special case of property <m>2</m>. Indeed, multiplying an <m>m\times n</m> matrix <m>A</m> by a scalar <m>\lambda\in\R</m> has the same effect as multiplying the <m>m\times m</m> matrix
+        <me>
+            \begin{pmatrix} \lambda \amp 0 \amp \cdots \amp 0\\ 0 \amp \lambda \amp \cdots \amp 0 \\ \vdots \amp \vdots \amp \ddots \amp \vdots \\ 0 \amp 0 \amp \cdots \amp \lambda\end{pmatrix}
+        </me>
+        by <m>A</m>. The matrix above is an example of a member of a family of square matrices called <em>diagonal matrices</em>.
+    </p>
+    <definition xml:id="def-square-diagonal">
+        <statement>
+            <p>
+                An <m>m\times n</m> matrix is called a <term>square matrix</term> if <m>m=n</m>, i.e. if it has as many rows as it has columns.
+            </p>
+            <p>
+                A square matrix <m>A=(a_{ij})_{1\leq i\leq n,1\leq j\leq n}</m> is called a <term>diagonal matrix</term> if <m>a_{ij}=0</m> whenever <m>i\neq j</m>. In other words, if the only non-zero entries occur along the main diagonal.
+            </p>
+        </statement>
+    </definition>
+    <p>
+        If <m>\lambda_1,\lambda_2,\ldots,\lambda_n</m> are <m>n</m> real numbers, then the <m>n\times n</m> diagonal matrix with entries <m>\lambda_1,\lambda_2,\ldots,\lambda_n</m> is often denoted by <m>\diag(\lambda_1,\lambda_2,\ldots,\lambda_n)</m>:
+        <me>
+            \diag(\lambda_1,\lambda_2,\ldots,\lambda_n)=\begin{pmatrix}\lambda_1 \amp 0 \amp \cdots \amp 0\\ 0 \amp \lambda_2 \amp \cdots \amp 0\\ \vdots \amp \vdots \amp \ddots \amp \vdots \\ 0 \amp 0 \amp \cdots \amp \lambda_n\end{pmatrix}
+        </me>.
+    </p>
+    <example>
+        <p>
+            For example,
+            <me>
+                \diag(1,0,3)=\begin{pmatrix} 1 \amp 0 \amp 0 \\ 0 \amp 0 \amp 0 \\ 0 \amp 0 \amp 3\end{pmatrix}
+            </me>
+            and 
+            <me>
+                \diag(5,5)=\begin{pmatrix} 5 \amp 0 \\ 0 \amp 5\end{pmatrix}
+            </me>.
+        </p>
+    </example>
 </section>
