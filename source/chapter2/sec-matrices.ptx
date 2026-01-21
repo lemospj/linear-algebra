@@ -295,7 +295,7 @@
         <me>
             \begin{pmatrix} \lambda \amp 0 \amp \cdots \amp 0\\ 0 \amp \lambda \amp \cdots \amp 0 \\ \vdots \amp \vdots \amp \ddots \amp \vdots \\ 0 \amp 0 \amp \cdots \amp \lambda\end{pmatrix}
         </me>
-        by <m>A</m>. The matrix above is an example of a member of a family of square matrices called <em>diagonal matrices</em>.
+        by <m>A</m>. The matrix above is an example of a member of a family of square matrices called <em>scalar matrices</em>.
     </p>
     <definition xml:id="def-square-diagonal">
         <statement>
@@ -304,6 +304,9 @@
             </p>
             <p>
                 A square matrix <m>A=(a_{ij})_{1\leq i\leq n,1\leq j\leq n}</m> is called a <term>diagonal matrix</term> if <m>a_{ij}=0</m> whenever <m>i\neq j</m>. In other words, if the only non-zero entries occur along the main diagonal.
+            </p>
+            <p>
+                A <term>scalar matrix</term> is a diagonal matrix whose entries in the main diagonal are all equal.
             </p>
         </statement>
     </definition>
@@ -325,4 +328,20 @@
             </me>.
         </p>
     </example>
+    <p>
+        Using this notation, a scalar matrix is a diagonal matrix of the form <m>\diag(\lambda,\lambda,\ldots,\lambda)</m> for some <m>\lambda\in \R</m>.
+    </p>
+    <p>
+        Note that multiplication by a scalar matrix boils down to multiplication by the scalar in the main diagonal, i.e. if <m>\diag(\lambda,\lambda,\ldots,\lambda)</m> is the <m>m\times m</m> scalar matrix with <m>\lambda</m> in the main diagonal, and if <m>A</m> is an <m>m\times n</m> matrix, then
+        <me>
+            \diag(\lambda,\lambda,\ldots,\lambda)A=\lambda A
+        </me>.
+        This means that scalar matrices behave very much like scalars. Using this fact, one can easily deduce property 3 in <xref ref="lem-matrix-multiplication-props"/> from property 2.
+    </p>
+    <p>
+        You may be wondering why matrix multiplication is defined in this convoluted way. After all, adding two matrices is nothing more than adding the corresponding entries. Why isn't matrix multiplication defined that way too?
+    </p>
+    <p>
+        
+    </p>
 </section>
