@@ -102,15 +102,15 @@ eBookConfig.allow_pairs = false;
 eBookConfig.enableScratchAC = false;
 eBookConfig.build_info = "";
 eBookConfig.python3 = null;
-eBookConfig.runestone_version = '7.11.9';
+eBookConfig.runestone_version = '7.11.10';
 eBookConfig.jobehost = '';
 eBookConfig.proxyuri_runs = '';
 eBookConfig.proxyuri_files = '';
 eBookConfig.enable_chatcodes =  false;
 </script>
 <!--*** Runestone Services ***-->
-<script src="_static/prefix-runtime.991c135ccf182bf5.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.1c010553c35c544c.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
-<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.677a75a9120449ff.css">
+<script src="_static/prefix-runtime.3dca4b99808f4053.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.80892ed1280c2803.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.6ec5960970d8b364.css">
 <script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
 </script>
 </head>
@@ -130,15 +130,20 @@ eBookConfig.enable_chatcodes =  false;
 <ol id="searchresults" class="searchresults"></ol>
 </div>
 </div>
-<span class="nav-other-controls"><button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="sec-linear-subspaces.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-euclidean-spaces.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="sec-linear-maps.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
-</div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\be}{{\bf e}}
+<span class="nav-other-controls"><button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="sec-vectors.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-euclidean-spaces.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="sec-linear-dependence.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+</div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\bc}{{\bf c}}
+\newcommand{\be}{{\bf e}}
+\newcommand{\br}{{\bf r}}
+\newcommand{\bu}{{\bf u}}
 \newcommand{\bv}{{\bf v}}
 \newcommand{\bw}{{\bf w}}
-\newcommand{\bu}{{\bf u}}
 \newcommand{\bz}{{\bf 0}}
 \newcommand{\colvec}[1]{
   \begin{pmatrix} #1 \end{pmatrix}
 }
+
+\DeclareMathOperator{\diag}{\mathrm{diag}}
+\newcommand{\Mat}{\mathrm{Mat}}
 \newcommand{\N}{\mathbb N} 
 \newcommand{\Z}{\mathbb Z} 
 \newcommand{\Q}{\mathbb Q} 
@@ -164,7 +169,7 @@ eBookConfig.enable_chatcodes =  false;
 <ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-solutions.html#exercises-ch1-sec1" class="internal"><span class="codenumber">1.1</span> <span class="title">Exercises</span></a></div></li></ul>
 </li>
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a href="sec-echelon.html" class="internal"><span class="codenumber">1.2</span> <span class="title">The reduced echelon form of a linear system</span></a></div>
+<div class="toc-title-box"><a href="sec-echelon.html" class="internal"><span class="codenumber">1.2</span> <span class="title">The reduced row echelon form of a linear system</span></a></div>
 <ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-echelon.html#exercises-ch1-sec2" class="internal"><span class="codenumber">1.2</span> <span class="title">Exercises</span></a></div></li></ul>
 </li>
 <li class="toc-item toc-section">
@@ -180,24 +185,395 @@ eBookConfig.enable_chatcodes =  false;
 <div class="toc-title-box"><a href="sec-vectors.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Vectors</span></a></div>
 <ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-vectors.html#exercises-chapter2-section1" class="internal"><span class="codenumber">2.1</span> <span class="title">Exercises</span></a></div></li></ul>
 </li>
+<li class="toc-item toc-section active"><div class="toc-title-box"><a href="sec-matrices.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Matrices</span></a></div></li>
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a href="sec-linear-dependence.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Linear dependence</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-linear-dependence.html#exercises-chapter2-section2" class="internal"><span class="codenumber">2.2</span> <span class="title">Exercises</span></a></div></li></ul>
+<div class="toc-title-box"><a href="sec-linear-dependence.html" class="internal"><span class="codenumber">2.3</span> <span class="title">Linear dependence</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-linear-dependence.html#exercises-chapter2-section2" class="internal"><span class="codenumber">2.3</span> <span class="title">Exercises</span></a></div></li></ul>
 </li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-linear-subspaces.html" class="internal"><span class="codenumber">2.3</span> <span class="title">Linear subspaces</span></a></div></li>
-<li class="toc-item toc-section active"><div class="toc-title-box"><a href="sec-matrices.html" class="internal"><span class="codenumber">2.4</span> <span class="title">Matrices</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-linear-subspaces.html" class="internal"><span class="codenumber">2.4</span> <span class="title">Linear subspaces</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-linear-maps.html" class="internal"><span class="codenumber">2.5</span> <span class="title">Linear maps</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-backmatter"><div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div></li>
 </ul></nav></div>
 <main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec-matrices"><h2 class="heading hide-type">
-<span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.4</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Matrices</span>
+<span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.2</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Matrices</span>
 </h2>
-<div class="para" id="sec-matrices-2"><div class="autopermalink" data-description="Paragraph"><a href="#sec-matrices-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div></div>
-<div class="autopermalink" data-description="Section 2.4: Matrices"><a href="#sec-matrices" title="Copy heading and permalink for Section 2.4: Matrices" aria-label="Copy heading and permalink for Section 2.4: Matrices">🔗</a></div></section></div>
+<div class="para" id="sec-matrices-2">We already discussed matrices briefly when we studied the Gauss--Jordan elimination algorithm. In that setting, the main purpose of assigning a matrix to a linear system was to simplify notation and clarify the operations required to transform the given system into one in reduced row echelon form. However, matrices play a much more important role in linear algebra. As we will soon see, an <span class="process-math">\(m\times n\)</span> matrix encodes the information required to describe a particular kind of function from <span class="process-math">\(\R^n\)</span> to <span class="process-math">\(\R^m\text{:}\)</span> a <em class="emphasis">linear map</em>. But before we speak about linear maps, we need to discuss matrix addition and multiplication.<div class="autopermalink" data-description="Paragraph"><a href="#sec-matrices-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-matrices-3">If the number of rows of a matrix <span class="process-math">\(A\)</span> is the same as the number of rows of a matrix <span class="process-math">\(B\text{,}\)</span> and if the same is true of the number of columns, then it is possible to define the sum <span class="process-math">\(A+B\)</span> of <span class="process-math">\(A\)</span> and <span class="process-math">\(B\text{.}\)</span> This sum will also be a matrix with the same number of rows of <span class="process-math">\(A\)</span> (and of <span class="process-math">\(B\)</span>) and the same number of columns of <span class="process-math">\(A\)</span> (and of <span class="process-math">\(B\)</span>). Let’s see the formal description of matrix addition.<div class="autopermalink" data-description="Paragraph"><a href="#sec-matrices-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="definition definition-like" id="def-matrix-addition"><h3 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.2.1</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Matrix addition.</span>
+</h3>
+<div class="para logical" id="def-matrix-addition-2-1">
+<div class="para">Let <span class="process-math">\(m\)</span> and <span class="process-math">\(n\)</span> be two positive integers, and let <span class="process-math">\(A=(a_{ij})_{ij}\)</span> and <span class="process-math">\(B=(b_{ij})_{ij}\)</span> be two <span class="process-math">\(m\times n\)</span> matrices. Recall that this short-hand notation means that the entry in row <span class="process-math">\(i\)</span> and column <span class="process-math">\(j\)</span> of matrix <span class="process-math">\(A\)</span> is <span class="process-math">\(a_{ij}\text{,}\)</span> and the entry in row <span class="process-math">\(i\)</span> and column <span class="process-math">\(j\)</span> of matrix <span class="process-math">\(B\)</span> is <span class="process-math">\(b_{ij}\text{.}\)</span> The matrix <span class="process-math">\(A+B\)</span> is the <span class="process-math">\(m\times n\)</span> matrix whose <span class="process-math">\((i,j)\)</span> entry is given by <span class="process-math">\(a_{ij}+b_{ij}\text{.}\)</span> Visually,</div>
+<div class="displaymath process-math" id="def-matrix-addition-2-1-18">
+\begin{equation*}
+\left(
+\begin{array}{cccc}
+a_{11} \amp a_{12} \amp \cdots \amp a_{1n}\\
+a_{21} \amp a_{22} \amp \cdots \amp a_{2n}\\
+\vdots \amp \vdots \amp \ddots \amp \vdots \\
+a_{m1} \amp a_{m2} \amp \cdots \amp a_{mn}
+\end{array}\right) +
+\left(
+\begin{array}{cccc}
+b_{11} \amp b_{12} \amp \cdots \amp b_{1n}\\
+b_{21} \amp b_{22} \amp \cdots \amp b_{2n}\\
+\vdots \amp \vdots \amp \ddots \amp \vdots \\
+b_{m1} \amp b_{m2} \amp \cdots \amp b_{mn}
+\end{array}\right) =
+\left(
+\begin{array}{cccc}
+a_{11} + b_{11} \amp a_{12} + b_{12} \amp \cdots \amp a_{1n} + b_{1n}\\
+a_{21} + b_{21} \amp a_{22} + b_{22} \amp \cdots \amp a_{2n}+ b_{2n}\\
+\vdots \amp \vdots \amp \ddots \amp \vdots \\
+a_{m1} + b_{m1}\amp a_{m2}+b_{m2} \amp \cdots \amp a_{mn} + b_{mn}
+\end{array}\right)\text{.}
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#def-matrix-addition-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Definition 2.2.1: Matrix addition"><a href="#def-matrix-addition" title="Copy heading and permalink for Definition 2.2.1: Matrix addition" aria-label="Copy heading and permalink for Definition 2.2.1: Matrix addition">🔗</a></div></article><details id="sec-matrices-5" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.2.2</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3></summary><article class="example example-like knowl__content"><div class="para logical" id="sec-matrices-5-1">
+<div class="para">If <span class="process-math">\(A=\left(\begin{array}{ccc} 1 \amp -2 \amp 0 \\ 3 \amp 7 \amp -5\end{array}\right)\)</span> and <span class="process-math">\(B=\left(\begin{array}{ccc} 3 \amp 0 \amp -4 \\ -\sqrt{2} \amp 3 \amp 1\end{array}\right)\text{,}\)</span> then</div>
+<div class="displaymath process-math" id="sec-matrices-5-1-3">
+\begin{equation*}
+A+B=\left(\begin{array}{ccc} 4 \amp -2 \amp -4 \\ 3-\sqrt{2} \amp 10 \amp -4\end{array}\right)\text{.}
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-matrices-5-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Example 2.2.2"><a href="#sec-matrices-5" title="Copy heading and permalink for Example 2.2.2" aria-label="Copy heading and permalink for Example 2.2.2">🔗</a></div></article></details><details id="sec-matrices-6" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.2.3</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3></summary><article class="example example-like knowl__content"><div class="para" id="sec-matrices-6-1">Vectors of <span class="process-math">\(\R^n\)</span> are a special kind of matrix. Indeed, they can be regarded as <span class="process-math">\(n\times 1\)</span> matrices, i.e. matrices with <span class="process-math">\(n\)</span> rows and a single column. Under this interpretation, matrix addition and vector addition are compatible.<div class="autopermalink" data-description="Paragraph"><a href="#sec-matrices-6-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Example 2.2.3"><a href="#sec-matrices-6" title="Copy heading and permalink for Example 2.2.3" aria-label="Copy heading and permalink for Example 2.2.3">🔗</a></div></article></details><div class="para" id="sec-matrices-7">We will denote the set of <span class="process-math">\(m\times n\)</span> matrices by <span class="process-math">\(\Mat_{m\times n}\text{.}\)</span> So, <span class="process-math">\(A\in\Mat_{m\times n}\)</span> means that <span class="process-math">\(A\)</span> is an <span class="process-math">\(m\times n\)</span> matrix.<div class="autopermalink" data-description="Paragraph"><a href="#sec-matrices-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-matrices-8">If <span class="process-math">\(A=(a_{ij})_{ij}\)</span> is an <span class="process-math">\(m\times n\)</span> matrix, then we define <span class="process-math">\(-A\)</span> to be the matrix <span class="process-math">\((-a_{ij})_{ij}\text{.}\)</span> It is easy to check (you should do it!) that <span class="process-math">\(A+(-A)=0\text{,}\)</span> the zero matrix.<div class="autopermalink" data-description="Paragraph"><a href="#sec-matrices-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-matrices-9">It is also possible to multiply matrices by a scalar.<div class="autopermalink" data-description="Paragraph"><a href="#sec-matrices-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="definition definition-like" id="def-matrix-scalar-multiplication"><h3 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.2.4</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para" id="def-matrix-scalar-multiplication-1-1">If <span class="process-math">\(\lambda\in \R\)</span> is a scalar and <span class="process-math">\(A=(a_{ij})_{ij}\)</span> is an <span class="process-math">\(m\times n\)</span> matrix, the matrix <span class="process-math">\(\lambda A\)</span> is defined to be the matrix <span class="process-math">\((\lambda a_{ij})_{ij}\text{.}\)</span> In other words, it is the <span class="process-math">\(m\times n\)</span> matrix obtained from <span class="process-math">\(A\)</span> by multiplying each entry by <span class="process-math">\(\lambda\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#def-matrix-scalar-multiplication-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Definition 2.2.4"><a href="#def-matrix-scalar-multiplication" title="Copy heading and permalink for Definition 2.2.4" aria-label="Copy heading and permalink for Definition 2.2.4">🔗</a></div></article><details id="sec-matrices-11" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.2.5</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3></summary><article class="example example-like knowl__content"><div class="para logical" id="sec-matrices-11-1">
+<div class="para">If <span class="process-math">\(A=\begin{pmatrix} 1 \amp 3 \amp -1 \\ -2 \amp 0 \amp 4\end{pmatrix}\text{,}\)</span> then</div>
+<div class="displaymath process-math" id="sec-matrices-11-1-2">
+\begin{equation*}
+3A=\begin{pmatrix} 3 \amp 9 \amp -3 \\ -6 \amp 0 \amp 12 \end{pmatrix}\text{.}
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-matrices-11-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Example 2.2.5"><a href="#sec-matrices-11" title="Copy heading and permalink for Example 2.2.5" aria-label="Copy heading and permalink for Example 2.2.5">🔗</a></div></article></details><details id="sec-matrices-12" class="exercise exercise-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+<span class="type">Checkpoint</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.2.6</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3></summary><article class="exercise exercise-like knowl__content"><div class="para" id="sec-matrices-12-1">Show that <span class="process-math">\((-1)\cdot A=-A\)</span> for any matrix <span class="process-math">\(A\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-matrices-12-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Checkpoint 2.2.6"><a href="#sec-matrices-12" title="Copy heading and permalink for Checkpoint 2.2.6" aria-label="Copy heading and permalink for Checkpoint 2.2.6">🔗</a></div></article></details><div class="para" id="sec-matrices-13">The properties of matrix addition listed in the following lemma follow almost immediately from the corresponding properties of real number addition, and you should prove them yourself.<div class="autopermalink" data-description="Paragraph"><a href="#sec-matrices-13" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="lemma theorem-like" id="lem-matrix-addition-props"><h3 class="heading">
+<span class="type">Lemma</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.2.7</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para logical" id="lem-matrix-addition-props-1-1">
+<div class="para">Let <span class="process-math">\(m\)</span> and <span class="process-math">\(n\)</span> be positive real numbers. Let <span class="process-math">\(A,B\)</span> and <span class="process-math">\(C\)</span> be <span class="process-math">\(m\times n\)</span> matrices and <span class="process-math">\(\lambda,\mu\in\R\)</span> scalars. The following properties hold:</div>
+<ol class="decimal" id="lem-matrix-addition-props-1-1-7">
+<li id="lem-matrix-addition-props-1-1-7-1">
+<div class="para" id="lem-matrix-addition-props-1-1-7-1-1">
+<span class="process-math">\(A+B=B+A\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#lem-matrix-addition-props-1-1-7-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 1"><a href="#lem-matrix-addition-props-1-1-7-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
+</li>
+<li id="lem-matrix-addition-props-1-1-7-2">
+<div class="para" id="lem-matrix-addition-props-1-1-7-2-1">
+<span class="process-math">\((A+B)+C=A+(B+C)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#lem-matrix-addition-props-1-1-7-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 2"><a href="#lem-matrix-addition-props-1-1-7-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
+</li>
+<li id="lem-matrix-addition-props-1-1-7-3">
+<div class="para" id="lem-matrix-addition-props-1-1-7-3-1">
+<span class="process-math">\(\lambda(A+B)=\lambda A+\lambda B\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#lem-matrix-addition-props-1-1-7-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 3"><a href="#lem-matrix-addition-props-1-1-7-3" title="Copy heading and permalink for Item 3" aria-label="Copy heading and permalink for Item 3">🔗</a></div>
+</li>
+<li id="lem-matrix-addition-props-1-1-7-4">
+<div class="para" id="lem-matrix-addition-props-1-1-7-4-1">
+<span class="process-math">\((\lambda+\mu)A=\lambda A + \mu A\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#lem-matrix-addition-props-1-1-7-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 4"><a href="#lem-matrix-addition-props-1-1-7-4" title="Copy heading and permalink for Item 4" aria-label="Copy heading and permalink for Item 4">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" data-description="Paragraph"><a href="#lem-matrix-addition-props-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Lemma 2.2.7"><a href="#lem-matrix-addition-props" title="Copy heading and permalink for Lemma 2.2.7" aria-label="Copy heading and permalink for Lemma 2.2.7">🔗</a></div></article><div class="para" id="sec-matrices-15">Another important operation that one can perform on matrices is that of <em class="emphasis">transposition</em>.<div class="autopermalink" data-description="Paragraph"><a href="#sec-matrices-15" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="definition definition-like" id="def-matrix-transposition"><h3 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.2.8</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Transpose.</span>
+</h3>
+<div class="para" id="def-matrix-transposition-2-1">If <span class="process-math">\(A=(a_{ij})_{ij}\)</span> is an <span class="process-math">\(m\times n\)</span> matrix, then the <em class="emphasis">transpose</em> of <span class="process-math">\(A\text{,}\)</span> denoted <span class="process-math">\(A^T\text{,}\)</span> is the <span class="process-math">\(n\times m\)</span> matrix <span class="process-math">\(A^T:=(a_{ji})_{ij}\text{.}\)</span> In other words, the <span class="process-math">\((i,j)\)</span> entry of <span class="process-math">\(A^T\)</span> is defined to be the <span class="process-math">\((j,i)\)</span> entry of <span class="process-math">\(A\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#def-matrix-transposition-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Definition 2.2.8: Transpose"><a href="#def-matrix-transposition" title="Copy heading and permalink for Definition 2.2.8: Transpose" aria-label="Copy heading and permalink for Definition 2.2.8: Transpose">🔗</a></div></article><details id="sec-matrices-17" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.2.9</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3></summary><article class="example example-like knowl__content"><div class="para logical" id="sec-matrices-17-1">
+<div class="para">If <span class="process-math">\(A=\begin{pmatrix} 1 \amp 2 \amp 3 \\ 4 \amp 5 \amp 6\end{pmatrix}\text{,}\)</span> then the transpose of <span class="process-math">\(A\)</span> is</div>
+<div class="displaymath process-math" id="sec-matrices-17-1-3">
+\begin{equation*}
+A^T=\begin{pmatrix} 1 \amp 4 \\ 2 \amp 5 \\ 3 \amp 6 \end{pmatrix}\text{.}
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-matrices-17-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Example 2.2.9"><a href="#sec-matrices-17" title="Copy heading and permalink for Example 2.2.9" aria-label="Copy heading and permalink for Example 2.2.9">🔗</a></div></article></details><details id="sec-matrices-18" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.2.10</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3></summary><article class="example example-like knowl__content"><div class="para logical" id="sec-matrices-18-1">
+<div class="para">If <span class="process-math">\(A=\begin{pmatrix} 1 \amp 2 \\ 3 \amp 4\end{pmatrix}\text{,}\)</span> then the transpose of <span class="process-math">\(A\)</span> is</div>
+<div class="displaymath process-math" id="sec-matrices-18-1-3">
+\begin{equation*}
+A^T=\begin{pmatrix} 1 \amp 3 \\ 2 \amp 4\end{pmatrix}\text{.}
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-matrices-18-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Example 2.2.10"><a href="#sec-matrices-18" title="Copy heading and permalink for Example 2.2.10" aria-label="Copy heading and permalink for Example 2.2.10">🔗</a></div></article></details><details id="example-transpose-vector" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.2.11</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3></summary><article class="example example-like knowl__content"><div class="para logical" id="example-transpose-vector-1">
+<div class="para">Regard the vector <span class="process-math">\(\bv=\colvec{1 \\ 2 \\ 3}\)</span> as a <span class="process-math">\(3\times 1\)</span> matrix. Then we can consider its transpose</div>
+<div class="displaymath process-math" id="example-transpose-vector-1-3">
+\begin{equation*}
+\bv^T=\begin{pmatrix} 1 \amp 2 \amp 3\end{pmatrix}\text{.}
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#example-transpose-vector-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Example 2.2.11"><a href="#example-transpose-vector" title="Copy heading and permalink for Example 2.2.11" aria-label="Copy heading and permalink for Example 2.2.11">🔗</a></div></article></details><div class="para" id="sec-matrices-20">I want to point out an important subtlety related to Example <a href="sec-matrices.html#example-transpose-vector" class="xref" data-knowl="./knowl/xref/example-transpose-vector.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 2.2.11">Example 2.2.11</a>. As you know, a vector in <span class="process-math">\(\R^n\)</span> is simply an ordered collection of <span class="process-math">\(n\)</span> real numbers. A single vector may be represented in many different ways. For reasons that are going to become apparent before the end of this section, we chose to represent vectors vertically. However, this is simply a choice and the vector <span class="process-math">\(\colvec{1 \\ 2}\)</span> for example, <em class="emphasis">as a vector</em>, is the same as the vector <span class="process-math">\((1,2)\)</span> or <span class="process-math">\(\begin{pmatrix} 1 \amp 2\end{pmatrix}\text{.}\)</span> (In the same way that the number <em class="emphasis">five</em> may be represented by the Arabic numeral <span class="process-math">\(5\)</span> or by the Roman numeral V.) But while <span class="process-math">\(\begin{pmatrix} 1 \amp 2\end{pmatrix}\)</span> and <span class="process-math">\(\colvec{1 \\ 2}\)</span> represent the same vector, they <em class="emphasis">do not</em> represent the same matrix. Matrices have a certain number of rows and a certain number of columns, and both these numbers and the entries are important.<div class="autopermalink" data-description="Paragraph"><a href="#sec-matrices-20" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-matrices-21">This being said, you may sometimes encounter the expressions <em class="emphasis">row vector</em> and <em class="emphasis">column vector</em>. These expressions actually refer to two types of <em class="emphasis">matrices</em>. A <em class="emphasis">row vector</em> is a <span class="process-math">\(1\times n\)</span> matrix, while a <em class="emphasis">columns vector</em> is an <span class="process-math">\(n\times 1\)</span> matrix. As mentioned before, we will choose to represent vectors using column vectors.<div class="autopermalink" data-description="Paragraph"><a href="#sec-matrices-21" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<details id="sec-matrices-22" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.2.12</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3></summary><article class="example example-like knowl__content"><div class="para logical" id="sec-matrices-22-1">
+<div class="para">If instead of starting with a column vector as in Example <a href="sec-matrices.html#example-transpose-vector" class="xref" data-knowl="./knowl/xref/example-transpose-vector.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 2.2.11">Example 2.2.11</a> we start with a row vector like <span class="process-math">\(\bw=\begin{pmatrix}1 \amp 2 \amp 3\end{pmatrix}\text{,}\)</span> then the transpose of <span class="process-math">\(\bw\)</span> is the column vector</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/example-transpose-vector.html" id="sec-matrices-22-1-4">
+\begin{equation*}
+\bw^T=\colvec{1 \\ 2 \\ 3}\text{.}
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-matrices-22-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Example 2.2.12"><a href="#sec-matrices-22" title="Copy heading and permalink for Example 2.2.12" aria-label="Copy heading and permalink for Example 2.2.12">🔗</a></div></article></details><div class="para" id="sec-matrices-23">Since the transpose of a matrix is a matrix again, one is able to transpose the transpose! You should have no trouble checking that <span class="process-math">\((A^T)^T=A\text{.}\)</span> In other words, the transpose of a transpose is initial matrix.<div class="autopermalink" data-description="Paragraph"><a href="#sec-matrices-23" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<details id="sec-matrices-24" class="exercise exercise-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+<span class="type">Checkpoint</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.2.13</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3></summary><article class="exercise exercise-like knowl__content"><div class="para" id="sec-matrices-24-1">Show that if <span class="process-math">\(A\)</span> is a matrix, then <span class="process-math">\((A^T)^T=A\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-matrices-24-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Checkpoint 2.2.13"><a href="#sec-matrices-24" title="Copy heading and permalink for Checkpoint 2.2.13" aria-label="Copy heading and permalink for Checkpoint 2.2.13">🔗</a></div></article></details><div class="para" id="sec-matrices-25">We finally come to the question of matrix multiplication. Matrix multiplication is a curious operation. Some natural properties of real number multiplication simply do not hold in general in the case of matrices. Perhaps the most shocking property not satisfied by matrix multiplication is commutativity. We will soon see that it is not necessarily true that <span class="process-math">\(AB=BA\text{.}\)</span> In fact, it may happen that only the product <span class="process-math">\(AB\)</span> is defined and that it is not possible to multiply <span class="process-math">\(B\)</span> by <span class="process-math">\(A\)</span> at all!<div class="autopermalink" data-description="Paragraph"><a href="#sec-matrices-25" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="definition definition-like" id="def-matrix-multiplication"><h3 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.2.14</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Matrix multiplication.</span>
+</h3>
+<div class="para logical" id="def-matrix-multiplication-2-1">
+<div class="para">Let <span class="process-math">\(m,n\)</span> and <span class="process-math">\(r\)</span> be positive integers. If <span class="process-math">\(A=(a_{ij})_{ij}\)</span> is an <span class="process-math">\(m\times n\)</span> matrix and <span class="process-math">\(B=(b_{ij})_{ij}\)</span> is an <span class="process-math">\(n\times r\)</span> matrix, then the product <span class="process-math">\(AB\)</span> is the <span class="process-math">\(m\times r\)</span> matrix whose <span class="process-math">\((i,j)\)</span> entry <span class="process-math">\(c_{ij}\)</span> is defined to be</div>
+<div class="displaymath process-math" id="def-matrix-multiplication-2-1-11">
+\begin{equation*}
+c_{ij}=\sum_{k=1}^n a_{ik}b_{kj}=a_{i1}b_{1j}+a_{i2}b_{2j}+\ldots+a_{in}b_{nj}\text{.}
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#def-matrix-multiplication-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Definition 2.2.14: Matrix multiplication"><a href="#def-matrix-multiplication" title="Copy heading and permalink for Definition 2.2.14: Matrix multiplication" aria-label="Copy heading and permalink for Definition 2.2.14: Matrix multiplication">🔗</a></div></article><div class="para" id="sec-matrices-27">The definition may not be very transparent when you first read it. Here is a better way of describing <span class="process-math">\(AB\text{.}\)</span> In order to calculate the entry in the <span class="process-math">\(i\)</span>th row and <span class="process-math">\(j\)</span>th column of <span class="process-math">\(AB\text{,}\)</span> start by considering the vector <span class="process-math">\(\br_i\)</span> formed by the <span class="process-math">\(i\)</span>th row of the matrix <span class="process-math">\(A\text{,}\)</span> and also consider the column vector <span class="process-math">\(\bc_j\)</span> formed by the <span class="process-math">\(j\)</span>th column of <span class="process-math">\(B\text{.}\)</span> The entry in the <span class="process-math">\(i\)</span>th row and <span class="process-math">\(j\)</span>th column of <span class="process-math">\(AB\)</span> is then the dot product <span class="process-math">\(\br_i\cdot\bc_j\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-matrices-27" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<details id="example-matrix-multiplication-first" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.2.15</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3></summary><article class="example example-like knowl__content"><div class="para" id="example-matrix-multiplication-first-1">Consider the matrices <span class="process-math">\(A=\begin{pmatrix}1 \amp 3 \amp 4 \\ 2 \amp -1 \amp -2 \end{pmatrix}\)</span> and <span class="process-math">\(B=\begin{pmatrix}-1 \amp 0 \amp 1 \\ 2 \amp 1 \amp 0 \\ 3\amp -2 \amp 1\end{pmatrix}\text{.}\)</span> Since <span class="process-math">\(A\)</span> has <span class="process-math">\(3\)</span> columns and <span class="process-math">\(B\)</span> has <span class="process-math">\(3\)</span> rows, the product <span class="process-math">\(AB\)</span> is defined. However, we cannot take the product <span class="process-math">\(BA\)</span> because the number of columns of <span class="process-math">\(B\)</span> is <span class="process-math">\(3\text{,}\)</span> while the number of rows of <span class="process-math">\(A\)</span> is <span class="process-math">\(2\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#example-matrix-multiplication-first-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="example-matrix-multiplication-first-2">
+<div class="para">Let’s calculate <span class="process-math">\(AB\text{.}\)</span> For starters, we know that the product <span class="process-math">\(AB\)</span> is going to be a <span class="process-math">\(2\times 3\)</span> matrix: the number of rows matches the number of rows of <span class="process-math">\(A\text{,}\)</span> while the number of columns is the number of columns of <span class="process-math">\(B\text{.}\)</span> Let’s denote by <span class="process-math">\(c_{ij}\)</span> the <span class="process-math">\((i,j)\)</span> entry of <span class="process-math">\(AB\text{.}\)</span> Then <span class="process-math">\(c_{11}\)</span> is the dot product of the vector formed by the first row of <span class="process-math">\(A\)</span> and the one formed by the first column of <span class="process-math">\(B\text{:}\)</span>
+</div>
+<div class="displaymath process-math" id="example-matrix-multiplication-first-2-12">
+\begin{equation*}
+c_{11}=\colvec{1 \\ 3 \\ 4}\cdot \colvec{-1 \\ 2 \\ 3}=-1+6+12=17\text{.}
+\end{equation*}
+</div>
+<div class="para">The entry <span class="process-math">\(c_{12}\)</span> is the dot product of the first row of <span class="process-math">\(A\)</span> and the second column of <span class="process-math">\(B\text{:}\)</span>
+</div>
+<div class="displaymath process-math" id="example-matrix-multiplication-first-2-16">
+\begin{equation*}
+c_{12}=\colvec{1 \\ 3 \\ 4}\cdot \colvec{0 \\ 1 \\ -2}=3-8=-5\text{.}
+\end{equation*}
+</div>
+<div class="para">Similarly, to compute <span class="process-math">\(c_{13}\)</span> one must take the dot product between the vector formed by the first row of <span class="process-math">\(A\)</span> and the third column of <span class="process-math">\(B\text{:}\)</span>
+</div>
+<div class="displaymath process-math" id="example-matrix-multiplication-first-2-20">
+\begin{equation*}
+c_{13}=\colvec{1 \\ 3 \\ 4} \cdot \colvec{1 \\ 0 \\ 1}=1 + 4=5\text{.}
+\end{equation*}
+</div>
+<div class="para">We then proceed in a similar manner with the second row of <span class="process-math">\(A\text{.}\)</span> We eventually find</div>
+<div class="displaymath process-math" id="example-matrix-multiplication-first-2-22">
+\begin{equation*}
+AB=\begin{pmatrix}17 \amp -5 \amp 5 \\ -10 \amp 3 \amp 0\end{pmatrix}\text{.}
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#example-matrix-multiplication-first-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Example 2.2.15"><a href="#example-matrix-multiplication-first" title="Copy heading and permalink for Example 2.2.15" aria-label="Copy heading and permalink for Example 2.2.15">🔗</a></div></article></details><div class="para" id="sec-matrices-29">
+<a href="sec-matrices.html#example-matrix-multiplication-first" class="xref" data-knowl="./knowl/xref/example-matrix-multiplication-first.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 2.2.15">Example 2.2.15</a> provides a first glimpse of the phenomenon I alluded to a few paragraphs ago. Here we have a pair of matrices <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> for which the product <span class="process-math">\(AB\)</span> is defined and the product <span class="process-math">\(BA\)</span> is not. The issue here is that the product of two matrices is only defined if the number of columns of the first matrix equals the number of columns of the second.<div class="autopermalink" data-description="Paragraph"><a href="#sec-matrices-29" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-matrices-30">If matrix <span class="process-math">\(A\)</span> is an <span class="process-math">\(m\times n\)</span> matrix and <span class="process-math">\(B\)</span> is an <span class="process-math">\(n\times m\)</span> matrix, then both <span class="process-math">\(AB\)</span> and <span class="process-math">\(BA\)</span> are defined. Yet, even in this situation, we will often have <span class="process-math">\(AB\neq BA\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-matrices-30" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<details id="sec-matrices-31" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.2.16</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3></summary><article class="example example-like knowl__content"><div class="para logical" id="sec-matrices-31-1">
+<div class="para">Let <span class="process-math">\(A=\begin{pmatrix}1 \amp 2 \\ 3 \amp 4\end{pmatrix}\)</span> and <span class="process-math">\(B=\begin{pmatrix} -1 \amp 1 \\ 3 \amp 0\end{pmatrix}\text{.}\)</span> Then</div>
+<div class="displaymath process-math" id="sec-matrices-31-1-3">
+\begin{equation*}
+AB=\begin{pmatrix}5 \amp 1 \\ 9 \amp 3\end{pmatrix}\text{,}
+\end{equation*}
+</div>
+<div class="para">but</div>
+<div class="displaymath process-math" id="sec-matrices-31-1-4">
+\begin{equation*}
+BA=\begin{pmatrix}2 \amp 2 \\ 3 \amp 6\end{pmatrix}\text{.}
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-matrices-31-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Example 2.2.16"><a href="#sec-matrices-31" title="Copy heading and permalink for Example 2.2.16" aria-label="Copy heading and permalink for Example 2.2.16">🔗</a></div></article></details><div class="para" id="sec-matrices-32">Despite the failure of commutativity in general, there are a few familiar properties that matrix multiplication satisfies. Again, I encourage you to prove the following properties using the definition of matrix multiplication.<div class="autopermalink" data-description="Paragraph"><a href="#sec-matrices-32" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="lemma theorem-like" id="lem-matrix-multiplication-props"><h3 class="heading">
+<span class="type">Lemma</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.2.17</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para logical" id="lem-matrix-multiplication-props-1-1">
+<div class="para">Let <span class="process-math">\(m,n,r\)</span> and <span class="process-math">\(s\)</span> be positive integers. Let <span class="process-math">\(A\)</span> be an <span class="process-math">\(m\times n\)</span> matrix, <span class="process-math">\(B\)</span> and <span class="process-math">\(C\)</span> two <span class="process-math">\(n\times r\)</span> matrices, and <span class="process-math">\(D\)</span> an <span class="process-math">\(r\times s\)</span> matrix. Let <span class="process-math">\(\lambda\in \R\)</span> be a scalar. The following properties hold.</div>
+<ol class="decimal" id="lem-matrix-multiplication-props-1-1-11">
+<li id="lem-matrix-multiplication-props-1-1-11-1">
+<div class="para" id="lem-matrix-multiplication-props-1-1-11-1-1">
+<span class="process-math">\(A(B+C)=AB+AC\)</span> and <span class="process-math">\((B+C)D=BD+CD\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#lem-matrix-multiplication-props-1-1-11-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 1"><a href="#lem-matrix-multiplication-props-1-1-11-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
+</li>
+<li id="lem-matrix-multiplication-props-1-1-11-2">
+<div class="para" id="lem-matrix-multiplication-props-1-1-11-2-1">
+<span class="process-math">\(A(BD)=(AB)D\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#lem-matrix-multiplication-props-1-1-11-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 2"><a href="#lem-matrix-multiplication-props-1-1-11-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
+</li>
+<li id="lem-matrix-multiplication-props-1-1-11-3">
+<div class="para" id="lem-matrix-multiplication-props-1-1-11-3-1">
+<span class="process-math">\(\lambda(AB)=(\lambda A)B=A(\lambda B)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#lem-matrix-multiplication-props-1-1-11-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 3"><a href="#lem-matrix-multiplication-props-1-1-11-3" title="Copy heading and permalink for Item 3" aria-label="Copy heading and permalink for Item 3">🔗</a></div>
+</li>
+<li id="lem-matrix-multiplication-props-1-1-11-4">
+<div class="para" id="lem-matrix-multiplication-props-1-1-11-4-1">
+<span class="process-math">\((AB)^T=B^TA^T\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#lem-matrix-multiplication-props-1-1-11-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 4"><a href="#lem-matrix-multiplication-props-1-1-11-4" title="Copy heading and permalink for Item 4" aria-label="Copy heading and permalink for Item 4">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" data-description="Paragraph"><a href="#lem-matrix-multiplication-props-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Lemma 2.2.17"><a href="#lem-matrix-multiplication-props" title="Copy heading and permalink for Lemma 2.2.17" aria-label="Copy heading and permalink for Lemma 2.2.17">🔗</a></div></article><details id="lem-matrix-multiplication-props-2" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para" id="lem-matrix-multiplication-props-2-1">As an example, I will prove property number <span class="process-math">\(4\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#lem-matrix-multiplication-props-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="lem-matrix-multiplication-props-2-2">
+<div class="para">Say that the <span class="process-math">\((i,j)\)</span> entry of <span class="process-math">\(A\)</span> is <span class="process-math">\(a_{ij}\text{,}\)</span> that of <span class="process-math">\(B\)</span> is <span class="process-math">\(b_{ij}\text{,}\)</span> that of <span class="process-math">\(AB\)</span> is <span class="process-math">\(c_{ij}\text{,}\)</span> and that of <span class="process-math">\(B^TA^T\)</span> is <span class="process-math">\(d_{ij}\text{.}\)</span> By the definition of matrix multiplication, we have</div>
+<div class="displaymath process-math" id="lem-matrix-multiplication-props-2-2-10">
+\begin{equation*}
+c_{ij}=\sum_{k=1}^n a_{ik}b_{kj}\text{.}
+\end{equation*}
+</div>
+<div class="para">Therefore, the <span class="process-math">\((i,j)\)</span> entry of <span class="process-math">\((AB)^T\)</span> is</div>
+<div class="displaymath process-math" id="lem-matrix-multiplication-props-2-2-13">
+\begin{equation*}
+c_{ji} = \sum_{k=1}^n a_{jk}b_{ki}\text{.}
+\end{equation*}
+</div>
+<div class="para">Let’s now calculate the <span class="process-math">\((i,j)\)</span> entry of <span class="process-math">\(B^T A^T\)</span> and check that it matches the expression for <span class="process-math">\(c_{ji}\text{.}\)</span> The <span class="process-math">\((i,j)\)</span> entry of <span class="process-math">\(A^T\)</span> is <span class="process-math">\(a_{ji}\)</span> and that of <span class="process-math">\(B^T\)</span> is <span class="process-math">\(b_{ji}\text{.}\)</span> It follows that the <span class="process-math">\((i,j)\)</span> entry of <span class="process-math">\(B^TA^T\text{,}\)</span> which we chose to call <span class="process-math">\(d_{ij}\)</span> is given by the expression</div>
+<div class="displaymath process-math" id="lem-matrix-multiplication-props-2-2-25">
+\begin{equation*}
+d_{ij}=\sum_{k=1}^n b_{ki}a_{jk}=\sum_{k=1}^n a_{jk}b_{ki}=c_{ji}\text{,}
+\end{equation*}
+</div>
+<div class="para">as we wanted.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#lem-matrix-multiplication-props-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="lem-matrix-multiplication-props-2-3">If you wanted, you could use the interpretation of matrix multiplication as a collection of dot products of the vectors formed by the rows of the first matrix and columns of the second to give an alternative proof of property <span class="process-math">\(4\text{.}\)</span> Indeed, denote by <span class="process-math">\(\br_i\)</span> the <span class="process-math">\(i\)</span>th row of <span class="process-math">\(A\)</span> and by <span class="process-math">\(\bc_j\)</span> the <span class="process-math">\(j\)</span>th column of <span class="process-math">\(B\text{.}\)</span> Then, for any <span class="process-math">\(1\leq i\leq m\)</span> and <span class="process-math">\(1\leq j\leq r\text{,}\)</span> the <span class="process-math">\((i,j)\)</span> entry of <span class="process-math">\(AB\)</span> is the dot product <span class="process-math">\(\br_i\cdot \bc_j\text{.}\)</span> This means that for <span class="process-math">\(1\leq i\leq r\)</span> and <span class="process-math">\(1\leq j\leq m\)</span> the <span class="process-math">\((i,j)\)</span> entry of <span class="process-math">\((AB)^T\)</span> is <span class="process-math">\(\br_j\cdot \bc_i\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#lem-matrix-multiplication-props-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="lem-matrix-multiplication-props-2-4">Now note that the vector defined by the <span class="process-math">\(j\)</span>th column of <span class="process-math">\(A^T\)</span> is precisely <span class="process-math">\(\br_j\text{,}\)</span> while the vector defined by the <span class="process-math">\(i\)</span>th row of <span class="process-math">\(B^T\)</span> is <span class="process-math">\(\bc_i\text{.}\)</span> Therefore, the <span class="process-math">\((i,j)\)</span> entry of <span class="process-math">\(B^TA^T\)</span> is the dot product <span class="process-math">\(\bc_i\cdot \br_j\text{.}\)</span> By the commutativity of the dot product, we conclude that this is the same as <span class="process-math">\(\br_j\cdot \bc_i\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#lem-matrix-multiplication-props-2-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 2.2.17.1"><a href="#lem-matrix-multiplication-props-2" title="Copy heading and permalink for Proof 2.2.17.1" aria-label="Copy heading and permalink for Proof 2.2.17.1">🔗</a></div></article></details><div class="para logical" id="sec-matrices-34">
+<div class="para">It should be pointed out that property <span class="process-math">\(3\)</span> in <a href="sec-matrices.html#lem-matrix-multiplication-props" class="xref" data-knowl="./knowl/xref/lem-matrix-multiplication-props.html" data-reveal-label="Reveal" data-close-label="Close" title="Lemma 2.2.17">Lemma 2.2.17</a> is a special case of property <span class="process-math">\(2\text{.}\)</span> Indeed, multiplying an <span class="process-math">\(m\times n\)</span> matrix <span class="process-math">\(A\)</span> by a scalar <span class="process-math">\(\lambda\in\R\)</span> has the same effect as multiplying the <span class="process-math">\(m\times m\)</span> matrix</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/lem-matrix-multiplication-props.html" id="sec-matrices-34-8">
+\begin{equation*}
+\begin{pmatrix} \lambda \amp 0 \amp \cdots \amp 0\\ 0 \amp \lambda \amp \cdots \amp 0 \\ \vdots \amp \vdots \amp \ddots \amp \vdots \\ 0 \amp 0 \amp \cdots \amp \lambda\end{pmatrix}
+\end{equation*}
+</div>
+<div class="para">by <span class="process-math">\(A\text{.}\)</span> The matrix above is an example of a member of a family of square matrices called <em class="emphasis">scalar matrices</em>.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-matrices-34" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="definition definition-like" id="def-square-diagonal"><h3 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.2.18</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para" id="def-square-diagonal-1-1">An <span class="process-math">\(m\times n\)</span> matrix is called a <dfn class="terminology">square matrix</dfn> if <span class="process-math">\(m=n\text{,}\)</span> i.e. if it has as many rows as it has columns.<div class="autopermalink" data-description="Paragraph"><a href="#def-square-diagonal-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para" id="def-square-diagonal-1-2">A square matrix <span class="process-math">\(A=(a_{ij})_{1\leq i\leq n,1\leq j\leq n}\)</span> is called a <dfn class="terminology">diagonal matrix</dfn> if <span class="process-math">\(a_{ij}=0\)</span> whenever <span class="process-math">\(i\neq j\text{.}\)</span> In other words, if the only non-zero entries occur along the main diagonal.<div class="autopermalink" data-description="Paragraph"><a href="#def-square-diagonal-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para" id="def-square-diagonal-1-3">A <dfn class="terminology">scalar matrix</dfn> is a diagonal matrix whose entries in the main diagonal are all equal.<div class="autopermalink" data-description="Paragraph"><a href="#def-square-diagonal-1-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Definition 2.2.18"><a href="#def-square-diagonal" title="Copy heading and permalink for Definition 2.2.18" aria-label="Copy heading and permalink for Definition 2.2.18">🔗</a></div></article><div class="para logical" id="sec-matrices-36">
+<div class="para">If <span class="process-math">\(\lambda_1,\lambda_2,\ldots,\lambda_n\)</span> are <span class="process-math">\(n\)</span> real numbers, then the <span class="process-math">\(n\times n\)</span> diagonal matrix with entries <span class="process-math">\(\lambda_1,\lambda_2,\ldots,\lambda_n\)</span> is often denoted by <span class="process-math">\(\diag(\lambda_1,\lambda_2,\ldots,\lambda_n)\text{:}\)</span>
+</div>
+<div class="displaymath process-math" id="sec-matrices-36-6">
+\begin{equation*}
+\diag(\lambda_1,\lambda_2,\ldots,\lambda_n)=\begin{pmatrix}\lambda_1 \amp 0 \amp \cdots \amp 0\\ 0 \amp \lambda_2 \amp \cdots \amp 0\\ \vdots \amp \vdots \amp \ddots \amp \vdots \\ 0 \amp 0 \amp \cdots \amp \lambda_n\end{pmatrix}\text{.}
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-matrices-36" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<details id="sec-matrices-37" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.2.19</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3></summary><article class="example example-like knowl__content"><div class="para logical" id="sec-matrices-37-1">
+<div class="para">For example,</div>
+<div class="displaymath process-math" id="sec-matrices-37-1-1">
+\begin{equation*}
+\diag(1,0,3)=\begin{pmatrix} 1 \amp 0 \amp 0 \\ 0 \amp 0 \amp 0 \\ 0 \amp 0 \amp 3\end{pmatrix}
+\end{equation*}
+</div>
+<div class="para">and</div>
+<div class="displaymath process-math" id="sec-matrices-37-1-2">
+\begin{equation*}
+\diag(5,5)=\begin{pmatrix} 5 \amp 0 \\ 0 \amp 5\end{pmatrix}\text{.}
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-matrices-37-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Example 2.2.19"><a href="#sec-matrices-37" title="Copy heading and permalink for Example 2.2.19" aria-label="Copy heading and permalink for Example 2.2.19">🔗</a></div></article></details><div class="para" id="sec-matrices-38">Using this notation, a scalar matrix is a diagonal matrix of the form <span class="process-math">\(\diag(\lambda,\lambda,\ldots,\lambda)\)</span> for some <span class="process-math">\(\lambda\in \R\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-matrices-38" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="sec-matrices-39">
+<div class="para">Note that multiplication by a scalar matrix boils down to multiplication by the scalar in the main diagonal, i.e. if <span class="process-math">\(\diag(\lambda,\lambda,\ldots,\lambda)\)</span> is the <span class="process-math">\(m\times m\)</span> scalar matrix with <span class="process-math">\(\lambda\)</span> in the main diagonal, and if <span class="process-math">\(A\)</span> is an <span class="process-math">\(m\times n\)</span> matrix, then</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/lem-matrix-multiplication-props.html" id="sec-matrices-39-6">
+\begin{equation*}
+\diag(\lambda,\lambda,\ldots,\lambda)A=\lambda A\text{.}
+\end{equation*}
+</div>
+<div class="para">This means that scalar matrices behave very much like scalars. Using this fact, one can easily deduce property 3 in <a href="sec-matrices.html#lem-matrix-multiplication-props" class="xref" data-knowl="./knowl/xref/lem-matrix-multiplication-props.html" data-reveal-label="Reveal" data-close-label="Close" title="Lemma 2.2.17">Lemma 2.2.17</a> from property 2.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-matrices-39" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-matrices-40">You may be wondering why matrix multiplication is defined in this convoluted way. After all, adding two matrices is nothing more than adding the corresponding entries. Why isn’t matrix multiplication defined that way too?<div class="autopermalink" data-description="Paragraph"><a href="#sec-matrices-40" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-matrices-41">As I pointed out at the start of this section, an <span class="process-math">\(m\times n\)</span> matrix represents a very special type of function from <span class="process-math">\(\R^n\)</span> to <span class="process-math">\(\R^m\)</span> called a <dfn class="terminology">liner map</dfn>. If we have an <span class="process-math">\(m\times n\)</span> matrix <span class="process-math">\(A\)</span> and an <span class="process-math">\(n\times r\)</span> matrix <span class="process-math">\(B\text{,}\)</span> then we have two linear maps: on function <span class="process-math">\(\phi_A\)</span> from <span class="process-math">\(\R^n\)</span> to <span class="process-math">\(\R^m\text{,}\)</span> and another one, <span class="process-math">\(\phi_B\text{,}\)</span> from <span class="process-math">\(\R^r\)</span>to <span class="process-math">\(\R^n\text{.}\)</span> We can therefore form the composition <span class="process-math">\(\phi_A\circ\phi_B\text{,}\)</span> which turns out to be a linear map. We can then wonder what is the matrix that describes this composition. This matrix is precisely the product <span class="process-math">\(AB\text{.}\)</span> Simply put, the matrix product was defined to ensure that matrix multiplication corresponds to composition of linear maps.<div class="autopermalink" data-description="Paragraph"><a href="#sec-matrices-41" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-matrices-42">Note that from this perspective it is not surprising that, in general, matrix multiplication is not commutative. Indeed, it is rarely the case that composition of functions commutes!<div class="autopermalink" data-description="Paragraph"><a href="#sec-matrices-42" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-matrices-43">This is all well and good, but I have yet to tell you how matrices define functions at all. This is our next goal.<div class="autopermalink" data-description="Paragraph"><a href="#sec-matrices-43" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Section 2.2: Matrices"><a href="#sec-matrices" title="Copy heading and permalink for Section 2.2: Matrices" aria-label="Copy heading and permalink for Section 2.2: Matrices">🔗</a></div></section></div>
 <div id="ptx-content-footer" class="ptx-content-footer">
-<a class="previous-button button" href="sec-linear-subspaces.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec-linear-maps.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+<a class="previous-button button" href="sec-vectors.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec-linear-dependence.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
 </div>
 <div id="ptx-page-footer" class="ptx-page-footer">

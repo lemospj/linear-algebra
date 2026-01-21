@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: default-modern                 *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="lemma theorem-like"><h3 class="heading">
+<span class="type">Lemma</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.2.17</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para logical">
+<div class="para">Let <span class="process-math">\(m,n,r\)</span> and <span class="process-math">\(s\)</span> be positive integers. Let <span class="process-math">\(A\)</span> be an <span class="process-math">\(m\times n\)</span> matrix, <span class="process-math">\(B\)</span> and <span class="process-math">\(C\)</span> two <span class="process-math">\(n\times r\)</span> matrices, and <span class="process-math">\(D\)</span> an <span class="process-math">\(r\times s\)</span> matrix. Let <span class="process-math">\(\lambda\in \R\)</span> be a scalar. The following properties hold.</div>
+<ol class="decimal" id="lem-matrix-multiplication-props-1-1-11">
+<li>
+<div class="para">
+<span class="process-math">\(A(B+C)=AB+AC\)</span> and <span class="process-math">\((B+C)D=BD+CD\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#lem-matrix-multiplication-props-1-1-11-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 1"><a href="#lem-matrix-multiplication-props-1-1-11-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
+</li>
+<li>
+<div class="para">
+<span class="process-math">\(A(BD)=(AB)D\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#lem-matrix-multiplication-props-1-1-11-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 2"><a href="#lem-matrix-multiplication-props-1-1-11-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
+</li>
+<li>
+<div class="para">
+<span class="process-math">\(\lambda(AB)=(\lambda A)B=A(\lambda B)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#lem-matrix-multiplication-props-1-1-11-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 3"><a href="#lem-matrix-multiplication-props-1-1-11-3" title="Copy heading and permalink for Item 3" aria-label="Copy heading and permalink for Item 3">🔗</a></div>
+</li>
+<li>
+<div class="para">
+<span class="process-math">\((AB)^T=B^TA^T\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#lem-matrix-multiplication-props-1-1-11-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 4"><a href="#lem-matrix-multiplication-props-1-1-11-4" title="Copy heading and permalink for Item 4" aria-label="Copy heading and permalink for Item 4">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" data-description="Paragraph"><a href="#lem-matrix-multiplication-props-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Lemma 2.2.17"><a href="#lem-matrix-multiplication-props" title="Copy heading and permalink for Lemma 2.2.17" aria-label="Copy heading and permalink for Lemma 2.2.17">🔗</a></div></article><details class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para">As an example, I will prove property number <span class="process-math">\(4\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#lem-matrix-multiplication-props-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical">
+<div class="para">Say that the <span class="process-math">\((i,j)\)</span> entry of <span class="process-math">\(A\)</span> is <span class="process-math">\(a_{ij}\text{,}\)</span> that of <span class="process-math">\(B\)</span> is <span class="process-math">\(b_{ij}\text{,}\)</span> that of <span class="process-math">\(AB\)</span> is <span class="process-math">\(c_{ij}\text{,}\)</span> and that of <span class="process-math">\(B^TA^T\)</span> is <span class="process-math">\(d_{ij}\text{.}\)</span> By the definition of matrix multiplication, we have</div>
+<div class="displaymath process-math">
+\begin{equation*}
+c_{ij}=\sum_{k=1}^n a_{ik}b_{kj}\text{.}
+\end{equation*}
+</div>
+<div class="para">Therefore, the <span class="process-math">\((i,j)\)</span> entry of <span class="process-math">\((AB)^T\)</span> is</div>
+<div class="displaymath process-math">
+\begin{equation*}
+c_{ji} = \sum_{k=1}^n a_{jk}b_{ki}\text{.}
+\end{equation*}
+</div>
+<div class="para">Let’s now calculate the <span class="process-math">\((i,j)\)</span> entry of <span class="process-math">\(B^T A^T\)</span> and check that it matches the expression for <span class="process-math">\(c_{ji}\text{.}\)</span> The <span class="process-math">\((i,j)\)</span> entry of <span class="process-math">\(A^T\)</span> is <span class="process-math">\(a_{ji}\)</span> and that of <span class="process-math">\(B^T\)</span> is <span class="process-math">\(b_{ji}\text{.}\)</span> It follows that the <span class="process-math">\((i,j)\)</span> entry of <span class="process-math">\(B^TA^T\text{,}\)</span> which we chose to call <span class="process-math">\(d_{ij}\)</span> is given by the expression</div>
+<div class="displaymath process-math">
+\begin{equation*}
+d_{ij}=\sum_{k=1}^n b_{ki}a_{jk}=\sum_{k=1}^n a_{jk}b_{ki}=c_{ji}\text{,}
+\end{equation*}
+</div>
+<div class="para">as we wanted.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#lem-matrix-multiplication-props-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para">If you wanted, you could use the interpretation of matrix multiplication as a collection of dot products of the vectors formed by the rows of the first matrix and columns of the second to give an alternative proof of property <span class="process-math">\(4\text{.}\)</span> Indeed, denote by <span class="process-math">\(\br_i\)</span> the <span class="process-math">\(i\)</span>th row of <span class="process-math">\(A\)</span> and by <span class="process-math">\(\bc_j\)</span> the <span class="process-math">\(j\)</span>th column of <span class="process-math">\(B\text{.}\)</span> Then, for any <span class="process-math">\(1\leq i\leq m\)</span> and <span class="process-math">\(1\leq j\leq r\text{,}\)</span> the <span class="process-math">\((i,j)\)</span> entry of <span class="process-math">\(AB\)</span> is the dot product <span class="process-math">\(\br_i\cdot \bc_j\text{.}\)</span> This means that for <span class="process-math">\(1\leq i\leq r\)</span> and <span class="process-math">\(1\leq j\leq m\)</span> the <span class="process-math">\((i,j)\)</span> entry of <span class="process-math">\((AB)^T\)</span> is <span class="process-math">\(\br_j\cdot \bc_i\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#lem-matrix-multiplication-props-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para">Now note that the vector defined by the <span class="process-math">\(j\)</span>th column of <span class="process-math">\(A^T\)</span> is precisely <span class="process-math">\(\br_j\text{,}\)</span> while the vector defined by the <span class="process-math">\(i\)</span>th row of <span class="process-math">\(B^T\)</span> is <span class="process-math">\(\bc_i\text{.}\)</span> Therefore, the <span class="process-math">\((i,j)\)</span> entry of <span class="process-math">\(B^TA^T\)</span> is the dot product <span class="process-math">\(\bc_i\cdot \br_j\text{.}\)</span> By the commutativity of the dot product, we conclude that this is the same as <span class="process-math">\(\br_j\cdot \bc_i\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#lem-matrix-multiplication-props-2-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 2.2.17.1"><a href="#lem-matrix-multiplication-props-2" title="Copy heading and permalink for Proof 2.2.17.1" aria-label="Copy heading and permalink for Proof 2.2.17.1">🔗</a></div></article></details><span class="incontext"><a class="internal" href="sec-matrices.html#lem-matrix-multiplication-props">in-context</a></span>
+</body>
+</html>
