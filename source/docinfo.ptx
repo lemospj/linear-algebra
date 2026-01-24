@@ -20,6 +20,7 @@
   <!-- to define these semantically, so that the macro relates to what-->
   <!-- it defines. -->
   <macros> 
+    \newcommand{\bb}{{\bf b}}
     \newcommand{\bc}{{\bf c}}
     \newcommand{\be}{{\bf e}}
     \newcommand{\br}{{\bf r}}
@@ -30,6 +31,7 @@
     \newcommand{\colvec}[1]{
       \begin{pmatrix} #1 \end{pmatrix}
     }
+    \newcommand{\Id}{\mathrm{Id}}
 
     \DeclareMathOperator{\diag}{\mathrm{diag}}
     \newcommand{\Mat}{\mathrm{Mat}}

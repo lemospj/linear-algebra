@@ -350,4 +350,238 @@
     <p>
         This is all well and good, but I have yet to tell you how matrices define functions at all. This is our next goal.
     </p>
+    <p>
+        The description of the function defined by a matrix is actually very simple. Consider an <m>m\times n</m> matrix <m>A</m>, and let <m>\bv</m> be a vector in <m>\R^n</m>. If we view <m>\bv</m> as a column vector (i.e., as a <m>n\times 1</m> matrix), we can multiply <m>A</m> and <m>\bv</m> together to get a <m>m\times 1</m> matrix <m>A\bv</m> (i.e., another column vector). Thus, <m>A\bv</m> represents a vector in <m>\R^m</m>. We define the function <m>\varphi_A:\R^n\rightarrow \R^m</m> by setting <m>\varphi_A(\bv)=A\bv</m>.
+    </p>
+    <example>
+        <p>
+            Consider the matrix <m>A=\begin{pmatrix}\frac{\sqrt{2}}{2} \amp -\frac{\sqrt{2}}{2}\\ \frac{\sqrt{2}}{2} \amp \frac{\sqrt{2}}{2}\end{pmatrix}</m>. Being a <m>2\times 2</m> matrix, it defines a function <m>\varphi_A:\R^2\rightarrow \R^2</m>. We can describe this function explicitly as follows. Let <m>\bv=\colvec{x \\ y}</m> be a vector in <m>\R^2</m>. By definition, we have
+            <me>
+                \varphi_A(\bv)=\begin{pmatrix}\frac{\sqrt{2}}{2} \amp -\frac{\sqrt{2}}{2}\\ \frac{\sqrt{2}}{2} \amp \frac{\sqrt{2}}{2}\end{pmatrix}\colvec{x \\ y}=\colvec{\frac{\sqrt{2}}{2}x - \frac{\sqrt{2}}{2}y \\ \frac{\sqrt{2}}{2}x + \frac{\sqrt{2}}{2}y}
+            </me>.
+            So, <m>\varphi_A(x,y)=\left(\frac{\sqrt{2}}{2}x - \frac{\sqrt{2}}{2}y, \frac{\sqrt{2}}{2}x + \frac{\sqrt{2}}{2}y\right)</m>.
+        </p>
+        <p>
+            It is instructive to see what happens to the standard unit vectors <m>\be_1=\colvec{1 \\ 0}</m> and <m>\be_2=\colvec{0 \\ 1}</m> of <m>\R^2</m> when we hit them with this map. One can easily calculate that
+            <me>
+                A\be_1=\colvec{\frac{\sqrt{2}}{2} \\ \frac{\sqrt{2}}{2}}\qquad\text{and}\qquad A\be_2=\colvec{-\frac{\sqrt{2}}{2} \\ \frac{\sqrt{2}}{2}}
+            </me>.
+                The figure below shows <m>\varphi_A(\be_1)</m> in blue and <m>\varphi_A(e_2)</m> in orange.
+        </p>
+        <figure xml:id="fig-rotation">
+            <caption>The effect of <m>\varphi_A</m> on the standard unit vectors.</caption>
+                <image width="80%">
+                    <shortdescription>The vectors obtained by rotating the standard unit vectors of r2 by pi over four radians.</shortdescription>
+                    <prefigure xmlns="https://prefigure.org" label="prefig-rotation">
+                        <diagram dimensions="(300,300)" margins="5">
+                            <definition>v=(sqrt(2)/2,sqrt(2)/2)</definition>
+                            <definition>w=(-sqrt(2)/2,sqrt(2)/2)</definition>
+                            <coordinates bbox="(-1.5,-1.5, 1.5, 1.5)">
+                                <grid-axes xlabel="x" ylabel="y" />
+                                <vector v="v" stroke="blue" thickness="2" />
+                                <vector v="w" stroke="orange" thickness="2" />
+                            </coordinates>
+                        </diagram>
+                    </prefigure>                    
+                </image>
+        </figure>
+        <p>
+            What we see in the image above is that the vectors <m>\be_1</m> and <m>\be_2</m> were both rotated <m>\pi/4</m> radians counterclockwise. In fact, the action of <m>\varphi_A</m> on every vector of <m>\R^2</m> is precisely rotation by <m>\pi/4</m> radians.
+        </p>
+    </example>
+    <example>
+        <p>
+            The function <m>f(\bv)=2\bv</m> (i.e. the function that scales every vector by a factor of <m>2</m>) is the same as <m>\varphi_A</m> for the matrix
+            <m>
+                A=\begin{pmatrix} 2 \amp 0 \\ 0 \amp 2\end{pmatrix}
+            </m>.
+        </p>
+    </example>
+    <p>
+        Explicitly, the function <m>\varphi_A:\R^n\rightarrow \R^m</m> defined by the matrix 
+        <me>
+            A=\begin{pmatrix} a_{11} \amp a_{12} \amp \ldots \amp a_{1n} \\ a_{21} \amp a_{22} \amp \ldots \amp a_{2n}\\ \vdots \amp \vdots \amp \ddots \amp \vdots \\ a_{m1} \amp a_{m2} \amp \ldots \amp a_{mn}\end{pmatrix}
+        </me>
+        is the function that maps the vector <m>\bv=\colvec{x_1 \\ x_2 \\ \vdots \\ x_n}</m> to the vector
+        <me>
+            A\bv=\colvec{a_{11}x_1 + a_{12}x_2 +\ldots+a_{1n}x_n \\ a_{21}x_1+a_{22}x_2 +\ldots+a_{2n}x_n\\ \vdots\\ a_{m1}x_1+a_{m2}x_2+\ldots + a_{mn}x_n}
+        </me>.
+    </p>
+    <p>
+        Imagine now that I give you a vector <m>\bb=\colvec{b_1 \\ b_2 \\ \vdots \\ b_n}</m> in <m>\R^n</m> and I ask you whether <m>\bb</m> is in the image of <m>\varphi_A</m>. How would you go about deciding this?
+    </p>
+    <p>
+        The question that I am asking is whether there is a vector <m>\bv\in\R^n</m> such that
+        <me>
+            A\bv=\bb
+        </me>,
+        or, explicitly, whether there are real numbers <m>x_1,x_2,\ldots,x_n</m> such that
+        <me>
+            \colvec{a_{11}x_1 + a_{12}x_2 +\ldots+a_{1n}x_n \\ a_{21}x_1+a_{22}x_2 +\ldots+a_{2n}x_n\\ \vdots\\ a_{m1}x_1+a_{m2}x_2+\ldots + a_{mn}x_n}=\colvec{b_1 \\ b_2 \\ \vdots \\ b_n}
+        </me>.
+        Put differently, whether there are solutions to the system
+        <me>
+            \left\{
+                \begin{alignedat}{9}
+                    a_{11}x_1 \ampp + \ampp a_{12}x_2 \ampp + \ampp \ldots \ampp + \ampp a_{1n}x_n \amp = \ampp b_1\\
+                    a_{21}x_1 \ampp + \ampp a_{22}x_2 \ampp + \ampp \ldots \ampp + \ampp a_{2n}x_n \amp = \ampp b_2\\
+                    \vdots \ampp \ampp \vdots \ampp  \ampp \ldots \ampp  \ampp \vdots \amp  \ampp \vdots\\
+                    a_{m1}x_1 \ampp + \ampp a_{m2}x_2 \ampp + \ampp \ldots \ampp + \ampp a_{mn}x_n \amp = \ampp b_m
+                \end{alignedat}
+            \right.
+        </me>
+        The upshot of this discussion is that we can now look at linear systems from a different perspective. Solving a linear system is equivalent to finding a vector <m>\bv\in\R^n</m> such that
+        <me>
+            A\bv=\bb,
+        </me>
+        where <m>A</m> is the matrix formed by the coefficients <m>a_{ij}</m> of the system and <me>\bb=\colvec{b_1 \\ b_2 \\ \vdots \\ b_n}</me>.
+    </p>
+    <definition xml:id="def-linear-map-euclidean">
+        <statement>
+            <p>
+                A <term>linear map</term>, or <term>linear transformation</term>, is a function <m>f:\R^n\rightarrow \R^m</m> satisfying:
+                <ol>
+                    <li>
+                        <p>
+                            <m>f(\lambda \bv)=\lambda f(\bv)</m> for every <m>\lambda\in\R</m> and <m>\bv\in\R^n</m>.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <m>f(\bv+\bw)=f(\bv)+f(\bw)</m> for every <m>\bv,\bw\in\R^n</m>.
+                        </p>
+                    </li>
+                </ol>
+            </p>
+        </statement>
+    </definition>
+    <exercise>
+        <p>
+            Let <m>A</m> be an <m>m\times n</m> matrix and <m>B</m> an <m>n\times r</m> matrix. Verify that <m>\varphi_{AB}=\varphi_A\circ\varphi_B</m>.
+        </p>
+    </exercise>
+    <p>
+        The following important result follows immediately from the properties of matrix addition and multiplication and you should attempt to prove it before looking at the proof.
+    </p>
+    <proposition xml:id="prop-matrix-linear-map">
+        <statement>
+            <p>
+                Let <m>A</m> be an <m>m\times n</m> matrix. The function <m>\varphi_A:\R^n\rightarrow \R^m</m> defined above is a linear map.
+            </p>
+        </statement>
+        <proof>
+            <p>
+                We need to show that the two defining properties of a linear map hold form <m>\varphi_A</m>. In order to show this, let <m>\bv</m> and <m>\bw</m> be vectors in <m>\R^n</m> and let <m>\lambda\in\R</m> be a scalar. 
+            </p>
+            <p>
+                By the definition of <m>\varphi_A</m>, we have <m>\varphi_A(\lambda\bv)=A(\lambda\bv)</m>. But we know that
+                <me>
+                    A(\lambda\bv)=\lambda(A\bv)
+                </me>,
+                and since <m>\varphi_A(\bv)=A\bv</m>, we conclude that <m>\varphi_A(\lambda\bv)=\lambda\varphi_A(\bv)</m>.
+            </p>
+            <p>
+                Similarly, <m>\varphi_A(\bv+\bw)=A(\bv+\bw)=A\bv+A\bw=\varphi_A(\bv)+\varphi_A(\bw)</m>.
+            </p>
+        </proof>
+    </proposition>
+    <p>
+        It is also true that every linear map <m>f:\R^n\rightarrow \R^m</m> is induced by an <m>m\times n</m> matrix, and we could even prove it here, but this section is already quite long and so I will discuss this property in a later section.
+    </p>
+    <exercises xml:id="exercises-matrices">
+        <exercise>
+            <p>
+                Calculate the following expressions.
+            </p>
+            <ol marker="(a)">
+                <li>
+                    <p>
+                        <m>\begin{pmatrix} 1 \amp -3 \amp -1 \\ 2 \amp -2 \amp -2 \end{pmatrix}\colvec{-3 \\ 5 \\ 1}</m>
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <m>\begin{pmatrix}1 \amp 2 \\ -3 \amp 0 \\ -1 \amp -1 \end{pmatrix} + \begin{pmatrix} 3 \amp 0 \\ -1 \amp -5 \\ 8 \amp -2\end{pmatrix}</m>
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <m>\begin{pmatrix} 3 \amp 1 \amp 1\\ 0 \amp -2 \amp 1 \end{pmatrix}\begin{pmatrix} 1 \amp 2 \amp 3 \\ 3 \amp 1 \amp -1 \\ 0 \amp 0 \amp 1\end{pmatrix}</m>
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <m>\begin{pmatrix} 1 \amp 2 \\ 3 \amp 7 \end{pmatrix}\begin{pmatrix} 7 \amp -2 \\ -3 \amp 1\end{pmatrix}</m>
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <m>\begin{pmatrix} 7 \amp -2 \\ -3 \amp 1\end{pmatrix}\begin{pmatrix} 1 \amp 2 \\ 3 \amp 7 \end{pmatrix}</m>
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <m>\begin{pmatrix} 1 \amp 2 \amp 4 \\ -2 \amp 1 \amp 0 \\ -2 \amp 1 \amp 1\end{pmatrix}\left(2\begin{pmatrix} 3 \amp 2 \\ 0 \amp 1 \\ -1 \amp -1 \end{pmatrix} + 3\begin{pmatrix} 1 \amp 1 \\ 1 \amp 1 \\ 1 \amp 1 \end{pmatrix}\right)</m>
+                    </p>
+                </li>
+            </ol>
+        </exercise>
+        <exercise>
+            <p>
+                Let <m>A</m> be an <m>m\times n</m> matrix. Denoting by <m>\be_i</m> the <m>i</m>th standard unit vector (<m>1\leq i\leq n</m>), show that <m>A\be_i</m> is the <m>i</m>th column of <m>A</m>.
+            </p>
+        </exercise>
+        <exercise>
+            <p>
+                Consider the matrix <m>A=\begin{pmatrix} 1 \amp 3 \\ 5 \amp -1\end{pmatrix}</m>. Find a vector <m>\bv\in\R^2</m> such that <m>\varphi_A(\bv)=\colvec{-2 \\ 1}</m>.
+            </p>
+        </exercise>
+        <exercise>
+            <p>
+                The following is a list of linear maps. For each one for them, find a matrix that induces it.
+            </p>
+            <ol marker="(a)">
+                <li>
+                    <p>
+                        <m>f:\R^2\rightarrow \R^3,\quad (x,y)\mapsto (2x, x-y,3x+y)</m>
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <m>g:\R^2\rightarrow \R^2,\quad (x,y)\mapsto \left(\frac{\sqrt{3}}{2}x-\frac{1}{2}y,\frac{1}{2}x+\frac{\sqrt{3}}{2}y\right)</m>
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <m>h:\R^2\rightarrow \R^2,\quad (x,y)\mapsto (2x,y)</m>
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <m>k:\R^3\rightarrow \R^3,\quad \left(x, \frac{\sqrt{3}}{2}y-\frac{1}{2}z,\frac{1}{2}y+\frac{\sqrt{3}}{2}z\right)</m>
+                    </p>
+                </li>
+            </ol>
+        </exercise>
+        <exercise>
+            <p>
+                Recall that the <m>n\times n</m> identity matrix <m>\Id_n</m> is the diagonal matrix whose entries in the main diagonal are all <m>1</m>. Verify that <m>\varphi_{\Id_n}:\R^n\rightarrow\R^n</m> is the identity map.
+            </p>
+        </exercise>
+        <exercise>
+            <p>
+                Show that if <m>f,g:\R^n\rightarrow \R^m</m> are linear maps and <m>a,b\in\R</m>, then <m>af+bg</m> is a linear map.
+            </p>
+        </exercise>
+        <exercise>
+            <p>
+                Show that if <m>f:\R^n\rightarrow \R^m</m> and <m>g:\R^m\rightarrow \R^s</m> are linear maps, then the composition <m>g\circ f</m> is a linear map too.
+            </p>
+        </exercise>
+        <exercise>
+            <p>
+                &#9733; Show that if <m>f:\R^n\rightarrow \R^n</m> is a bijective linear map, then its inverse <m>f^{-1}</m> is a linear map as well.
+            </p>
+        </exercise>
+    </exercises>
 </section>
