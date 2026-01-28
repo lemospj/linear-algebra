@@ -171,11 +171,10 @@
         </p>
     </example>
     <p>
-        Let me mention an important generalization of <xref ref="example-standard-units"/>. The unit vectors
+        Let me mention an important generalization of <xref ref="example-standard-units"/>. Recall that the standard unit vectors in <m>\R^n</m> are the vectors
         <me>
-            \be_1=\colvec{1 \\ 0 \\ 0 \\ \vdots \\0},\qquad\be_2=\colvec{0 \\ 1 \\ 0 \\ \vdots \\0},\qquad\cdots\qquad,\be_n=\colvec{0 \\ 0 \\ 0 \\ \vdots \\1}
-        </me>
-        in <m>\R^n</m> are called the <term>standard unit vectors</term> of <m>\R^n</m>. To be completely clear regarding their definition, <m>\R^n</m> contains exactly <m>n</m> standard unit vectors. For each integer <m>i</m> between <m>1</m> and <m>n</m>, the standard unit vector <m>\be_i</m> is the only vector with <m>i</m>th entry equal to <m>1</m> and every other entry equal to <m>0</m>.
+            \be_1=\colvec{1 \\ 0 \\ 0 \\ \vdots \\0},\qquad\be_2=\colvec{0 \\ 1 \\ 0 \\ \vdots \\0},\qquad\cdots,\qquad\be_n=\colvec{0 \\ 0 \\ 0 \\ \vdots \\1}
+        </me>.
     </p>
     <lemma xml:id="lem-standard-ind">
         <statement>
@@ -393,6 +392,18 @@
                     The converse of <xref ref="exercise-ortho-lin-ind"/> does not hold. Give an example of two linearly independent vectors in <m>\R^2</m> such that <m>\bv\cdot \bw\neq 0</m>.
                 </p>
             </statement>
+        </exercise>
+        <exercise>
+            <statement>
+                <p>
+                    &#9733; Let <m>m,n</m> be positive integers such that <m>m &gt; n</m>. Show that any set of <m>m</m> vectors <m>\bv_1,\bv_2,\ldots,\bv_m</m> in <m>\R^n</m> is linearly dependent.
+                </p>
+            </statement>
+            <hint>
+                <p>
+                    You may want to use the fact that any homogeneous linear system with more variables than equations has infinitely many solutions.
+                </p>
+            </hint>
         </exercise>
     </exercises>
 </section>

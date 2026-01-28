@@ -329,7 +329,10 @@
         </p>
     </example>
     <p>
-        Using this notation, a scalar matrix is a diagonal matrix of the form <m>\diag(\lambda,\lambda,\ldots,\lambda)</m> for some <m>\lambda\in \R</m>.
+        Using this notation, a scalar matrix is a diagonal matrix of the form <m>\diag(\lambda,\lambda,\ldots,\lambda)</m> for some <m>\lambda\in \R</m>. Equivalently, a scalar matrix is a matrix of the form <m>\lambda\Id_n</m>, where, recall, <m>\Id_n</m> is the <m>n\times n</m> identity matrix:
+        <me>
+            \Id_n=\begin{pmatrix} 1 \amp 0 \amp \cdots \amp 0 \\ 0 \amp 1 \amp \cdots \amp 0 \\ \vdots \amp \vdots \amp \ddots \amp \vdots \\ 0 \amp 0 \amp \cdots \amp 1\end{pmatrix}
+        </me>.
     </p>
     <p>
         Note that multiplication by a scalar matrix boils down to multiplication by the scalar in the main diagonal, i.e. if <m>\diag(\lambda,\lambda,\ldots,\lambda)</m> is the <m>m\times m</m> scalar matrix with <m>\lambda</m> in the main diagonal, and if <m>A</m> is an <m>m\times n</m> matrix, then
@@ -338,6 +341,18 @@
         </me>.
         This means that scalar matrices behave very much like scalars. Using this fact, one can easily deduce property 3 in <xref ref="lem-matrix-multiplication-props"/> from property 2.
     </p>
+    <p>
+        If we identify scalars with scalar matrices, we are now able to make sense of <m>p(A)</m> for any polynomial <m>p(X)\in\R[X]</m> and square matrix <m>A</m>.
+    </p>
+    <example>
+        <p>
+            Consider the polynomial <m>p(X)=X^2-2X+5</m> and the matrix <m>A=\begin{pmatrix} 1 \amp -1 \\ 0 \amp 2\end{pmatrix}</m>. Then
+            <md>
+                <mrow>p(A)=A^2-2A+5\Id_2 \amp =\begin{pmatrix} 1 \amp -3 \\ 0 \amp 4\end{pmatrix} -2\begin{pmatrix} 1 \amp -1 \\ 0 \amp 2\end{pmatrix} +\begin{pmatrix} 5 \amp 0 \\ 0 \amp 5 \end{pmatrix}</mrow>
+                <mrow> \amp=\begin{pmatrix} 4 \amp -1 \\ 0 \amp 5\end{pmatrix} </mrow>
+            </md>.
+        </p>
+    </example>
     <p>
         You may be wondering why matrix multiplication is defined in this convoluted way. After all, adding two matrices is nothing more than adding the corresponding entries. Why isn't matrix multiplication defined that way too?
     </p>
@@ -491,7 +506,7 @@
     <exercises xml:id="exercises-matrices">
         <exercise>
             <p>
-                Calculate the following expressions.
+                Evaluate the following expressions.
             </p>
             <ol marker="(a)">
                 <li>
@@ -528,7 +543,32 @@
         </exercise>
         <exercise>
             <p>
+                Evaluate <m>p(A)</m> for each polynomial <m>p(X)\in\R[X]</m> and square matrix <m>A</m> given.
+            </p>
+            <ol marker="(a)">
+                <li>
+                    <p>
+                        <m>A=\begin{pmatrix} 1 \amp 3 \\ 2 \amp 5\end{pmatrix},\quad p(X)=X^2-6X-1</m>
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <m>A=\begin{pmatrix} -2 \amp 0 \\ -1 \amp 1\end{pmatrix},\quad p(X)=X^3-2X^2+X-1</m>
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <m>A=\begin{pmatrix} 1 \amp 2 \amp -1 \\ 0 \amp -3 \amp -1 \\ 1 \amp 0 \amp -1 \end{pmatrix},\quad p(X)=2X^2+X-2</m>
+                    </p>
+                </li>
+            </ol>
+        </exercise>
+        <exercise>
+            <p>
                 Let <m>A</m> be an <m>m\times n</m> matrix. Denoting by <m>\be_i</m> the <m>i</m>th standard unit vector (<m>1\leq i\leq n</m>), show that <m>A\be_i</m> is the <m>i</m>th column of <m>A</m>.
+            </p>
+            <p>
+                This means that the image of <m>\be_i</m> under the linear map <m>\varphi_A</m> is the vector represented by the <m>i</m>th column of <m>A</m>.
             </p>
         </exercise>
         <exercise>
