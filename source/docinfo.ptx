@@ -34,7 +34,7 @@
     \newcommand{\Id}{\mathrm{Id}}
 
     \DeclareMathOperator{\diag}{\mathrm{diag}}
-    \DeclareMathOperator{\span}{\mathrm{span}}
+    \DeclareMathOperator{\vspan}{\mathrm{span}}
     \newcommand{\Mat}{\mathrm{Mat}}
     \newcommand{\N}{\mathbb N} 
     \newcommand{\Z}{\mathbb Z} 

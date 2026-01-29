@@ -37,13 +37,13 @@
     <definition xml:id="def-span">
         <statement>
             <p>
-                Let <m>S</m> be a set of vectors in <m>\R^n</m>. The <term>span</term> of <m>S</m>, denoted <m>\span(S)</m>, is the set of vectors in <m>\R^n</m> that can be written as a linear combination of elements in <m>S</m>. We say that the set <m>S</m> <term>generates</term> <m>\span(S)</m>.
+                Let <m>S</m> be a set of vectors in <m>\R^n</m>. The <term>span</term> of <m>S</m>, denoted <m>\vspan(S)</m>, is the set of vectors in <m>\R^n</m> that can be written as a linear combination of elements in <m>S</m>. We say that the set <m>S</m> <term>generates</term> <m>\vspan(S)</m>.
             </p>
         </statement>
     </definition>
     <example>
         <p>
-            Consider the vector <m>\bv=\colvec{1 \\ 2}</m> in <m>\R^2</m>. All linear combinations of the set formed by this single vector are of the form <m>\lambda\bv</m> for some scalar <m>\lambda\in \R</m>. Therefore, <m>\span(\bv)</m> is simply the line in <m>\R^2</m> that passes through the origin and has the same direction as the vector <m>\bv</m>.
+            Consider the vector <m>\bv=\colvec{1 \\ 2}</m> in <m>\R^2</m>. All linear combinations of the set formed by this single vector are of the form <m>\lambda\bv</m> for some scalar <m>\lambda\in \R</m>. Therefore, <m>\vspan(\bv)</m> is simply the line in <m>\R^2</m> that passes through the origin and has the same direction as the vector <m>\bv</m>.
         </p>
         <figure xml:id="fig-span-line">
             <caption>Vector <m>(1,2)</m> (in blue) and its span (in orange).</caption>
@@ -63,7 +63,7 @@
             </image>
         </figure>
         <p>
-            Consider now the set <m>S</m> formed by the vectors <m>\bv=\colvec{1 \\ 2}</m> and <m>\bw=\colvec{-2 \\ -4}</m>. Since <m>\bw=-2\bv</m> the span <m>\span(\bv,\bw)</m> is the same as <m>\span(\bv)</m>. Indeed, if a vector <m>\bu\in\R^2</m> is a linear combination of <m>\bv</m> and <m>\bw</m>, then it is a linear combination of <m>\bv</m> alone:
+            Consider now the set <m>S</m> formed by the vectors <m>\bv=\colvec{1 \\ 2}</m> and <m>\bw=\colvec{-2 \\ -4}</m>. Since <m>\bw=-2\bv</m> the span <m>\vspan(\bv,\bw)</m> is the same as <m>\vspan(\bv)</m>. Indeed, if a vector <m>\bu\in\R^2</m> is a linear combination of <m>\bv</m> and <m>\bw</m>, then it is a linear combination of <m>\bv</m> alone:
             <me>
                 \bu=\lambda\bv+\mu\bw=\lambda\bv-2\mu\bv=(\lambda-2\mu)\bv
             </me>.
@@ -90,7 +90,7 @@
     </example>
     <example xml:id="example-span-two-ind">
         <p>
-            Consider the vectors <m>\bv=\colvec{1 \\ 2}</m> and <m>\bu=\colvec{-1 \\ 1}</m>. In this case, <m>\span(\bv,\bw)=\R^2</m>. In other words, every vector in <m>\R^2</m> can be written as a linear combination of <m>\bv</m> and <m>\bw</m>. In order to see this, let <m>\bb=\colvec{b_1 \\ b_2}</m> be a vector and <m>\R^2</m>. We want to find real numbers <m>x</m> and <m>y</m> such that
+            Consider the vectors <m>\bv=\colvec{1 \\ 2}</m> and <m>\bu=\colvec{-1 \\ 1}</m>. In this case, <m>\vspan(\bv,\bw)=\R^2</m>. In other words, every vector in <m>\R^2</m> can be written as a linear combination of <m>\bv</m> and <m>\bw</m>. In order to see this, let <m>\bb=\colvec{b_1 \\ b_2}</m> be a vector and <m>\R^2</m>. We want to find real numbers <m>x</m> and <m>y</m> such that
             <me>
                 x\colvec{1 \\ 2} + y\colvec{-1 \\ 1}=\colvec{b_1 \\ b_2}
             </me>,
@@ -133,11 +133,11 @@
         If you suspect that you are having a d&#233;j&#224; vu, you are right. These properties are analogues of the elementary row operations that we studied in Chapter 1. However, since we represent vectors as columns, we are performing elementary column operations instead!
     </p>
     <p>
-        If we now consider the matrix whose columns are the vectors <m>\bv_1,\bv_2,\ldots,\bv_m</m>, every time we perform an elementary column operation on it, each column will still be an element in <m>V=\span(\bv_1,\ldots,\bv_m)</m> and the set of all columns will still generate <m>\span(\bv_1,\ldots,\bv_m)</m>. We can therefore use the Gauss-Jordan process on columns to end up with a matrix in <term>reduced column echelon form</term> where the columns generate <m>V</m>. Let me show you a few examples that will hopefully convince you that the generating set for <m>\span(\bv_1,\ldots,\bv_m)</m> that we obtain from applying the Gauss-Jordan elimination process to the matrix with columns <m>\bv_1,\ldots,\bv_m</m> offers a much better description of this space.
+        If we now consider the matrix whose columns are the vectors <m>\bv_1,\bv_2,\ldots,\bv_m</m>, every time we perform an elementary column operation on it, each column will still be an element in <m>V=\vspan(\bv_1,\ldots,\bv_m)</m> and the set of all columns will still generate <m>\vspan(\bv_1,\ldots,\bv_m)</m>. We can therefore use the Gauss-Jordan process on columns to end up with a matrix in <term>reduced column echelon form</term> where the columns generate <m>V</m>. Let me show you a few examples that will hopefully convince you that the generating set for <m>\vspan(\bv_1,\ldots,\bv_m)</m> that we obtain from applying the Gauss-Jordan elimination process to the matrix with columns <m>\bv_1,\ldots,\bv_m</m> offers a much better description of this space.
     </p>
     <example>
         <p>
-            We start we the two vectors from <xref ref="example-span-two-ind"/>. We want to find a nice description of <m>\span(\bv,\bw)</m> where <m>\bv=\colvec{1 \\ 2}</m> and <m>\bw=\colvec{-1 \\ 1}</m>. Let's consider the matrix whose columns are these two vectors:
+            We start we the two vectors from <xref ref="example-span-two-ind"/>. We want to find a nice description of <m>\vspan(\bv,\bw)</m> where <m>\bv=\colvec{1 \\ 2}</m> and <m>\bw=\colvec{-1 \\ 1}</m>. Let's consider the matrix whose columns are these two vectors:
             <me>
                 \begin{pmatrix} 1 \amp -1 \\ 2 \amp 1\end{pmatrix}
             </me>.
@@ -145,7 +145,7 @@
             <me>
                 \begin{pmatrix} 1 \amp -1 \\ 2 \amp 1\end{pmatrix}\xrightarrow{C_2\to C_2+C_1}\begin{pmatrix} 1\amp 0 \\ 2 \amp 3 \end{pmatrix}\xrightarrow{C_2\to \frac{1}{3}C_2}\begin{pmatrix} 1\amp 0 \\ 2 \amp 1\end{pmatrix}\xrightarrow{C_1\to C_1-2C_2}\begin{pmatrix} 1 \amp 0 \\ 0 \amp 1\end{pmatrix}
             </me>.
-            What this means is that <m>\span(\bv,\bw)</m> is precisely the set of vectors in <m>\R^2</m> generated by the standard unit vectors <m>\colvec{1 \\ 0}</m> and <m>\colvec{0 \\ 1}</m>. This is of course the whole of <m>\R^2</m>.
+            What this means is that <m>\vspan(\bv,\bw)</m> is precisely the set of vectors in <m>\R^2</m> generated by the standard unit vectors <m>\colvec{1 \\ 0}</m> and <m>\colvec{0 \\ 1}</m>. This is of course the whole of <m>\R^2</m>.
         </p>        
     </example>
     <example>
@@ -154,7 +154,7 @@
             <me>
                 \begin{pmatrix} 1 \amp -2 \\ 2 \amp -4 \end{pmatrix}\xrightarrow{C_2\to C_2+2C_1}\begin{pmatrix} 1 \amp 0 \\ 2 \amp 0\end{pmatrix}
             </me>.
-            We conclude that <m>\span(\bv,\bw)=\span(\bv)</m>.
+            We conclude that <m>\vspan(\bv,\bw)=\vspan(\bv)</m>.
         </p>
     </example>
     <example>
