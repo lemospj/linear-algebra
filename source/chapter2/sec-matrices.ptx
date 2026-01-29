@@ -564,6 +564,25 @@
             </ol>
         </exercise>
         <exercise>
+            <statement>
+                <p>
+                    If a square matrix <m>A</m> satisfies <m>A^2=A</m>, we say that <m>A</m> is <term>idempotent</term>. For example, the <m>n\times n</m> identity matrix is idempotent for every <m>n\geq 1</m>. Give an example of an idempotent matrix that is not an identity matrix.
+                </p>
+            </statement>
+        </exercise>
+        <exercise>
+            <statement>
+                <p>
+                    If a square matrix <m>A</m> satisfies <m>A^k=0</m> for some integer <m>k\geq 1</m>, we say that <m>A</m> is <term>nilpotent</term>. For example, the zero matrix is nilpotent. Give an example of a non-zero nilpotent matrix.
+                </p>
+            </statement>
+            <hint>
+                <p>
+                    There are examples of <m>2\times 2</m> non-zero matrices that satisfy <m>A^2=0</m>.
+                </p>
+            </hint>
+        </exercise>
+        <exercise>
             <p>
                 Let <m>A</m> be an <m>m\times n</m> matrix. Denoting by <m>\be_i</m> the <m>i</m>th standard unit vector (<m>1\leq i\leq n</m>), show that <m>A\be_i</m> is the <m>i</m>th column of <m>A</m>.
             </p>
