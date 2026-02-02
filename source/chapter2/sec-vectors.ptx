@@ -480,7 +480,7 @@
             <title>&#9733; Cauchy-Schwarz inequality in <m>\R^2</m></title>
             <statement>
                 <p>
-                    Show that <m>\bv\cdot\bw\leq \lVert\bv\rVert\lVert\bw\rVert</m> for all vectors <m>\bv,\bw\in\R^2</m>.
+                    Show that <m>|\bv\cdot\bw|\leq \lVert\bv\rVert\lVert\bw\rVert</m> for all vectors <m>\bv,\bw\in\R^2</m>.
                 </p>
             </statement>
         </exercise>
