@@ -35,6 +35,7 @@
 
     \DeclareMathOperator{\diag}{\mathrm{diag}}
     \DeclareMathOperator{\vspan}{\mathrm{span}}
+    \DeclareMathOperator{\Tr}{\mathrm{Tr}}
     \newcommand{\Mat}{\mathrm{Mat}}
     \newcommand{\N}{\mathbb N} 
     \newcommand{\Z}{\mathbb Z} 

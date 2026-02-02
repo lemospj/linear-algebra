@@ -503,6 +503,208 @@
     <p>
         It is also true that every linear map <m>f:\R^n\rightarrow \R^m</m> is induced by an <m>m\times n</m> matrix, and we could even prove it here, but this section is already quite long and so I will discuss this property in a later section.
     </p>
+    <p>
+        There are two important numbers that are associated to a given square matrix: its <term>trace</term> and its <term>determinant</term>.
+    </p>
+    <definition xml:id="def-trace">
+        <statement>
+            <p>
+                Let <m>A=(a_{ij})_{ij}</m> be an <m>n\times n</m> matrix. The <term>trace</term> of <m>A</m> is defined to be
+                <me>
+                    \Tr(A)=\sum_{i=1}^n a_{ii}
+                </me>.
+            </p>
+        </statement>
+    </definition>
+    <p>
+        In other words, the trace of a square matrix is the sum of the entries in the main diagonal.
+    </p>
+    <example>
+        <p>
+            Consider <m>A=\begin{pmatrix} 1 \amp 2 \\ -1 \amp 4\end{pmatrix}</m> and <m>B=\begin{pmatrix} -1 \amp 3 \amp 0 \\ 1 \amp 2 \amp 2 \\ -2 \amp 2 \amp -5 \end{pmatrix}</m>.
+            Then
+            <me>
+                \Tr(A)= 1 + 4=5
+            </me>
+            and
+            <me>
+                \Tr(B) = -1 +2 -5 =-4
+            </me>.
+        </p>
+    </example>
+    <p>
+        Here are some properties of the trace whose proof I will leave to you as an exercise.
+    </p>
+    <proposition xml:id="prop-trace-props">
+        <statement>
+            <p>
+                The following statements hold:
+                <ol>
+                    <li>
+                        <p>
+                            If <m>A</m> and <m>B</m> are <m>n\times n</m> matrices, then <m>\Tr(A+B)=\Tr(A)+\Tr(B)</m>.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            If <m>A</m> is a square matrix and <m>\lambda\in\R</m> is a scalar, then <m>\Tr(\lambda A)=\lambda\Tr(A)</m>.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            If <m>A</m> is a square matrix, then <m>\Tr(A)=\Tr(A^T)</m>.
+                        </p>
+                    </li>
+                </ol>
+            </p>
+        </statement>
+    </proposition>
+    <p>
+        However, it is not true that <m>\Tr(AB)=\Tr(A)\Tr(B)</m> for every <m>m\times n</m> matrix <m>A</m> and <m>n \times m</m> matrix <m>B</m>.
+    </p>
+    <exercise>
+        <statement>
+            <p>
+                Find two <m>2\times 2</m> matrices <m>A</m> and <m>B</m> such that <m>\Tr(AB)\neq \Tr(A)\Tr(B)</m>.
+            </p>
+        </statement>
+    </exercise>
+    <p>
+        What we do have is the following.
+    </p>
+    <proposition xml:id="prop-trace-product">
+        <statement>
+            <p>
+                Let <m>A</m> be an <m>m\times n</m> matrix, and let <m>B</m> be an <m>n\times m</m> matrix. Then <m>\Tr(AB)=\Tr(BA)</m>.
+            </p>
+        </statement>
+        <proof>
+            <p>
+                Denote by <m>a_{ij}</m> the <m>(i,j)</m> entry of <m>A</m> and by <m>b_{ij}</m> that of <m>B</m>.
+            </p>
+            <p>
+                The matrix <m>C=AB</m> is an <m>m\times m</m> matrix. If <m>c_{ij}</m> is its <m>(i,j)</m> entry, then
+                <me>
+                    c_{ii}=\sum_{j=1}^n a_{ij}b_{ji}
+                </me>.
+                This means that
+                <me>
+                    \Tr(AB)=\sum_{i=1}^m \sum_{j=1}^n a_{ij}b_{ji}
+                </me>.
+                Let's now calculate the trace of <m>D=BA</m> and compare. This matrix is an <m>n\times n</m> matrix. If we denote its <m>(i,j)</m> entry by <m>d_{ij}</m>, then
+                <me>
+                    d_{jj} = \sum_{i=1}^m b_{ji}a_{ij}
+                </me>.
+                Therefore, the trace of <m>BA</m> is given by
+                <me>
+                    \Tr(BA) = \sum_{j=1}^n\sum_{i=1}^m b_{ji}a_{ij}
+                </me>.
+                It is clear that the above expressions for <m>\Tr(AB)</m> and <m>\Tr(BA)</m> are the same.
+            </p>
+        </proof>
+    </proposition>
+    <p>
+        The definition of a determinant of a square matrix is a little more involved. We will define it recursively. What this means is that I will explicitly tell you what the determinant of a <m>1\times 1</m> matrix is, but then I will simply tell you how to find the determinant of an <m>n\times n</m> matrix by calculating determinants of <m>(n-1)\times (n-1)</m> matrices.
+    </p>
+    <definition xml:id="def-determinant">
+        <statement>
+            <p>
+                If <m>A=(a)</m> is a <m>1\times 1</m> matrix, the <term>determinant</term> of <m>A</m> is
+                <me>\det(A)=a</me>.
+            </p>
+            <p>
+                If <m>A=(a_{ij})_{ij}</m> is an <m>n\times n</m> matrix and we know how to calculate the determinant of <m>(n-1)\times (n-1)</m> matrices, then the <term>determinant</term> of <m>A</m> is defined to be
+                <me>
+                    \det(A)=\sum_{j=1}^n (-1)^{1+j}a_{1j}M_{1j}
+                </me>,
+                where <m>M_{1j}</m> is the determinant of the <m>(n-1)\times (n-1)</m> matrix obtained by deleting the first row and <m>j</m>th column from <m>A</m>.
+            </p>
+        </statement>
+    </definition>
+    <p>
+        The determinant of a matrix <m>A</m> is sometimes denoted <m>|A|</m>.
+    </p>
+    <p>
+        Let's work out the <m>2\times 2</m> and <m>3\times 3</m> expressions for the determinant of a general matrix.
+    </p>
+    <p>
+        Consider a <m>2\times 2</m> matrix <m>A=\begin{pmatrix} a \amp b \\ c \amp d\end{pmatrix}</m>. We need to calculate <m>M_{11}</m> and <m>M_{12}</m>, which are determinants of <m>1\times 1</m> matrices. Recall that <m>M_{11}</m> is the determinant of the matrix obtained from <m>A</m> by deleting the first row and first column. The matrix that one obtains is <m>(d)</m>, which has determinant <m>d</m>. Thus, <m>M_{11}=d</m>. Similarly, we can easily check that <m>M_{12}=c</m>. Therefore, 
+        <me>
+            \det(A)=aM_{11}-bM_{12}=ad-bc
+        </me>.
+    </p>
+    <p>
+        Now that we know how to calculate the determinant of a general <m>2\times 2</m> matrix, we can piggyback off this knowledge to deduce the general expression of the determinant of
+        <me>
+            A=\begin{pmatrix} a \amp b \amp c \\ d \amp e \amp f \\ g \amp h \amp i \end{pmatrix}
+        </me>.
+        According to the definition,
+        <md>
+            <mrow>\det(A) \amp = a\begin{vmatrix} e \amp f \\ h \amp i \end{vmatrix} - b \begin{vmatrix} d \amp f \\ g \amp i\end{vmatrix}+c\begin{vmatrix}d \amp e \\ g \amp h\end{vmatrix}</mrow>
+            <mrow> \amp = a(ei-fh) - b(di-fg) + c(dh-eg)</mrow>
+            <mrow> \amp = aei + dhc + gbf - ceg - fha - ibd </mrow>
+        </md>.  
+    </p>
+    <p>
+        These two quantities will feature prominently in this course. For now, let me finish this chapter with the following important results about the determinant, which I will state without proof.
+    </p>
+    <p>
+        Consider an <m>n\times (n-1)</m> matrix <me>A=\begin{pmatrix} a_{11} \amp a_{12} \amp \cdots \amp a_{1,n-1}\\ a_{21} \amp a_{22} \amp \cdots \amp a_{2,n-1} \\ \vdots \amp \vdots \amp \ddots \amp \vdots \\ a_{n1} \amp a_{n2} \amp \cdots \amp a_{n,n-1}\end{pmatrix}</me>. If we take a vector <m>\bv=\colvec{x_1 \\ x_2 \\ \vdots \\ x_n}</m> in <m>\R^n</m> and implant it in the matrix <m>A</m> as its <m>i</m>th column, we end up with an <m>n\times n</m> matrix 
+        <me>
+            A(\bv,i) = \begin{pmatrix} a_{11} \amp a_{12} \amp \cdots \amp a_{1,i-1} \amp x_1 \amp a_{1,i} \amp \cdots \amp a_{1,n-1}\\ a_{21} \amp a_{22} \amp \cdots \amp a_{2,i-1} \amp x_2 \amp a_{2,i} \amp \cdots \amp a_{2,n-1} \\ \vdots \amp \vdots \amp \ddots \amp \vdots \amp \vdots \amp \vdots \amp \ddots \amp \vdots \\ a_{n1} \amp a_{n2} \amp \cdots \amp a_{n,i-1} \amp x_n \amp a_{n,i} \amp \cdots \amp a_{n,n-1}\end{pmatrix}
+        </me>
+    </p>
+    <example>
+        <p>
+            Say that <m>A=\colvec{1 \\ 2}</m> and <m>\bv = \colvec{0 \\ 5}</m>. Then
+            <me>
+                A(\bv,1)=\begin{pmatrix} 0 \amp 1 \\ 5 \amp 2\end{pmatrix}\qquad \text{and}\qquad A(\bv,2)=\begin{pmatrix} 1 \amp 0 \\ 2 \amp 5 \end{pmatrix}
+            </me>.
+        </p>
+    </example>
+    <p>
+        So, if we fix such a matrix <m>A</m> and a integer <m>i</m> between <m>1</m> and <m>n</m>, we can construct a function <m>\delta_{A,i}: \R^n\rightarrow \R</m> by setting <m>\delta_A(\bv)=\det(A(\bv,i))</m>.
+    </p>
+    <proposition xml:id="prop-column-linearity">
+        <statement>
+            <p>
+                Let <m>A</m> be an <m>n\times (n-1)</m> matrix and fix an integer <m>i\in\{1,\ldots,n\}</m>. The function <m>\delta_{A,i}</m> defined above is linear.
+            </p>
+        </statement>
+    </proposition>
+    <p>
+        A more succint way of expressing <xref ref="prop-column-linearity"/> is by saying that the determinant is linear on columns.
+    </p>
+    <example>
+        <p>
+            Consider the matrices <m>A=\begin{pmatrix} 2 \amp -1 \\ 3 \amp 0\end{pmatrix}</m> and <m>B=\begin{pmatrix} -2 \amp -1 \\ 5 \amp 0\end{pmatrix}</m>. It can be easily calculated that
+            <me>
+                \det(A)=3\qquad \text{and}\qquad \det(B)=5
+            </me>.
+            Note that the matrix <m>C=\begin{pmatrix} 6 \amp -1 \\ 9 \amp 0 \end{pmatrix}</m> is obtained from <m>A</m> by multiplying the first column by <m>3</m>. Since determinants are linear on columns, we know that <m>\det(C)=3\det(A)=9</m>, which can be directly verified to be true.
+        </p>
+        <p>
+            Similarly, note that the first column of <m>D=\begin{pmatrix} 6 \amp -1 \\ 25 \amp 0 \end{pmatrix}</m> is equal to <m>5\cdot\colvec{2 \\ 3} + 2 \cdot\colvec{-2 \\ 5}</m>. Therefore,
+            <me>\det(D)=5\det(A)+2\det(B)=15+10=25</me>.
+        </p>
+    </example>
+    <p>
+        This does not mean that <m>\det(A+B)=\det(A)+\det(B)</m>. In fact, this is usually false!
+    </p>
+    <exercise>
+        <statement>
+            <p>
+                Find two <m>2\times 2</m> matrices <m>A</m> and <m>B</m> such that <m>\det(A+B)\neq\det(A)+\det(B)</m>.
+            </p>
+        </statement>
+    </exercise>
+    <proposition xml:id="prop-determinant-product">
+        <statement>
+            <p>
+                Let <m>A</m> and <m>B</m> be two <m>n\times n</m> matrices. Then <m>\det(AB)=\det(A)\cdot\det(B)</m>.
+            </p>
+        </statement>
+    </proposition>
     <exercises xml:id="exercises-matrices">
         <exercise>
             <p>
@@ -635,6 +837,65 @@
         <exercise>
             <p>
                 Show that if <m>f:\R^n\rightarrow \R^m</m> and <m>g:\R^m\rightarrow \R^s</m> are linear maps, then the composition <m>g\circ f</m> is a linear map too.
+            </p>
+        </exercise>
+        <exercise>
+            <statement>
+                <p>
+                    Calculate the trace and determinant of each of the following matrices.
+                    <ol>
+                        <li>
+                            <p>
+                                <m>\begin{pmatrix} -2 \amp 2 \\ 3 \amp 1\end{pmatrix}</m>
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                <m>\begin{pmatrix} 0 \amp -1 \\ -1 \amp 0 \end{pmatrix}</m>
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                <m>\begin{pmatrix} 1 \amp 2 \\ 2 \amp 4\end{pmatrix}</m>
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                <m>\begin{pmatrix} 2 \amp 0 \amp 0 \\ 0 \amp 3 \amp 0 \\ 0 \amp 0 \amp -1\end{pmatrix}</m>
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                <m>\begin{pmatrix} -1 \amp 2 \amp 1 \\ 2 \amp 3 \amp 0 \\ 3 \amp -1 \amp 0\end{pmatrix}</m>
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                <m>\begin{pmatrix} 2 \amp 2 \amp 1 \\ -1 \amp -1 \amp 4 \\ 3 \amp 3 \amp 7\end{pmatrix}</m>
+                            </p>
+                        </li>
+                    </ol>
+                </p>
+            </statement>
+        </exercise>
+        <exercise>
+            <p>
+                Show that <m>\det(\diag(\lambda_1,\lambda_2,\ldots,\lambda_n))=\lambda_1\cdot\lambda_2\cdot\ldots\cdot\lambda_n</m> and <m>\Tr(\diag(\lambda_1,\lambda_2,\ldots,\lambda_n)) = \lambda_1+\lambda_2+\cdots+\lambda_n</m>.
+            </p>
+        </exercise>
+        <exercise>
+            <p>
+                Show that <m>\det(\Id_n)=1</m> and <m>\Tr(\Id_n)=n</m> for every integer <m>n\geq 1</m>.
+            </p>
+        </exercise>
+        <exercise>
+            <p>
+                &#9733; Show that <m>\det(A)=\det(A^T)</m>.
+            </p>
+        </exercise>
+        <exercise>
+            <p>
+                &#9733; Use the fact that the determinant is linear on columns to show that if <m>A</m> is an <m>n\times n</m> matrix, then <m>\det(\lambda A)=\lambda^n\det(A)</m> for every <m>\lambda\in\R</m>.
             </p>
         </exercise>
         <exercise>
