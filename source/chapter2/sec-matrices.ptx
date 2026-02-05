@@ -793,9 +793,57 @@
             </p>
         </exercise>
         <exercise>
-            <p>
-                Consider the matrix <m>A=\begin{pmatrix} 1 \amp 3 \\ 5 \amp -1\end{pmatrix}</m>. Find a vector <m>\bv\in\R^2</m> such that <m>\varphi_A(\bv)=\colvec{-2 \\ 1}</m>.
-            </p>
+            <statement>
+                <p>
+                    Show that the following functions are linear maps. (Vectors are being written as row vectors.)                   
+                </p>
+                <ol>
+                    <li>
+                        <p>
+                            <m>f(x,y)=(x,y)</m>
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <m>g(x,y,z)=(-x,5y,3z)</m>
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <m>h(x,y,z)=(z,x,y)</m>
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <m>k(x,y)=(2x-y,x+3y,y)</m>
+                        </p>
+                    </li>
+                </ol>
+            </statement>
+        </exercise>
+        <exercise>
+            <statement>
+                <p>
+                    Show that the following functions are not linear maps.
+                </p>
+                <ol>
+                    <li>
+                        <p>
+                            <m>f(x)=\tan(x)</m>
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <m>g(x,y)=(x^2,y^2)</m>
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <m>h(x,y)=(x+1,y)</m>
+                        </p>
+                    </li>
+                </ol>
+            </statement>
         </exercise>
         <exercise>
             <statement>
@@ -820,6 +868,11 @@
                     </ol>
                 </p>
             </statement>
+        </exercise>
+        <exercise>
+            <p>
+                Consider the matrix <m>A=\begin{pmatrix} 1 \amp 3 \\ 5 \amp -1\end{pmatrix}</m>. Find a vector <m>\bv\in\R^2</m> such that <m>\varphi_A(\bv)=\colvec{-2 \\ 1}</m>.
+            </p>
         </exercise>
         <exercise>
             <p>
