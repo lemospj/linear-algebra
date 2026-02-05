@@ -27,6 +27,7 @@
     \newcommand{\bu}{{\bf u}}
     \newcommand{\bv}{{\bf v}}
     \newcommand{\bw}{{\bf w}}
+    \newcommand{\bx}{{\bf x}}
     \newcommand{\bz}{{\bf 0}}
     \newcommand{\colvec}[1]{
       \begin{pmatrix} #1 \end{pmatrix}

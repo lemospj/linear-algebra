@@ -798,6 +798,30 @@
             </p>
         </exercise>
         <exercise>
+            <statement>
+                <p>
+                    For each matrix <m>A</m> below, find a vector <m>\bx</m> that satisfies <m>A\bx=\bz</m>, or explain why such a vector does not exist.
+                    <ol marker="(a)">
+                        <li>
+                            <p>
+                                <m>A=\begin{pmatrix}1 \amp 2 \\ -1 \amp 1\end{pmatrix}</m>
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                <m>A=\begin{pmatrix} -1 \amp 2 \amp 0 \\ 1 \amp 1 \amp 1 \end{pmatrix}</m>
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                <m>A=\begin{pmatrix} 1 \amp 2 \\ -1 \amp 0 \\ 2 \amp 2\end{pmatrix}</m>
+                            </p>
+                        </li>
+                    </ol>
+                </p>
+            </statement>
+        </exercise>
+        <exercise>
             <p>
                 The following is a list of linear maps. For each one for them, find a matrix that induces it.
             </p>
