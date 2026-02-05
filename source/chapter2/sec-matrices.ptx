@@ -923,6 +923,13 @@
             </p>
         </exercise>
         <exercise>
+            <statement>
+                <p>
+                    &#9733; Show that if <m>A</m> is a square matrix with two equal columns, then <m>\det(A)=0</m>.
+                </p>
+            </statement>
+        </exercise>
+        <exercise>
             <p>
                 &#9733; Show that if <m>f:\R^n\rightarrow \R^n</m> is a bijective linear map, then its inverse <m>f^{-1}</m> is a linear map as well.
             </p>

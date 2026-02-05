@@ -17,7 +17,7 @@
                     </li>
                     <li>
                         <p>
-                            If <m>\lambda\in R</m> and <m>\bv\in V</m>, then <m>\lambda\bv\in \R</m> (i.e., <m>V</m> is closed under scalar multiplication).
+                            If <m>\lambda\in \R</m> and <m>\bv\in V</m>, then <m>\lambda\bv\in \R</m> (i.e., <m>V</m> is closed under scalar multiplication).
                         </p>
                     </li>
                 </ol>
@@ -27,20 +27,67 @@
     <exercise>
         <statement>
             <p>
+                Show that if <m>V</m> is a linear subspace of <m>\R^n</m>, then <m>\bz\in V</m>.
+            </p>
+        </statement>
+    </exercise>
+    <exercise>
+        <statement>
+            <p>
                 Show that both <m>\{\bz\}</m> and <m>\R^n</m> are linear subspaces of <m>\R^n</m>.
             </p>
         </statement>
     </exercise>
+    <p>
+        If <m>V</m> is a linear subspace of <m>\R^n</m> and <m>S</m> is a subset of vector in <m>V</m>, we say that <m>S</m> generates <m>V</m> if every vector in <m>v</m> can be written as a linear combination of vectors in <m>S</m>.
+    </p>
     <p>
         Any set of vectors in <m>\R^n</m> generates a linear subspace called its <term>span</term>.
     </p>
     <definition xml:id="def-span">
         <statement>
             <p>
-                Let <m>S</m> be a set of vectors in <m>\R^n</m>. The <term>span</term> of <m>S</m>, denoted <m>\vspan(S)</m>, is the set of vectors in <m>\R^n</m> that can be written as a linear combination of elements in <m>S</m>. We say that the set <m>S</m> <term>generates</term> <m>\vspan(S)</m>.
+                Let <m>S</m> be a set of vectors in <m>\R^n</m>. The <term>span</term> of <m>S</m>, denoted <m>\vspan(S)</m>, is the set of vectors in <m>\R^n</m> that can be written as a linear combination of elements in <m>S</m>.
             </p>
         </statement>
     </definition>
+    <proposition xml:id="prop-span-lin-space">
+        <statement>
+            <p>
+                Let <m>S</m> be a set of vectors in <m>\R^n</m>. The set <m>\vspan(S)</m> is a linear subspace of <m>\R^n</m>.
+            </p>
+        </statement>
+        <proof>
+            <p>
+                Let <m>\bv</m> be an element in <m>\vspan(S)</m>. First, we will see that <m>\lambda\bv\in\vspan(S)</m> for every scalar <m>\lambda\in \R</m>.
+            </p>
+            <p>
+                By definition, every element <m>v\in \vspan(S)</m> can be written as a linear combination of vectors in <m>S</m>:
+                <me>
+                    v=\sum_{\bu\in S}c_{\bu}\bu
+                </me>,
+                where only finitely many of the coefficients <m>c_u</m> are non-zero. If <m>\lambda\in\R</m>, then
+                <me>
+                    \lambda\bv=\sum_{\bu\in S}\lambda c_{\bu}\bu
+                </me>,
+                which means that <m>\lambda\bv</m> can also be written as a linear combination of vectors in <m>S</m>. Therefore, <m>\lambda\bv</m> is in the span of <m>S</m>.
+            </p>
+            <p>
+                We now need to show that if <m>\bv</m> and <m>\bw</m> are two vectors in the span of <m>S</m>, then <m>\bv+\bw</m> will also be there.
+            </p>
+            <p>
+                Using the definition of span again, we know that <m>\bv</m> and <m>\bw</m> can be written as linear combinations of vectors in <m>S</m>:
+                <me>
+                    \bv = \sum_{\bu\in S}a_{\bu}\bu \qquad\text{and}\qquad \bw=\sum_{\bu\in S}b_{\bu}\bu
+                </me>.
+                Then
+                <me>
+                    \bv + \bw = \sum_{\bu\in S}(a_{\bu}+b_{\bu})\bu
+                </me>, 
+                showing that <m>\bv+\bw</m> can also be written as a linear combination of vectors in <m>S</m>. This means that <m>\bv+\bw\in\vspan(S)</m> and concludes the proof that <m>\vspan(S)</m> is a linear subspace of <m>\R^n</m>.
+            </p>
+        </proof>
+    </proposition>
     <example>
         <p>
             Consider the vector <m>\bv=\colvec{1 \\ 2}</m> in <m>\R^2</m>. All linear combinations of the set formed by this single vector are of the form <m>\lambda\bv</m> for some scalar <m>\lambda\in \R</m>. Therefore, <m>\vspan(\bv)</m> is simply the line in <m>\R^2</m> that passes through the origin and has the same direction as the vector <m>\bv</m>.
