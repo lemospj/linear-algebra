@@ -848,6 +848,30 @@
         <exercise>
             <statement>
                 <p>
+                    Suppose that <m>f:\R^2\rightarrow\R^3</m> is a linear map such that <m>f(1,2)=(3,1,0)</m> and <m>f(0,1)=(1,1,1)</m>.
+                    <ol>
+                        <li>
+                            <p>
+                                Find <m>f(1,0)</m>.
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                Find <m>f(3,2)</m>.
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                &#9733; If <m>(x,y)</m> is a vector in <m>\R^2</m>, find an expression for <m>f(x,y)</m> in terms of <m>x,y</m> and <m>z</m>.
+                            </p>
+                        </li>
+                    </ol>
+                </p>
+            </statement>
+        </exercise>
+        <exercise>
+            <statement>
+                <p>
                     For each matrix <m>A</m> below, find a vector <m>\bx</m> that satisfies <m>A\bx=\bz</m>, or explain why such a vector does not exist.
                     <ol marker="(a)">
                         <li>
