@@ -58,7 +58,7 @@
         </p>
     </exercise>
     <p>
-        One interesting example of linear subspaces comes from solution sets of homogeneous linear systems of equations. Indeed, every solution set of a homogeneous linear 
+        One interesting example of linear subspaces comes from solution sets of homogeneous linear systems of equations. Indeed, every solution set of a homogeneous linear system of equations is a linear subspace. (See exercises.)
     </p>
     <p>
         If <m>V</m> is a linear subspace of <m>\R^n</m> and <m>S</m> is a subset of vector in <m>V</m>, we say that <m>S</m> <term>generates</term> <m>V</m> if every vector in <m>v</m> can be written as a linear combination of vectors in <m>S</m>.
