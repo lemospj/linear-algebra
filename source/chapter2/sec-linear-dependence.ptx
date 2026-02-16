@@ -262,6 +262,25 @@
             </p>
         </proof>
     </lemma>
+    <lemma xml:id="lem-generate">
+        <statement>
+            <p>
+                Let <m>S</m> be a linearly independent set of vectors in <m>\R^n</m>. If <m>\bv\in\R^n</m> is a vector such that <m>S\cup\{\bv\}</m> is linearly dependent, then <m>\bv</m> can be written as a linear combination of vectors in <m>S</m>.
+            </p>
+        </statement>
+        <proof>
+            <p>
+                Since <m>S\cup\{v\}</m> is linearly dependent, there is a collection of vectors <m>\bu_1,\bu_2,\ldots,\bu_m\in S</m> and scalars <m>a_1,a_2,\ldots,a_m,c\in\R</m> not all <m>0</m> such that
+                <me>
+                    a_1\bu_1+a_2\bu_2+\ldots+a_m\bu_m+c\bv=\bz
+                </me>.
+                Note that we must have <m>c\neq 0</m>, for otherwise we would have a non-trivial linear relation among vectors in <m>S</m>, meaning that <m>S</m> itself would be linearly dependent. But if <m>c\neq 0</m>, we have
+                <me>
+                    \bv = -\frac{a_1}{c}\bu_1 -\frac{a_2}{c}\bu_2-\ldots-\frac{a_m}{c}\bu_m
+                </me>, as we wanted.
+            </p>
+        </proof>
+    </lemma>
     <exercises xml:id="exercises-chapter2-section2">
         <exercise>
             <statement>
@@ -393,7 +412,7 @@
                 </p>
             </statement>
         </exercise>
-        <exercise>
+        <exercise xml:id="exercise-lin-dep">
             <statement>
                 <p>
                     &#9733; Let <m>m,n</m> be positive integers such that <m>m &gt; n</m>. Show that any set of <m>m</m> vectors <m>\bv_1,\bv_2,\ldots,\bv_m</m> in <m>\R^n</m> is linearly dependent.

@@ -52,8 +52,16 @@
             </p>
         </statement>
     </exercise>
+    <exercise>
+        <p>
+            Show that if <m>V</m> and <m>W</m> are two linear subspaces of <m>\R^n</m>, then <m>V\cap W</m> is a linear subspace of <m>\R^n</m> too.
+        </p>
+    </exercise>
     <p>
-        If <m>V</m> is a linear subspace of <m>\R^n</m> and <m>S</m> is a subset of vector in <m>V</m>, we say that <m>S</m> generates <m>V</m> if every vector in <m>v</m> can be written as a linear combination of vectors in <m>S</m>.
+        One interesting example of linear subspaces comes from solution sets of homogeneous linear systems of equations. Indeed, every solution set of a homogeneous linear 
+    </p>
+    <p>
+        If <m>V</m> is a linear subspace of <m>\R^n</m> and <m>S</m> is a subset of vector in <m>V</m>, we say that <m>S</m> <term>generates</term> <m>V</m> if every vector in <m>v</m> can be written as a linear combination of vectors in <m>S</m>.
     </p>
     <definition xml:id="def-span">
         <statement>
@@ -237,7 +245,7 @@
         </statement>
         <proof>
             <p>
-                The key ingredient is the fact that any set of vectors in <m>\R^n</m> with more than <m>n</m> vectors is necessarily linearly dependent.
+                The key ingredient is the fact that any set of vectors in <m>\R^n</m> with more than <m>n</m> vectors is necessarily linearly dependent. (See <xref ref="exercise-lin-dep"/>)
             </p>
             <p>
                 Define <m>V:=\vspan(S)</m>. Start by choosing a maximal subset <m>T</m> of vectors in <m>S</m> that is linearly independent (see the exercises). This means that if we add any other vector of <m>V</m> to <m>T</m> this set becomes linearly dependent. Since <m>T</m> is linearly independent, it contains finitely many vectors. (In fact, at most <m>n</m>.) We only need to show that <m>\vspan(T)=V</m>.
@@ -266,9 +274,9 @@
             </p>
         </statement>
     </definition>
-    <example>
+    <example xml:id="example-standard-basis">
         <p>
-            The set of standard unit vectors <m>\be_1,\be_2,\ldots,\be_n</m> in <m>\R^n</m> is a basis of <m>\R^n</m>. In order to show this, we need to show two things: first, we need to show that the set of standard unit vectors is linearly independent; after this, we need to show that this set spans <m>\R^n</m>.
+            The set of standard unit vectors <m>\be_1,\be_2,\ldots,\be_n</m> in <m>\R^n</m> is a basis of <m>\R^n</m> called the <term>standard basis</term> of <m>\R^n</m>. In order to show this, we need to show two things: first, we need to show that the set of standard unit vectors is linearly independent; after this, we need to show that this set spans <m>\R^n</m>.
         </p>
         <p>
             We already saw that the set of standard of unit vectors is linearly independent, but let's see why this is the case again. Denote by <m>e_{ij}</m> the <m>j</m>th coordinate of <m>\be_i</m>. By definition, we have <m>e_{ij}=0</m> if <m>i\neq j</m> and <m>e_{ii}=1</m>. If <m>\lambda_1,\lambda_2,\ldots,\lambda_n\in\R</m> are such that
@@ -279,6 +287,37 @@
         </p>
         <p>
             Now consider a vector <m>\bv\in\R^n</m>. If <m>x_i</m> denotes the <m>i</m>th entry of <m>\bv</m>, then it is easy to see that <m>\bv=x_1\be_1 +x_2\be_2+\ldots+x_n\be_n</m>, which means that <m>\be_1,\be_2,\ldots,\be_n</m> spans <m>\R^n</m>.
+        </p>
+    </example>
+    <example>
+        <p>
+            <xref ref="example-standard-basis"/> says, in particular, that the standard basis of <m>\R^2</m> is the set formed by the vectors <m>\colvec{1 \\ 0}</m> and <m>\colvec{0 \\ 1}</m>. But there are many more basis of <m>\R^2</m>. (In fact, there are infinitely many: any two non-collinear vectors are a basis of <m>\R^2</m>.) For example, the vectors <m>\bv=\colvec{-1 \\ 1}</m> and <m>\bu=\colvec{2 \\ 1}</m> are a basis of <m>\R^2</m>. To see this, we first need to show that they are linearly independent, and then that they span <m>\R^2</m>.
+        </p>
+        <p>
+            If <m>a,b\in\R</m> are scalars such that <m>a\bv+b\bu=\bz</m>, then
+            <me>
+                \colvec{-a \\ a}+\colvec{2b \\ b}=\colvec{0 \\ 0}
+            </me>,
+            and so <m>2b-a=0</m> and <m>b+a=0</m>. It can be quickly checked that the only solution to this system is <m>a=0</m> and <m>b=0</m>. This means that <m>\bv</m> and <m>\bu</m> are linearly independent.
+        </p>
+        <p>
+            Now we need to show that every vector in <m>\R^2</m> can be expressed as a linear combination of <m>\bv</m> and <m>\bu</m>. Since we know that <m>\colvec{1 \\ 0}</m> and <m>\colvec{0 \\ 1}</m> are a basis of <m>\R^2</m>, it will suffice to show that we can express <m>\colvec{1 \\ 0}</m> and <m>\colvec{0 \\ 1}</m> as linear combinations of <m>\bv</m> and <m>\bu</m>. (Pause here and think why this is true.) Let's show that we can express <m>\colvec{1 \\ 0}</m> as a linear combination of <m>\bv</m> and <m>\bv</m>. The case of <m>\colvec{0 \\ 1}</m> is almost identical.
+        </p>
+        <p>
+            We want to find scalars <m>a,b\in \R</m> such that <m>a\bv+b\bu=\be_1</m>. This means solving the equation
+            <me>
+                a\colvec{-1 \\ 1} + b\colvec{2 \\ 1}=\colvec{1 \\ 0}
+            </me>,
+            which is equivalent to the system
+            <me>
+                \left\{
+                    \begin{alignedat}{5}
+                        -a \ampp + \ampp 2b \amp = \ampp 1 \\
+                        a \ampp + \ampp b \amp = \ampp 0
+                    \end{alignedat}
+                \right.
+            </me>
+            Solving the system for <m>a</m> and <m>b</m>, we find that the system has the solution <m>a=-1/3</m> and <m>b=1/3</m>.
         </p>
     </example>
     <p>
@@ -305,6 +344,28 @@
     <p>
         So every linear subspace of <m>\R^n</m> has a basis. While there are infinitely many basis for a given non-zero linear subspace of <m>\R^n</m>, they will all have the same size.
     </p>
+    <lemma xml:id="lem-more-vectors-than-dimension">
+        <statement>
+            <p>
+                Let <m>V</m> be a linear subspace of <m>\R^n</m>. If <m>B</m> is a basis of <m>V</m> and <m>S</m> is a subset of vectors of <m>V</m> whose size is strictly larger than the size of <m>B</m>, then <m>S</m> is linearly dependent.
+            </p>
+        </statement>
+        <proof>
+            <p>
+                Let <m>n</m> be the size of <m>B</m> and <m>m</m> be the size of <m>S</m>. By hypothesis, <m>m\gt n</m>. Let <m>B=\{\bv_1,\ldots,\bv_n\}</m> and <m>S=\{\bu_1,\ldots,\bu_m\}</m>. Since <m>B</m> is a basis, every vector in <m>S</m> can be written as a linear combination of vectors in <m>B</m>. This means that for each <m>1\leq j\leq m</m>, there are scalars <m>a_{1j}, a_{2j},\ldots, a_{nj}</m> such that 
+                <me>
+                    a_{1j}\bv_1+a_{2j}\bv_2+\ldots + a_{nj}\bv_n=\bu_j
+                </me> for every <m>j</m> in <m>\{1,\ldots,m\}</m>. The aim is to use this to find a non-trivial linear combination of the <m>\bu_i</m>'s that represents the zero vector.
+            </p>
+            <p>
+                To be clear, we are trying to find scalars <m>x_1,x_2,\ldots,x_m</m>, not all zero, such that <m>x_1\bu_1+\x_2\bu_2+\ldots+x_n\bu_n=\bz</m>. It will be enough that these scalars satisfy
+                <me>
+                    x_1a_{i1} + x_2a_{i2}+\ldots+x_ma_{im}=0
+                </me>. 
+                (You should try to figure out why this is true.) In other words, we need to solve a homogeneous linear system with <m>n</m> equations and <m>m</m> variables. Since <m>m\gt n</m>, there are infinitely many solutions, which means that there are non-zero solutions too.
+            </p>
+        </proof>
+    </lemma>
     <theorem xml:id="thm-dimension">
         <statement>
             <p>
@@ -313,9 +374,73 @@
         </statement>
         <proof>
             <p>
-                Let <m>B_1=\{\bv_1,\ldots,\bv_n\}</m> and <m>B_2=\{\bu_1,\ldots,\bu_m\}</m> be two basis of <m>V</m> and suppose, for the sake of contradiction, that <m>m \gt n</m>.
+                Suppose, for the sake of contradiction, that we have two basis <m>B_1</m> and <m>B_2</m> of different sizes. Say that the size of <m>B_1</m> is <m>n</m> and that of <m>B_2</m> is <m>m</m>. We may assume, without loss of generality, that <m>m\gt n</m>. In that case, <xref ref="lem-more-vectors-than-dimension"/> implies that <m>B_2</m> is linearly dependent, which contradicts the fact that it is a basis. Therefore, <m>B_1</m> and <m>B_2</m> must have the same size.
             </p>
         </proof>
     </theorem>
-    
+    <definition xml:id="def-dimension">
+        <statement>
+            <p>
+                Let <m>V</m> be a linear subspace of <m>\R^n</m>. The size of any basis of <m>V</m> is called the <term>dimension</term> of <m>V</m>.
+            </p>
+        </statement>
+    </definition>
+    <p>
+        This definition allows us to restate <xref ref="lem-more-vectors-than-dimension"/>. Indeed, we may simply say that any subset of <m>V</m> of size <m>\gt \dim(V)</m> is linearly dependent.
+    </p>
+    <example>
+        <p>
+            Consider the linear subspace <m>V</m> of <m>\R^4</m> defined as the set of solutions to the equation <m>x-2y+3z-w=0</m>. The variables <m>y,z</m> and <m>w</m> are free variables. The set of solutions to this equation in <m>\R^4</m> can be given in parametric form by <m>(2s-3t+r,s,t,r)</m>, where <m>s,t,r\in\R</m>. It is easy to see that the vectors <m>\bv = \colvec{2 \\ 1 \\ 0 \\ 0}</m>, <m>\bu=\colvec{-3 \\ 0 \\ 1 \\ 0}</m> and <m>\bw = \colvec{1 \\ 0 \\ 0 \\ 1}</m> are linearly independent and that
+            <me>
+                \colvec{2s-3t+r \\ s \\ t \\ r} = s\bv + t\bu+r\bw
+            </me>
+            for any <m>s,t,u\in\R</m>. This means that <m>\bv, \bu</m> and <m>\bw</m> form a basis of <m>V</m>. Therefore, <m>\dim(V)=3</m>. 
+        </p>
+    </example>
+    <p>
+        Note that the number of free variables in a linear system always matches the dimension of the solution set of that linear system.
+    </p>
+    <p>
+        If one linear subspace is contained in another, then, as you might expect, the dimension of the one that contains is at least as big as that of the one that is contained. This is the content of the following proposition. Try to prove it using <xref ref="lem-more-vectors-than-dimension"/>.
+    </p>
+    <proposition xml:id="prop-dimension-containment">
+        <statement>
+            <p>
+                Let <m>V</m> and <m>W</m> be two linear subspaces of <m>\R^n</m>. If <m>V\subseteq W</m>, then <m>\dim(V)\leq \dim(W)</m>.
+            </p>
+        </statement>
+        <proof>
+            <p>
+                Suppose, for the sake of contradiction, that there are linear subspaces <m>V</m> and <m>W</m> of <m>\R^n</m> such that <m>V\subseteq W</m> and <m>\dim(V)\gt \dim(W)</m>. Let <m>B</m> be a basis of <m>V</m>. Since <m>V</m> is contained in <m>W</m>, the set <m>B</m> is contained in <m>W</m> as well. However, <m>\#B=\dim(V)\gt \dim(W)</m>, which, according to <xref ref="lem-more-vectors-than-dimension"/>, means that <m>B</m> is linearly dependent. This, however, contradicts the fact that it is a basis of <m>V</m>. It follows that we cannot have <m>\dim(V) \gt \dim(W)</m>, and so it must be the case that <m>\dim(V)\leq \dim(W)</m>.
+            </p>
+        </proof>
+    </proposition>
+    <p>
+        We can actually say a little bit more about this. We will now see that if <m>V\subseteq W</m> are two linear subspaces of <m>\R^n</m> such that <m>\dim(V)=\dim(W)</m>, then <m>V=W</m>.
+    </p>
+    <proposition xml:id="prop-lin-ind-dimension">
+        <statement>
+            <p>
+                Let <m>V</m> be a linear subspace of <m>\R^n</m> of dimension <m>d</m>. Any linearly independent set of vectors in <m>V</m> of size <m>d</m> is a basis of <m>V</m>.
+            </p>
+        </statement>
+        <proof>
+            <p>
+                Let <m>S</m> be a subset of vectors of <m>V</m> of size <m>d</m> that is linearly independent. We only need to show that every vector of <m>V</m> can be written as a linear combination of vectors in <m>S</m>.
+            </p>
+            <p>
+                Choose a vector <m>v\in V</m>. We know from <xref ref="lem-more-vectors-than-dimension"/> that any set of vectors in <m>V</m> whose size is larger than <m>d</m> is linearly dependent. This means that <m>S\cup\{d\}</m> must be linearly dependent because its size is <m>d+1</m>. Using <xref ref="lem-generate"/>, we conclude that the vector <m>v</m> can be written as a linear combination of vectors in <m>S</m>. This shows that <m>S</m> is a basis of <m>V</m>.
+            </p>
+        </proof>
+    </proposition>
+    <p>
+        The following is an immediate consequence of this result. You should try to prove it!
+    </p>
+    <corollary xml:id="cor-containment-spaces">
+        <statement>
+            <p>
+                Let <m>V</m> and <m>W</m> be linear subspaces of <m>\R^n</m> such that <m>V\subseteq W</m>. If <m>\dim(V)=\dim(W)</m>, then <m>V=W</m>.
+            </p>
+        </statement>
+    </corollary>
 </section>
