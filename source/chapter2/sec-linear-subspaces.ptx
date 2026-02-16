@@ -24,6 +24,20 @@
             </p>
         </statement>
     </definition>
+    <example>
+        <p>
+            Consider the set <m>V=\{(x,y)\in\R^2|y=3x\}\subseteq \R^2</m>. This set is a line in the plane containing the origin (the line <m>y=3x</m>), and it is an example of a vector subspace of <m>\R^2</m>. Indeed, if <m>\bv=(x,3x)\in\R^2</m>, then <m>\lambda\bv=(\lambda x, 3\lambda x)</m>, and it is clear that the <m>y</m>-coordinate of <m>\lambda v</m> is three times its <m>x</m>-coordinate, which means that <m>\lambda\bv\in V</m> for every <m>\lambda\in\R</m>. Similarly, if <m>\bv=(x,y)</m> and <m>\bu=(s,t)</m> are both in <m>V</m>, then we must have <m>y=3x</m> and <m>t=3s</m>. This leads to
+            <me>
+                \bv + \bu = (x,3x)+(s,3s)=(x+s,3(x+s))\in V
+            </me>.
+            The two axioms of a vector subspace are satisfied, which means that <m>V</m> is a vector subspace of <m>\R^2</m>.
+        </p>
+    </example>
+    <example>
+        <p>
+            The line <m>y=3x+1</m> is <em>not</em> a vector space. For example, <m>(0,1)</m> is a vector of the form <m>(x, 3x+1)</m>, but <m>2(0,1)=(0,2)</m> is not.
+        </p>
+    </example>
     <exercise>
         <statement>
             <p>
@@ -41,13 +55,10 @@
     <p>
         If <m>V</m> is a linear subspace of <m>\R^n</m> and <m>S</m> is a subset of vector in <m>V</m>, we say that <m>S</m> generates <m>V</m> if every vector in <m>v</m> can be written as a linear combination of vectors in <m>S</m>.
     </p>
-    <p>
-        Any set of vectors in <m>\R^n</m> generates a linear subspace called its <term>span</term>.
-    </p>
     <definition xml:id="def-span">
         <statement>
             <p>
-                Let <m>S</m> be a set of vectors in <m>\R^n</m>. The <term>span</term> of <m>S</m>, denoted <m>\vspan(S)</m>, is the set of vectors in <m>\R^n</m> that can be written as a linear combination of elements in <m>S</m>.
+                Let <m>S</m> be a set of vectors in <m>\R^n</m>. The <term>span</term> of <m>S</m>, denoted <m>\vspan(S)</m>, is the set of vectors in <m>\R^n</m> that can be written as a linear combination of elements in <m>S</m>. We make the convention that the span of the empty set is the linear subspace of <m>\R^n</m> consisting of the zero vector.
             </p>
         </statement>
     </definition>
@@ -218,4 +229,93 @@
             where <m>x</m> and <m>y</m> are real numbers.
         </p>
     </example>
+    <proposition xml:id="prop-finite-basis-span">
+        <statement>
+            <p>
+                Let <m>S</m> be a set of vectors in <m>\R^n</m>. There is a finite subset <m>T\subseteq S</m> that is linearly independent and that satisfies <m>\vspan(T)=\vspan(S)</m>.
+            </p>
+        </statement>
+        <proof>
+            <p>
+                The key ingredient is the fact that any set of vectors in <m>\R^n</m> with more than <m>n</m> vectors is necessarily linearly dependent.
+            </p>
+            <p>
+                Define <m>V:=\vspan(S)</m>. Start by choosing a maximal subset <m>T</m> of vectors in <m>S</m> that is linearly independent (see the exercises). This means that if we add any other vector of <m>V</m> to <m>T</m> this set becomes linearly dependent. Since <m>T</m> is linearly independent, it contains finitely many vectors. (In fact, at most <m>n</m>.) We only need to show that <m>\vspan(T)=V</m>.
+            </p>
+            <p>
+                Of course, <m>\vspan(T)\subseteq V</m>. If there were a vector <m>\bv\in V</m> not in <m>\vspan(T)</m>, then <m>T\cup\{v\}</m> would be linearly independent. But this cannot happen because <m>T</m> is a maximally linearly independent subset of <m>V</m>. This means that <m>V\subseteq \vspan(T)</m>. Therefore, <m>T</m> spans <m>V</m>.
+            </p>
+        </proof>
+    </proposition>
+    <theorem xml:id="thm-span-space">
+        <statement>
+            <p>
+                If <m>V</m> is a linear subspace of <m>\R^n</m>, then there is a finite linearly independent set <m>S</m> of vectors in <m>V</m> such that <m>\vspan(S)=V</m>.
+            </p>
+        </statement>
+        <proof>
+        <p>
+            This is a direct consequence of Proposition <xref ref="prop-finite-basis-span"/>. Indeed, the set <m>V</m> itself spans <m>V</m>. Using Proposition <xref ref="prop-finite-basis-span"/>, we immediately conclude that there is a finite subset of <m>V</m> that spans <m>V</m> and that is linearly independent.
+        </p>
+    </proof>
+    </theorem>
+    <definition xml:id="def-basis">
+        <statement>
+            <p>
+                A linearly independent set <m>S</m> of a linear subspace <m>V</m> of <m>\R^n</m> that spans <m>V</m> is called a <term>basis</term> of <m>V</m>.
+            </p>
+        </statement>
+    </definition>
+    <example>
+        <p>
+            The set of standard unit vectors <m>\be_1,\be_2,\ldots,\be_n</m> in <m>\R^n</m> is a basis of <m>\R^n</m>. In order to show this, we need to show two things: first, we need to show that the set of standard unit vectors is linearly independent; after this, we need to show that this set spans <m>\R^n</m>.
+        </p>
+        <p>
+            We already saw that the set of standard of unit vectors is linearly independent, but let's see why this is the case again. Denote by <m>e_{ij}</m> the <m>j</m>th coordinate of <m>\be_i</m>. By definition, we have <m>e_{ij}=0</m> if <m>i\neq j</m> and <m>e_{ii}=1</m>. If <m>\lambda_1,\lambda_2,\ldots,\lambda_n\in\R</m> are such that
+            <me>
+                \lambda_1\be_1+\lambda_2\be_2+\ldots+\lambda_n\be_n=\bz,
+            </me>
+            then we have <m>\lambda_1 e_{1j}+\lambda_2 e_{2j}+\ldots+\lambda_n e_{nj}=0</m> for every <m>j</m>. But this means that <m>\lambda_j=0</m> for every <m>j</m>. Therefore, the set of standard unit vectors is linearly independent.
+        </p>
+        <p>
+            Now consider a vector <m>\bv\in\R^n</m>. If <m>x_i</m> denotes the <m>i</m>th entry of <m>\bv</m>, then it is easy to see that <m>\bv=x_1\be_1 +x_2\be_2+\ldots+x_n\be_n</m>, which means that <m>\be_1,\be_2,\ldots,\be_n</m> spans <m>\R^n</m>.
+        </p>
+    </example>
+    <p>
+        The obvious question now is that of finding a basis for a given vector space. If we are given a finite set of vectors <m>S</m> and the vector space in question in <m>\vspan(S)</m>, then we already know how to do that: this is precisely what we were doing above when we used elementary column operations to find a nice description of <m>\vspan(S)</m>! However, vector spaces may not be described using a given generator set. Instead, they may be given by a set of linear equations.
+    </p>
+    <example>
+        <p>
+            Consider the subset <m>V</m> of vectors <m>(x,y,z)</m> of <m>\R^3</m> that satisfy <m>x+2y-z=0</m>. This is a linear subspace of <m>\R^3</m>. This equation has infinitely many solutions that can be given in parametric form by <m>(t-2s, s, t)</m> where <m>s,t\in\R</m>. If <m>s=0</m> and <m>t=1</m>, we obtain the vector <m>\colvec{1 \\ 0 \\ 1}</m>. If we now set <m>s=1</m> and <m>t=0</m>, we get <m>\colvec{-2 \\ 1\\ 0}</m>. It is easy to see that these two vectors are linearly independent and that they span all vectors of the form <m>(t-2s, s, t)</m> because
+            <me>
+                \colvec{t-2s \\ s \\ t} = t\colvec{1 \\ 0 \\ 1} + s\colvec{-2 \\ 1 \\ 0}
+            </me>.
+            Therefore, the vectors <m>\colvec{1 \\ 0 \\ 1}</m> and <m>\colvec{-2 \\ 1 \\0}</m> form a basis of <m>V</m>.
+        </p>
+    </example>
+    <example>
+        <p>
+            Let <m>V</m> be the linear subspace of <m>\R^4</m> consisting of vectors <m>(x,y,z,w)</m> in <m>\R^4</m> satisfying the equations <m>2x-3z=0</m> and <m>2y+z+w=0</m>. Solving the system, we see that <m>z</m> and <m>w</m> are free variables and the solutions to the system can be given in parametric form as <m>\left(\frac{3}{2}s, -\frac{1}{2}s-\frac{1}{2}t, s, t\right)</m>, where <m>s,t\in\R</m>. Setting <m>s=0</m> and <m>t=2</m>, we find the solution <m>\colvec{0 \\ -1 \\ 0 \\ 2}</m>. If we now set <m>s=2</m> and <m>t=0</m>, we get <m>\colvec{3 \\ -1 \\ 2 \\ 0}</m>. Since these two vectors are linearly independent and
+            <me>
+                \colvec{\frac{3}{2}s \\ -\frac{1}{2}s-\frac{1}{2}t \\ s \\ t} = \frac{s}{2}\colvec{3 \\ -1 \\ 2 \\ 0}+\frac{t}{2}\colvec{0 \\ -1 \\ 0 \\ 2}
+            </me>,
+            they constitute a basis of <m>V</m>.
+        </p>
+    </example>
+    <p>
+        So every linear subspace of <m>\R^n</m> has a basis. While there are infinitely many basis for a given non-zero linear subspace of <m>\R^n</m>, they will all have the same size.
+    </p>
+    <theorem xml:id="thm-dimension">
+        <statement>
+            <p>
+                Let <m>V</m> be a linear subspace of <m>\R^n</m>. Every basis of <m>V</m> has the same size.
+            </p>
+        </statement>
+        <proof>
+            <p>
+                Let <m>B_1=\{\bv_1,\ldots,\bv_n\}</m> and <m>B_2=\{\bu_1,\ldots,\bu_m\}</m> be two basis of <m>V</m> and suppose, for the sake of contradiction, that <m>m \gt n</m>.
+            </p>
+        </proof>
+    </theorem>
+    
 </section>

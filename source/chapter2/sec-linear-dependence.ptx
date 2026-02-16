@@ -405,5 +405,29 @@
                 </p>
             </hint>
         </exercise>
+        <exercise>
+            <statement>
+                <p>
+                    Let <m>A</m> be an <m>n\times n</m> matrix.
+                    <ol marker="(a)">
+                        <li>
+                            <p>
+                                Show that if one of the columns of <m>A</m> is <m>\bz</m>, then <m>\det(A)=0</m>.
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                &#9733; Show that if the columns of <m>A</m> form a linear dependent set of vectors, then <m>\det(A)=0</m>.
+                            </p>
+                        </li>
+                    </ol>
+                </p>
+            </statement>
+            <hint>
+                <p>
+                    Use the fact that the determinant is linear on the columns of a matrix.
+                </p>
+            </hint>
+        </exercise>
     </exercises>
 </section>
