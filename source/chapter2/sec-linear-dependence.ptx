@@ -375,6 +375,13 @@
         <exercise>
             <statement>
                 <p>
+                    Show that any set of vectors of <m>\R^n</m> containing the zero vector is linearly dependent.
+                </p>
+            </statement>
+        </exercise>
+        <exercise>
+            <statement>
+                <p>
                     Suppose that <m>S=\{\bv_1,\bv_2,\ldots,\bv_m\}\subseteq \R^n</m> is a linearly independent set of vectors. Is it possible to find a subset of <m>S</m> that is linearly dependent?
                 </p>
             </statement>
@@ -382,14 +389,14 @@
         <exercise>
             <statement>
                 <p>
-                    Show that two vectors in <m>\R^n</m> are linearly independent if and only if one of them is a scalar multiple of the other.
+                    Show that two vectors in <m>\R^n</m> are linearly dependent if and only if one of them is a scalar multiple of the other.
                 </p>
             </statement>
         </exercise>
         <exercise>
             <statement>
                 <p>
-                    Find an example of a linearly independent set in <m>\R^2</m> consisting of more than one vector such that none of them is a scalar multiple of another vector in the set.
+                    Find an example of a linearly dependent set in <m>\R^2</m> consisting of more than one vector such that none of them is a scalar multiple of another vector in the set.
                 </p>
             </statement>
         </exercise>
