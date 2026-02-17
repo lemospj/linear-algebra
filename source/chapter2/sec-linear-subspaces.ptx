@@ -358,7 +358,7 @@
                 </me> for every <m>j</m> in <m>\{1,\ldots,m\}</m>. The aim is to use this to find a non-trivial linear combination of the <m>\bu_i</m>'s that represents the zero vector.
             </p>
             <p>
-                To be clear, we are trying to find scalars <m>x_1,x_2,\ldots,x_m</m>, not all zero, such that <m>x_1\bu_1+\x_2\bu_2+\ldots+x_n\bu_n=\bz</m>. It will be enough that these scalars satisfy
+                To be clear, we are trying to find scalars <m>x_1,x_2,\ldots,x_m</m>, not all zero, such that <m>x_1\bu_1+x_2\bu_2+\ldots+x_n\bu_n=\bz</m>. It will be enough that these scalars satisfy
                 <me>
                     x_1a_{i1} + x_2a_{i2}+\ldots+x_ma_{im}=0
                 </me>. 
