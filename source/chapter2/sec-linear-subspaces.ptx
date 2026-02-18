@@ -58,7 +58,7 @@
         </p>
     </exercise>
     <p>
-        One interesting example of linear subspaces comes from solution sets of homogeneous linear systems of equations. Indeed, every solution set of a homogeneous linear system of equations is a linear subspace. (See exercises.)
+        One interesting example of linear subspaces comes from solution sets of homogeneous linear systems of equations. Indeed, every solution set of a homogeneous linear system of equations is a linear subspace. (See <xref ref="exercise-linear-system-subspace"/>)
     </p>
     <p>
         If <m>V</m> is a linear subspace of <m>\R^n</m> and <m>S</m> is a subset of vector in <m>V</m>, we say that <m>S</m> <term>generates</term> <m>V</m> if every vector in <m>\bv</m> can be written as a linear combination of vectors in <m>S</m>.
@@ -248,7 +248,7 @@
                 The key ingredient is the fact that any set of vectors in <m>\R^n</m> with more than <m>n</m> vectors is necessarily linearly dependent. (See <xref ref="exercise-lin-dep"/>)
             </p>
             <p>
-                Define <m>V:=\vspan(S)</m>. Start by choosing a maximal subset <m>T</m> of vectors in <m>S</m> that is linearly independent (see the exercises). This means that if we add any other vector of <m>V</m> to <m>T</m> this set becomes linearly dependent. Since <m>T</m> is linearly independent, it contains finitely many vectors. (In fact, at most <m>n</m>.) We only need to show that <m>\vspan(T)=V</m>.
+                Define <m>V:=\vspan(S)</m>. Start by choosing a maximal subset <m>T</m> of vectors in <m>S</m> that is linearly independent (see <xref ref="exercise-maximal"/>). This means that if we add any other vector of <m>V</m> to <m>T</m> this set becomes linearly dependent. Since <m>T</m> is linearly independent, it contains finitely many vectors. (In fact, at most <m>n</m>.) We only need to show that <m>\vspan(T)=V</m>.
             </p>
             <p>
                 Of course, <m>\vspan(T)\subseteq V</m>. If there were a vector <m>\bv\in V</m> not in <m>\vspan(T)</m>, then <m>T\cup\{v\}</m> would be linearly independent. But this cannot happen because <m>T</m> is a maximally linearly independent subset of <m>V</m>. This means that <m>V\subseteq \vspan(T)</m>. Therefore, <m>T</m> spans <m>V</m>.
@@ -481,7 +481,7 @@
         </proof>
     </theorem>
     <exercises xml:id="exercises-chapter2-section4">
-        <exercise>
+        <exercise xml:id="exercise-linear-system-subspace">
             <statement>
                 <p>
                     <ol marker="(a)">
@@ -588,7 +588,7 @@
                 </p>
             </statement>
         </exercise>
-        <exercise>
+        <exercise xml:id="exercise-maximal">
             <statement>
                 <p>
                     Let <m>S</m> be a set of vectors in <m>\R^n</m>. A <term>maximal linearly independent subset</term> of <m>S</m> is a linearly independent subset <m>T</m> of <m>S</m> with the property that <m>T\cup\{\bv\}</m> is a linearly dependent set for every vector <m>\bv</m> of <m>S</m> that is not already in <m>T</m>. Show that maximal linearly independent subsets of <m>S</m> exist.
