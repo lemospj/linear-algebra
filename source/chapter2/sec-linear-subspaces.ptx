@@ -26,11 +26,11 @@
     </definition>
     <example>
         <p>
-            Consider the set <m>V=\{(x,y)\in\R^2|y=3x\}\subseteq \R^2</m>. This set is a line in the plane containing the origin (the line <m>y=3x</m>), and it is an example of a vector subspace of <m>\R^2</m>. Indeed, if <m>\bv=(x,3x)\in\R^2</m>, then <m>\lambda\bv=(\lambda x, 3\lambda x)</m>, and it is clear that the <m>y</m>-coordinate of <m>\lambda v</m> is three times its <m>x</m>-coordinate, which means that <m>\lambda\bv\in V</m> for every <m>\lambda\in\R</m>. Similarly, if <m>\bv=(x,y)</m> and <m>\bu=(s,t)</m> are both in <m>V</m>, then we must have <m>y=3x</m> and <m>t=3s</m>. This leads to
+            Consider the set <m>V=\{(x,y)\in\R^2|y=3x\}\subseteq \R^2</m>. This set is a line in the plane containing the origin (the line <m>y=3x</m>), and it is an example of a linear subspace of <m>\R^2</m>. Indeed, if <m>\bv=(x,3x)\in\R^2</m>, then <m>\lambda\bv=(\lambda x, 3\lambda x)</m>, and it is clear that the <m>y</m>-coordinate of <m>\lambda v</m> is three times its <m>x</m>-coordinate, which means that <m>\lambda\bv\in V</m> for every <m>\lambda\in\R</m>. Similarly, if <m>\bv=(x,y)</m> and <m>\bu=(s,t)</m> are both in <m>V</m>, then we must have <m>y=3x</m> and <m>t=3s</m>. This leads to
             <me>
                 \bv + \bu = (x,3x)+(s,3s)=(x+s,3(x+s))\in V
             </me>.
-            The two axioms of a vector subspace are satisfied, which means that <m>V</m> is a vector subspace of <m>\R^2</m>.
+            The two axioms of a linear subspace are satisfied, which means that <m>V</m> is a linear subspace of <m>\R^2</m>.
         </p>
     </example>
     <example>
@@ -61,7 +61,7 @@
         One interesting example of linear subspaces comes from solution sets of homogeneous linear systems of equations. Indeed, every solution set of a homogeneous linear system of equations is a linear subspace. (See exercises.)
     </p>
     <p>
-        If <m>V</m> is a linear subspace of <m>\R^n</m> and <m>S</m> is a subset of vector in <m>V</m>, we say that <m>S</m> <term>generates</term> <m>V</m> if every vector in <m>v</m> can be written as a linear combination of vectors in <m>S</m>.
+        If <m>V</m> is a linear subspace of <m>\R^n</m> and <m>S</m> is a subset of vector in <m>V</m>, we say that <m>S</m> <term>generates</term> <m>V</m> if every vector in <m>\bv</m> can be written as a linear combination of vectors in <m>S</m>.
     </p>
     <definition xml:id="def-span">
         <statement>
@@ -263,7 +263,7 @@
         </statement>
         <proof>
         <p>
-            This is a direct consequence of Proposition <xref ref="prop-finite-basis-span"/>. Indeed, the set <m>V</m> itself spans <m>V</m>. Using Proposition <xref ref="prop-finite-basis-span"/>, we immediately conclude that there is a finite subset of <m>V</m> that spans <m>V</m> and that is linearly independent.
+            This is a direct consequence of <xref ref="prop-finite-basis-span"/>. Indeed, the set <m>V</m> itself spans <m>V</m>. Using <xref ref="prop-finite-basis-span"/>, we immediately conclude that there is a finite subset of <m>V</m> that spans <m>V</m> and that is linearly independent.
         </p>
     </proof>
     </theorem>
@@ -291,7 +291,7 @@
     </example>
     <example>
         <p>
-            <xref ref="example-standard-basis"/> says, in particular, that the standard basis of <m>\R^2</m> is the set formed by the vectors <m>\colvec{1 \\ 0}</m> and <m>\colvec{0 \\ 1}</m>. But there are many more basis of <m>\R^2</m>. (In fact, there are infinitely many: any two non-collinear vectors are a basis of <m>\R^2</m>.) For example, the vectors <m>\bv=\colvec{-1 \\ 1}</m> and <m>\bu=\colvec{2 \\ 1}</m> are a basis of <m>\R^2</m>. To see this, we first need to show that they are linearly independent, and then that they span <m>\R^2</m>.
+            <xref ref="example-standard-basis"/> says, in particular, that the standard basis of <m>\R^2</m> is the set formed by the vectors <m>\colvec{1 \\ 0}</m> and <m>\colvec{0 \\ 1}</m>. But there are many more bases of <m>\R^2</m>. (In fact, there are infinitely many: any two non-collinear vectors are a basis of <m>\R^2</m>.) For example, the vectors <m>\bv=\colvec{-1 \\ 1}</m> and <m>\bu=\colvec{2 \\ 1}</m> are a basis of <m>\R^2</m>. To see this, we first need to show that they are linearly independent, and then that they span <m>\R^2</m>.
         </p>
         <p>
             If <m>a,b\in\R</m> are scalars such that <m>a\bv+b\bu=\bz</m>, then
@@ -480,5 +480,161 @@
             </p>
         </proof>
     </theorem>
+    <exercises xml:id="exercises-chapter2-section4">
+        <exercise>
+            <statement>
+                <p>
+                    <ol marker="(a)">
+                        <li>
+                            <p>
+                                Show that the solution set in <m>\R^n</m> to a homogeneous linear equation <m>a_1x_1+a_2x_2+\ldots+a_nx_n=0</m> is a linear subspace of <m>\R^n</m>.
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                Use part (a) and the fact that the intersection of linear subspaces is a linear subspace to show that the solution set of a linear system in the variables <m>x_1,\ldots, x_n</m> is a linear subspace of <m>\R^n</m>.
+                            </p>
+                        </li>
+                    </ol>
+                </p>
+            </statement>
+        </exercise>
+        <exercise>
+            <statement>
+                <p>
+                    For each list of vectors below, find a basis for the linear subspace they generate (i.e., their span). Determine the dimensions of these subspaces.
+                    <ol marker="(a)">
+                        <li>
+                            <p>
+                                <m>\colvec{1 \\ 2}, \colvec{2 \\ 5}, \colvec{1 \\ -1}</m>
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                <m>\colvec{2 \\ 3}, \colvec{-4 \\ -6}</m>
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                <m>\colvec{1 \\ 2\\ 0}, \colvec{-1 \\ 1 \\ -2}</m>
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                <m>\colvec{1 \\ 2 \\ 3}, \colvec{-2 \\ 2 \\ 3}, \colvec{0 \\ 4 \\ 9}, \colvec{-3 \\ 4 \\ 6}</m>
+                            </p>
+                        </li>
+                    </ol>
+                </p>
+            </statement>
+        </exercise>
+        <exercise>
+            <statement>
+                <p>
+                    Find a basis for the linear subspace of <m>\R^3</m> defined by the solution set of each linear system below. Determine their dimensions.
+                    <ol marker="(a)">
+                        <li>
+                            <p>
+                                <m>2x-3y=0</m>
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                <m>2x-z+y=0</m>
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                <m>\left\{\begin{alignedat}{7} 2x\ampp -\ampp 3y\ampp -\ampp z\amp =\ampp 0 \\ 2x \ampp - \ampp y \ampp + \ampp z \amp = \amp 0\end{alignedat}\right.</m>
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                <m>\left\{\begin{alignedat}{7} x \ampp - \ampp 2y \ampp + \ampp 3z \amp = \ampp 0\\ 3x \ampp + \ampp 2y \ampp - \ampp 3z \amp = \ampp 0 \\ x\ampp + \ampp y \ampp + \ampp z \amp = \ampp 0\end{alignedat}\right.</m>
+                            </p>
+                        </li>
+                    </ol>
+                </p>
+            </statement>
+        </exercise>
+        <exercise>
+            <statement>
+                <p>
+                    Extend the following linearly independent sets <m>S</m> of vectors to a basis of the given vector space.
+                    <ol marker="(a)">
+                        <li>
+                            <p>
+                                <m>S=\left\{\colvec{1 \\ 3}\right\}</m>, vector space: <m>\R^2</m>
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                <m>S=\left\{\colvec{1\\ 0 \\ -1},\colvec{2\\1\\1}\right\}</m>, vector space: <m>\R^3</m>
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                <m>S=\left\{\colvec{2 \\ 1 \\ -2}\right\}</m>, vector space: solution set of <m>\left\{\begin{alignedat}{5} x \ampp - \ampp 2y \amp = \ampp 0 \\ x \ampp + \ampp z \amp = \ampp 0\end{alignedat}\right.</m>
+                            </p>
+                        </li>
+                    </ol>
+                </p>
+            </statement>
+        </exercise>
+        <exercise>
+            <statement>
+                <p>
+                    Two vectors <m>\bv, \bu</m> of <m>\R^n</m> are <term>collinear</term> if there exists a real number <m>\lambda</m> such that <m>\lambda\bv=\bu</m> or <m>\bv=\lambda\bu</m>. Show that two non-collinear vectors in <m>\R^2</m> form a basis of <m>\R^2</m>.
+                </p>
+            </statement>
+        </exercise>
+        <exercise>
+            <statement>
+                <p>
+                    Let <m>S</m> be a set of vectors in <m>\R^n</m>. A <term>maximal linearly independent subset</term> of <m>S</m> is a linearly independent subset <m>T</m> of <m>S</m> with the property that <m>T\cup\{\bv\}</m> is a linearly dependent set for every vector <m>\bv</m> of <m>S</m> that is not already in <m>T</m>. Show that maximal linearly independent subsets of <m>S</m> exist.
+                </p>
+            </statement>
+        </exercise>
+        <exercise>
+            <statement>
+                <p>
+                    Let <m>f:\R^n\rightarrow\R^m</m> be a linear map.
+                    <ol marker="(a)">
+                        <li>
+                            <p>
+                                Show that the subset of <m>\R^n</m> consisting of vectors <m>\bv</m> such that <m>f(\bv)=\bz</m> is a linear subspace of <m>\R^n</m>.
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                Show that the subset of <m>\R^m</m> consisting of vectors <m>\bu</m> for which there exists a vector <m>\bv\in\R^n</m> such that <m>f(\bv)=\bu</m> is a linear subspace of <m>\R^m</m>.
+                            </p>
+                        </li>
+                    </ol>
+                </p>
+            </statement>
+        </exercise>
+        <exercise>
+            <statement>
+                <p>
+                    Give an example of two linear subspaces <m>V</m> and <m>W</m> of <m>\R^2</m> such that <m>V\cup W</m> is not a linear subspace of <m>\R^2</m>.
+                </p>
+            </statement>
+        </exercise>
+        <exercise>
+            <statement>
+                <p>
+                    &#9733; Show that if <m>V</m> and <m>W</m> are linear subspaces of <m>\R^n</m>, then <m>V\cup W</m> is a linear subspace of <m>\R^n</m> if and only if <m>V\subseteq W</m> or <m>W\subseteq V</m>.
+                </p>
+            </statement>
+        </exercise>
+        <exercise>
+            <statement>
+                <p>
+                    &#9733; Let <m>V</m> and <m>W</m> be linear subspaces of <m>\R^n</m>. Define <m>V+W</m> to be <m>\vspan(V\cup W)</m>, which is a linear subspace of <m>\R^n</m>. Show that <m>\dim(V+W)=\dim(V)+\dim(W)-\dim(V\cap W)</m>.
+                </p>
+            </statement>
+        </exercise>
+    </exercises>
     
 </section>
