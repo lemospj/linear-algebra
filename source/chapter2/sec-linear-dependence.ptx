@@ -451,7 +451,7 @@
             </statement>
             <hint>
                 <p>
-                    Use the fact that the determinant is linear on the columns of a matrix.
+                    Use the fact that the determinant is linear on the columns of a matrix together with the fact that a matrix with two equal columns has zero determinant.
                 </p>
             </hint>
         </exercise>
