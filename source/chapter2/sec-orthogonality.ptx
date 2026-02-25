@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-orthogonality" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>Orthogonality</title>
+    <p>
+        This section will have a more geometric flavor than the previous ones. We will speak about distances and angles and see how these relate to the dot product between two vectors. We will see that every linear subspace admits a basis formed by orthogonal vectors of norm <m>1</m>. Finally, we will discuss the first real-world application of this course: the least squares method. 
+    </p>
+    <p>
+        Let's start by recalling that the <em>norm</em> of a vector <m>\bv=\colvec{a_1\\ a_2\\ \vdots \\ a_n}\in\R^n</m> was defined to be
+        <me>
+            \lVert\bv\rVert = \sqrt{a_1^2+a_2^2+\ldots+a_n^2}
+        </me>.
+        This is the vector's length. We also saw that there is a relationship between dot product and norm, namely <m>\lVert \bv\rVert^2=\bv\cdot\bv</m>, which follows directly from the definition. 
+    </p>
+    <p>
+        The first problem that we want to solve is that of measuring the distance between a point and a given linear subspace of <m>\R^n</m>. To solve this, we will need the following fact.
+    </p>
+    <lemma xml:id="lem-dot-product-norm">
+        <statement>
+            <p>
+                If <m>\bv,\bw\in\R^n</m> are two vectors, we have <me>\bv\cdot\bw=\frac{1}{2}(\lVert \bv+\bw\rVert^2 - \lVert \bv\rVert^2-\lVert\bw\rVert^2)</me>.
+            </p>
+        </statement>
+        <proof>
+            <p>
+                Note that
+                <me>(\bv+\bw)\cdot(\bv+\bw)=\bv\cdot\bv + 2\bv\cdot\bw+\bw\cdot\bw=\lVert\bv\rVert^2+2\bv\cdot\bw+\lVert\bw\rVert^2</me>.
+                The result follows from solving the equation above for <m>\bv\cdot\bw</m>.
+            </p>
+        </proof>
+    </lemma>
+    <p>
+        Let's have a look at a concrete instance of our problem.
+    </p>
+    <example>
+        <p>
+            Consider the linear subspace of <m>\R^2</m> defined as the set of solutions of the equation <m>2x-y=0</m>. This is a line of slope <m>1/2</m> passing through the origin. Let's also consider the point <m>(1,2)</m>, which does not lie on this line. Our objective is to express the distance between the point <m>(1,2)</m> and this line in terms of dot products and norms of vectors.
+        </p>
+    </example>
+</section>

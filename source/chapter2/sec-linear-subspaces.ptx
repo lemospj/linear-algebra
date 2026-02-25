@@ -610,6 +610,16 @@
                                 Show that the subset of <m>\R^m</m> consisting of vectors <m>\bu</m> for which there exists a vector <m>\bv\in\R^n</m> such that <m>f(\bv)=\bu</m> is a linear subspace of <m>\R^m</m>.
                             </p>
                         </li>
+                        <li>
+                            <p>
+                                Let <m>V\subseteq \R^n</m> be a linear subspace of <m>\R^n</m>. Define <m>f(V)</m> to be the subset of <m>\R^m</m> consisting of those vectors <m>\bw\in\R^m</m> such that <m>\bw=f(\bv)</m> for some vector <m>\bv\in V</m>. Show that <m>f(V)</m> is a linear subspace of <m>\R^m</m>.
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                Let <m>W\subseteq \R^m</m> be a linear subspace of <m>\R^m</m>. Define <m>f^{-1}(W)</m> to be the subset of vectors <m>\bv\in\R^n</m> such that <m>f(\bv)\in W</m>. Show that <m>f^{-1}(W)</m> is a linear subspace of <m>\R^n</m>.
+                            </p>
+                        </li>
                     </ol>
                 </p>
             </statement>
