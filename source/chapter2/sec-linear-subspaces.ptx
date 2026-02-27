@@ -8,7 +8,7 @@
     <definition xml:id="def-linear-subspace">
         <statement>
             <p>
-                A subset <m>V</m> of <m>\R^n</m> is called a <term>linear subspace</term> of <m>\R^n</m> if the following conditions hold:
+                A non-empty subset <m>V</m> of <m>\R^n</m> is called a <term>linear subspace</term> of <m>\R^n</m> if the following conditions hold:
                 <ol>
                     <li>
                         <p>
@@ -332,9 +332,35 @@
             Therefore, the vectors <m>\colvec{1 \\ 0 \\ 1}</m> and <m>\colvec{-2 \\ 1 \\0}</m> form a basis of <m>V</m>.
         </p>
     </example>
+    <p>
+        Recall that every linear system of equations can be reinterpreted in terms of linear maps. For example, asking for the solution set of 
+        <me>
+            \left\{
+                \begin{alignedat}{7} 
+                    2x \ampp -\ampp 2y \ampp +\ampp 3z \amp = \ampp 0 \\ 
+                    2x \ampp + \ampp y \ampp - \ampp z \amp = \ampp 0
+                \end{alignedat}
+            \right.
+        </me>
+        is the same thing as asking for the set of vectors <m>\colvec{x\\y\\z}</m> in <m>\R^3</m> that satisfy
+        <me>
+            \begin{pmatrix} 2 \amp -2 \amp 3 \\ 2 \amp 1 \amp -1 \end{pmatrix}\colvec{x \\ y \\ z}=\bz
+        </me>.
+        Or, if we define <m>A=\begin{pmatrix} 2 \amp -2 \amp 3 \\ 2 \amp 1 \amp -1 \end{pmatrix}</m>, this is equivalent to finding the set of vectors <m>\bv\in\R^3</m> that satisfy <m>\varphi_A(\bv)=\bz</m>. Since we already know that the solution set of a homogeneous linear system is a linear subspace, it follows that the set of vectors <m>\bv\in\R^3</m> such that <m>\varphi_A(\bv)=\bz</m> is a linear subspace of <m>\R^3</m>.
+    </p>
+    <definition xml:id="def-kernel">
+        <statement>
+            <p>
+                Let <m>f:\R^n\rightarrow \R^m</m> be a linear map. The <term>kernel</term> of <m>f</m> is the set of vectors <m>\bv</m> in <m>\R^n</m> such that <m>f(\bv)=\bz</m>. If <m>A</m> is the matrix associated to <m>f</m>, we may also say that this space is the kernel of <m>A</m>.
+            </p>
+        </statement>
+    </definition>
+    <p>
+        So the kernel of a matrix <m>A</m> (or of its associated linear map) is the solution set to <m>A\bx=\bz</m>. So kernels of linear maps are always linear subspaces of the domain. (This can actually be shown without invoking linear systems at all.)
+    </p>
     <example>
         <p>
-            Let <m>V</m> be the linear subspace of <m>\R^4</m> consisting of vectors <m>(x,y,z,w)</m> in <m>\R^4</m> satisfying the equations <m>2x-3z=0</m> and <m>2y+z+w=0</m>. Solving the system, we see that <m>z</m> and <m>w</m> are free variables and the solutions to the system can be given in parametric form as <m>\left(\frac{3}{2}s, -\frac{1}{2}s-\frac{1}{2}t, s, t\right)</m>, where <m>s,t\in\R</m>. Setting <m>s=0</m> and <m>t=2</m>, we find the solution <m>\colvec{0 \\ -1 \\ 0 \\ 2}</m>. If we now set <m>s=2</m> and <m>t=0</m>, we get <m>\colvec{3 \\ -1 \\ 2 \\ 0}</m>. Since these two vectors are linearly independent and
+            Let <m>V</m> be the linear subspace of <m>\R^4</m> consisting of the kernel of the matrix <m>\begin{pmatrix} 2 \amp 0 \amp -3 \amp 0 \\ 0 \amp 2 \amp 1 \amp 1 \end{pmatrix}</m>. In other words, this linear subspace consists of the vectors <m>(x,y,z,w)</m> in <m>\R^4</m> satisfying the equations <m>2x-3z=0</m> and <m>2y+z+w=0</m>. Solving the system, we see that <m>z</m> and <m>w</m> are free variables and the solutions to the system can be given in parametric form as <m>\left(\frac{3}{2}s, -\frac{1}{2}s-\frac{1}{2}t, s, t\right)</m>, where <m>s,t\in\R</m>. Setting <m>s=0</m> and <m>t=2</m>, we find the solution <m>\colvec{0 \\ -1 \\ 0 \\ 2}</m>. If we now set <m>s=2</m> and <m>t=0</m>, we get <m>\colvec{3 \\ -1 \\ 2 \\ 0}</m>. Since these two vectors are linearly independent and
             <me>
                 \colvec{\frac{3}{2}s \\ -\frac{1}{2}s-\frac{1}{2}t \\ s \\ t} = \frac{s}{2}\colvec{3 \\ -1 \\ 2 \\ 0}+\frac{t}{2}\colvec{0 \\ -1 \\ 0 \\ 2}
             </me>,
@@ -390,7 +416,7 @@
     </p>
     <example>
         <p>
-            Consider the linear subspace <m>V</m> of <m>\R^4</m> defined as the set of solutions to the equation <m>x-2y+3z-w=0</m>. The variables <m>y,z</m> and <m>w</m> are free variables. The set of solutions to this equation in <m>\R^4</m> can be given in parametric form by <m>(2s-3t+r,s,t,r)</m>, where <m>s,t,r\in\R</m>. It is easy to see that the vectors <m>\bv = \colvec{2 \\ 1 \\ 0 \\ 0}</m>, <m>\bu=\colvec{-3 \\ 0 \\ 1 \\ 0}</m> and <m>\bw = \colvec{1 \\ 0 \\ 0 \\ 1}</m> are linearly independent and that
+            Consider the kernel <m>V</m> of <m>\begin{pmatrix} 1 \amp -2 \amp 3 \amp -1\end{pmatrix}</m> in <m>\R^4</m>. This is the solution set of <m>x-2y+3z-w=0</m>. The variables <m>y,z</m> and <m>w</m> are free variables. The set of solutions to this equation in <m>\R^4</m> can be given in parametric form by <m>(2s-3t+r,s,t,r)</m>, where <m>s,t,r\in\R</m>. It is easy to see that the vectors <m>\bv = \colvec{2 \\ 1 \\ 0 \\ 0}</m>, <m>\bu=\colvec{-3 \\ 0 \\ 1 \\ 0}</m> and <m>\bw = \colvec{1 \\ 0 \\ 0 \\ 1}</m> are linearly independent and that
             <me>
                 \colvec{2s-3t+r \\ s \\ t \\ r} = s\bv + t\bu+r\bw
             </me>
@@ -481,6 +507,80 @@
         </proof>
     </theorem>
     <exercises xml:id="exercises-chapter2-section4">
+        <exercise>
+            <statement>
+                <p>
+                    Verify that the solution sets of the following homogeneous linear systems of equations are linear subspaces of <m>\R^3</m>.
+                    <ol marker="(a)">
+                        <li>
+                            <p>
+                                <m>\left\{\begin{alignedat}{7} x \ampp - \ampp y \ampp - \ampp z \amp = \ampp 0 \\ \ampp \ampp 2y\ampp + \ampp z \amp = \ampp 0\end{alignedat}\right.</m>
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                <m>\left\{\begin{alignedat}{7} x \ampp + \ampp 3y \ampp + \ampp z \amp = \ampp 0 \\ 2x\ampp - \ampp 2y\ampp + \ampp z \amp = \ampp 0\\ \ampp \ampp y \ampp - \ampp z\amp = \ampp 0\end{alignedat}\right.</m>
+                            </p>
+                        </li>
+                    </ol>
+                </p>
+            </statement>
+        </exercise>
+        <exercise>
+            <statement>
+                <p>
+                    Explain why the solution sets of the following equations are not linear subspaces of <m>\R^2</m>.
+                    <ol marker="(a)">
+                        <li>
+                            <p>
+                                <m>2x+y=-1</m>
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                <m>x^2-y^2=0</m>
+                            </p>
+                        </li>
+                    </ol>
+                </p>
+            </statement>
+        </exercise>
+        <exercise>
+            <statement>
+                <p>
+                    Let <m>\bv</m> be a vector in <m>\R^n</m>. Show that the set of vectors <m>\bu</m> in <m>\R^n</m> satisfying <m>\bu\cdot \bv=0</m> is a linear subspace of <m>\R^n</m>.
+                </p>
+            </statement>
+        </exercise>
+        <exercise>
+            <statement>
+                <p>
+                    For each collection of vectors below, use elementary column operations to find a "nice" description of their span. (In other words, find a reduced set of vectors that generates their span.)
+                    <ol marker="(a)">
+                        <li>
+                            <p>
+                                <m>\colvec{2 \\ -1}, \colvec{4 \\ -2}</m>
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                <m>\colvec{2 \\ 5}, \colvec{1 \\ 2}</m>
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                <m>\colvec{1 \\ 0 \\ 1}, \colvec{-1 \\ 2 \\ 3} ,\colvec{2 \\ 1 \\ 0}</m>
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                <m>\colvec{-2 \\ 0 \\ 1} , \colvec{1 \\ 2 \\ 3}, \colvec{-4\\4\\9}</m>
+                            </p>
+                        </li>
+                    </ol>
+                </p>
+            </statement>
+        </exercise>
         <exercise xml:id="exercise-linear-system-subspace">
             <statement>
                 <p>
@@ -531,26 +631,26 @@
         <exercise>
             <statement>
                 <p>
-                    Find a basis for the linear subspace of <m>\R^3</m> defined by the solution set of each linear system below. Determine their dimensions.
+                    Find a basis for the kernel of each of the matrices below. Determine the dimension of each kernel.
                     <ol marker="(a)">
                         <li>
                             <p>
-                                <m>2x-3y=0</m>
+                                <m>\begin{pmatrix}2 \amp -3 \amp 0\end{pmatrix}</m>
                             </p>
                         </li>
                         <li>
                             <p>
-                                <m>2x-z+y=0</m>
+                                <m>\begin{pmatrix} 2 \amp 1 \amp -1 \end{pmatrix}</m>
                             </p>
                         </li>
                         <li>
                             <p>
-                                <m>\left\{\begin{alignedat}{7} 2x\ampp -\ampp 3y\ampp -\ampp z\amp =\ampp 0 \\ 2x \ampp - \ampp y \ampp + \ampp z \amp = \amp 0\end{alignedat}\right.</m>
+                                <m>\begin{pmatrix} 2 \amp -3 \amp -1 \\ 2 \amp -1 \amp 1 \end{pmatrix}</m>
                             </p>
                         </li>
                         <li>
                             <p>
-                                <m>\left\{\begin{alignedat}{7} x \ampp - \ampp 2y \ampp + \ampp 3z \amp = \ampp 0\\ 3x \ampp + \ampp 2y \ampp - \ampp 3z \amp = \ampp 0 \\ x\ampp + \ampp y \ampp + \ampp z \amp = \ampp 0\end{alignedat}\right.</m>
+                                <m>\begin{pmatrix} 1 \amp -2 \amp 3 \\ 3 \amp 2 \amp -3 \\ 1 \amp 1 \amp 1 \end{pmatrix}</m>
                             </p>
                         </li>
                     </ol>
