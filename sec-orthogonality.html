@@ -222,7 +222,7 @@ eBookConfig.enable_chatcodes =  false;
 <div class="para">This is the vector’s length. We also saw that there is a relationship between dot product and norm, namely <span class="process-math">\(\lVert \bv\rVert^2=\bv\cdot\bv\text{,}\)</span> which follows directly from the definition.</div>
 <div class="autopermalink" data-description="Paragraph"><a href="#sec-orthogonality-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="sec-orthogonality-4">The first problem that we want to solve is that of measuring the distance between a point and a given linear subspace of <span class="process-math">\(\R^n\text{.}\)</span> To solve this, we will need the following fact.<div class="autopermalink" data-description="Paragraph"><a href="#sec-orthogonality-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="sec-orthogonality-4">The first problem that we want to solve is that of finding the closest point in a linear subspace of <span class="process-math">\(\R^n\)</span> to a given point. To solve this, we will need the following fact.<div class="autopermalink" data-description="Paragraph"><a href="#sec-orthogonality-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <article class="lemma theorem-like" id="lem-dot-product-norm"><h3 class="heading">
 <span class="type">Lemma</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.5.1</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
@@ -247,13 +247,101 @@ eBookConfig.enable_chatcodes =  false;
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#lem-dot-product-norm-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Proof 2.5.1.1"><a href="#lem-dot-product-norm-2" title="Copy heading and permalink for Proof 2.5.1.1" aria-label="Copy heading and permalink for Proof 2.5.1.1">🔗</a></div></article></details><div class="para" id="sec-orthogonality-6">Let’s have a look at a concrete instance of our problem.<div class="autopermalink" data-description="Paragraph"><a href="#sec-orthogonality-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Proof 2.5.1.1"><a href="#lem-dot-product-norm-2" title="Copy heading and permalink for Proof 2.5.1.1" aria-label="Copy heading and permalink for Proof 2.5.1.1">🔗</a></div></article></details><div class="para" id="sec-orthogonality-6">A direct consequence of this result is that two vectors <span class="process-math">\(\bv,\bw\in\R^n\)</span> are orthogonal to each other precisely when <span class="process-math">\(\bv\cdot\bw=0\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-orthogonality-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<details id="sec-orthogonality-7" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
-<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.5.2</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
-</h3></summary><article class="example example-like knowl__content"><div class="para" id="sec-orthogonality-7-1">Consider the linear subspace of <span class="process-math">\(\R^2\)</span> defined as the set of solutions of the equation <span class="process-math">\(x-2y=0\text{.}\)</span> This is a line of slope <span class="process-math">\(1/2\)</span> passing through the origin. Let’s also consider the point <span class="process-math">\((1,2)\text{,}\)</span> which does not lie on this line. Our objective is to express the distance between the point <span class="process-math">\((1,2)\)</span> and this line in terms of dot products and norms of vectors.<div class="autopermalink" data-description="Paragraph"><a href="#sec-orthogonality-7-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<article class="corollary theorem-like" id="cor-orthogonal"><h3 class="heading">
+<span class="type">Corollary</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.5.2</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para" id="cor-orthogonal-1-1">Two vectors <span class="process-math">\(\bv,\bw\in\R^n\)</span> are orthogonal to each other if and only if <span class="process-math">\(\bv\cdot\bw=0\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#cor-orthogonal-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Example 2.5.2"><a href="#sec-orthogonality-7" title="Copy heading and permalink for Example 2.5.2" aria-label="Copy heading and permalink for Example 2.5.2">🔗</a></div></article></details><div class="autopermalink" data-description="Section 2.5: Orthogonality"><a href="#sec-orthogonality" title="Copy heading and permalink for Section 2.5: Orthogonality" aria-label="Copy heading and permalink for Section 2.5: Orthogonality">🔗</a></div></section></div>
+<div class="autopermalink" data-description="Corollary 2.5.2"><a href="#cor-orthogonal" title="Copy heading and permalink for Corollary 2.5.2" aria-label="Copy heading and permalink for Corollary 2.5.2">🔗</a></div></article><details id="cor-orthogonal-2" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para" id="cor-orthogonal-2-1">If the two vectors are collinear, then either <span class="process-math">\(\bv=\lambda\bw\)</span> or <span class="process-math">\(\bw=\lambda\bv\)</span> for some scalar <span class="process-math">\(\lambda\in\R\text{.}\)</span> In either case, it can be easily checked that <span class="process-math">\(\bv\cdot\bw=0\)</span> only when one of the two vectors is <span class="process-math">\(\bz\text{.}\)</span> (We consider the zero vector to be orthogonal to all the vectors in <span class="process-math">\(\R^n\text{.}\)</span>)<div class="autopermalink" data-description="Paragraph"><a href="#cor-orthogonal-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="cor-orthogonal-2-2">Suppose now that the two vectors are not collinear. They then form two sides of the triangle with vertices the origin and the two heads of the vectors. The other side has length <span class="process-math">\(\lVert\bv-\bw\rVert\text{.}\)</span> If the two vectors are perpendicular, then it follows immediately from the Pythagorean theorem that <span class="process-math">\(\lVert\bv-\bw\rVert^2=\lVert\bv\rVert^2+\lVert\bw\rVert^2\text{.}\)</span> Using the formula in <a href="sec-orthogonality.html#lem-dot-product-norm" class="xref" data-knowl="./knowl/xref/lem-dot-product-norm.html" data-reveal-label="Reveal" data-close-label="Close" title="Lemma 2.5.1">Lemma 2.5.1</a>, we conclude that <span class="process-math">\(\bv\cdot(-\bw)=0\text{,}\)</span> which yields <span class="process-math">\(\bv\cdot\bw=0\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#cor-orthogonal-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="cor-orthogonal-2-3">But the converse to the Pythagorean theorem also holds: if a triangle with sides fo lengths <span class="process-math">\(a,b,c\)</span> is such that <span class="process-math">\(a^2+b^2=c^2\text{,}\)</span> then the angle formed by the sides of lengths <span class="process-math">\(a\)</span> and <span class="process-math">\(b\)</span> is a right angle. Therefore, if <span class="process-math">\(\bv\cdot\bw=0\text{,}\)</span> then <span class="process-math">\(\lVert\bv-\bw\rVert^2=\lVert\bv\rVert^2+\lVert\bw\rVert^2\text{,}\)</span> and so <span class="process-math">\(\bv\)</span> and <span class="process-math">\(\bw\)</span> must be orthogonal.<div class="autopermalink" data-description="Paragraph"><a href="#cor-orthogonal-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 2.5.2.1"><a href="#cor-orthogonal-2" title="Copy heading and permalink for Proof 2.5.2.1" aria-label="Copy heading and permalink for Proof 2.5.2.1">🔗</a></div></article></details><div class="para" id="sec-orthogonality-8">Let’s have a look at a concrete instance of our problem.<div class="autopermalink" data-description="Paragraph"><a href="#sec-orthogonality-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<details id="sec-orthogonality-9" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.5.3</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3></summary><article class="example example-like knowl__content"><div class="para" id="sec-orthogonality-9-1">Consider the linear subspace of <span class="process-math">\(\R^2\)</span> defined as the set of solutions of the equation <span class="process-math">\(x-2y=0\text{.}\)</span> This is a line of slope <span class="process-math">\(1/2\)</span> passing through the origin. Let’s also consider the point <span class="process-math">\((1,2)\text{,}\)</span> which does not lie on this line. Our objective is to find the point in the line <span class="process-math">\(x-2y=0\)</span> that lies closest to <span class="process-math">\((1,2)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-orthogonality-9-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<figure class="figure figure-like" id="fig-distance-line"><div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="generated/prefigure/prefig-distance-line.svg" role="img" class="contained" alt="Line defined by the equation x minus 2y equals 0 and point 1 comma 2"></div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.5.4<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Line <span class="process-math">\(x-2y=0\)</span> and point <span class="process-math">\((1,2)\text{.}\)</span><div class="autopermalink" data-description="Figure 2.5.4"><a href="#fig-distance-line" title="Copy heading and permalink for Figure 2.5.4" aria-label="Copy heading and permalink for Figure 2.5.4">🔗</a></div></figcaption></figure><div class="para" id="sec-orthogonality-9-3">The distance between the point <span class="process-math">\((1,2)\)</span> and the line <span class="process-math">\(x-2y=0\)</span> is the length of the line segment that starts at the point <span class="process-math">\((1,2)\)</span> and ends at the line <span class="process-math">\(x-2y=0\text{,}\)</span> intersecting it at a right angle. This line segment is depicted in <a href="sec-orthogonality.html#fig-distance-line" class="xref" data-knowl="./knowl/xref/fig-distance-line.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 2.5.4">Figure 2.5.4</a> as a dashed black line.<div class="autopermalink" data-description="Paragraph"><a href="#sec-orthogonality-9-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-orthogonality-9-4">Consider now the vector <span class="process-math">\(\bv=(1,2)\)</span> and the vector <span class="process-math">\(\bu\)</span> defined as the vector whose head lies in the point of intersection between the line <span class="process-math">\(x-2y=0\)</span> and the black dashed line in <a href="sec-orthogonality.html#fig-distance-line" class="xref" data-knowl="./knowl/xref/fig-distance-line.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 2.5.4">Figure 2.5.4</a>. This is called the <dfn class="terminology">projection</dfn> of <span class="process-math">\(\bv\)</span> onto the line <span class="process-math">\(x-2y=0\text{.}\)</span> The head of this vector is precisely the point on the line that lies the closest to <span class="process-math">\((1,2)\text{.}\)</span> Define <span class="process-math">\(\bu^{\perp}:=\bv-\bu\text{.}\)</span> This last vector has the same length as the dashed black line of <a href="sec-orthogonality.html#fig-distance-line" class="xref" data-knowl="./knowl/xref/fig-distance-line.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 2.5.4">Figure 2.5.4</a> and is parallel to it.<div class="autopermalink" data-description="Paragraph"><a href="#sec-orthogonality-9-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<figure class="figure figure-like" id="fig-distance-line-vectors"><div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="generated/prefigure/prefig-distance-line-vectors.svg" role="img" class="contained" alt="Line defined by the equation x minus 2y equals 0 and point 1 comma 2"></div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.5.5<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Line <span class="process-math">\(x-2y=0\)</span> and point <span class="process-math">\((1,2)\text{.}\)</span><div class="autopermalink" data-description="Figure 2.5.5"><a href="#fig-distance-line-vectors" title="Copy heading and permalink for Figure 2.5.5" aria-label="Copy heading and permalink for Figure 2.5.5">🔗</a></div></figcaption></figure><div class="para logical" id="sec-orthogonality-9-6">
+<div class="para">In the figure above, <span class="process-math">\(\theta\)</span> is the angle between <span class="process-math">\(\bu\)</span> and <span class="process-math">\(\bv\text{.}\)</span> Using a little trigonometry, we find that <span class="process-math">\(\lVert\bu\rVert=\lVert\bv\rVert\cos\theta\text{.}\)</span> If <span class="process-math">\(\bw\)</span> is any non-zero vector on the line <span class="process-math">\(x-2y=0\text{,}\)</span> we have <span class="process-math">\(\bu=\lambda\bw\)</span> for some <span class="process-math">\(\lambda\in\R\text{.}\)</span> This means that</div>
+<div class="displaymath process-math" id="sec-orthogonality-9-6-9">
+\begin{equation*}
+|\lambda|\lVert\bw\rVert=\lVert\lambda\bw\rVert=\lVert\bu\rVert=\lVert\bv\rVert\cos\theta\text{.}
+\end{equation*}
+</div>
+<div class="para">Therefore,</div>
+<div class="displaymath process-math" id="sec-orthogonality-9-6-10">
+\begin{equation*}
+|\lambda|=\frac{\lVert\bv\rVert}{\lVert\bw\rVert}\cos\theta\text{.}
+\end{equation*}
+</div>
+<div class="para">If we denote the angle between <span class="process-math">\(\bv\)</span> and <span class="process-math">\(\bw\)</span> by <span class="process-math">\(\theta(\bv,\bw)\text{,}\)</span> then <span class="process-math">\(\cos\theta=\cos\theta(\bv,\bw)\)</span> precisely when <span class="process-math">\(\lambda\geq 0\text{.}\)</span> Otherwise, <span class="process-math">\(\cos\theta=-\cos\theta(\bv,\bw)\text{.}\)</span> It follows that</div>
+<div class="displaymath process-math" id="sec-orthogonality-9-6-17">
+\begin{equation*}
+\lambda=\frac{\lVert\bv\rVert}{\lVert\bw\rVert}\cos\theta(\bv,\bw)\text{.}
+\end{equation*}
+</div>
+<div class="para">So we can express <span class="process-math">\(\bu\)</span> as a scalar multiple of <span class="process-math">\(\bw\text{:}\)</span>
+</div>
+<div class="displaymath process-math" id="sec-orthogonality-9-6-20">
+\begin{equation*}
+\bu=\frac{\lVert\bv\rVert}{\lVert\bw\rVert}\cos\theta(\bv,\bw)\bw\text{.}
+\end{equation*}
+</div>
+<div class="para">The last thing we need to do is to somehow remove any reference to the angle <span class="process-math">\(\theta\text{.}\)</span> This can be done using the following equality:</div>
+<div class="displaymath process-math" id="sec-orthogonality-9-6-22">
+\begin{equation*}
+\bv\cdot\bw=\lVert\bv\rVert\lVert\bw\rVert\cos\theta(\bv,\bw)\text{.}
+\end{equation*}
+</div>
+<div class="para">If <span class="process-math">\(\bv\)</span> and <span class="process-math">\(\bw\)</span> are orthogonal, then we already know that this holds. If not, then <span class="process-math">\(\cos\theta(\bv,\bw)\neq 0\text{.}\)</span> Since</div>
+<div class="displaymath process-math" id="sec-orthogonality-9-6-26">
+\begin{equation*}
+\lambda\bv\cdot\bw=\bv\cdot\bu=(\bu+\bu^{\perp})\cdot\bu=\lVert\bu\rVert^2=\lVert\bv\rVert^2\cos^2\theta\text{,}
+\end{equation*}
+</div>
+<div class="para">we conclude that</div>
+<div class="displaymath process-math" id="sec-orthogonality-9-6-27">
+\begin{equation*}
+\bv\cdot\bw=\lVert\bv\rVert\lVert\bw\rVert\frac{\cos^2\theta}{\cos\theta(\bv,\bw)}\text{.}
+\end{equation*}
+</div>
+<div class="para">But since <span class="process-math">\(\cos\theta=\pm\cos\theta(\bv,\bw)\text{,}\)</span> it follows that <span class="process-math">\(\cos^2\theta=\cos^2\theta(\bv,\bw)\text{,}\)</span> and the expression above simplifies to</div>
+<div class="displaymath process-math" id="sec-orthogonality-9-6-30">
+\begin{equation*}
+\bv\cdot\bw=\lVert\bv\rVert\lVert\bw\rVert\cos\theta(\bv,\bw)\text{.}
+\end{equation*}
+</div>
+<div class="para">Therefore,</div>
+<div class="displaymath process-math" id="sec-orthogonality-9-6-31">
+\begin{equation*}
+\bu=\frac{\bv\cdot\bw}{\lVert\bw\rVert^2}\bw
+\end{equation*}
+</div>
+<div class="para">for any non-zero vector <span class="process-math">\(\bw\)</span> on the line <span class="process-math">\(x-2y=0\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-orthogonality-9-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="sec-orthogonality-9-7">
+<div class="para">Let’s choose, for example, <span class="process-math">\(\bw=(2,1)\text{.}\)</span> Then <span class="process-math">\(\bv\cdot\bw=4\text{,}\)</span> <span class="process-math">\(\lVert\bw\rVert^2=5\text{,}\)</span> which means that the projection of <span class="process-math">\(\bv\)</span> onto the line <span class="process-math">\(x-2y=0\)</span> is the vector</div>
+<div class="displaymath process-math" id="sec-orthogonality-9-7-6">
+\begin{equation*}
+\bu=\frac{4}{5}\colvec{2\\1}=\colvec{\frac{8}{5}\\ \frac{4}{5}}\text{.}
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-orthogonality-9-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Example 2.5.3"><a href="#sec-orthogonality-9" title="Copy heading and permalink for Example 2.5.3" aria-label="Copy heading and permalink for Example 2.5.3">🔗</a></div></article></details><div class="autopermalink" data-description="Section 2.5: Orthogonality"><a href="#sec-orthogonality" title="Copy heading and permalink for Section 2.5: Orthogonality" aria-label="Copy heading and permalink for Section 2.5: Orthogonality">🔗</a></div></section></div>
 <div id="ptx-content-footer" class="ptx-content-footer">
 <a class="previous-button button" href="sec-linear-subspaces.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="backmatter.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
