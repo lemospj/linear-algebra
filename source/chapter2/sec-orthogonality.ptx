@@ -13,7 +13,7 @@
         This is the vector's length. We also saw that there is a relationship between dot product and norm, namely <m>\lVert \bv\rVert^2=\bv\cdot\bv</m>, which follows directly from the definition. 
     </p>
     <p>
-        The first problem that we want to solve is that of measuring the distance between a point and a given linear subspace of <m>\R^n</m>. To solve this, we will need the following fact.
+        The first problem that we want to solve is that of finding the closest point in a linear subspace of <m>\R^n</m> to a given point. To solve this, we will need the following fact.
     </p>
     <lemma xml:id="lem-dot-product-norm">
         <statement>
@@ -30,11 +30,142 @@
         </proof>
     </lemma>
     <p>
+        A direct consequence of this result is that two vectors <m>\bv,\bw\in\R^n</m> are orthogonal to each other precisely when <m>\bv\cdot\bw=0</m>.
+    </p>
+    <corollary xml:id="cor-orthogonal">
+        <statement>
+            <p>
+                Two vectors <m>\bv,\bw\in\R^n</m> are orthogonal to each other if and only if <m>\bv\cdot\bw=0</m>.
+            </p>
+        </statement>
+        <proof>
+            <p>
+                If the two vectors are collinear, then either <m>\bv=\lambda\bw</m> or <m>\bw=\lambda\bv</m> for some scalar <m>\lambda\in\R</m>. In either case, it can be easily checked that <m>\bv\cdot\bw=0</m> only when one of the two vectors is <m>\bz</m>. (We consider the zero vector to be orthogonal to all the vectors in <m>\R^n</m>.)                
+            </p>
+            <p>
+                Suppose now that the two vectors are not collinear. They then form two sides of the triangle with vertices the origin and the two heads of the vectors. The other side has length <m>\lVert\bv-\bw\rVert</m>. If the two vectors are perpendicular, then it follows immediately from the Pythagorean theorem that <m>\lVert\bv-\bw\rVert^2=\lVert\bv\rVert^2+\lVert\bw\rVert^2</m>. Using the formula in <xref ref="lem-dot-product-norm"/>, we conclude that <m>\bv\cdot(-\bw)=0</m>, which yields <m>\bv\cdot\bw=0</m>.
+            </p>
+            <p>
+                But the converse to the Pythagorean theorem also holds: if a triangle with sides fo lengths <m>a,b,c</m> is such that <m>a^2+b^2=c^2</m>, then the angle formed by the sides of lengths <m>a</m> and <m>b</m> is a right angle. Therefore, if <m>\bv\cdot\bw=0</m>, then <m>\lVert\bv-\bw\rVert^2=\lVert\bv\rVert^2+\lVert\bw\rVert^2</m>, and so <m>\bv</m> and <m>\bw</m> must be orthogonal.
+            </p>
+        </proof>
+    </corollary>
+    <p>
         Let's have a look at a concrete instance of our problem.
     </p>
     <example>
         <p>
-            Consider the linear subspace of <m>\R^2</m> defined as the set of solutions of the equation <m>x-2y=0</m>. This is a line of slope <m>1/2</m> passing through the origin. Let's also consider the point <m>(1,2)</m>, which does not lie on this line. Our objective is to express the distance between the point <m>(1,2)</m> and this line in terms of dot products and norms of vectors.
+            Consider the linear subspace of <m>\R^2</m> defined as the set of solutions of the equation <m>x-2y=0</m>. This is a line of slope <m>1/2</m> passing through the origin. Let's also consider the point <m>(1,2)</m>, which does not lie on this line. Our objective is to find the point in the line <m>x-2y=0</m> that lies closest to <m>(1,2)</m>.
+            
+        </p>
+        <figure xml:id="fig-distance-line">
+            <caption>Line <m>x-2y=0</m> and point <m>(1,2)</m>.</caption>
+            <image width="80%">
+                <shortdescription>Line defined by the equation x minus 2y equals 0 and point 1 comma 2</shortdescription>
+                <prefigure xmlns="https://prefigure.org" label="prefig-distance-line">
+                    <diagram dimensions="(300,300)" margins="5">
+                        <definition>v=(2,1)</definition>
+                        <definition>q=(0,0)</definition>
+                        <definition>p=(1,2)</definition>
+                        <definition>pr=dot(p,v)/dot(v,v)*v</definition>
+                        <coordinates bbox="(-1,-1, 3, 3)">
+                            <grid-axes xlabel="x" ylabel="y" />
+                            <line endpoints="(v,q)" stroke="blue" infinite="yes"/>
+                            <line endpoints="(p,pr)" stroke="black" dash="4 4"/>
+                            <angle-marker points="(p,pr,q)" stroke="black"/>
+                            <point p="p"/>
+                        </coordinates>
+                    </diagram>
+                </prefigure>                    
+            </image>
+        </figure>
+        <p>
+            The distance between the point <m>(1,2)</m> and the line <m>x-2y=0</m> is the length of the line segment that starts at the point <m>(1,2)</m> and ends at the line <m>x-2y=0</m>, intersecting it at a right angle. This line segment is depicted in <xref ref="fig-distance-line"/> as a dashed black line.
+        </p>
+        <p>
+            Consider now the vector <m>\bv=(1,2)</m> and the vector <m>\bu</m> defined as the vector whose head lies in the point of intersection between the line <m>x-2y=0</m> and the black dashed line in <xref ref="fig-distance-line"/>. This is called the <term>projection</term> of <m>\bv</m> onto the line <m>x-2y=0</m>. The head of this vector is precisely the point on the line that lies the closest to <m>(1,2)</m>. Define <m>\bu^{\perp}:=\bv-\bu</m>. This last vector has the same length as the dashed black line of <xref ref="fig-distance-line"/> and is parallel to it.
+        </p>
+        <figure xml:id="fig-distance-line-vectors">
+            <caption>Line <m>x-2y=0</m> and point <m>(1,2)</m>.</caption>
+            <image width="80%">
+                <shortdescription>Line defined by the equation x minus 2y equals 0 and point 1 comma 2</shortdescription>
+                <prefigure xmlns="https://prefigure.org" label="prefig-distance-line-vectors">
+                    <diagram dimensions="(300,300)" margins="5">
+                        <definition>v=(2,1)</definition>
+                        <definition>o=(0,0)</definition>
+                        <definition>p=(1,2)</definition>
+                        <definition>u=dot(p,v)/dot(v,v)*v</definition>
+                        <definition>w=p-u</definition>
+                        <coordinates bbox="(-1,-1, 2.5, 2.5)">
+                            <grid-axes xlabel="x" ylabel="y" />
+                            <line endpoints="(v,o)" stroke="blue" infinite="yes"/>
+                            <line endpoints="(p,u)" stroke="black" dash="4 4"/>
+                            <angle-marker points="(p,u,o)" stroke="black"/>
+                            <vector v="p" stroke="red" thickness="3"/>
+                            <point p="p"/>
+                            <vector v="u" stroke="orange" thickness="3"/>
+                            <vector v="w" stroke="black" thickness="3"/>
+                            <angle-marker points="(u,o,p)" stroke="black">
+                                <m>\theta</m>
+                            </angle-marker>
+                            <label anchor="(1,0.4)" alignment="south">
+                                <m>\bu</m>
+                            </label>
+                            <label anchor="(0.4,1.1)" alignment="north">
+                                <m>\bv</m>
+                            </label>
+                            <label anchor="(-0.5,0.5)">
+                                <m>\bu^{\perp}</m>
+                            </label>
+                        </coordinates>
+                    </diagram>
+                </prefigure>                    
+            </image>
+        </figure>
+        <p>
+            In the figure above, <m>\theta</m> is the angle between <m>\bu</m> and <m>\bv</m>. Using a little trigonometry, we find that <m>\lVert\bu\rVert=\lVert\bv\rVert\cos\theta</m>. If <m>\bw</m> is any non-zero vector on the line <m>x-2y=0</m>, we have <m>\bu=\lambda\bw</m> for some <m>\lambda\in\R</m>. This means that
+            <me>
+                |\lambda|\lVert\bw\rVert=\lVert\lambda\bw\rVert=\lVert\bu\rVert=\lVert\bv\rVert\cos\theta
+            </me>.
+            Therefore,
+            <me>
+                |\lambda|=\frac{\lVert\bv\rVert}{\lVert\bw\rVert}\cos\theta
+            </me>.
+            If we denote the angle between <m>\bv</m> and <m>\bw</m> by <m>\theta(\bv,\bw)</m>, then <m>\cos\theta=\cos\theta(\bv,\bw)</m> precisely when <m>\lambda\geq 0</m>. Otherwise, <m>\cos\theta=-\cos\theta(\bv,\bw)</m>. It follows that
+            <me>
+                \lambda=\frac{\lVert\bv\rVert}{\lVert\bw\rVert}\cos\theta(\bv,\bw)
+            </me>.
+            So we can express <m>\bu</m> as a scalar multiple of <m>\bw</m>:
+            <me>
+                \bu=\frac{\lVert\bv\rVert}{\lVert\bw\rVert}\cos\theta(\bv,\bw)\bw
+            </me>.
+            The last thing we need to do is to somehow remove any reference to the angle <m>\theta</m>. This can be done using the following equality:
+            <me>
+                \bv\cdot\bw=\lVert\bv\rVert\lVert\bw\rVert\cos\theta(\bv,\bw)
+            </me>.
+            If <m>\bv</m> and <m>\bw</m> are orthogonal, then we already know that this holds. If not, then <m>\cos\theta(\bv,\bw)\neq 0</m>. Since
+            <me>
+                \lambda\bv\cdot\bw=\bv\cdot\bu=(\bu+\bu^{\perp})\cdot\bu=\lVert\bu\rVert^2=\lVert\bv\rVert^2\cos^2\theta
+            </me>,
+            we conclude that
+            <me>
+                \bv\cdot\bw=\lVert\bv\rVert\lVert\bw\rVert\frac{\cos^2\theta}{\cos\theta(\bv,\bw)}
+            </me>.
+            But since <m>\cos\theta=\pm\cos\theta(\bv,\bw)</m>, it follows that <m>\cos^2\theta=\cos^2\theta(\bv,\bw)</m>, and the expression above simplifies to
+            <me>
+                \bv\cdot\bw=\lVert\bv\rVert\lVert\bw\rVert\cos\theta(\bv,\bw)
+            </me>.
+            Therefore,
+            <me>
+                \bu=\frac{\bv\cdot\bw}{\lVert\bw\rVert^2}\bw
+            </me>
+            for any non-zero vector <m>\bw</m> on the line <m>x-2y=0</m>.
+        </p>
+        <p>
+            Let's choose, for example, <m>\bw=(2,1)</m>. Then <m>\bv\cdot\bw=4</m>, <m>\lVert\bw\rVert^2=5</m>, which means that the projection of <m>\bv</m> onto the line <m>x-2y=0</m> is the vector
+            <me>
+                \bu=\frac{4}{5}\colvec{2\\1}=\colvec{\frac{8}{5}\\ \frac{4}{5}}
+            </me>.
         </p>
     </example>
 </section>
