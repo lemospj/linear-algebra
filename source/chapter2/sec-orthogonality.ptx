@@ -34,7 +34,7 @@
     </p>
     <example>
         <p>
-            Consider the linear subspace of <m>\R^2</m> defined as the set of solutions of the equation <m>2x-y=0</m>. This is a line of slope <m>1/2</m> passing through the origin. Let's also consider the point <m>(1,2)</m>, which does not lie on this line. Our objective is to express the distance between the point <m>(1,2)</m> and this line in terms of dot products and norms of vectors.
+            Consider the linear subspace of <m>\R^2</m> defined as the set of solutions of the equation <m>x-2y=0</m>. This is a line of slope <m>1/2</m> passing through the origin. Let's also consider the point <m>(1,2)</m>, which does not lie on this line. Our objective is to express the distance between the point <m>(1,2)</m> and this line in terms of dot products and norms of vectors.
         </p>
     </example>
 </section>
