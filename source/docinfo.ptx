@@ -23,6 +23,8 @@
     \newcommand{\bb}{{\bf b}}
     \newcommand{\bc}{{\bf c}}
     \newcommand{\be}{{\bf e}}
+    \newcommand{\bp}{{\bf p}}
+    \newcommand{\bq}{{\bf q}}
     \newcommand{\br}{{\bf r}}
     \newcommand{\bu}{{\bf u}}
     \newcommand{\bv}{{\bf v}}
@@ -36,6 +38,7 @@
 
     \DeclareMathOperator{\diag}{\mathrm{diag}}
     \DeclareMathOperator{\vspan}{\mathrm{span}}
+    \DeclareMathOperator{\pr}{\mathrm{pr}}
     \DeclareMathOperator{\Tr}{\mathrm{Tr}}
     \newcommand{\Mat}{\mathrm{Mat}}
     \newcommand{\N}{\mathbb N} 
