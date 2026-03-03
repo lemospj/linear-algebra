@@ -1879,7 +1879,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "2.5",
   "title": "Orthogonality",
-  "body": " Orthogonality  This section will have a more geometric flavor than the previous ones. We will speak about distances and angles and see how these relate to the dot product between two vectors. We will see that every linear subspace admits a basis formed by orthogonal vectors of norm . Finally, we will discuss the first real-world application of this course: the least squares method.  Let's start by recalling that the norm of a vector was defined to be . This is the vector's length. We also saw that there is a relationship between dot product and norm, namely , which follows directly from the definition.  The first problem that we want to solve is that of finding the closest point in a linear subspace of to a given point. To solve this, we will need the following fact.    If are two vectors, we have .    Note that . The result follows from solving the equation above for .    A direct consequence of this result is that two vectors are orthogonal to each other precisely when .    Two vectors are orthogonal to each other if and only if .    If the two vectors are collinear, then either or for some scalar . In either case, it can be easily checked that only when one of the two vectors is . (We consider the zero vector to be orthogonal to all the vectors in .)  Suppose now that the two vectors are not collinear. They then form two sides of the triangle with vertices the origin and the two heads of the vectors. The other side has length . If the two vectors are perpendicular, then it follows immediately from the Pythagorean theorem that . Using the formula in , we conclude that , which yields .  But the converse to the Pythagorean theorem also holds: if a triangle with sides fo lengths is such that , then the angle formed by the sides of lengths and is a right angle. Therefore, if , then , and so and must be orthogonal.    Let's have a look at a concrete instance of our problem.   Consider the linear subspace of defined as the set of solutions of the equation . This is a line of slope passing through the origin. Let's also consider the point , which does not lie on this line. Our objective is to find the point in the line that lies closest to .   Line and point .   Line defined by the equation x minus 2y equals 0 and point 1 comma 2    v=(2,1)  q=(0,0)  p=(1,2)  pr=dot(p,v)\/dot(v,v)*v             The distance between the point and the line is the length of the line segment that starts at the point and ends at the line , intersecting it at a right angle. This line segment is depicted in as a dashed black line.  Consider now the vector and the vector defined as the vector whose head lies in the point of intersection between the line and the black dashed line in . This is called the projection of onto the line . The head of this vector is precisely the point on the line that lies the closest to . Define . This last vector has the same length as the dashed black line of and is parallel to it.   Line and point .   Line defined by the equation x minus 2y equals 0 and point 1 comma 2    v=(2,1)  o=(0,0)  p=(1,2)  u=dot(p,v)\/dot(v,v)*v  w=p-u            \\theta    \\bu    \\bv    \\bu^{\\perp}        In the figure above, is the angle between and . Using a little trigonometry, we find that . If is any non-zero vector on the line , we have for some . This means that . Therefore, . If we denote the angle between and by , then precisely when . Otherwise, . It follows that . So we can express as a scalar multiple of : . The last thing we need to do is to somehow remove any reference to the angle . This can be done using the following equality: . If and are orthogonal, then we already know that this holds. If not, then . Since , we conclude that . But since , it follows that , and the expression above simplifies to . Therefore, for any non-zero vector on the line .  Let's choose, for example, . Then , , which means that the projection of onto the line is the vector .   "
+  "body": " Orthogonality  This section will have a more geometric flavor than the previous ones. We will speak about distances and angles and see how these relate to the dot product between two vectors. We will see that every linear subspace admits a basis formed by orthogonal vectors of norm . Finally, we will discuss the first real-world application of this course: the least squares method.  Let's start by recalling that the norm of a vector was defined to be . This is the vector's length. We also saw that there is a relationship between dot product and norm, namely , which follows directly from the definition.  The first problem that we want to solve is that of finding the closest point in a linear subspace of to a given point. To solve this, we will need the following fact.    If are two vectors, we have .    Note that . The result follows from solving the equation above for .    A direct consequence of this result is that two vectors are orthogonal to each other precisely when .    Two vectors are orthogonal to each other if and only if .    If the two vectors are collinear, then either or for some scalar . In either case, it can be easily checked that only when one of the two vectors is . (We consider the zero vector to be orthogonal to all the vectors in .)  Suppose now that the two vectors are not collinear. They then form two sides of the triangle with vertices the origin and the two heads of the vectors. The other side has length . If the two vectors are perpendicular, then it follows immediately from the Pythagorean theorem that . Using the formula in , we conclude that , which yields .  But the converse to the Pythagorean theorem also holds: if a triangle with sides fo lengths is such that , then the angle formed by the sides of lengths and is a right angle. Therefore, if , then , and so and must be orthogonal.    In fact, using the law of the cosines, we can quickly find a generalization of .    Let and be two non-zero vectors in , and let be the angle between them. Then .    We show the case when and are not collinear, and collinear case as an exercise.  Consider the triangle defined by determining that two of its sides are the vectors and . The third side has length . By the law of the cosines, we have . But applied to the vectors and states that . Therefore, , which immediately leads to .    Let's have a look at a concrete instance of our problem.   Consider the linear subspace of defined as the set of solutions of the equation . This is a line of slope passing through the origin. Let's also consider the point , which does not lie on this line. Our objective is to find the point in the line that lies closest to .   Line and point .   Line defined by the equation x minus 2y equals 0 and point 1 comma 2    v=(2,1)  q=(0,0)  p=(1,2)  pr=dot(p,v)\/dot(v,v)*v             The distance between the point and the line is the length of the line segment that starts at the point and ends at the line , intersecting it at a right angle. This line segment is depicted in as a dashed black line.  Consider now the vector and the vector defined as the vector whose head lies in the point of intersection between the line and the black dashed line in . This is called the projection of onto the line . The head of this vector is precisely the point on the line that lies the closest to . Define . This last vector has the same length as the dashed black line of and is parallel to it.   Line and point .   Line defined by the equation x minus 2y equals 0 and point 1 comma 2    v=(2,1)  o=(0,0)  p=(1,2)  u=dot(p,v)\/dot(v,v)*v  w=p-u            \\theta    \\bu    \\bv    \\bu^{\\perp}        In the figure above, is the angle between and . Using a little trigonometry, we find that . If is any non-zero vector on the line , we have for some . This means that . Therefore, . If we denote the angle between and by , then precisely when . Otherwise, . It follows that . So we can express as a scalar multiple of : . The last thing we need to do is to somehow remove any reference to the angle . This can be done using the equality . Therefore, for any non-zero vector on the line .  Let's choose, for example, . Then , , which means that the projection of onto the line is the vector .   It is worth writing down the main result in the previous example in full generality, i.e. that the projection of a vector in onto the line formed by a non-zero vector is given by the expression . To show that this always holds, we need to precisely define what we mean by projection to a line.    Let be a vector in , and let be a non-zero vector in . The projection of onto the line generated by is defined to be the only vector in such that is orthogonal to . The projection of onto is denoted by or .      Show that if a vector in is orthogonal to a vector , then it must be orthogonal to every scalar multiple of . Therefore, if is non-zero and is orthogonal to , then is orthogonal to every vector in the line generated by .    The definition above uses the fact that there is exactly one vector in the line generated by such that is orthogonal to , but we never proved this.    Let be a vector in , and let be a non-zero vector of . There is a unique vector in the line generated by such that is orthogonal to .    There is at least one vector in the line generated by such that . Indeed, if we define , we easily see that . Now we need to show that there can be no other such vector in the line generated by .  Suppose that is another vector in the line generated by such that . We then must have for every . Since both and are scalar multiples of (this is what it means to lie in the line generated by ), the difference is a scalar multiple of , and so lies in the line generated by . Therefore, a particular instance of the equation above is . Bu this means that , which is only possible if . This means that .      Let be a non-zero vector in . The projection of a vector in onto the line generated by is given by the expression .    We saw during the proof of that the vector lies in the line generated by and is such that . By the uniqueness established by , we conclude that this must be the projection of onto the line generated by .    You now know how to project vectors onto lines, and you will soon learn how to project vectors onto any linear subspace. But before we get into that, we need to learn one more thing, namely that every linear subspace admits an orthonormal basis .    A basis of a linear subspace or is said to be an orthonormal basis if the following two conditions hold:    for every vector in .     for every pair of distinct vectors .       In other words, an orthonormal basis is a basis consisting of unit vectors that are orthogonal to each other.   The standard unit vectors in are an example of an orthonormal basis of .    Consider the vectors and . They are linearly independent, and so they span a -dimensional linear subspace of . They are form a basis for , of course. However, they do not form an orthonormal basis. Indeed, , and . However, we can use this basis to obtain an orthonormal basis of .  The first step is to find an orthogonal basis, i.e. one that consists of pairwise orthogonal vectors. We will use as our first basis vector. For the second one, we start by considering the projection of onto the line generated by . As we now know, this is given by the expression . The vector is orthogonal to . Explicitly, it is given by . The vectors and are now orthogonal vectors in , and so they are also linearly independent. Since , the vectors and form an orthogonal basis of .  Now all we need to do is normalize each vector, i.e. scale them so that they become unit vectors. Since and , we conclude that is an orthonormal basis for .   The process that we used in the example above to find an orthonormal basis from a known basis of a vector space is called the Gram-Schmidt orthogonalization process . In general, if is a linear subspace of and we have a basis of it, the Gram-Schmidt orthogonalization process is an algorithm that takes these data and returns an orthonormal basis of . The algorithm has two phases. The first phase creates an orthogonal basis. The second phase normalizes each vector in the orthogonal basis obtained in the first phase. Here's how the process works.  The procedure to obtain an orthogonal basis is recursive. The objective is to use the starting basis to find an orthogonal basis . The first vector is defined to be the first vector of the original basis, i.e. . We now define the vector as follows: . We can easily see that and are orthogonal: . Now suppose that we already have orthogonal vectors in . We define the next one as . It is now easy to check that is orthogonal to every vector among . Indeed, if , we have . Proceeding recursively, we eventually end up with an orthogonal set of vectors , which must necessarily form a basis of .  To normalize these vectors, we now simply divide each by its norm. In other words, for each we define . The set is now an orthonormal basis of .    Every linear subspace of admits an orthonormal basis.     Consider the vectors , and . Let denote its span, which is a linear subspace of . They are linearly independent (show this), and so constitutes a basis of . Let's use the Gram-Schmidt orthogonalization process to find an orthonormal basis of .  First, we define .  Now define . Finally, define .  We now need to normalize the vectors . Since , and , we conclude that an orthonormal basis for is .      Show that a set of pairwise orthogonal non-zero vectors in is a linearly independent set of vectors. (Pairwise orthogonal means that whenever .) Conclude that if is a linear subspace of of dimension , then any collection of pairwise orthogonal non-zero vectors in forms a basis of .     "
 },
 {
   "id": "lem-dot-product-norm",
@@ -1900,13 +1900,139 @@ var ptx_lunr_docs = [
   "body": "  Two vectors are orthogonal to each other if and only if .    If the two vectors are collinear, then either or for some scalar . In either case, it can be easily checked that only when one of the two vectors is . (We consider the zero vector to be orthogonal to all the vectors in .)  Suppose now that the two vectors are not collinear. They then form two sides of the triangle with vertices the origin and the two heads of the vectors. The other side has length . If the two vectors are perpendicular, then it follows immediately from the Pythagorean theorem that . Using the formula in , we conclude that , which yields .  But the converse to the Pythagorean theorem also holds: if a triangle with sides fo lengths is such that , then the angle formed by the sides of lengths and is a right angle. Therefore, if , then , and so and must be orthogonal.   "
 },
 {
-  "id": "sec-orthogonality-9",
+  "id": "prop-dot-product-angle",
   "level": "2",
-  "url": "sec-orthogonality.html#sec-orthogonality-9",
-  "type": "Example",
+  "url": "sec-orthogonality.html#prop-dot-product-angle",
+  "type": "Proposition",
   "number": "2.5.3",
   "title": "",
-  "body": " Consider the linear subspace of defined as the set of solutions of the equation . This is a line of slope passing through the origin. Let's also consider the point , which does not lie on this line. Our objective is to find the point in the line that lies closest to .   Line and point .   Line defined by the equation x minus 2y equals 0 and point 1 comma 2    v=(2,1)  q=(0,0)  p=(1,2)  pr=dot(p,v)\/dot(v,v)*v             The distance between the point and the line is the length of the line segment that starts at the point and ends at the line , intersecting it at a right angle. This line segment is depicted in as a dashed black line.  Consider now the vector and the vector defined as the vector whose head lies in the point of intersection between the line and the black dashed line in . This is called the projection of onto the line . The head of this vector is precisely the point on the line that lies the closest to . Define . This last vector has the same length as the dashed black line of and is parallel to it.   Line and point .   Line defined by the equation x minus 2y equals 0 and point 1 comma 2    v=(2,1)  o=(0,0)  p=(1,2)  u=dot(p,v)\/dot(v,v)*v  w=p-u            \\theta    \\bu    \\bv    \\bu^{\\perp}        In the figure above, is the angle between and . Using a little trigonometry, we find that . If is any non-zero vector on the line , we have for some . This means that . Therefore, . If we denote the angle between and by , then precisely when . Otherwise, . It follows that . So we can express as a scalar multiple of : . The last thing we need to do is to somehow remove any reference to the angle . This can be done using the following equality: . If and are orthogonal, then we already know that this holds. If not, then . Since , we conclude that . But since , it follows that , and the expression above simplifies to . Therefore, for any non-zero vector on the line .  Let's choose, for example, . Then , , which means that the projection of onto the line is the vector .  "
+  "body": "  Let and be two non-zero vectors in , and let be the angle between them. Then .    We show the case when and are not collinear, and collinear case as an exercise.  Consider the triangle defined by determining that two of its sides are the vectors and . The third side has length . By the law of the cosines, we have . But applied to the vectors and states that . Therefore, , which immediately leads to .   "
+},
+{
+  "id": "example-projection-line",
+  "level": "2",
+  "url": "sec-orthogonality.html#example-projection-line",
+  "type": "Example",
+  "number": "2.5.4",
+  "title": "",
+  "body": " Consider the linear subspace of defined as the set of solutions of the equation . This is a line of slope passing through the origin. Let's also consider the point , which does not lie on this line. Our objective is to find the point in the line that lies closest to .   Line and point .   Line defined by the equation x minus 2y equals 0 and point 1 comma 2    v=(2,1)  q=(0,0)  p=(1,2)  pr=dot(p,v)\/dot(v,v)*v             The distance between the point and the line is the length of the line segment that starts at the point and ends at the line , intersecting it at a right angle. This line segment is depicted in as a dashed black line.  Consider now the vector and the vector defined as the vector whose head lies in the point of intersection between the line and the black dashed line in . This is called the projection of onto the line . The head of this vector is precisely the point on the line that lies the closest to . Define . This last vector has the same length as the dashed black line of and is parallel to it.   Line and point .   Line defined by the equation x minus 2y equals 0 and point 1 comma 2    v=(2,1)  o=(0,0)  p=(1,2)  u=dot(p,v)\/dot(v,v)*v  w=p-u            \\theta    \\bu    \\bv    \\bu^{\\perp}        In the figure above, is the angle between and . Using a little trigonometry, we find that . If is any non-zero vector on the line , we have for some . This means that . Therefore, . If we denote the angle between and by , then precisely when . Otherwise, . It follows that . So we can express as a scalar multiple of : . The last thing we need to do is to somehow remove any reference to the angle . This can be done using the equality . Therefore, for any non-zero vector on the line .  Let's choose, for example, . Then , , which means that the projection of onto the line is the vector .  "
+},
+{
+  "id": "sec-orthogonality-12",
+  "level": "2",
+  "url": "sec-orthogonality.html#sec-orthogonality-12",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "projection "
+},
+{
+  "id": "def-projection-line",
+  "level": "2",
+  "url": "sec-orthogonality.html#def-projection-line",
+  "type": "Definition",
+  "number": "2.5.7",
+  "title": "",
+  "body": "  Let be a vector in , and let be a non-zero vector in . The projection of onto the line generated by is defined to be the only vector in such that is orthogonal to . The projection of onto is denoted by or .   "
+},
+{
+  "id": "sec-orthogonality-14",
+  "level": "2",
+  "url": "sec-orthogonality.html#sec-orthogonality-14",
+  "type": "Checkpoint",
+  "number": "2.5.8",
+  "title": "",
+  "body": "  Show that if a vector in is orthogonal to a vector , then it must be orthogonal to every scalar multiple of . Therefore, if is non-zero and is orthogonal to , then is orthogonal to every vector in the line generated by .   "
+},
+{
+  "id": "prop-unique-proj-line",
+  "level": "2",
+  "url": "sec-orthogonality.html#prop-unique-proj-line",
+  "type": "Proposition",
+  "number": "2.5.9",
+  "title": "",
+  "body": "  Let be a vector in , and let be a non-zero vector of . There is a unique vector in the line generated by such that is orthogonal to .    There is at least one vector in the line generated by such that . Indeed, if we define , we easily see that . Now we need to show that there can be no other such vector in the line generated by .  Suppose that is another vector in the line generated by such that . We then must have for every . Since both and are scalar multiples of (this is what it means to lie in the line generated by ), the difference is a scalar multiple of , and so lies in the line generated by . Therefore, a particular instance of the equation above is . Bu this means that , which is only possible if . This means that .   "
+},
+{
+  "id": "cor-projection-line-formula",
+  "level": "2",
+  "url": "sec-orthogonality.html#cor-projection-line-formula",
+  "type": "Corollary",
+  "number": "2.5.10",
+  "title": "",
+  "body": "  Let be a non-zero vector in . The projection of a vector in onto the line generated by is given by the expression .    We saw during the proof of that the vector lies in the line generated by and is such that . By the uniqueness established by , we conclude that this must be the projection of onto the line generated by .   "
+},
+{
+  "id": "sec-orthogonality-18",
+  "level": "2",
+  "url": "sec-orthogonality.html#sec-orthogonality-18",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "orthonormal basis "
+},
+{
+  "id": "def-orthonormal-basis",
+  "level": "2",
+  "url": "sec-orthogonality.html#def-orthonormal-basis",
+  "type": "Definition",
+  "number": "2.5.11",
+  "title": "",
+  "body": "  A basis of a linear subspace or is said to be an orthonormal basis if the following two conditions hold:    for every vector in .     for every pair of distinct vectors .      "
+},
+{
+  "id": "sec-orthogonality-21",
+  "level": "2",
+  "url": "sec-orthogonality.html#sec-orthogonality-21",
+  "type": "Example",
+  "number": "2.5.12",
+  "title": "",
+  "body": " The standard unit vectors in are an example of an orthonormal basis of .  "
+},
+{
+  "id": "sec-orthogonality-22",
+  "level": "2",
+  "url": "sec-orthogonality.html#sec-orthogonality-22",
+  "type": "Example",
+  "number": "2.5.13",
+  "title": "",
+  "body": " Consider the vectors and . They are linearly independent, and so they span a -dimensional linear subspace of . They are form a basis for , of course. However, they do not form an orthonormal basis. Indeed, , and . However, we can use this basis to obtain an orthonormal basis of .  The first step is to find an orthogonal basis, i.e. one that consists of pairwise orthogonal vectors. We will use as our first basis vector. For the second one, we start by considering the projection of onto the line generated by . As we now know, this is given by the expression . The vector is orthogonal to . Explicitly, it is given by . The vectors and are now orthogonal vectors in , and so they are also linearly independent. Since , the vectors and form an orthogonal basis of .  Now all we need to do is normalize each vector, i.e. scale them so that they become unit vectors. Since and , we conclude that is an orthonormal basis for .  "
+},
+{
+  "id": "sec-orthogonality-23",
+  "level": "2",
+  "url": "sec-orthogonality.html#sec-orthogonality-23",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "Gram-Schmidt orthogonalization process "
+},
+{
+  "id": "thm-orthonormal-basis",
+  "level": "2",
+  "url": "sec-orthogonality.html#thm-orthonormal-basis",
+  "type": "Theorem",
+  "number": "2.5.14",
+  "title": "",
+  "body": "  Every linear subspace of admits an orthonormal basis.   "
+},
+{
+  "id": "sec-orthogonality-27",
+  "level": "2",
+  "url": "sec-orthogonality.html#sec-orthogonality-27",
+  "type": "Example",
+  "number": "2.5.15",
+  "title": "",
+  "body": " Consider the vectors , and . Let denote its span, which is a linear subspace of . They are linearly independent (show this), and so constitutes a basis of . Let's use the Gram-Schmidt orthogonalization process to find an orthonormal basis of .  First, we define .  Now define . Finally, define .  We now need to normalize the vectors . Since , and , we conclude that an orthonormal basis for is .  "
+},
+{
+  "id": "exercises-orthogonality-1",
+  "level": "2",
+  "url": "sec-orthogonality.html#exercises-orthogonality-1",
+  "type": "Exercise",
+  "number": "2.5.1",
+  "title": "",
+  "body": "  Show that a set of pairwise orthogonal non-zero vectors in is a linearly independent set of vectors. (Pairwise orthogonal means that whenever .) Conclude that if is a linear subspace of of dimension , then any collection of pairwise orthogonal non-zero vectors in forms a basis of .   "
 },
 {
   "id": "backmatter-2",
