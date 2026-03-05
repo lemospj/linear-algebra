@@ -545,6 +545,103 @@
         <exercise>
             <statement>
                 <p>
+                    Use the Gram-Schmidt orthogonalization process to find orthogonal bases for each of the linear subspaces spanned by the sets of linearly independent vectors below.
+                    <ol marker="(a)">
+                        <li>
+                            <p>
+                                <m>\left\{\colvec{1 \\ 2 \\ -1},\colvec{2 \\ 1 \\ 0}\right\}</m>
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                <m>\left\{\colvec{0 \\ -1 \\ 1}, \colvec{1 \\ -2 \\ 2}\right\}</m>
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                <m>\left\{\colvec{1 \\ 0 \\ 0 \\ 1},\colvec{-1\\1\\1 \\2},\colvec{0 \\ 2\\0 \\0}\right\}</m>
+                            </p>
+                        </li>
+                    </ol>
+                </p>
+            </statement>
+        </exercise>
+        <exercise>
+            <statement>
+                <p>
+                    For each matrix below, find a basis for the image of the corresponding linear map. Use the bases that you found and the Gram-Schmidt orthogonalization process to find orthogonal bases for the images.
+                    <ol marker="(a)">
+                        <li>
+                            <p>
+                                <m>A=\begin{pmatrix} 1 \amp 3 \amp 1 \\ 2 \amp 0 \amp -1\end{pmatrix}</m>
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                <m>A=\begin{pmatrix} 1 \amp 2 \\ 0 \amp 3 \\ -1 \amp -1 \end{pmatrix}</m>
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                <m>A=\begin{pmatrix}1 \amp - 1\amp 0 \\ 1 \amp -3 \amp 2 \\ 1 \amp 1 \amp 1\end{pmatrix}</m>
+                            </p>
+                        </li>
+                    </ol>
+                </p>
+            </statement>
+        </exercise>
+        <exercise>
+            <statement>
+                <p>
+                    Let <m>V</m> be a linear subspace of <m>\R^n</m>. Consider the projection <m>\pr_V:\R^n\rightarrow V</m>.
+                    <ol marker="(a)">
+                        <li>
+                            <p>
+                                Show that the image of <m>\pr_V</m> is <m>V</m>.
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                Show that the kernel of <m>\pr_V</m> is <m>V^{\perp}</m>, i.e. the orthogonal complement of <m>V</m>.
+                            </p>
+                        </li>
+                    </ol>
+                </p>
+            </statement>
+        </exercise>
+        <exercise>
+            <statement>
+                <p>
+                    Let <m>V</m> be a linear subspace of <m>\R^n</m>. If <m>U</m> and <m>W</m> are linear subspaces of <m>\R^n</m> that are contained in <m>V</m>, we say that <m>V</m> is the <term>direct sum</term> of <m>U</m> and <m>W</m> if <m>V=\vspan(U\cup W)</m> and <m>U\cap W=\{0\}</m>. In this case, we write <m>V=U\oplus W</m>.
+                    <ol marker="(a)">
+                        <li>
+                            <p>
+                                Show that if <m>V</m> is the direct sum of two linear subspaces <m>U</m> and <m>W</m>, then every vector in <m>V</m> can be written as a sum of a vector in <m>U</m> and a vector in <m>W</m> in a unique manner. Equivalently, if <m>\bv\in V</m>, there is a unique vector <m>\bu\in U</m> and a unique vector <m>\bw\in W</m> such that <m>\bv=\bu+\bw</m>.
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                Show that <m>\R^n=V\oplus V^{\perp}</m>.
+                            </p>
+                        </li>
+                    </ol>
+                </p>
+            </statement>
+        </exercise>
+        <exercise>
+            <statement>
+                <p>
+                    Show that if <m>V</m> is a linear subspace of of <m>\R^n</m> and <m>\bu_1,\bu_2,\ldots,\bu_m</m> is an orthonormal basis of <m>V</m>, then
+                    <me>
+                        \bv=(\bv\cdot\bu_1)\bu_1+(\bv\cdot \bu_2)\bu_2+\ldots+(\bv\cdot\bu_m)\bu_m
+                    </me>
+                    for every vector <m>\bv\in V</m>.
+                </p>
+            </statement>
+        </exercise>
+        <exercise>
+            <statement>
+                <p>
                     Show that a set of <m>m</m> pairwise orthogonal non-zero vectors <m>\bv_1,\ldots,\bv_m</m> in <m>\R^n</m> is a linearly independent set of vectors. (Pairwise orthogonal means that <m>\bv_i\cdot\bv_j=0</m> whenever <m>i\neq j</m>.) Conclude that if <m>V</m> is a linear subspace of <m>\R^n</m> of dimension <m>m</m>, then any collection of <m>m</m> pairwise orthogonal non-zero vectors in <m>V</m> forms a basis of <m>V</m>.
                 </p>
             </statement>
