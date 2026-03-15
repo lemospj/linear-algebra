@@ -20,6 +20,8 @@
   <!-- to define these semantically, so that the macro relates to what-->
   <!-- it defines. -->
   <macros> 
+    \newcommand{\ba}{{\bf a}}
+
     \newcommand{\bb}{{\bf b}}
     \newcommand{\bc}{{\bf c}}
     \newcommand{\be}{{\bf e}}
@@ -30,6 +32,7 @@
     \newcommand{\bv}{{\bf v}}
     \newcommand{\bw}{{\bf w}}
     \newcommand{\bx}{{\bf x}}
+    \newcommand{\by}{{\bf y}}
     \newcommand{\bz}{{\bf 0}}
     \newcommand{\colvec}[1]{
       \begin{pmatrix} #1 \end{pmatrix}
@@ -40,6 +43,8 @@
     \DeclareMathOperator{\vspan}{\mathrm{span}}
     \DeclareMathOperator{\pr}{\mathrm{pr}}
     \DeclareMathOperator{\Tr}{\mathrm{Tr}}
+    \DeclareMathOperator{\Img}{\mathrm{Im}}
+
     \newcommand{\Mat}{\mathrm{Mat}}
     \newcommand{\N}{\mathbb N} 
     \newcommand{\Z}{\mathbb Z} 

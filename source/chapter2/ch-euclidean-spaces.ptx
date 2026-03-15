@@ -15,5 +15,7 @@
   <xi:include href="sec-linear-dependence.ptx" />
   <xi:include href="sec-linear-subspaces.ptx" />
   <xi:include href="sec-orthogonality.ptx" />
+  <xi:include href="sec-least-squares.ptx" />
+
 
 </chapter>
