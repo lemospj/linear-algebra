@@ -102,15 +102,15 @@ eBookConfig.allow_pairs = false;
 eBookConfig.enableScratchAC = false;
 eBookConfig.build_info = "";
 eBookConfig.python3 = null;
-eBookConfig.runestone_version = '7.11.17';
+eBookConfig.runestone_version = '7.11.19';
 eBookConfig.jobehost = '';
 eBookConfig.proxyuri_runs = '';
 eBookConfig.proxyuri_files = '';
 eBookConfig.enable_chatcodes =  false;
 </script>
 <!--*** Runestone Services ***-->
-<script src="_static/prefix-runtime.86a1bdf80f338ffc.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.98ef3b0c170cd180.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
-<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.74f6fa0c85f09c79.css">
+<script src="_static/prefix-runtime.998c9d9ee2a5e7ac.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.98ef3b0c170cd180.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.b12a7b3f0773ebcd.css">
 <script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
 </script>
 </head>
@@ -130,8 +130,10 @@ eBookConfig.enable_chatcodes =  false;
 <ol id="searchresults" class="searchresults"></ol>
 </div>
 </div>
-<span class="nav-other-controls"><button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="sec-linear-subspaces.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-euclidean-spaces.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="backmatter.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
-</div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\bb}{{\bf b}}
+<span class="nav-other-controls"><button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="sec-linear-subspaces.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-euclidean-spaces.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="sec-least-squares.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+</div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\ba}{{\bf a}}
+
+\newcommand{\bb}{{\bf b}}
 \newcommand{\bc}{{\bf c}}
 \newcommand{\be}{{\bf e}}
 \newcommand{\bp}{{\bf p}}
@@ -141,6 +143,7 @@ eBookConfig.enable_chatcodes =  false;
 \newcommand{\bv}{{\bf v}}
 \newcommand{\bw}{{\bf w}}
 \newcommand{\bx}{{\bf x}}
+\newcommand{\by}{{\bf y}}
 \newcommand{\bz}{{\bf 0}}
 \newcommand{\colvec}[1]{
   \begin{pmatrix} #1 \end{pmatrix}
@@ -151,6 +154,8 @@ eBookConfig.enable_chatcodes =  false;
 \DeclareMathOperator{\vspan}{\mathrm{span}}
 \DeclareMathOperator{\pr}{\mathrm{pr}}
 \DeclareMathOperator{\Tr}{\mathrm{Tr}}
+\DeclareMathOperator{\Img}{\mathrm{Im}}
+
 \newcommand{\Mat}{\mathrm{Mat}}
 \newcommand{\N}{\mathbb N} 
 \newcommand{\Z}{\mathbb Z} 
@@ -209,6 +214,7 @@ eBookConfig.enable_chatcodes =  false;
 <div class="toc-title-box"><a href="sec-orthogonality.html" class="internal"><span class="codenumber">2.5</span> <span class="title">Orthogonality</span></a></div>
 <ul class="structural toc-item-list active"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-orthogonality.html#exercises-orthogonality" class="internal"><span class="codenumber">2.5</span> <span class="title">Exercises</span></a></div></li></ul>
 </li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-least-squares.html" class="internal"><span class="codenumber">2.6</span> <span class="title">Linear regression and the least squares method</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-backmatter"><div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div></li>
@@ -509,7 +515,7 @@ eBookConfig.enable_chatcodes =  false;
 <div class="para">Now suppose that we already have <span class="process-math">\(k\)</span> orthogonal vectors <span class="process-math">\(\bv_1,\bv_2,\ldots,\bv_k\)</span> in <span class="process-math">\(V\text{.}\)</span> We define the next one as</div>
 <div class="displaymath process-math" id="sec-orthogonality-24-13">
 \begin{equation*}
-\bv_{k+1} = \bw_{k+1} - \pr_{\bv_1}(\bw_{k+1})-\pr_{\bv_2}(\bw_{k+1})-\ldots-\pr_{\bv_k}(\bw_k)\text{.}
+\bv_{k+1} = \bw_{k+1} - \pr_{\bv_1}(\bw_{k+1})-\pr_{\bv_2}(\bw_{k+1})-\ldots-\pr_{\bv_k}(\bw_{k+1})\text{.}
 \end{equation*}
 </div>
 <div class="para">It is now easy to check that <span class="process-math">\(\bv_{k+1}\)</span> is orthogonal to every vector among <span class="process-math">\(\bv_1,\bv_2,\ldots,\bv_k\text{.}\)</span> Indeed, if <span class="process-math">\(1\leq i \leq k\text{,}\)</span> we have</div>
@@ -594,9 +600,10 @@ eBookConfig.enable_chatcodes =  false;
 <div class="autopermalink" data-description="Definition 2.5.19"><a href="#def-projection-subspace" title="Copy heading and permalink for Definition 2.5.19" aria-label="Copy heading and permalink for Definition 2.5.19">🔗</a></div></article><div class="para logical" id="sec-orthogonality-32">
 <div class="para">The proof of <a href="sec-orthogonality.html#prop-unique-proj-subspace" class="xref" data-knowl="./knowl/xref/prop-unique-proj-subspace.html" data-reveal-label="Reveal" data-close-label="Close" title="Proposition 2.5.18">Proposition 2.5.18</a> actually gave us a method to find the projection of any given vector <span class="process-math">\(\bw\)</span> onto a linear subspace <span class="process-math">\(V\text{.}\)</span> First, find an orthogonal basis <span class="process-math">\(\bv1,\bv_2,\ldots,\bv_m\)</span> for <span class="process-math">\(V\)</span> (you may use the first phase of the Gram-Schmidt orthogonalization process for this). Then the projection is given by the sum of the projections of <span class="process-math">\(\bw\)</span> onto the lines generated by each of the basis vectors:</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/prop-unique-proj-subspace.html" id="sec-orthogonality-32-7">
-\begin{equation*}
-\bp=\pr_{\bv_1}(\bw)+\pr_{\bv_2}(\bw)+\ldots+\pr_{\bv_m}(\bw)\text{.}
-\end{equation*}
+\begin{align*}
+\bp\amp =\pr_{\bv_1}(\bw)+\pr_{\bv_2}(\bw)+\ldots+\pr_{\bv_m}(\bw)\\
+\amp =\frac{\bw\cdot\bv_1}{\lVert\bv_1\rVert^2}\bv_1+\frac{\bw\cdot\bv_2}{\lVert\bv_2\rVert}\bv_2+\ldots+\frac{\bw\cdot\bv_m}{\lVert\bv_m\rVert^2}\bv_m\text{.}
+\end{align*}
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#sec-orthogonality-32" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
@@ -695,61 +702,68 @@ eBookConfig.enable_chatcodes =  false;
 </div>
 <div class="para" id="prop-image-linear-subspace-2-2">Now let <span class="process-math">\(\bw\)</span> be a vector in <span class="process-math">\(f(V)\)</span> and let <span class="process-math">\(\lambda\in\R\)</span> be a scalar. Using the definition of image of a linear map again, we know that there exists a vector <span class="process-math">\(\bv\in V\)</span> such that <span class="process-math">\(f(\bv)=\bw\text{.}\)</span> Because <span class="process-math">\(V\)</span> is a linear subspace of <span class="process-math">\(\R^n\text{,}\)</span> we also know that <span class="process-math">\(\lambda\bv\in V\text{,}\)</span> which implies that <span class="process-math">\(f(\lambda\bv)\)</span> lies in <span class="process-math">\(f(V)\text{.}\)</span> Using the linearity of <span class="process-math">\(f\text{,}\)</span> we see that <span class="process-math">\(f(\lambda\bv)=\lambda f(\bv)=\lambda\bw\text{.}\)</span> Therefore, <span class="process-math">\(\lambda\bw\in f(V)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#prop-image-linear-subspace-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Proof 2.5.23.1"><a href="#prop-image-linear-subspace-2" title="Copy heading and permalink for Proof 2.5.23.1" aria-label="Copy heading and permalink for Proof 2.5.23.1">🔗</a></div></article></details><div class="para" id="sec-orthogonality-39">You now know that the kernel of a linear map is a linear subspace and you know how to find a basis for it. That’s what we did in the previous section. You also just learnt that the image of a linear subspace under a linear map is also a linear subspace. Finding a basis for the image turns out to be easy.<div class="autopermalink" data-description="Paragraph"><a href="#sec-orthogonality-39" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Proof 2.5.23.1"><a href="#prop-image-linear-subspace-2" title="Copy heading and permalink for Proof 2.5.23.1" aria-label="Copy heading and permalink for Proof 2.5.23.1">🔗</a></div></article></details><article class="definition definition-like" id="def-image"><h3 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.5.24</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para" id="def-image-1-1">If <span class="process-math">\(f:\R^n\rightarrow \R^m\)</span> is a linear map, the <dfn class="terminology">image</dfn> of <span class="process-math">\(f\text{,}\)</span> which we will denote by <span class="process-math">\(\Img(f)\text{,}\)</span> is defined to be <span class="process-math">\(f(\R^n)\text{.}\)</span> From <a href="sec-orthogonality.html#prop-image-linear-subspace" class="xref" data-knowl="./knowl/xref/prop-image-linear-subspace.html" data-reveal-label="Reveal" data-close-label="Close" title="Proposition 2.5.23">Proposition 2.5.23</a>, we know that <span class="process-math">\(\Img(f)\)</span> is a linear subspace of <span class="process-math">\(\R^m\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#def-image-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<details id="sec-orthogonality-40" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
-<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.5.24</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
-</h3></summary><article class="example example-like knowl__content"><div class="para" id="sec-orthogonality-40-1">Consider the linear map <span class="process-math">\(f:\R^3\rightarrow \R^3\)</span> given by <span class="process-math">\(f(x,y,z)=(x+y+2z,2x+2z,3x-y+2z)\text{.}\)</span> The corresponding matrix is <span class="process-math">\(A=\begin{pmatrix} 1 \amp 1 \amp 2 \\ 2 \amp 0 \amp 2 \\ 3 \amp -1 \amp 2\end{pmatrix}\text{.}\)</span> Let’s first find a basis for the image of <span class="process-math">\(f\text{,}\)</span> by which I mean <span class="process-math">\(f(\R^3)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-orthogonality-40-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Definition 2.5.24"><a href="#def-image" title="Copy heading and permalink for Definition 2.5.24" aria-label="Copy heading and permalink for Definition 2.5.24">🔗</a></div></article><div class="para" id="sec-orthogonality-40">If <span class="process-math">\(A\)</span> is the matrix corresponding to a linear map <span class="process-math">\(f\text{,}\)</span> we may also denote the image of <span class="process-math">\(f\)</span> by <span class="process-math">\(\Img(A)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-orthogonality-40" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para logical" id="sec-orthogonality-40-2">
+<div class="para" id="sec-orthogonality-41">You now know that the kernel of a linear map is a linear subspace and you know how to find a basis for it. That’s what we did in the previous section. You also just learnt that the image of a linear subspace under a linear map is also a linear subspace. Finding a basis for the image turns out to be easy.<div class="autopermalink" data-description="Paragraph"><a href="#sec-orthogonality-41" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<details id="sec-orthogonality-42" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.5.25</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3></summary><article class="example example-like knowl__content"><div class="para" id="sec-orthogonality-42-1">Consider the linear map <span class="process-math">\(f:\R^3\rightarrow \R^3\)</span> given by <span class="process-math">\(f(x,y,z)=(x+y+2z,2x+2z,3x-y+2z)\text{.}\)</span> The corresponding matrix is <span class="process-math">\(A=\begin{pmatrix} 1 \amp 1 \amp 2 \\ 2 \amp 0 \amp 2 \\ 3 \amp -1 \amp 2\end{pmatrix}\text{.}\)</span> Let’s first find a basis for the image of <span class="process-math">\(f\text{,}\)</span> by which I mean <span class="process-math">\(f(\R^3)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-orthogonality-42-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="sec-orthogonality-42-2">
 <div class="para">Since <span class="process-math">\(\R^3\)</span> is generated by <span class="process-math">\(\be_1,\be_2\)</span> and <span class="process-math">\(\be_3\text{,}\)</span> the linear subspace <span class="process-math">\(f(\R^3)\)</span> will be the span of <span class="process-math">\(f(\be_1), f(\be_2)\)</span> and <span class="process-math">\(f(\be_3)\text{.}\)</span> (See the exercises.) But these three vectors are precisely the column vectors of <span class="process-math">\(A\text{,}\)</span> so</div>
-<div class="displaymath process-math" id="sec-orthogonality-40-2-8">
+<div class="displaymath process-math" id="sec-orthogonality-42-2-8">
 \begin{equation*}
 f(\R^3)=\vspan\left(\colvec{1 \\ 2 \\ 3}, \colvec{1 \\ 0 \\ -1}, \colvec{2 \\ 2 \\ 2}\right)\text{.}
 \end{equation*}
 </div>
 <div class="para">For this reason, the image of a matrix is sometimes called its <dfn class="terminology">column space</dfn>. To find a basis for this space we use elementary column operations on <span class="process-math">\(A\)</span> until we find a matrix in reduced column echelon form. Doing this leads us to the basis <span class="process-math">\(\colvec{1 \\ 0 \\ -1}, \colvec{0 \\ 1 \\ 2}\text{.}\)</span>
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#sec-orthogonality-40-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-orthogonality-42-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para logical" id="sec-orthogonality-40-3">
+<div class="para logical" id="sec-orthogonality-42-3">
 <div class="para">What if we are given the linear subspace <span class="process-math">\(V\)</span> of <span class="process-math">\(\R^3\)</span> generated by the vectors <span class="process-math">\(\colvec{1 \\ 1 \\ 0}\)</span> and <span class="process-math">\(\colvec{0 \\ 1 \\ 1}\)</span> and are asked to find a basis to <span class="process-math">\(f(V)\text{?}\)</span> In this case, <span class="process-math">\(f(V)\)</span> is the span of <span class="process-math">\(f(1,1,0)\)</span> and <span class="process-math">\(f(0,1,1)\text{.}\)</span> Now,</div>
-<div class="displaymath process-math" id="sec-orthogonality-40-3-9">
+<div class="displaymath process-math" id="sec-orthogonality-42-3-9">
 \begin{equation*}
 f(1,1,0)=\begin{pmatrix} 1 \amp 1 \amp 2 \\ 2 \amp 0 \amp 2 \\ 3 \amp -1 \amp 2\end{pmatrix}\colvec{1 \\ 1 \\ 0}=\colvec{2 \\ 2 \\ 2}
 \end{equation*}
 </div>
 <div class="para">and</div>
-<div class="displaymath process-math" id="sec-orthogonality-40-3-10">
+<div class="displaymath process-math" id="sec-orthogonality-42-3-10">
 \begin{equation*}
 f(0,1,1)=\begin{pmatrix} 1 \amp 1 \amp 2 \\ 2 \amp 0 \amp 2 \\ 3 \amp -1 \amp 2\end{pmatrix}\colvec{0 \\ 1 \\ 1}=\colvec{3 \\ 2 \\ 1}\text{.}
 \end{equation*}
 </div>
 <div class="para">We can now either perform elementary column operations on <span class="process-math">\(\begin{pmatrix} 2 \amp 3 \\ 2 \amp 2 \\ 2 \amp 1\end{pmatrix}\text{,}\)</span> or simply observe that <span class="process-math">\(\colvec{2 \\ 2\\ 2}\)</span> and <span class="process-math">\(\colvec{3 \\ 2 \\ 1}\)</span> are linearly independent, and so must be a basis of their span.</div>
-<div class="autopermalink" data-description="Paragraph"><a href="#sec-orthogonality-40-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-orthogonality-42-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Example 2.5.24"><a href="#sec-orthogonality-40" title="Copy heading and permalink for Example 2.5.24" aria-label="Copy heading and permalink for Example 2.5.24">🔗</a></div></article></details><div class="para" id="sec-orthogonality-41">The proof of the following proposition is left as an exercise.<div class="autopermalink" data-description="Paragraph"><a href="#sec-orthogonality-41" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Example 2.5.25"><a href="#sec-orthogonality-42" title="Copy heading and permalink for Example 2.5.25" aria-label="Copy heading and permalink for Example 2.5.25">🔗</a></div></article></details><div class="para" id="sec-orthogonality-43">The proof of the following proposition is left as an exercise.<div class="autopermalink" data-description="Paragraph"><a href="#sec-orthogonality-43" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <article class="proposition theorem-like" id="prop-projection-image"><h3 class="heading">
-<span class="type">Proposition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.5.25</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+<span class="type">Proposition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.5.26</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h3>
 <div class="para" id="prop-projection-image-1-1">If <span class="process-math">\(V\)</span> is a linear subspace of <span class="process-math">\(\R^n\text{,}\)</span> the image of <span class="process-math">\(\pr_V\)</span> is <span class="process-math">\(V\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#prop-projection-image-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Proposition 2.5.25"><a href="#prop-projection-image" title="Copy heading and permalink for Proposition 2.5.25" aria-label="Copy heading and permalink for Proposition 2.5.25">🔗</a></div></article><article class="definition definition-like" id="def-orthogonal-complement"><h3 class="heading">
-<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.5.26</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+<div class="autopermalink" data-description="Proposition 2.5.26"><a href="#prop-projection-image" title="Copy heading and permalink for Proposition 2.5.26" aria-label="Copy heading and permalink for Proposition 2.5.26">🔗</a></div></article><article class="definition definition-like" id="def-orthogonal-complement"><h3 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.5.27</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h3>
 <div class="para" id="def-orthogonal-complement-1-1">The <dfn class="terminology">orthogonal complement</dfn> to a linear subspace <span class="process-math">\(V\)</span> of <span class="process-math">\(\R^n\)</span> is the set of all vectors in <span class="process-math">\(\R^n\)</span> that are orthogonal to <span class="process-math">\(V\text{.}\)</span> It is denoted by <span class="process-math">\(V^{\perp}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#def-orthogonal-complement-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Definition 2.5.26"><a href="#def-orthogonal-complement" title="Copy heading and permalink for Definition 2.5.26" aria-label="Copy heading and permalink for Definition 2.5.26">🔗</a></div></article><article class="proposition theorem-like" id="prop-orthogonal-complement-is-linear"><h3 class="heading">
-<span class="type">Proposition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.5.27</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+<div class="autopermalink" data-description="Definition 2.5.27"><a href="#def-orthogonal-complement" title="Copy heading and permalink for Definition 2.5.27" aria-label="Copy heading and permalink for Definition 2.5.27">🔗</a></div></article><article class="proposition theorem-like" id="prop-orthogonal-complement-is-linear"><h3 class="heading">
+<span class="type">Proposition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.5.28</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h3>
 <div class="para" id="prop-orthogonal-complement-is-linear-1-1">Let <span class="process-math">\(V\)</span> be a linear subspace of <span class="process-math">\(\R^n\text{.}\)</span> Its orthogonal complement <span class="process-math">\(V^{\perp}\)</span> is a linear subspace of <span class="process-math">\(\R^n\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#prop-orthogonal-complement-is-linear-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Proposition 2.5.27"><a href="#prop-orthogonal-complement-is-linear" title="Copy heading and permalink for Proposition 2.5.27" aria-label="Copy heading and permalink for Proposition 2.5.27">🔗</a></div></article><details id="prop-orthogonal-complement-is-linear-2" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para" id="prop-orthogonal-complement-is-linear-2-1">If <span class="process-math">\(\bw, \bu\in V^{\perp}\text{,}\)</span> then this means that <span class="process-math">\(\bw\cdot\bv=0\)</span> and <span class="process-math">\(\bu\cdot \bv=0\)</span> for every vector <span class="process-math">\(\bv\in V\text{.}\)</span> But then <span class="process-math">\((\bw+\bu)\cdot\bv=\bw\cdot\bv+\bw\cdot\bv=0\)</span> for every vector <span class="process-math">\(\bv\in V\text{.}\)</span> This means that <span class="process-math">\(\bw+\bu\in V^{\perp}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#prop-orthogonal-complement-is-linear-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Proposition 2.5.28"><a href="#prop-orthogonal-complement-is-linear" title="Copy heading and permalink for Proposition 2.5.28" aria-label="Copy heading and permalink for Proposition 2.5.28">🔗</a></div></article><details id="prop-orthogonal-complement-is-linear-2" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para" id="prop-orthogonal-complement-is-linear-2-1">If <span class="process-math">\(\bw, \bu\in V^{\perp}\text{,}\)</span> then this means that <span class="process-math">\(\bw\cdot\bv=0\)</span> and <span class="process-math">\(\bu\cdot \bv=0\)</span> for every vector <span class="process-math">\(\bv\in V\text{.}\)</span> But then <span class="process-math">\((\bw+\bu)\cdot\bv=\bw\cdot\bv+\bw\cdot\bv=0\)</span> for every vector <span class="process-math">\(\bv\in V\text{.}\)</span> This means that <span class="process-math">\(\bw+\bu\in V^{\perp}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#prop-orthogonal-complement-is-linear-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para" id="prop-orthogonal-complement-is-linear-2-2">Now pick a vector <span class="process-math">\(\bw\in V^{\perp}\)</span> and a scalar <span class="process-math">\(\lambda\in\R\text{.}\)</span> Again, <span class="process-math">\(\bw\cdot\bv=0\)</span> for every vector <span class="process-math">\(\bv\in V\text{.}\)</span> But this implies that <span class="process-math">\((\lambda\bw)\cdot\bv=\lambda(\bw\cdot \bv)=0\)</span> for every vector <span class="process-math">\(\bv\in V\text{.}\)</span> Therefore, <span class="process-math">\(\lambda\bv\in V^{\perp}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#prop-orthogonal-complement-is-linear-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Proof 2.5.27.1"><a href="#prop-orthogonal-complement-is-linear-2" title="Copy heading and permalink for Proof 2.5.27.1" aria-label="Copy heading and permalink for Proof 2.5.27.1">🔗</a></div></article></details><section class="exercises" id="exercises-orthogonality"><h3 class="heading hide-type">
+<div class="autopermalink" data-description="Proof 2.5.28.1"><a href="#prop-orthogonal-complement-is-linear-2" title="Copy heading and permalink for Proof 2.5.28.1" aria-label="Copy heading and permalink for Proof 2.5.28.1">🔗</a></div></article></details><section class="exercises" id="exercises-orthogonality"><h3 class="heading hide-type">
 <span class="type">Exercises</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Exercises</span>
 </h3>
 <article class="exercise exercise-like" id="exercises-orthogonality-1"><h4 class="heading"><span class="codenumber">1<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
@@ -838,24 +852,54 @@ f(0,1,1)=\begin{pmatrix} 1 \amp 1 \amp 2 \\ 2 \amp 0 \amp 2 \\ 3 \amp -1 \amp 2\
 </ol>
 <div class="autopermalink" data-description="Paragraph"><a href="#exercises-orthogonality-4-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Exercise 2.5.4"><a href="#exercises-orthogonality-4" title="Copy heading and permalink for Exercise 2.5.4" aria-label="Copy heading and permalink for Exercise 2.5.4">🔗</a></div></article><article class="exercise exercise-like" id="exercises-orthogonality-5"><h4 class="heading"><span class="codenumber">5<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
-<div class="para logical" id="exercises-orthogonality-5-1-1">
+<div class="autopermalink" data-description="Exercise 2.5.4"><a href="#exercises-orthogonality-4" title="Copy heading and permalink for Exercise 2.5.4" aria-label="Copy heading and permalink for Exercise 2.5.4">🔗</a></div></article><article class="exercise exercise-like" id="exercise-lin-comb-orthogonal"><h4 class="heading"><span class="codenumber">5<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="para logical" id="exercise-lin-comb-orthogonal-1-1">
 <div class="para">Show that if <span class="process-math">\(V\)</span> is a linear subspace of of <span class="process-math">\(\R^n\)</span> and <span class="process-math">\(\bu_1,\bu_2,\ldots,\bu_m\)</span> is an orthonormal basis of <span class="process-math">\(V\text{,}\)</span> then</div>
-<div class="displaymath process-math" id="exercises-orthogonality-5-1-1-5">
+<div class="displaymath process-math" id="exercise-lin-comb-orthogonal-1-1-5">
 \begin{equation*}
 \bv=(\bv\cdot\bu_1)\bu_1+(\bv\cdot \bu_2)\bu_2+\ldots+(\bv\cdot\bu_m)\bu_m
 \end{equation*}
 </div>
-<div class="para">for every vector <span class="process-math">\(\bv\in V\text{.}\)</span>
+<div class="para">for every vector <span class="process-math">\(\bv\in V\text{.}\)</span> Conclude that if <span class="process-math">\(\bw\)</span> is any vector in <span class="process-math">\(\R^n\text{,}\)</span> then</div>
+<div class="displaymath process-math" id="exercise-lin-comb-orthogonal-1-1-9">
+\begin{equation*}
+\pr_V(\bw)=(\bw\cdot\bu_1)\bu_1+(\bw\cdot \bu_2)\bu_2+\ldots+(\bw\cdot\bu_m)\bu_m\text{.}
+\end{equation*}
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#exercises-orthogonality-5-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#exercise-lin-comb-orthogonal-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Exercise 2.5.5"><a href="#exercises-orthogonality-5" title="Copy heading and permalink for Exercise 2.5.5" aria-label="Copy heading and permalink for Exercise 2.5.5">🔗</a></div></article><article class="exercise exercise-like" id="exercises-orthogonality-6"><h4 class="heading"><span class="codenumber">6<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
-<div class="para" id="exercises-orthogonality-6-1-1">Show that a set of <span class="process-math">\(m\)</span> pairwise orthogonal non-zero vectors <span class="process-math">\(\bv_1,\ldots,\bv_m\)</span> in <span class="process-math">\(\R^n\)</span> is a linearly independent set of vectors. (Pairwise orthogonal means that <span class="process-math">\(\bv_i\cdot\bv_j=0\)</span> whenever <span class="process-math">\(i\neq j\text{.}\)</span>) Conclude that if <span class="process-math">\(V\)</span> is a linear subspace of <span class="process-math">\(\R^n\)</span> of dimension <span class="process-math">\(m\text{,}\)</span> then any collection of <span class="process-math">\(m\)</span> pairwise orthogonal non-zero vectors in <span class="process-math">\(V\)</span> forms a basis of <span class="process-math">\(V\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#exercises-orthogonality-6-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Exercise 2.5.5"><a href="#exercise-lin-comb-orthogonal" title="Copy heading and permalink for Exercise 2.5.5" aria-label="Copy heading and permalink for Exercise 2.5.5">🔗</a></div></article><article class="exercise exercise-like" id="exercises-orthogonality-6"><h4 class="heading"><span class="codenumber">6<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="para logical" id="exercises-orthogonality-6-1-1">
+<div class="para">Consider the linear subspace <span class="process-math">\(V\)</span> of <span class="process-math">\(\R^3\)</span> defined as the span of the vectors <span class="process-math">\(\bv_1=\colvec{1 \\ -2 \\ 1}\)</span> and <span class="process-math">\(\bv_2=\colvec{-2 \\ -1 \\ 0}\text{.}\)</span>
 </div>
-<div class="autopermalink" data-description="Exercise 2.5.6"><a href="#exercises-orthogonality-6" title="Copy heading and permalink for Exercise 2.5.6" aria-label="Copy heading and permalink for Exercise 2.5.6">🔗</a></div></article><div class="autopermalink" data-description="Exercises 2.5"><a href="#exercises-orthogonality" title="Copy heading and permalink for Exercises 2.5" aria-label="Copy heading and permalink for Exercises 2.5">🔗</a></div></section><div class="autopermalink" data-description="Section 2.5: Orthogonality"><a href="#sec-orthogonality" title="Copy heading and permalink for Section 2.5: Orthogonality" aria-label="Copy heading and permalink for Section 2.5: Orthogonality">🔗</a></div></section></div>
+<ol class="lower-alpha lower-alpha-level-1" id="exercises-orthogonality-6-1-1-5">
+<li id="exercises-orthogonality-6-1-1-5-1">
+<div class="para" id="exercises-orthogonality-6-1-1-5-1-1">Verify that the vectors <span class="process-math">\(\bv_1\)</span> and <span class="process-math">\(\bv_2\)</span> are linearly independent. (So, they form a basis of <span class="process-math">\(V\text{.}\)</span>)<div class="autopermalink" data-description="Paragraph"><a href="#exercises-orthogonality-6-1-1-5-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 2.5.6.a"><a href="#exercises-orthogonality-6-1-1-5-1" title="Copy heading and permalink for Item 2.5.6.a" aria-label="Copy heading and permalink for Item 2.5.6.a">🔗</a></div>
+</li>
+<li id="exercises-orthogonality-6-1-1-5-2">
+<div class="para" id="exercises-orthogonality-6-1-1-5-2-1">Verify that the vectors <span class="process-math">\(\bv_1\)</span> and <span class="process-math">\(\bv_2\)</span> are orthogonal.<div class="autopermalink" data-description="Paragraph"><a href="#exercises-orthogonality-6-1-1-5-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 2.5.6.b"><a href="#exercises-orthogonality-6-1-1-5-2" title="Copy heading and permalink for Item 2.5.6.b" aria-label="Copy heading and permalink for Item 2.5.6.b">🔗</a></div>
+</li>
+<li id="exercises-orthogonality-6-1-1-5-3">
+<div class="para" id="exercises-orthogonality-6-1-1-5-3-1">Let <span class="process-math">\(\bw=\colvec{2 \\ 3 \\ -1}\text{.}\)</span> Write <span class="process-math">\(\pr_V(\bw)\)</span> as a linear combination of the vectors <span class="process-math">\(\bv_1\)</span> and <span class="process-math">\(\bv_2\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#exercises-orthogonality-6-1-1-5-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 2.5.6.c"><a href="#exercises-orthogonality-6-1-1-5-3" title="Copy heading and permalink for Item 2.5.6.c" aria-label="Copy heading and permalink for Item 2.5.6.c">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" data-description="Paragraph"><a href="#exercises-orthogonality-6-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Exercise 2.5.6"><a href="#exercises-orthogonality-6" title="Copy heading and permalink for Exercise 2.5.6" aria-label="Copy heading and permalink for Exercise 2.5.6">🔗</a></div></article><article class="exercise exercise-like" id="exercises-orthogonality-7"><h4 class="heading"><span class="codenumber">7<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="para" id="exercises-orthogonality-7-1-1">Show that a set of <span class="process-math">\(m\)</span> pairwise orthogonal non-zero vectors <span class="process-math">\(\bv_1,\ldots,\bv_m\)</span> in <span class="process-math">\(\R^n\)</span> is a linearly independent set of vectors. (Pairwise orthogonal means that <span class="process-math">\(\bv_i\cdot\bv_j=0\)</span> whenever <span class="process-math">\(i\neq j\text{.}\)</span>) Conclude that if <span class="process-math">\(V\)</span> is a linear subspace of <span class="process-math">\(\R^n\)</span> of dimension <span class="process-math">\(m\text{,}\)</span> then any collection of <span class="process-math">\(m\)</span> pairwise orthogonal non-zero vectors in <span class="process-math">\(V\)</span> forms a basis of <span class="process-math">\(V\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#exercises-orthogonality-7-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Exercise 2.5.7"><a href="#exercises-orthogonality-7" title="Copy heading and permalink for Exercise 2.5.7" aria-label="Copy heading and permalink for Exercise 2.5.7">🔗</a></div></article><article class="exercise exercise-like" id="exercise-transpose-kernel"><h4 class="heading"><span class="codenumber">8<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="para" id="exercise-transpose-kernel-1-1">Let <span class="process-math">\(A\)</span> be an <span class="process-math">\(m\times n\)</span> matrix. Its image, <span class="process-math">\(\Img(A)\)</span> is a linear subspace of <span class="process-math">\(\R^m\text{.}\)</span> The transpose <span class="process-math">\(A^T\)</span> is an <span class="process-math">\(n\times m\)</span> matrix, so its kernel <span class="process-math">\(\ker(A^T)\)</span> is also a linear subspace of <span class="process-math">\(\R^m\text{.}\)</span> Show that <span class="process-math">\(\ker(A^T)=\Img(A)^{\perp}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#exercise-transpose-kernel-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Exercise 2.5.8"><a href="#exercise-transpose-kernel" title="Copy heading and permalink for Exercise 2.5.8" aria-label="Copy heading and permalink for Exercise 2.5.8">🔗</a></div></article><div class="autopermalink" data-description="Exercises 2.5"><a href="#exercises-orthogonality" title="Copy heading and permalink for Exercises 2.5" aria-label="Copy heading and permalink for Exercises 2.5">🔗</a></div></section><div class="autopermalink" data-description="Section 2.5: Orthogonality"><a href="#sec-orthogonality" title="Copy heading and permalink for Section 2.5: Orthogonality" aria-label="Copy heading and permalink for Section 2.5: Orthogonality">🔗</a></div></section></div>
 <div id="ptx-content-footer" class="ptx-content-footer">
-<a class="previous-button button" href="sec-linear-subspaces.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="backmatter.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+<a class="previous-button button" href="sec-linear-subspaces.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec-least-squares.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
 </div>
 <div id="ptx-page-footer" class="ptx-page-footer">

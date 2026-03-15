@@ -1,32 +1,32 @@
-<svg xmlns="http://www.w3.org/2000/svg" id="diagram" width="310" height="310" viewBox="0 0 310 310">
+<svg xmlns="http://www.w3.org/2000/svg" id="pf__figure" width="310" height="310" viewBox="0 0 310 310">
   <defs>
-    <clipPath id="clipPath-0">
+    <clipPath id="pf__clipPath-0">
       <rect x="5.0" y="5.0" width="300.0" height="300.0"/>
     </clipPath>
-    <clipPath id="clipPath-1">
+    <clipPath id="pf__clipPath-1">
       <rect x="5.0" y="5.0" width="300.0" height="300.0"/>
     </clipPath>
-    <marker id="arrow-head-end-3_None_24_60-red" markerWidth="13.5" markerHeight="12.0" markerUnits="userSpaceOnUse" orient="auto-start-reverse" refX="9.8" refY="6.0">
+    <marker id="pf__arrow-head-end-3_None_24_60-red" markerWidth="13.5" markerHeight="12.0" markerUnits="userSpaceOnUse" orient="auto-start-reverse" refX="9.8" refY="6.0">
       <path d="M 13.5 6.0L 0.0 12.0L 2.6 7.5L 2.6 4.5L 0.0 0.0Z" fill="red" stroke="none"/>
     </marker>
-    <marker id="arrow-head-end-3_None_24_60-red-outline" markerWidth="17.5" markerHeight="16.0" markerUnits="userSpaceOnUse" orient="auto-start-reverse" refX="11.8" refY="8.0">
+    <marker id="pf__arrow-head-end-3_None_24_60-red-outline" markerWidth="17.5" markerHeight="16.0" markerUnits="userSpaceOnUse" orient="auto-start-reverse" refX="11.8" refY="8.0">
       <path d="M 16.3 9.8 L 2.8 15.8 A 2 2 0 0 1 0.0 14.0 L 0.0 2.0 A 2 2 0 0 1 2.8 0.2 L 16.3 6.2 A 2 2 0 0 1 16.3 9.8 Z" fill="white" stroke="none"/>
     </marker>
-    <marker id="arrow-head-end-3_None_24_60-orange" markerWidth="13.5" markerHeight="12.0" markerUnits="userSpaceOnUse" orient="auto-start-reverse" refX="9.8" refY="6.0">
+    <marker id="pf__arrow-head-end-3_None_24_60-orange" markerWidth="13.5" markerHeight="12.0" markerUnits="userSpaceOnUse" orient="auto-start-reverse" refX="9.8" refY="6.0">
       <path d="M 13.5 6.0L 0.0 12.0L 2.6 7.5L 2.6 4.5L 0.0 0.0Z" fill="orange" stroke="none"/>
     </marker>
-    <marker id="arrow-head-end-3_None_24_60-orange-outline" markerWidth="17.5" markerHeight="16.0" markerUnits="userSpaceOnUse" orient="auto-start-reverse" refX="11.8" refY="8.0">
+    <marker id="pf__arrow-head-end-3_None_24_60-orange-outline" markerWidth="17.5" markerHeight="16.0" markerUnits="userSpaceOnUse" orient="auto-start-reverse" refX="11.8" refY="8.0">
       <path d="M 16.3 9.8 L 2.8 15.8 A 2 2 0 0 1 0.0 14.0 L 0.0 2.0 A 2 2 0 0 1 2.8 0.2 L 16.3 6.2 A 2 2 0 0 1 16.3 9.8 Z" fill="white" stroke="none"/>
     </marker>
-    <marker id="arrow-head-end-3_None_24_60-black" markerWidth="13.5" markerHeight="12.0" markerUnits="userSpaceOnUse" orient="auto-start-reverse" refX="9.8" refY="6.0">
+    <marker id="pf__arrow-head-end-3_None_24_60-black" markerWidth="13.5" markerHeight="12.0" markerUnits="userSpaceOnUse" orient="auto-start-reverse" refX="9.8" refY="6.0">
       <path d="M 13.5 6.0L 0.0 12.0L 2.6 7.5L 2.6 4.5L 0.0 0.0Z" fill="black" stroke="none"/>
     </marker>
-    <marker id="arrow-head-end-3_None_24_60-black-outline" markerWidth="17.5" markerHeight="16.0" markerUnits="userSpaceOnUse" orient="auto-start-reverse" refX="11.8" refY="8.0">
+    <marker id="pf__arrow-head-end-3_None_24_60-black-outline" markerWidth="17.5" markerHeight="16.0" markerUnits="userSpaceOnUse" orient="auto-start-reverse" refX="11.8" refY="8.0">
       <path d="M 16.3 9.8 L 2.8 15.8 A 2 2 0 0 1 0.0 14.0 L 0.0 2.0 A 2 2 0 0 1 2.8 0.2 L 16.3 6.2 A 2 2 0 0 1 16.3 9.8 Z" fill="white" stroke="none"/>
     </marker>
   </defs>
-  <g id="grid-axes">
-    <g id="grid" stroke="#ccc" stroke-width="1">
+  <g id="pf__grid-axes">
+    <g id="pf__grid" stroke="#ccc" stroke-width="1">
       <line x1="5.0" y1="305.0" x2="5.0" y2="5.0"/>
       <line x1="47.9" y1="305.0" x2="47.9" y2="5.0"/>
       <line x1="90.7" y1="305.0" x2="90.7" y2="5.0"/>
@@ -44,27 +44,27 @@
       <line x1="5.0" y1="47.9" x2="305.0" y2="47.9"/>
       <line x1="5.0" y1="5.0" x2="305.0" y2="5.0"/>
     </g>
-    <g id="axes" stroke="black" stroke-width="2">
-      <line id="line-16" x1="5.0" y1="219.3" x2="305.0" y2="219.3" stroke="black" stroke-width="2"/>
+    <g id="pf__axes" stroke="black" stroke-width="2">
+      <line id="pf__line-16" x1="5.0" y1="219.3" x2="305.0" y2="219.3" stroke="black" stroke-width="2"/>
       <g>
-        <line id="line-17" x1="176.4" y1="222.3" x2="176.4" y2="216.3"/>
-        <line id="line-18" x1="262.1" y1="222.3" x2="262.1" y2="216.3"/>
+        <line id="pf__line-17" x1="176.4" y1="222.3" x2="176.4" y2="216.3"/>
+        <line id="pf__line-18" x1="262.1" y1="222.3" x2="262.1" y2="216.3"/>
       </g>
-      <line id="line-19" x1="90.7" y1="305.0" x2="90.7" y2="5.0" stroke="black" stroke-width="2"/>
+      <line id="pf__line-19" x1="90.7" y1="305.0" x2="90.7" y2="5.0" stroke="black" stroke-width="2"/>
       <g>
-        <line id="line-20" x1="87.7" y1="133.6" x2="93.7" y2="133.6"/>
-        <line id="line-21" x1="87.7" y1="47.9" x2="93.7" y2="47.9"/>
+        <line id="pf__line-20" x1="87.7" y1="133.6" x2="93.7" y2="133.6"/>
+        <line id="pf__line-21" x1="87.7" y1="47.9" x2="93.7" y2="47.9"/>
       </g>
     </g>
-    <g id="label-0" transform="translate(301.0,215.3) translate(-10.4,-8.2)">
-      <g id="g-1">
+    <g id="pf__label-0" transform="translate(301.0,215.3) translate(-10.4,-8.2)">
+      <g id="pf__g-1">
         <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -0.200px" width="10.352px" height="8.200px" role="img" focusable="false" viewBox="0 -442 572 453" x="0.0" y="0.0">
           <defs>
             <path id="MJX-2-TEX-I-1D465" d="M52 289Q59 331 106 386T222 442Q257 442 286 424T329 379Q371 442 430 442Q467 442 494 420T522 361Q522 332 508 314T481 292T458 288Q439 288 427 299T415 328Q415 374 465 391Q454 404 425 404Q412 404 406 402Q368 386 350 336Q290 115 290 78Q290 50 306 38T341 26Q378 26 414 59T463 140Q466 150 469 151T485 153H489Q504 153 504 145Q504 144 502 134Q486 77 440 33T333 -11Q263 -11 227 52Q186 -10 133 -10H127Q78 -10 57 16T35 71Q35 103 54 123T99 143Q142 143 142 101Q142 81 130 66T107 46T94 41L91 40Q91 39 97 36T113 29T132 26Q168 26 194 71Q203 87 217 139T245 247T261 313Q266 340 266 352Q266 380 251 392T217 404Q177 404 142 372T93 290Q91 281 88 280T72 278H58Q52 284 52 289Z"/>
           </defs>
           <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)">
             <g data-mml-node="math">
-              <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="latinletter" data-semantic-font="italic" data-semantic-annotation="clearspeak:simple" data-semantic-id="0" data-semantic-speech="x">
+              <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="latinletter" data-semantic-font="italic" data-semantic-id="0" data-semantic-speech="">
                 <use data-c="1D465" xlink:href="#MJX-2-TEX-I-1D465"/>
               </g>
             </g>
@@ -72,15 +72,15 @@
         </svg>
       </g>
     </g>
-    <g id="label-1" transform="translate(94.7,9.0) translate(0.0,-0.0)">
-      <g id="g-2">
+    <g id="pf__label-1" transform="translate(94.7,9.0) translate(0.0,-0.0)">
+      <g id="pf__g-2">
         <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -3.712px" width="8.872px" height="11.712px" role="img" focusable="false" viewBox="0 -442 490 647" x="0.0" y="0.0">
           <defs>
             <path id="MJX-3-TEX-I-1D466" d="M21 287Q21 301 36 335T84 406T158 442Q199 442 224 419T250 355Q248 336 247 334Q247 331 231 288T198 191T182 105Q182 62 196 45T238 27Q261 27 281 38T312 61T339 94Q339 95 344 114T358 173T377 247Q415 397 419 404Q432 431 462 431Q475 431 483 424T494 412T496 403Q496 390 447 193T391 -23Q363 -106 294 -155T156 -205Q111 -205 77 -183T43 -117Q43 -95 50 -80T69 -58T89 -48T106 -45Q150 -45 150 -87Q150 -107 138 -122T115 -142T102 -147L99 -148Q101 -153 118 -160T152 -167H160Q177 -167 186 -165Q219 -156 247 -127T290 -65T313 -9T321 21L315 17Q309 13 296 6T270 -6Q250 -11 231 -11Q185 -11 150 11T104 82Q103 89 103 113Q103 170 138 262T173 379Q173 380 173 381Q173 390 173 393T169 400T158 404H154Q131 404 112 385T82 344T65 302T57 280Q55 278 41 278H27Q21 284 21 287Z"/>
           </defs>
           <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)">
             <g data-mml-node="math">
-              <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="latinletter" data-semantic-font="italic" data-semantic-annotation="clearspeak:simple" data-semantic-id="0" data-semantic-speech="y">
+              <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="latinletter" data-semantic-font="italic" data-semantic-id="0" data-semantic-speech="">
                 <use data-c="1D466" xlink:href="#MJX-3-TEX-I-1D466"/>
               </g>
             </g>
@@ -88,15 +88,15 @@
         </svg>
       </g>
     </g>
-    <g id="label-2" transform="translate(176.4,230.3) translate(-4.5,-0.0)">
-      <g id="g-3">
+    <g id="pf__label-2" transform="translate(176.4,230.3) translate(-4.5,-0.0)">
+      <g id="pf__g-3">
         <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: 0.000px" width="9.048px" height="12.056px" role="img" focusable="false" viewBox="0 -666 500 666" x="0.0" y="0.0">
           <defs>
             <path id="MJX-4-TEX-N-31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z"/>
           </defs>
           <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)">
             <g data-mml-node="math">
-              <g data-mml-node="mtext" data-semantic-type="text" data-semantic-role="integer" data-semantic-font="normal" data-semantic-annotation="clearspeak:unit" data-semantic-id="0" data-semantic-speech="1">
+              <g data-mml-node="mtext" data-semantic-type="text" data-semantic-role="integer" data-semantic-font="normal" data-semantic-id="0" data-semantic-speech="">
                 <use data-c="31" xlink:href="#MJX-4-TEX-N-31"/>
               </g>
             </g>
@@ -104,15 +104,15 @@
         </svg>
       </g>
     </g>
-    <g id="label-3" transform="translate(262.1,230.3) translate(-4.5,-0.0)">
-      <g id="g-4">
+    <g id="pf__label-3" transform="translate(262.1,230.3) translate(-4.5,-0.0)">
+      <g id="pf__g-4">
         <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: 0.000px" width="9.048px" height="12.056px" role="img" focusable="false" viewBox="0 -666 500 666" x="0.0" y="0.0">
           <defs>
             <path id="MJX-5-TEX-N-32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"/>
           </defs>
           <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)">
             <g data-mml-node="math">
-              <g data-mml-node="mtext" data-semantic-type="text" data-semantic-role="integer" data-semantic-font="normal" data-semantic-annotation="clearspeak:unit" data-semantic-id="0" data-semantic-speech="2">
+              <g data-mml-node="mtext" data-semantic-type="text" data-semantic-role="integer" data-semantic-font="normal" data-semantic-id="0" data-semantic-speech="">
                 <use data-c="32" xlink:href="#MJX-5-TEX-N-32"/>
               </g>
             </g>
@@ -120,15 +120,15 @@
         </svg>
       </g>
     </g>
-    <g id="label-4" transform="translate(79.7,133.6) translate(-9.0,-6.0)">
-      <g id="g-5">
+    <g id="pf__label-4" transform="translate(79.7,133.6) translate(-9.0,-6.0)">
+      <g id="pf__g-5">
         <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: 0.000px" width="9.048px" height="12.056px" role="img" focusable="false" viewBox="0 -666 500 666" x="0.0" y="0.0">
           <defs>
             <path id="MJX-6-TEX-N-31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z"/>
           </defs>
           <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)">
             <g data-mml-node="math">
-              <g data-mml-node="mtext" data-semantic-type="text" data-semantic-role="integer" data-semantic-font="normal" data-semantic-annotation="clearspeak:unit" data-semantic-id="0" data-semantic-speech="1">
+              <g data-mml-node="mtext" data-semantic-type="text" data-semantic-role="integer" data-semantic-font="normal" data-semantic-id="0" data-semantic-speech="">
                 <use data-c="31" xlink:href="#MJX-6-TEX-N-31"/>
               </g>
             </g>
@@ -136,15 +136,15 @@
         </svg>
       </g>
     </g>
-    <g id="label-5" transform="translate(79.7,47.9) translate(-9.0,-6.0)">
-      <g id="g-6">
+    <g id="pf__label-5" transform="translate(79.7,47.9) translate(-9.0,-6.0)">
+      <g id="pf__g-6">
         <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: 0.000px" width="9.048px" height="12.056px" role="img" focusable="false" viewBox="0 -666 500 666" x="0.0" y="0.0">
           <defs>
             <path id="MJX-7-TEX-N-32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"/>
           </defs>
           <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)">
             <g data-mml-node="math">
-              <g data-mml-node="mtext" data-semantic-type="text" data-semantic-role="integer" data-semantic-font="normal" data-semantic-annotation="clearspeak:unit" data-semantic-id="0" data-semantic-speech="2">
+              <g data-mml-node="mtext" data-semantic-type="text" data-semantic-role="integer" data-semantic-font="normal" data-semantic-id="0" data-semantic-speech="">
                 <use data-c="32" xlink:href="#MJX-7-TEX-N-32"/>
               </g>
             </g>
@@ -153,23 +153,23 @@
       </g>
     </g>
   </g>
-  <line id="line-22" x1="305.0" y1="112.1" x2="5.0" y2="262.1" stroke="blue" stroke-width="2" fill="none"/>
-  <line id="line-23" x1="176.4" y1="47.9" x2="227.9" y2="150.7" stroke="black" stroke-width="2" stroke-dasharray="4 4" fill="none"/>
-  <path id="path-0" d="M 220.3 135.5 L 205.0 143.1 L 212.7 158.3" stroke="black" stroke-width="2" fill="none"/>
-  <path id="path-1" stroke="red" stroke-width="3" fill="none" d="M 90.7 219.3 L 176.4 47.9" marker-end="url(#arrow-head-end-3_None_24_60-red)"/>
-  <circle id="circle-0" cx="176.4" cy="47.9" r="4" stroke="black" stroke-width="2" fill="red"/>
-  <path id="path-2" stroke="orange" stroke-width="3" fill="none" d="M 90.7 219.3 L 227.9 150.7" marker-end="url(#arrow-head-end-3_None_24_60-orange)"/>
-  <path id="path-3" stroke="black" stroke-width="3" fill="none" d="M 90.7 219.3 L 39.3 116.4" marker-end="url(#arrow-head-end-3_None_24_60-black)"/>
-  <g id="g-0">
+  <line id="pf__line-22" x1="305.0" y1="112.1" x2="5.0" y2="262.1" stroke="blue" stroke-width="2" fill="none"/>
+  <line id="pf__line-23" x1="176.4" y1="47.9" x2="227.9" y2="150.7" stroke="black" stroke-width="2" stroke-dasharray="4 4" fill="none"/>
+  <path id="pf__path-0" d="M 220.3 135.5 L 205.0 143.1 L 212.7 158.3" stroke="black" stroke-width="2" fill="none"/>
+  <path id="pf__path-1" stroke="red" stroke-width="3" fill="none" d="M 90.7 219.3 L 176.4 47.9" marker-end="url(#pf__arrow-head-end-3_None_24_60-red)"/>
+  <circle id="pf__circle-0" cx="176.4" cy="47.9" r="4" stroke="black" stroke-width="2" fill="red"/>
+  <path id="pf__path-2" stroke="orange" stroke-width="3" fill="none" d="M 90.7 219.3 L 227.9 150.7" marker-end="url(#pf__arrow-head-end-3_None_24_60-orange)"/>
+  <path id="pf__path-3" stroke="black" stroke-width="3" fill="none" d="M 90.7 219.3 L 39.3 116.4" marker-end="url(#pf__arrow-head-end-3_None_24_60-black)"/>
+  <g id="pf__g-0">
     <g transform="translate(115.9,194.1) translate(0.0,-12.9)">
-      <g id="g-7">
+      <g id="pf__g-7">
         <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -0.184px" width="8.488px" height="12.944px" role="img" focusable="false" viewBox="0 -705 469 715" x="0.0" y="0.0">
           <defs>
             <path id="MJX-8-TEX-I-1D703" d="M35 200Q35 302 74 415T180 610T319 704Q320 704 327 704T339 705Q393 701 423 656Q462 596 462 495Q462 380 417 261T302 66T168 -10H161Q125 -10 99 10T60 63T41 130T35 200ZM383 566Q383 668 330 668Q294 668 260 623T204 521T170 421T157 371Q206 370 254 370L351 371Q352 372 359 404T375 484T383 566ZM113 132Q113 26 166 26Q181 26 198 36T239 74T287 161T335 307L340 324H145Q145 321 136 286T120 208T113 132Z"/>
           </defs>
           <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)">
             <g data-mml-node="math">
-              <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="greekletter" data-semantic-font="italic" data-semantic-annotation="clearspeak:simple" data-semantic-id="0" data-semantic-speech="theta">
+              <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="greekletter" data-semantic-font="italic" data-semantic-id="0" data-semantic-speech="">
                 <use data-c="1D703" xlink:href="#MJX-8-TEX-I-1D703"/>
               </g>
             </g>
@@ -179,8 +179,8 @@
     </g>
     <path d="M 117.5 205.9 A 30.0 30.0 0 0 0 104.1 192.5" stroke="black" stroke-width="2" fill="none"/>
   </g>
-  <g id="label-7" transform="translate(176.4,189.0) translate(-5.8,-0.0)">
-    <g id="g-8">
+  <g id="pf__label-7" transform="translate(176.4,189.0) translate(-5.8,-0.0)">
+    <g id="pf__g-8">
       <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -0.112px" width="11.568px" height="8.256px" role="img" focusable="false" viewBox="0 -450 639 456" x="0.0" y="0.0">
         <defs>
           <path id="MJX-9-TEX-B-1D42E" d="M40 442L134 446Q228 450 229 450H235V273V165Q235 90 238 74T254 52Q268 46 304 46H319Q352 46 380 67T419 121L420 123Q424 135 425 199Q425 201 425 207Q425 233 425 249V316Q425 354 423 363T410 376Q396 380 369 380H356V442L554 450V267Q554 84 556 79Q561 62 610 62H623V31Q623 0 622 0Q603 0 527 -3T432 -6Q431 -6 431 25V56L420 45Q373 6 332 -1Q313 -6 281 -6Q208 -6 165 14T109 87L107 98L106 230Q106 358 104 366Q96 380 50 380H37V442H40Z"/>
@@ -188,7 +188,7 @@
         <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)">
           <g data-mml-node="math">
             <g data-mml-node="TeXAtom" data-mjx-texclass="ORD">
-              <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="latinletter" data-semantic-font="bold" data-semantic-annotation="clearspeak:simple" data-semantic-id="0" data-semantic-attributes="texclass:ORD" data-semantic-speech="bold u">
+              <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="latinletter" data-semantic-font="bold" data-semantic-id="0" data-semantic-attributes="texclass:ORD" data-semantic-speech="">
                 <use data-c="1D42E" xlink:href="#MJX-9-TEX-B-1D42E"/>
               </g>
             </g>
@@ -197,8 +197,8 @@
       </svg>
     </g>
   </g>
-  <g id="label-8" transform="translate(125.0,121.0) translate(-5.5,-8.0)">
-    <g id="g-9">
+  <g id="pf__label-8" transform="translate(125.0,121.0) translate(-5.5,-8.0)">
+    <g id="pf__g-9">
       <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: 0.000px" width="10.984px" height="8.040px" role="img" focusable="false" viewBox="0 -444 607 444" x="0.0" y="0.0">
         <defs>
           <path id="MJX-10-TEX-B-1D42F" d="M401 444Q413 441 495 441Q568 441 574 444H580V382H510L409 156Q348 18 339 6Q331 -4 320 -4Q318 -4 313 -4T303 -3H288Q273 -3 264 12T221 102Q206 135 197 156L96 382H26V444H34Q49 441 145 441Q252 441 270 444H279V382H231L284 264Q335 149 338 149Q338 150 389 264T442 381Q442 382 418 382H394V444H401Z"/>
@@ -206,7 +206,7 @@
         <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)">
           <g data-mml-node="math">
             <g data-mml-node="TeXAtom" data-mjx-texclass="ORD">
-              <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="latinletter" data-semantic-font="bold" data-semantic-annotation="clearspeak:simple" data-semantic-id="0" data-semantic-attributes="texclass:ORD" data-semantic-speech="bold v">
+              <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="latinletter" data-semantic-font="bold" data-semantic-id="0" data-semantic-attributes="texclass:ORD" data-semantic-speech="">
                 <use data-c="1D42F" xlink:href="#MJX-10-TEX-B-1D42F"/>
               </g>
             </g>
@@ -215,8 +215,8 @@
       </svg>
     </g>
   </g>
-  <g id="label-9" transform="translate(47.9,176.4) translate(-11.5,-7.6)">
-    <g id="g-10">
+  <g id="pf__label-9" transform="translate(47.9,176.4) translate(-11.5,-7.6)">
+    <g id="pf__g-10">
       <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -0.112px" width="23.024px" height="15.232px" role="img" focusable="false" viewBox="0 -835.3 1272.1 841.3" x="0.0" y="0.0">
         <defs>
           <path id="MJX-11-TEX-B-1D42E" d="M40 442L134 446Q228 450 229 450H235V273V165Q235 90 238 74T254 52Q268 46 304 46H319Q352 46 380 67T419 121L420 123Q424 135 425 199Q425 201 425 207Q425 233 425 249V316Q425 354 423 363T410 376Q396 380 369 380H356V442L554 450V267Q554 84 556 79Q561 62 610 62H623V31Q623 0 622 0Q603 0 527 -3T432 -6Q431 -6 431 25V56L420 45Q373 6 332 -1Q313 -6 281 -6Q208 -6 165 14T109 87L107 98L106 230Q106 358 104 366Q96 380 50 380H37V442H40Z"/>
@@ -224,14 +224,14 @@
         </defs>
         <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)">
           <g data-mml-node="math">
-            <g data-mml-node="msup" data-semantic-type="superscript" data-semantic-role="latinletter" data-semantic-id="2" data-semantic-children="0,1" data-semantic-speech="bold u Superscript up tack">
+            <g data-mml-node="msup" data-semantic-type="superscript" data-semantic-role="latinletter" data-semantic-id="2" data-semantic-children="0,1" data-semantic-speech="">
               <g data-mml-node="TeXAtom" data-mjx-texclass="ORD">
-                <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="latinletter" data-semantic-font="bold" data-semantic-annotation="clearspeak:simple" data-semantic-id="0" data-semantic-parent="2" data-semantic-attributes="texclass:ORD" data-semantic-speech="bold u" data-semantic-prefix="Base">
+                <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="latinletter" data-semantic-font="bold" data-semantic-id="0" data-semantic-parent="2" data-semantic-attributes="texclass:ORD" data-semantic-speech="">
                   <use data-c="1D42E" xlink:href="#MJX-11-TEX-B-1D42E"/>
                 </g>
               </g>
               <g data-mml-node="TeXAtom" transform="translate(672,363) scale(0.707)" data-mjx-texclass="ORD">
-                <g data-mml-node="mo" data-semantic-type="operator" data-semantic-role="addition" data-semantic-id="1" data-semantic-parent="2" data-semantic-attributes="texclass:ORD" data-semantic-speech="up tack" data-semantic-prefix="Exponent">
+                <g data-mml-node="mo" data-semantic-type="operator" data-semantic-role="addition" data-semantic-id="1" data-semantic-parent="2" data-semantic-attributes="texclass:ORD" data-semantic-speech="">
                   <use data-c="22A5" xlink:href="#MJX-11-TEX-N-22A5"/>
                 </g>
               </g>

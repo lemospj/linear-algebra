@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: default-modern                 *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Linear regression and the least squares method</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+<link href="_static/pretext/css/theme.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/ol-markers.css" rel="stylesheet" type="text/css">
+<script>
+var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  "tex": {
+    "inlineMath": [
+      [
+        "\\(",
+        "\\)"
+      ]
+    ],
+    "tags": "none",
+    "tagSide": "right",
+    "tagIndent": ".8em",
+    "packages": {
+      "[+]": [
+        "base",
+        "extpfeil",
+        "ams",
+        "amscd",
+        "color",
+        "newcommand",
+        "knowl"
+      ]
+    }
+  },
+  "options": {
+    "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
+    "processHtmlClass": "process-math"
+  },
+  "chtml": {
+    "scale": 0.98,
+    "mtextInheritFont": true
+  },
+  "loader": {
+    "load": [
+      "input/asciimath",
+      "[tex]/extpfeil",
+      "[tex]/amscd",
+      "[tex]/color",
+      "[tex]/newcommand",
+      "[pretext]/mathjaxknowl3.js"
+    ],
+    "paths": {
+      "pretext": "_static/pretext/js"
+    }
+  },
+  "startup": {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+  }
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="MATH2101: Linear Algebra">
+<meta property="book:author" content="Pedro Lemos">
+<script src="_static/pretext/js/jquery.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX_Course_Title_Here';
+eBookConfig.basecourse = 'PTX_Base_Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.runestone_version = '7.11.19';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script src="_static/prefix-runtime.998c9d9ee2a5e7ac.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.98ef3b0c170cd180.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.b12a7b3f0773ebcd.css">
+<script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script>
+</head>
+<body id="changeme" class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner"><div class="title-container">
+<h1 class="heading"><a href="linear-algebra-lecture-notes.html"><span class="title">MATH2101: Linear Algebra</span> <span class="subtitle">Lecture Notes</span></a></h1>
+<p class="byline">Pedro Lemos</p>
+</div></div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
+<button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="searchbox">
+<div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
+<div class="search-results-controls">
+<input aria-label="Search term" id="ptxsearch" class="ptxsearch" type="text" name="terms" placeholder="Search term"><button title="Close search" id="closesearchresults" class="closesearchresults"><span class="material-symbols-outlined">close</span></button>
+</div>
+<h2 class="search-results-heading">Search Results: </h2>
+<div id="searchempty" class="searchempty"><span>No results.</span></div>
+<ol id="searchresults" class="searchresults"></ol>
+</div>
+</div>
+<span class="nav-other-controls"><button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="sec-orthogonality.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-euclidean-spaces.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="backmatter.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+</div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\ba}{{\bf a}}
+
+\newcommand{\bb}{{\bf b}}
+\newcommand{\bc}{{\bf c}}
+\newcommand{\be}{{\bf e}}
+\newcommand{\bp}{{\bf p}}
+\newcommand{\bq}{{\bf q}}
+\newcommand{\br}{{\bf r}}
+\newcommand{\bu}{{\bf u}}
+\newcommand{\bv}{{\bf v}}
+\newcommand{\bw}{{\bf w}}
+\newcommand{\bx}{{\bf x}}
+\newcommand{\by}{{\bf y}}
+\newcommand{\bz}{{\bf 0}}
+\newcommand{\colvec}[1]{
+  \begin{pmatrix} #1 \end{pmatrix}
+}
+\newcommand{\Id}{\mathrm{Id}}
+
+\DeclareMathOperator{\diag}{\mathrm{diag}}
+\DeclareMathOperator{\vspan}{\mathrm{span}}
+\DeclareMathOperator{\pr}{\mathrm{pr}}
+\DeclareMathOperator{\Tr}{\mathrm{Tr}}
+\DeclareMathOperator{\Img}{\mathrm{Im}}
+
+\newcommand{\Mat}{\mathrm{Mat}}
+\newcommand{\N}{\mathbb N} 
+\newcommand{\Z}{\mathbb Z} 
+\newcommand{\Q}{\mathbb Q} 
+\newcommand{\R}{\mathbb R}
+\newcommand{\ampp}{\amp\amp\;}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2 focused" data-preexpanded-levels="0" data-max-levels="2"><ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-frontmatter">
+<div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-preface"><div class="toc-title-box"><a href="frontmatter-3.html" class="internal"><span class="title">Preface</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-linear-equations.html" class="internal"><span class="codenumber">1</span> <span class="title">Systems of linear equations</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-solutions.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Solutions to systems of linear equations</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-solutions.html#exercises-ch1-sec1" class="internal"><span class="codenumber">1.1</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-echelon.html" class="internal"><span class="codenumber">1.2</span> <span class="title">The reduced row echelon form of a linear system</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-echelon.html#exercises-ch1-sec2" class="internal"><span class="codenumber">1.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-gauss.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Gauss-Jordan elimination</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-gauss.html#exercises-ch1-sec3" class="internal"><span class="codenumber">1.3</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter contains-active">
+<div class="toc-title-box"><a href="ch-euclidean-spaces.html" class="internal"><span class="codenumber">2</span> <span class="title">Euclidean spaces</span></a></div>
+<ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-vectors.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Vectors</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-vectors.html#exercises-chapter2-section1" class="internal"><span class="codenumber">2.1</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-matrices.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Matrices</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-matrices.html#exercises-matrices" class="internal"><span class="codenumber">2.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-linear-dependence.html" class="internal"><span class="codenumber">2.3</span> <span class="title">Linear dependence</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-linear-dependence.html#exercises-chapter2-section2" class="internal"><span class="codenumber">2.3</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-linear-subspaces.html" class="internal"><span class="codenumber">2.4</span> <span class="title">Linear subspaces</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-linear-subspaces.html#exercises-chapter2-section4" class="internal"><span class="codenumber">2.4</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-orthogonality.html" class="internal"><span class="codenumber">2.5</span> <span class="title">Orthogonality</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-orthogonality.html#exercises-orthogonality" class="internal"><span class="codenumber">2.5</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section active"><div class="toc-title-box"><a href="sec-least-squares.html" class="internal"><span class="codenumber">2.6</span> <span class="title">Linear regression and the least squares method</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-backmatter"><div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div></li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec-least-squares"><h2 class="heading hide-type">
+<span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.6</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Linear regression and the least squares method</span>
+</h2>
+<div class="para" id="sec-least-squares-2">Linear regression is a method in mathematics, statistics and machine learning that aims to describe a linear relationship between a collection of independent variables and one dependent variable. The term regression originates from the 19th century study led by Francis Galton where he first observed the statistical phenomenon that came to be known as <em class="emphasis">regression towards the mean</em>. Galton found that certain some extreme characteristics are not fully passed from parents to their offspring. Instead, the offspring’s characteristic <em class="emphasis">regress towards the mean</em>. Using data measuring the height of parents and their children, Galton was able to quantify this regression for the case of height. We will be using Galton’s data to illustrate the process of linear regression. But before that, we will look at a small test case.<div class="autopermalink" data-description="Paragraph"><a href="#sec-least-squares-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-least-squares-3">We will need the following result.<div class="autopermalink" data-description="Paragraph"><a href="#sec-least-squares-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="proposition theorem-like" id="prop-dist-proj"><h3 class="heading">
+<span class="type">Proposition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.6.1</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para" id="prop-dist-proj-1-1">Let <span class="process-math">\(V\)</span> be a linear subspace of <span class="process-math">\(\R^n\text{,}\)</span> and let <span class="process-math">\(\bv\)</span> be a vector in <span class="process-math">\(\R^n\text{.}\)</span> The vector in <span class="process-math">\(V\)</span> that is the closest to <span class="process-math">\(\bv\)</span> is <span class="process-math">\(\pr_V(\bv)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#prop-dist-proj-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proposition 2.6.1"><a href="#prop-dist-proj" title="Copy heading and permalink for Proposition 2.6.1" aria-label="Copy heading and permalink for Proposition 2.6.1">🔗</a></div></article><details id="prop-dist-proj-2" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para logical" id="prop-dist-proj-2-1">
+<div class="para">We need to show that if <span class="process-math">\(\bw\)</span> is any other vector in <span class="process-math">\(V\text{,}\)</span> then</div>
+<div class="displaymath process-math" id="prop-dist-proj-2-1-3">
+\begin{equation*}
+\lVert\bv-\bw\rVert &gt; \lVert\bv-\pr_V(\bv)\rVert\text{,}
+\end{equation*}
+</div>
+<div class="para">or equivalently</div>
+<div class="displaymath process-math" id="prop-dist-proj-2-1-4">
+\begin{equation*}
+\lVert\bv-\bw\rVert^2 &gt; \lVert\bv-\pr_V(\bv)\rVert^2\text{.}
+\end{equation*}
+</div>
+<div class="para">Since we are assuming that <span class="process-math">\(\bw\)</span> is a vector in <span class="process-math">\(V\)</span> that is different from <span class="process-math">\(\pr_V(\bv)\text{,}\)</span> we know that the vector <span class="process-math">\(\bu=\bw-\pr_V(\bv)\)</span> lies in <span class="process-math">\(V\)</span> and is non-zero. In particular, <span class="process-math">\(\lVert\bu\rVert &gt; 0\text{.}\)</span> Now,</div>
+<div class="displaymath process-math" id="prop-dist-proj-2-1-11">
+\begin{equation*}
+\lVert\bv-\bw\rVert^2 = (\bv-\bw)\cdot(\bv-\bw)= (\bv-\pr_V(\bv)-\bu)\cdot(\bv-\pr_V(\bv)-\bu).\text{.}
+\end{equation*}
+</div>
+<div class="para">Expanding the right-hand side of this equation, we find that</div>
+<div class="displaymath process-math" id="prop-dist-proj-2-1-12">
+\begin{equation*}
+\lVert\bv-\bw\rVert^2 = (\bv-\pr_V(\bv))\cdot(\bv-\pr_V(\bv)) - 2\bu\cdot(\bv-\pr_V(\bv)) + \bu\cdot\bu\text{.}
+\end{equation*}
+</div>
+<div class="para">Recalling that <span class="process-math">\(\bv-\pr_V(\bv)\)</span> is orthogonal to <span class="process-math">\(V\text{,}\)</span> we see that <span class="process-math">\(\bu\cdot(\bv-\pr_V(\bv))=0\text{.}\)</span> But then</div>
+<div class="displaymath process-math" id="prop-dist-proj-2-1-16">
+\begin{equation*}
+\lVert\bv-\bw\rVert^2 = \lVert\bv-\pr_V(\bv)\rVert^2 + \lVert\bu\rVert^2\text{.}
+\end{equation*}
+</div>
+<div class="para">Since <span class="process-math">\(\lVert\bu\rVert &gt; 0\text{,}\)</span> we conclude that <span class="process-math">\(\lVert\bv-\bw\rVert^2 &gt; \lVert\bv-\pr_V(\bv)\rVert^2\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#prop-dist-proj-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 2.6.1.1"><a href="#prop-dist-proj-2" title="Copy heading and permalink for Proof 2.6.1.1" aria-label="Copy heading and permalink for Proof 2.6.1.1">🔗</a></div></article></details><div class="para logical" id="sec-least-squares-5">
+<div class="para">Let’s suppose that we have a collection of <span class="process-math">\(m\)</span> data points</div>
+<div class="displaymath process-math" id="sec-least-squares-5-2">
+\begin{equation*}
+\bp_1=(x_{11}, x_{12},\ldots,x_{1n}, y_1),\ldots, \bp_m=(x_{m1},x_{m2},\ldots,x_{mn}, y_m)
+\end{equation*}
+</div>
+<div class="para">and that our aim is to explain the values <span class="process-math">\(y_i\)</span> in terms of <span class="process-math">\(x_{ij}\text{,}\)</span> <span class="process-math">\(1\leq j\leq n\text{.}\)</span> The first <span class="process-math">\(n\)</span> entries of the data points <span class="process-math">\(\bp_i\)</span> are then called the <dfn class="terminology">independent variables</dfn>, while the last one is called the <dfn class="terminology">dependent variable</dfn>. The easiest kind of relation that these variables could satisfy is a linear relationship. We say that the relationship between the independent variables and the dependent one is linear if there are <span class="process-math">\(n+1\)</span> scalars <span class="process-math">\(a_0, a_1,\ldots, a_n\in\R\)</span> such that the value</div>
+<div class="displaymath process-math" id="sec-least-squares-5-12">
+\begin{equation*}
+a_0 + a_1x_{i1} + a_2x_{i2} + \ldots + a_nx_{in}
+\end{equation*}
+</div>
+<div class="para">is a good approximation of the value <span class="process-math">\(y_i\)</span> for every <span class="process-math">\(i\)</span> between <span class="process-math">\(1\)</span> and <span class="process-math">\(m\text{.}\)</span> Our task is to find the coefficients <span class="process-math">\(a_0, a_1,\ldots,a_n\)</span> that best approximate the values <span class="process-math">\(y_i\text{,}\)</span> in the sense that they minimize the sum of square residues</div>
+<div class="displaymath process-math" id="sec-least-squares-5-19">
+\begin{equation*}
+| a_0 + a_1x_{11} + a_2x_{12} + \ldots + a_nx_{1n}-y_1|^2 + \ldots + |a_0 + a_1x_{m1} + a_2x_{m2} + \ldots + a_nx_{mn} - y_m|^2\text{.}
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-least-squares-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="sec-least-squares-6">
+<div class="para">It will be useful to separate the values in our data points corresponding to independent variables from those corresponding to dependent variables. So let <span class="process-math">\(\by\)</span> be the vector in <span class="process-math">\(\R^m\)</span> whose <span class="process-math">\(i\)</span>th entry is <span class="process-math">\(y_i\text{:}\)</span>
+</div>
+<div class="displaymath process-math" id="sec-least-squares-6-5">
+\begin{equation*}
+\by=\colvec{y_1 \\ y_2 \\ \vdots \\ y_m}\text{.}
+\end{equation*}
+</div>
+<div class="para">The independent variables will all be organized in a single <span class="process-math">\(m\times (n+1)\)</span> matrix <span class="process-math">\(X\)</span> where row <span class="process-math">\(i\)</span> consists of the vector <span class="process-math">\((1,x_{11}, x_{12},\ldots,x_{1n})\text{:}\)</span>
+</div>
+<div class="displaymath process-math" id="sec-least-squares-6-10">
+\begin{equation*}
+X=\begin{pmatrix} 1 &amp; x_{11} &amp; x_{12} &amp; \cdots &amp; x_{1n} \\ 1 &amp; x_{21} &amp; x_{22} &amp; \cdots &amp; x_{2n} \\ \vdots &amp; \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\ 1 &amp; x_{m1} &amp; x_{m2} &amp; \cdots &amp; x_{mn}\end{pmatrix}\text{.}
+\end{equation*}
+</div>
+<div class="para">Using the vector <span class="process-math">\(\by\)</span> and the matrix <span class="process-math">\(X\text{,}\)</span> we can rewrite the square residue minimization condition in the following form: we are trying to find the vector <span class="process-math">\(\ba=\colvec{a_0\\a_1\\ \vdots\\a_n}\)</span> in <span class="process-math">\(\R^{n+1}\)</span> that minimizes the distance between <span class="process-math">\(X\ba\)</span> and <span class="process-math">\(\by\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-least-squares-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="sec-least-squares-7">
+<div class="para">This is where projections come in handy. What we are trying to do is to find the closest vector in <span class="process-math">\(V=\Img(X)\)</span> to <span class="process-math">\(\by\text{.}\)</span> <a href="sec-least-squares.html#prop-dist-proj" class="xref" data-knowl="./knowl/xref/prop-dist-proj.html" data-reveal-label="Reveal" data-close-label="Close" title="Proposition 2.6.1">Proposition 2.6.1</a> tells us that that vector is precisely <span class="process-math">\(\pr_V(\by)\text{.}\)</span> Therefore, we want to solve</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/prop-dist-proj.html" id="sec-least-squares-7-5">
+\begin{equation*}
+X\ba=\pr_V(\by)\text{.}
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-least-squares-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="proposition theorem-like" id="prop-normal-equation"><h3 class="heading">
+<span class="type">Proposition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.6.2</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para" id="prop-normal-equation-1-1">The vector <span class="process-math">\(\bv\in\R^{n+1}\)</span> is a solution to <span class="process-math">\(X\ba=\pr_V(\by)\)</span> if and only if it is a solution to <span class="process-math">\(X^TX\ba=X^T\by\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#prop-normal-equation-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proposition 2.6.2"><a href="#prop-normal-equation" title="Copy heading and permalink for Proposition 2.6.2" aria-label="Copy heading and permalink for Proposition 2.6.2">🔗</a></div></article><details id="prop-normal-equation-2" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para logical" id="prop-normal-equation-2-1">
+<div class="para">Suppose that <span class="process-math">\(\bv\)</span> is a solution to <span class="process-math">\(X\ba=\pr_V(\by)\text{.}\)</span> Then we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/exercise-transpose-kernel.html" id="prop-normal-equation-2-1-3">
+\begin{equation*}
+X^TX\bv = X^T\pr_V(\by)\text{.}
+\end{equation*}
+</div>
+<div class="para">We know that <span class="process-math">\(\bu=\by-\pr_V(\by)\)</span> is orthogonal to <span class="process-math">\(V\text{.}\)</span> <a href="sec-orthogonality.html#exercise-transpose-kernel" class="xref" data-knowl="./knowl/xref/exercise-transpose-kernel.html" data-reveal-label="Reveal" data-close-label="Close" title="Exercise 2.5.8">Exercise 2.5.8</a> states that the kernel of <span class="process-math">\(X^T\)</span> is the orthogonal complement of <span class="process-math">\(\Img(X)\)</span> in <span class="process-math">\(\R^m\text{.}\)</span> Since <span class="process-math">\(\bu\)</span> is in the orthogonal complement of <span class="process-math">\(\Img(X)\text{,}\)</span> we conclude that <span class="process-math">\(X^T\bu=\bz\text{.}\)</span> But this means that <span class="process-math">\(X^T\by=X^T\pr_V(\by)\text{.}\)</span> So, <span class="process-math">\(X^TX\bv=X^T\pr_V(\by)=X^T\by\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#prop-normal-equation-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="prop-normal-equation-2-2">
+<div class="para">We now prove the converse. Suppose that <span class="process-math">\(\bv\)</span> is a solution to <span class="process-math">\(X^TX\ba=X^T\by\text{.}\)</span> Rewriting the equation, we get</div>
+<div class="displaymath process-math" id="prop-normal-equation-2-2-3">
+\begin{equation*}
+X^T(X\ba-\by)=\bz\text{.}
+\end{equation*}
+</div>
+<div class="para">In other words, <span class="process-math">\(X\ba-\by\)</span> is in the kernel of <span class="process-math">\(X^T\text{.}\)</span> Since the kernel of <span class="process-math">\(X^T\)</span> is <span class="process-math">\(\Img(X)^{\perp}\text{,}\)</span> this means that <span class="process-math">\(X\ba-\by\)</span> is a vector in <span class="process-math">\(\Img(X)\text{.}\)</span> Again, writing <span class="process-math">\(\by=\bu+\pr_V(\by)\text{,}\)</span> and using the fact that <span class="process-math">\(\bu\in\Img(X)^{\perp}\text{,}\)</span> we conclude that <span class="process-math">\(X\ba-\pr_V(\by)\)</span> is in <span class="process-math">\(\Img(X)^{\perp}\text{.}\)</span> However, <span class="process-math">\(X\ba\)</span> and <span class="process-math">\(\pr_V(\by)\)</span> are two vectors in <span class="process-math">\(\Img(X)\text{,}\)</span> and so <span class="process-math">\(X\ba-\pr_V(\by)\in \Img(X)\cap\Img(X)^{\perp}\text{.}\)</span> Therefore, <span class="process-math">\(X\ba-\pr_V(\by)=\bz\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#prop-normal-equation-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 2.6.2.1"><a href="#prop-normal-equation-2" title="Copy heading and permalink for Proof 2.6.2.1" aria-label="Copy heading and permalink for Proof 2.6.2.1">🔗</a></div></article></details><details id="sec-least-squares-9" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.6.3</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3></summary><article class="example example-like knowl__content"><div class="para logical" id="sec-least-squares-9-1">
+<div class="para">Consider the points <span class="process-math">\((1,2)\text{,}\)</span> <span class="process-math">\((2,5)\)</span> and <span class="process-math">\((4,7)\)</span> in <span class="process-math">\(\R^2\text{.}\)</span> Let’s try to find the line of best fit, by which I mean the line <span class="process-math">\(y=mx+b\)</span> that minimizes</div>
+<div class="displaymath process-math" id="sec-least-squares-9-1-6">
+\begin{equation*}
+|m+b-1|^2+|2m+b-5|^2+|4m+b-7|^2\text{.}
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-least-squares-9-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<figure class="figure figure-like" id="fig-least-squares-point"><div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="generated/prefigure/prefig-least-squares-point.svg" role="img" class="contained" alt="The points 1 comma 2, 2 comma 5 and 4 comma 7"></div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.6.4<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>The points <span class="process-math">\((1,2)\text{,}\)</span> <span class="process-math">\((2,5)\)</span> and <span class="process-math">\((4,7)\text{.}\)</span><div class="autopermalink" data-description="Figure 2.6.4"><a href="#fig-least-squares-point" title="Copy heading and permalink for Figure 2.6.4" aria-label="Copy heading and permalink for Figure 2.6.4">🔗</a></div></figcaption></figure><div class="para logical" id="sec-least-squares-9-3">
+<div class="para">The values in the second entry of the vectors above correspond to the values of the dependent variable, so <span class="process-math">\(\by=\colvec{2 \\ 5 \\ 7}\)</span> and</div>
+<div class="displaymath process-math" id="sec-least-squares-9-3-2">
+\begin{equation*}
+X=\begin{pmatrix} 1 &amp; 1 \\ 1 &amp; 2 \\ 1 &amp; 4\end{pmatrix}\text{.}
+\end{equation*}
+</div>
+<div class="para">The transpose is given by</div>
+<div class="displaymath process-math" id="sec-least-squares-9-3-3">
+\begin{equation*}
+X^T=\begin{pmatrix} 1 &amp; 1 &amp; 1 \\ 1 &amp; 2 &amp; 4\end{pmatrix}\text{.}
+\end{equation*}
+</div>
+<div class="para">The product <span class="process-math">\(X^TX\)</span> is given by</div>
+<div class="displaymath process-math" id="sec-least-squares-9-3-5">
+\begin{equation*}
+X^TX=\begin{pmatrix} 3 &amp; 7 \\ 7 &amp; 21 \end{pmatrix}\text{.}
+\end{equation*}
+</div>
+<div class="para">The linear system that we need to solve is</div>
+<div class="displaymath process-math" id="sec-least-squares-9-3-6">
+\begin{equation*}
+\begin{pmatrix} 3 &amp; 7 \\ 7 &amp; 21 \end{pmatrix}\colvec{b \\ m}=\colvec{14 \\ 40}\text{.}
+\end{equation*}
+</div>
+<div class="para">The solution is</div>
+<div class="displaymath process-math" id="sec-least-squares-9-3-7">
+\begin{equation*}
+\colvec{b \\ m}=\colvec{1 \\ \frac{11}{7}}\text{.}
+\end{equation*}
+</div>
+<div class="para">So the line of best fit for this set of three points is <span class="process-math">\(y=\frac{11}{7}x+1\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-least-squares-9-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<figure class="figure figure-like" id="fig-least-squares"><div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="generated/prefigure/prefig-least-squares.svg" role="img" class="contained" alt="The points 1 comma 2, 2 comma 5 and 4 comma 7 and the line of best fit"></div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.6.5<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>The points <span class="process-math">\((1,2)\text{,}\)</span> <span class="process-math">\((2,5)\)</span> and <span class="process-math">\((4,7)\text{.}\)</span><div class="autopermalink" data-description="Figure 2.6.5"><a href="#fig-least-squares" title="Copy heading and permalink for Figure 2.6.5" aria-label="Copy heading and permalink for Figure 2.6.5">🔗</a></div></figcaption></figure><div class="autopermalink" data-description="Example 2.6.3"><a href="#sec-least-squares-9" title="Copy heading and permalink for Example 2.6.3" aria-label="Copy heading and permalink for Example 2.6.3">🔗</a></div></article></details><div class="autopermalink" data-description="Section 2.6: Linear regression and the least squares method"><a href="#sec-least-squares" title="Copy heading and permalink for Section 2.6: Linear regression and the least squares method" aria-label="Copy heading and permalink for Section 2.6: Linear regression and the least squares method">🔗</a></div></section></div>
+<div id="ptx-content-footer" class="ptx-content-footer">
+<a class="previous-button button" href="sec-orthogonality.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="backmatter.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+</div></main>
+</div>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="338 3000 8772 6866" role="img"><title>PreTeXt logo</title><g style="stroke-width:.025in; stroke:currentColor; fill:none"><polyline points="472,3590 472,9732 " style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png" alt="Runstone Academy logo"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png" alt="MathJax logo"></a>
+</div>
+</body>
+</html>
