@@ -3,7 +3,7 @@
 <section xml:id="sec-least-squares" xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>Linear regression and the least squares method</title>
     <p>
-        Linear regression is a method in mathematics, statistics and machine learning that aims to describe a linear relationship between a collection of independent variables and one dependent variable. The term regression originates from the 19th century study led by Francis Galton where he first observed the statistical phenomenon that came to be known as <em>regression towards the mean</em>. Galton found that certain some extreme characteristics are not fully passed from parents to their offspring. Instead, the offspring's characteristic <em>regress towards the mean</em>. Using data measuring the height of parents and their children, Galton was able to quantify this regression for the case of height. We will be use Galton's data later to illustrate the process of linear regression.
+        Linear regression is a method in mathematics, statistics and machine learning that aims to describe a linear relationship between a collection of independent variables and one dependent variable. The term regression originates from the 19th century study led by Francis Galton where he first observed the statistical phenomenon that came to be known as <em>regression towards the mean</em>. Galton found that certain some extreme characteristics are not fully passed from parents to their offspring. Instead, the offspring's characteristic <em>regress towards the mean</em>. Using data measuring the height of parents and their children, Galton was able to quantify this regression for the case of height. We will use Galton's data later to illustrate the process of linear regression.
     </p>
     <p>
         We will need the following result.
@@ -169,6 +169,11 @@
                     </prefigure>                    
                 </image>
             </figure>
+    </example>
+    <example>
+        <p>
+            If you want to see the theory above being applied to Galton's data, you will have to follow <url href="https://cocalc.com/share/public_paths/48492909e4e74ae2844994d7b7972835c6dfdf17">this link</url> to a CoCalc project I created. As you would probably expect, real-world problems often deal with large amounts of data, and a computer is almost always necessary to handle the calculations. The CoCalc project is not self-explanatory, but I will go over it in class.
+        </p>
     </example>
     
 </section>
