@@ -3,6 +3,6 @@
 <section xml:id="sec-linear-maps" xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>Linear maps</title>
     <p>
-        In this section we will take a closer look at linear maps. We will prove one of the most important results in linear algebra: the rank-nullity theorem. After that, we will discuss some important linear transformations of <m>\R^2</m> and <m>\R^3</m> that will help us motivate the study of eigenvalues and eigenvectors in the next section. The two types o
+        In this section we will take a deeper dive into linear maps. We will prove one of the most important results in linear algebra: the rank-nullity theorem. After that, we will discuss some important linear transformations of <m>\R^2</m> and <m>\R^3</m> that will help us motivate the study of eigenvalues and eigenvectors in the next section. The two types o
     </p>
 </section>
