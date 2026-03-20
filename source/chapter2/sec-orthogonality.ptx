@@ -677,6 +677,13 @@
         <exercise>
             <statement>
                 <p>
+                    Consider the linear subspace <m>V</m> of <m>\R^3</m> defined as the set of solutions to the equation <m>2x+y-z=0</m>. Let <m>\bv</m> be the vector <m>\colvec{1 \\ 2 \\ 1}</m>. Calculate the projection of <m>\bv</m> onto <m>V</m>.
+                </p>
+            </statement>
+        </exercise>
+        <exercise>
+            <statement>
+                <p>
                     Show that a set of <m>m</m> pairwise orthogonal non-zero vectors <m>\bv_1,\ldots,\bv_m</m> in <m>\R^n</m> is a linearly independent set of vectors. (Pairwise orthogonal means that <m>\bv_i\cdot\bv_j=0</m> whenever <m>i\neq j</m>.) Conclude that if <m>V</m> is a linear subspace of <m>\R^n</m> of dimension <m>m</m>, then any collection of <m>m</m> pairwise orthogonal non-zero vectors in <m>V</m> forms a basis of <m>V</m>.
                 </p>
             </statement>
