@@ -33,14 +33,8 @@ window.addEventListener('message', function (event) {
             const iFrames = document.getElementsByTagName('iframe');
             for(const iFrame of iFrames) {
                 if(iFrame.contentWindow === event.source) {
-                    if (edata.height) {
-                      iFrame.height = edata.height;
-                      iFrame.style.height = edata.height + 'px';
-                    }
-                    if (edata.width) {
-                      iFrame.width = edata.width;
-                      iFrame.style.width = edata.width + 'px';
-                    }
+                    if (edata.height) iFrame.height = edata.height;
+                    if (edata.width) iFrame.width = edata.width;
                     break;
                 }
             }
