@@ -290,7 +290,7 @@ A\colvec{x \\ y \\ z}=2\colvec{x \\ y \\ z}\text{,}
 (A-2\Id_2)\colvec{x \\ y \\ z}= \colvec{0 \\ 0 \\ 0}\text{.}
 \end{equation*}
 </div>
-<div class="para">Now, <span class="process-math">\(A-2\Id_2=\begin{pmatrix} 0 \amp 0 \amp 0 \\ 0 \amp 0 \amp 0 \\ 0 \amp 0\amp 1\end{pmatrix}\text{.}\)</span> The solutions to</div>
+<div class="para">Now, <span class="process-math">\(A-2\Id_3=\begin{pmatrix} 0 \amp 0 \amp 0 \\ 0 \amp 0 \amp 0 \\ 0 \amp 0\amp 1\end{pmatrix}\text{.}\)</span> The solutions to</div>
 <div class="displaymath process-math" id="example-eigenvalue-three-1-9">
 \begin{equation*}
 \begin{pmatrix} 0 \amp 0 \amp 0 \\ 0 \amp 0 \amp 0 \\ 0 \amp 0\amp 1\end{pmatrix}\colvec{x \\ y \\ z}=\colvec{0 \\ 0 \\ 0}
@@ -304,7 +304,7 @@ A\colvec{x \\ y \\ z}=2\colvec{x \\ y \\ z}\text{,}
 <div class="para">Similarly, we may calculate the eigenvectors associated to the eigenvalue <span class="process-math">\(3\text{.}\)</span> These are the non-zero solutions to</div>
 <div class="displaymath process-math" id="example-eigenvalue-three-2-2">
 \begin{equation*}
-(A-3\Id_2)\colvec{x \\ y \\ z} = \colvec{0 \\ 0 \\ 0}\text{.}
+(A-3\Id_3)\colvec{x \\ y \\ z} = \colvec{0 \\ 0 \\ 0}\text{.}
 \end{equation*}
 </div>
 <div class="para">The solutions to this system are the vectors of the form <span class="process-math">\(\colvec{0 \\ 0 \\ z}\text{.}\)</span>
@@ -362,12 +362,43 @@ A\bv=\lambda\bv\text{.}
 <div class="para">Let <span class="process-math">\(A\)</span> be an <span class="process-math">\(n\times n\)</span> matrix. The <dfn class="terminology">characteristic polynomial</dfn> of <span class="process-math">\(A\)</span> is the polynomial</div>
 <div class="displaymath process-math" id="def-char-poly-1-1-5">
 \begin{equation*}
-p_A(x)=\det(A-x\Id_n)\text{.}
+p_A(x)=\det(x\Id_n-A)\text{.}
 \end{equation*}
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#def-char-poly-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Definition 2.7.7"><a href="#def-char-poly" title="Copy heading and permalink for Definition 2.7.7" aria-label="Copy heading and permalink for Definition 2.7.7">🔗</a></div></article><div class="autopermalink" data-description="Section 2.7: Eigenvalues and eigenvectors"><a href="#sec-eigenvalues" title="Copy heading and permalink for Section 2.7: Eigenvalues and eigenvectors" aria-label="Copy heading and permalink for Section 2.7: Eigenvalues and eigenvectors">🔗</a></div></section></div>
+<div class="autopermalink" data-description="Definition 2.7.7"><a href="#def-char-poly" title="Copy heading and permalink for Definition 2.7.7" aria-label="Copy heading and permalink for Definition 2.7.7">🔗</a></div></article><details id="sec-eigenvalues-12" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.7.8</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3></summary><article class="example example-like knowl__content"><div class="para logical" id="sec-eigenvalues-12-1">
+<div class="para">Let’s consider the matrix <span class="process-math">\(A=\begin{pmatrix} 2 \amp -1 \\ 1 \amp 3\end{pmatrix}\text{.}\)</span> In order to calculate its characteristic polynomial, we will need to work out the expression for <span class="process-math">\(x\Id_2-A\text{.}\)</span> But this is just</div>
+<div class="displaymath process-math" id="sec-eigenvalues-12-1-3">
+\begin{equation*}
+x\Id_2-A=\begin{pmatrix} x \amp 0 \\ 0 \amp x\end{pmatrix}-\begin{pmatrix}2 \amp -1 \\ 1 \amp 3\end{pmatrix}=\begin{pmatrix}x-2 \amp 1 \\ -1 \amp x-3\end{pmatrix}\text{.}
+\end{equation*}
+</div>
+<div class="para">The determinant of this matrix is <span class="process-math">\((x-2)(x-3)+1=x^2-5x+7\text{,}\)</span> so we conclude that the characteristic polynomial of <span class="process-math">\(A\)</span> is <span class="process-math">\(x^2-5x+7\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-eigenvalues-12-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Example 2.7.8"><a href="#sec-eigenvalues-12" title="Copy heading and permalink for Example 2.7.8" aria-label="Copy heading and permalink for Example 2.7.8">🔗</a></div></article></details><details id="sec-eigenvalues-13" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.7.9</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3></summary><article class="example example-like knowl__content"><div class="para logical" id="sec-eigenvalues-13-1">
+<div class="para">Going back to the matrix in <a href="sec-eigenvalues.html#example-eigenvalue-projection" class="xref" data-knowl="./knowl/xref/example-eigenvalue-projection.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 2.7.2">Example 2.7.2</a>, we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/example-eigenvalue-projection.html" id="sec-eigenvalues-13-1-2">
+\begin{equation*}
+x\Id_2-A = \begin{pmatrix}x-\frac{1}{2} \amp -\frac{1}{2} \\ -\frac{1}{2} \amp x-\frac{1}{2}\end{pmatrix}\text{.}
+\end{equation*}
+</div>
+<div class="para">Therefore, the characteristic polynomial of <span class="process-math">\(A\)</span> is</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/example-eigenvalue-projection.html" id="sec-eigenvalues-13-1-4">
+\begin{equation*}
+p_A(x)=\left(x-\frac{1}{2}\right)^2-\frac{1}{4}=x^2-x=x(x-1)\text{.}
+\end{equation*}
+</div>
+<div class="para">Note that the zeros of this polynomial are <span class="process-math">\(0\)</span> and <span class="process-math">\(1\text{.}\)</span> These are precisely the eigenvalues of <span class="process-math">\(A\text{.}\)</span> This is not a coincidence!</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-eigenvalues-13-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Example 2.7.9"><a href="#sec-eigenvalues-13" title="Copy heading and permalink for Example 2.7.9" aria-label="Copy heading and permalink for Example 2.7.9">🔗</a></div></article></details><div class="autopermalink" data-description="Section 2.7: Eigenvalues and eigenvectors"><a href="#sec-eigenvalues" title="Copy heading and permalink for Section 2.7: Eigenvalues and eigenvectors" aria-label="Copy heading and permalink for Section 2.7: Eigenvalues and eigenvectors">🔗</a></div></section></div>
 <div id="ptx-content-footer" class="ptx-content-footer">
 <a class="previous-button button" href="sec-least-squares.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="backmatter.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
