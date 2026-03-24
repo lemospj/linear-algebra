@@ -110,9 +110,31 @@
             <p>
                 Let <m>A</m> be an <m>n\times n</m> matrix. The <term>characteristic polynomial</term> of <m>A</m> is the polynomial
                 <me>
-                    p_A(x)=\det(A-x\Id_n)
+                    p_A(x)=\det(x\Id_n-A)
                 </me>.
             </p>
         </statement>
     </definition>
+    <example>
+        <p>
+            Let's consider the matrix <m>A=\begin{pmatrix} 2 \amp -1 \\ 1 \amp 3\end{pmatrix}</m>. In order to calculate its characteristic polynomial, we will need to work out the expression for <m>x\Id_2-A</m>. But this is just
+            <me>
+                x\Id_2-A=\begin{pmatrix} x \amp 0 \\ 0 \amp x\end{pmatrix}-\begin{pmatrix}2 \amp -1 \\ 1 \amp 3\end{pmatrix}=\begin{pmatrix}x-2 \amp 1 \\ -1 \amp x-3\end{pmatrix}
+            </me>.
+            The determinant of this matrix is <m>(x-2)(x-3)+1=x^2-5x+7</m>, so we conclude that the characteristic polynomial of <m>A</m> is <m>x^2-5x+7</m>.
+        </p>
+    </example>
+    <example>
+        <p>
+            Going back to the matrix in <xref ref="example-eigenvalue-projection"/>, we have
+            <me>
+                x\Id_2-A = \begin{pmatrix}x-\frac{1}{2} \amp -\frac{1}{2} \\ -\frac{1}{2} \amp x-\frac{1}{2}\end{pmatrix}
+            </me>.
+            Therefore, the characteristic polynomial of <m>A</m> is
+            <me>
+                p_A(x)=\left(x-\frac{1}{2}\right)^2-\frac{1}{4}=x^2-x=x(x-1)
+            </me>.
+            Note that the zeros of this polynomial are <m>0</m> and <m>1</m>. These are precisely the eigenvalues of <m>A</m>. This is not a coincidence!
+        </p>
+    </example>
 </section>
