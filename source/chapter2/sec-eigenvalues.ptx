@@ -3,6 +3,116 @@
 <section xml:id="sec-eigenvalues" xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>Eigenvalues and eigenvectors</title>
     <p>
-        
+        Consider the linear map associated to the matrix <m>A=\begin{pmatrix} \frac{1}{2} \amp \frac{1}{2} \\ \frac{1}{2} \amp \frac{1}{2} \end{pmatrix}</m>. You may not realize it immediately, but this linear map is precisely the projection onto the line <m>y=x</m>. As you know, the projection of any vector already on the line will be itself. For example,
+        <me>
+            A\colvec{1 \\ 1} = \colvec{1 \\ 1}
+        </me>.
+        However, if <m>\bv</m> is a vector that is orthogonal to the line, <m>A\bv=\bz</m>. For instance, the vector <m>\colvec{1 \\ -1}</m> is orthogonal to every vector in the line <m>y=x</m>, and so
+        <me>
+            A\colvec{1 \\ -1}=\colvec{0 \\ 0}
+        </me>.
+        These two vectors are examples of <term>eigenvectors</term> of <m>A</m>.
     </p>
+    <definition xml:id="def-eigenvector-eigenvalue">
+        <statement>
+            <p>
+                An <term>eigenvector</term> of a linear map <m>f:\R^n\rightarrow \R^n</m> (or of the associated matrix) is a non-zero vector <m>\bv\in\R^n</m> such that <m>f(\bv)=\lambda\bv</m> for some scalar <m>\lambda\in\R</m>. In this situation, we say that <m>\lambda</m> is the associated <term>eigenvalue</term> (which may be <m>0</m>).
+            </p>
+        </statement>
+    </definition>
+    <example xml:id="example-eigenvalue-projection">
+        <p>
+            In the example above where <m>A=\begin{pmatrix}\frac{1}{2} \amp \frac{1}{2} \\ \frac{1}{2} \amp \frac{1}{2} \end{pmatrix}</m>, the vector <m>\colvec{1 \\ 1}</m> is an eigenvector associated to the eigenvalue <m>1</m>, while the vector <m>\colvec{1 \\ -1}</m> is an eigenvector associated to the eigenvalue <m>0</m>. So <m>1</m> and <m>0</m> are eigenvalues of <m>A</m>. They turn out to be all the eigenvalues of <m>A</m>. (We will soon see how this can be shown.) What other eigenvectors are there associated to <m>0</m>? To answer this question we must solve the system
+            <me>
+                A\colvec{x \\ y} = \colvec{0 \\ 0}
+            </me>.
+            It can be easily see that the solutions to this system are all the vectors of the form <m>\colvec{x \\ -x}</m>. This means that the eigenvectors associated to <m>0</m> are precisely the non-zero vectors of the form <m>\colvec{x \\ -x}</m>. This is precisely the orthogonal space to the line <m>y=x</m>.
+        </p>
+        <p>
+            Let's now try to find all the vectors associated to the eigenvalue <m>1</m>. This boils down to solving the system
+            <me>
+                A\colvec{x \\ y}=\colvec{x \\ y}
+            </me>,
+            or, equivalently, the system
+            <me>
+                (A-\Id_2)\colvec{x \\ y}=\colvec{0 \\ 0}
+            </me>.
+            It can be easily see that all the solutions to this system are the vectors of the form <m>\colvec{x \\ x}</m>, i.e. all the vectors in the line <m>y=x</m>. The eigenvectors associated to the eigenvalue <m>1</m> are then the non-zero vectors in the line <m>y=x</m>.
+        </p>
+    </example>
+    <example xml:id="example-eigenvalue-three">
+        <p>
+            Consider the matrix <m>A=\begin{pmatrix} 2 \amp 0 \amp 0 \\ 0 \amp 2 \amp 0 \\ 0 \amp 0 \amp 3\end{pmatrix}</m>. The eigenvalues of <m>A</m> are <m>2</m> and <m>3</m> (take this for granted for now). Let's try to describe all eigenvectors associated to the eigenvalue <m>2</m>. This means that we want to solve the system
+            <me>
+                A\colvec{x \\ y \\ z}=2\colvec{x \\ y \\ z}
+            </me>,
+            which is equivalent to the system
+            <me>
+                (A-2\Id_2)\colvec{x \\ y \\ z}= \colvec{0 \\ 0 \\ 0}
+            </me>.
+            Now, <m>A-2\Id_3=\begin{pmatrix} 0 \amp 0 \amp 0 \\ 0 \amp 0 \amp 0 \\ 0 \amp 0\amp 1\end{pmatrix}</m>. The solutions to
+            <me>
+                \begin{pmatrix} 0 \amp 0 \amp 0 \\ 0 \amp 0 \amp 0 \\ 0 \amp 0\amp 1\end{pmatrix}\colvec{x \\ y \\ z}=\colvec{0 \\ 0 \\ 0}
+            </me>
+            are all the vectors of the form <m>\colvec{x \\ y \\ 0}</m>. So, the eigenvectors associated to <m>2</m> are all the non-zero vectors in <m>\colvec{x \\ y \\0}</m>.
+        </p>
+        <p>
+            Similarly, we may calculate the eigenvectors associated to the eigenvalue <m>3</m>. These are the non-zero solutions to 
+            <me>
+                (A-3\Id_3)\colvec{x \\ y \\ z} = \colvec{0 \\ 0 \\ 0}
+            </me>.
+            The solutions to this system are the vectors of the form <m>\colvec{0 \\ 0 \\ z}</m>.
+        </p>
+    </example>
+    <p>
+        If <m>A</m> is an <m>n\times n</m> matrix, and if <m>\lambda</m> is an eigenvalue of <m>A</m>, then the eigenvectors associated to <m>\lambda</m> are the non-zero vectors in <m>\R^n</m> that satisfy
+        <me>
+            A\bv=\lambda\bv
+        </me>.
+        These are also the vectors that satisfy
+        <me>
+            (A-\lambda\Id_n)\bv=\bz
+        </me>.
+        So, the eigenvectors of <m>A</m> associated to <m>\lambda</m> are precisely the non-zero vectors in the kernel of <m>A-\lambda\Id_n</m>.
+    </p>
+    <definition xml:id="def-eigenspace">
+        <statement>
+            <p>
+                If <m>f:\R^n\rightarrow\R^n</m> is a linear map, and if <m>\lambda</m> is an eigenvalue of <m>f</m>, then the <term>eigenspace</term> associated to the eigenvalue <m>\lambda</m> is the kernel of <m>f-\lambda\Id_n</m>.
+            </p>
+            <p>
+                We can write this in terms of matrices. If <m>A</m> is an <m>n\times n</m> matrix, then the <term>eigenspace</term> associated to the eigenvalue <m>\lambda</m> is the kernel of <m>A-\lambda\Id_n</m>.
+            </p>
+        </statement>
+    </definition>
+    <example>
+        <p>
+            In example <xref ref="example-eigenvalue-projection"/>, we see that the eigenspace associated to <m>1</m> is the kernel of
+            <me>
+                \begin{pmatrix} \frac{1}{2} \amp \frac{1}{2} \\ \frac{1}{2} \amp \frac{1}{2}\end{pmatrix}-\begin{pmatrix} 1 \amp 0 \\ 0 \amp 1\end{pmatrix}=\begin{pmatrix} -\frac{1}{2} \amp \frac{1}{2} \\ \frac{1}{2} \amp -\frac{1}{2}\end{pmatrix}
+            </me>.
+            We already found that this is precisely the linear subspace generated by <m>\colvec{1 \\ 1}</m>. In particular, it has dimension <m>1</m>.
+        </p>
+        <p>
+            Similarly, the eigenspace associated to <m>0</m>, is generated by <m>\colvec{1 \\ -1}</m> and also has dimension <m>1</m>.
+        </p>
+    </example>
+    <example>
+        <p>
+            In <xref ref="example-eigenvalue-three"/>, the eigenspace associated to <m>2</m> has dimension <m>2</m>, while the eigenspace associated to <m>3</m> has dimension <m>1</m>.
+        </p>
+    </example>
+    <p>
+        At the moment, given a square matrix <m>A</m> and an eigenvalue <m>\lambda</m> of <m>A</m>, we know how to determine the eigenspace associated to <m>\lambda</m>. However, we still do not know how to find the eigenvalues of <m>A</m> in the first place. To be able to do this, we will need to speak about the <term>characteristic polynomial</term> of a square matrix <m>A</m>.
+    </p>
+    <definition xml:id="def-char-poly">
+        <statement>
+            <p>
+                Let <m>A</m> be an <m>n\times n</m> matrix. The <term>characteristic polynomial</term> of <m>A</m> is the polynomial
+                <me>
+                    p_A(x)=\det(A-x\Id_n)
+                </me>.
+            </p>
+        </statement>
+    </definition>
 </section>
