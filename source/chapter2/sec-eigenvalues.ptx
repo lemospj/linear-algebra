@@ -200,5 +200,63 @@
             We need to find the kernels of <m>A</m> and of <m>A-\Id_3</m>. Both of these can be quickly calculated. The kernel of <m>A</m> is the subspace of <m>\R^3</m> spanned by <m>\colvec{1 \\ 1\\ 0}</m>, which is precisely <m>V^{\perp}</m>, while the kernel of <m>A-\Id_3</m> is precisely <m>V</m>.
         </p>
     </example>
+    <exercises>
+        <exercise>
+            <statement>
+                <p>
+                    Calculate the characteristic polynomial of each of the following matrices. Use it to determine the eigenvalues and the eigenspaces (i.e. find a basis for each eigenspace).
+                    <ol marker="(a)">
+                        <li>
+                            <p>
+                                <m>\begin{pmatrix} 2\amp 3 \\ 0 \amp 2\end{pmatrix}</m>
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                <m>\begin{pmatrix}-1 \amp -4 \\ 2 \amp 5\end{pmatrix}</m>
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                <m>\begin{pmatrix}-2\amp -2 \\ 10 \amp 4\end{pmatrix}</m>
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                <m>\begin{pmatrix} 3 \amp -2 \\ 2 \amp -1 \end{pmatrix}</m>
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                <m>\begin{pmatrix} 1 \amp 3 \amp 1 \\ 0 \amp 1 \amp 5 \\ 0 \amp 0 \amp 2\end{pmatrix}</m>
+                                
+                            </p>
+                        </li>
+                    </ol>
+                </p>
+            </statement>
+        </exercise>
+        <exercise>
+            <statement>
+                <p>
+                    Show that if <m>A</m> is a <m>2\times 2</m> matrix, then the characteristic polynomial of <m>A</m> is <me>x^2-\Tr(A)x+\det(A)</me>, where <m>\Tr(A)</m> is the trace of <m>A</m> and <m>\det(A)</m> its determinant.
+                </p>
+            </statement>
+        </exercise>
+        <exercise>
+            <statement>
+                <p>
+                    Let <m>A</m> be a <m>2\times 2</m> matrix, and denote its characteristic polynomial by <m>p_A(x)</m>. Show that <m>p_A(A)</m> is always the zero matrix. (This result holds for square matrices of any size. This is called the <em>Cayley-Hamilton theorem</em>.)
+                </p>
+            </statement>
+        </exercise>
+        <exercise>
+            <statement>
+                <p>
+                    &#9733; An <term>upper triangular matrix</term> is a square matrix whose entries below the main diagonal are all zero. Show that if <m>A</m> is an upper triangular matrix, then its eigenvalues are precisely the entries in the main diagonal.
+                </p>
+            </statement>
+        </exercise>
+    </exercises>
     
 </section>
