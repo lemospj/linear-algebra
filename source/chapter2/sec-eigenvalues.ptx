@@ -137,4 +137,68 @@
             Note that the zeros of this polynomial are <m>0</m> and <m>1</m>. These are precisely the eigenvalues of <m>A</m>. This is not a coincidence!
         </p>
     </example>
+    <example>
+        <p>
+            Let's now consider the matrix <m>A=\begin{pmatrix} 2 \amp 0 \amp 0 \\ 0 \amp 2 \amp 0 \\ 0 \amp 0 \amp 3\end{pmatrix}</m> from <xref ref="example-eigenvalue-three"/>. We have
+            <me>
+                x\Id_3-A=\begin{pmatrix}x-2 \amp 0 \amp 0 \\ 0 \amp x-2 \amp 0 \\ 0 \amp 0 \amp x-3\end{pmatrix}
+            </me>,
+            and so the characteristic polynomial of <m>A</m> is <m>(x-2)^2(x-3)</m>.
+        </p>
+    </example>
+    <p>
+        In the next section, we will show the important result that the eigenvalues of a linear map <m>f:\R^n\rightarrow\R^n</m> are precisely the zeros of its characteristic polynomial. For now, let's simply apply this fact.
+    </p>
+    <example>
+        <p>
+            Consider the matrix <m>A=\begin{pmatrix} \frac{\sqrt{3}}{2} \amp -\frac{1}{2} \\ \frac{1}{2} \amp \frac{\sqrt{3}}{2}\end{pmatrix}</m>. This is the matrix that corresponds to a rotation of <m>\R^2</m> by an angle of <m>\pi/6</m> radians around the origin. As such, we should expect that there are no eigenvectors, and so no eigenvalues. Let's confirm that this is the case using the characteristic polynomial.
+        </p>
+        <p>
+            Since
+            <me>
+                x\Id_2-A=\begin{pmatrix} x-\frac{\sqrt{3}}{2} \amp \frac{1}{2} \\ -\frac{1}{2} \amp x-\frac{\sqrt{3}}{2}\end{pmatrix}
+            </me>,
+            we see that the characteristic polynomial of <m>A</m> is given by
+            <me>
+                p_A(x) = \left(x-\frac{\sqrt{3}}{4}\right)^2+\frac{1}{4}=x^2-\sqrt{3}x+1
+            </me>.
+            Since the discriminant of this polynomial is <m>-1</m>, we conclude that it has no real roots. Therefore, <m>A</m> does not have real eigenvalues.
+        </p>
+    </example>
+    <example>
+        <p>
+            Consider the matrix <m>A=\begin{pmatrix} 0 \amp 1 \\ 1 \amp 0\end{pmatrix}</m>. This is the matrix that corresponds to reflection along the line <m>y=x</m> in <m>\R^2</m>. Geometrically, one would guess that there are two eigenvalues. One of them should be <m>1</m> because every vector on the line <m>y=x</m> will be sent to itself. The other should be <m>-1</m> because every vector that is orthogonal to the line <m>y=x</m> should be sent to its opposite. Let's confirm that this is the case.
+        </p>
+        <p>
+            The characteristic polynomial of <m>A</m> is
+            <me>
+                p_A(x)=\det\begin{pmatrix} x \amp -1 \\ -1 \amp x \end{pmatrix} = x^2-1-(x-1)(x+1)
+            </me>.
+            So, indeed, the two roots of <m>p_A</m> are <m>1</m> and <m>-1</m>. 
+        </p>
+        <p>
+            Now that we have the eigenvalues, we may try to find the corresponding eigenvectors. The eigenspace corresponding to <m>1</m> is the kernel of <m>A-\Id_2=\begin{pmatrix}-1 \amp 1 \\ 1 \amp -1\end{pmatrix}</m>. We can quickly solve the associated linear system to conclude that the eigenspace associated to <m>1</m> is precisely the set of vectors of the form <m>\colvec{s \\ s}</m> for some real number <m>s</m>. In other words, it is precisely the line <m>y=x</m> along which we are performing our reflection.
+        </p>
+        <p>
+            The eigenspace associated to <m>-1</m> is the kernel of <m>A+\Id_2=\begin{pmatrix} 1\amp 1 \\ 1 \amp 1\end{pmatrix}</m>. Solving the system, we conclude that it is the linear subspace consisting of the vectors of the form <m>\colvec{s \\ -s}</m> for some <m>s\in\R</m>. In other words, it is precisely the line <m>y=-x</m> which is orthogonal to <m>y=x</m> and passes through the origin.
+        </p>
+    </example>
+    <example>
+        <p>
+            Let's now consider the matrix <m>A=\begin{pmatrix}\frac{1}{2} \amp -\frac{1}{2} \amp 0 \\ -\frac{1}{2} \amp \frac{1}{2} \amp 0 \\ 0 \amp 0 \amp 1\end{pmatrix}</m>. You can check that this is the matrix corresponding to the projection of <m>\R^3</m> onto the linear subspace given by <m>x+y=0</m>. Once again, we can guess that we should have two eigenvalues: <m>0</m> and <m>1</m>. The eigenspace corresponding to <m>0</m> should be the orthogonal complement to <m>V</m>, while <m>V</m> should be the eigenspace corresponding to <m>1</m>. Let's confirm that all of this holds.
+        </p>
+        <p>
+            The characteristic polynomial is
+            <md>
+                <mrow> p_A(x)\amp =\det\begin{pmatrix} x-\frac{1}{2} \amp \frac{1}{2} \amp 0 \\ \frac{1}{2} \amp x-\frac{1}{2} \amp 0 \\ 0 \amp 0 \amp x-1\end{pmatrix}  </mrow>
+                <mrow> \amp = \left(x-\frac{1}{2}\right)^2(x-1)-\frac{1}{4}(x-1)</mrow>
+                <mrow> \amp =x(x-1)^2</mrow>
+            </md>.
+            The zeros of this polynomial are <m>0</m> and <m>1</m>, so these are the eigenvalues of <m>A</m>. Let's calculate the corresponding eigenspaces.
+        </p>
+        <p>
+            We need to find the kernels of <m>A</m> and of <m>A-\Id_3</m>. Both of these can be quickly calculated. The kernel of <m>A</m> is the subspace of <m>\R^3</m> spanned by <m>\colvec{1 \\ 1\\ 0}</m>, which is precisely <m>V^{\perp}</m>, while the kernel of <m>A-\Id_3</m> is precisely <m>V</m>.
+        </p>
+    </example>
+    
 </section>
