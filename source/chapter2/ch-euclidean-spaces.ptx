@@ -17,6 +17,7 @@
   <xi:include href="sec-orthogonality.ptx" />
   <xi:include href="sec-least-squares.ptx" />
   <xi:include href="sec-eigenvalues.ptx" />
+  <xi:include href="sec-linear-maps.ptx" />
 
 
 

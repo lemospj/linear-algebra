@@ -1,8 +1,121 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <section xml:id="sec-linear-maps" xmlns:xi="http://www.w3.org/2001/XInclude">
-    <title>Linear maps</title>
+    <title>More on linear maps</title>
     <p>
-        In this section we will take a deeper dive into linear maps. We will prove one of the most important results in linear algebra: the rank-nullity theorem. After that, we will discuss some important linear transformations of <m>\R^2</m> and <m>\R^3</m> that will help us motivate the study of eigenvalues and eigenvectors in the next section. The two types o
+        In this section we will take a deeper dive into linear maps. We will prove one of the most important results in linear algebra: the rank-nullity theorem. We will also discuss invertible matrices and learn what the determinant of a square matrix can tell us about the number of solutions to a linear system.
+    </p>
+    <p>
+        We already studied two important linear subspaces associated to a linear map <m>f:\R^n\rightarrow \R^m</m>: its kernel, which is a linear subspace of the domain, and its image, which is a linear subspace of the codomain. We know how to find bases for those and, therefore, how to calculate their dimensions. It turns out that the dimensions of these two linear subspaces are intimately connected.
+    </p>
+    <theorem xml:id="thm-rank-nullity">
+        <title>Rank-Nullity Theorem</title>
+        
+        
+        <statement>
+            <p>
+                Let <m>f:\R^n\rightarrow \R^m</m> be a linear map. Then <me>\dim(\ker(f))+\dim(\Img(f))=n</me>.
+            </p>
+        </statement>
+        <proof>
+            <p>
+                Say that <m>r</m> and is the dimension of the kernel of <m>f</m> and <m>s</m> is the dimension of the image of <m>f</m>. Choose a basis <m>\bv_1,\ldots,\bv_r</m> for the kernel of <m>f</m>. We know that we can complete it to a basis <m>\bv_1,\ldots,\bv_r,\bv_{r+1},\ldots,\bv_n</m> of <m>\R^n</m>. Since this is a basis of <m>\R^n</m>, the image of <m>f</m> is spanned by the vectors <me>f(\bv_1),\ldots,f(\bv_r),f_(bv_{r+1}),\ldots,f(\bv_n)</me>. Since <m>\bv_1,\ldots,\bv_r</m> are in the kernel of <m>f</m>, we conclude that <m>f(\bv_i)=\bz</m> if <m>0\leq i\leq r</m>. It follows that <m>\Img(f)</m> is spanned by <m>f(\bv_{r+1}),\ldots,f(\bv_n)</m>. We will now show that the vectors <m>f(\bv_{r+1}),\ldots,f(\bv_n)</m> form a linearly independent set, and so are a basis of <m>\Img(f)</m>.
+            </p>
+            <p>
+                Let <m>\lambda_{r+1},\ldots,\lambda_n\in\R</m> be scalars such that
+                <me>
+                    \lambda_{r+1}f(\bv_{r+1})+\ldots+\lambda_nf(\bv_n)=\bz
+                </me>.
+                Using the linearity of <m>f</m> we see that this is equivalent to saying that 
+                <me>
+                    f(\lambda_{r+1}\bv_{r+1}+\ldots+\lambda_n\bv_n)=\bz
+                </me>,
+                or, in other words, that <m>\lambda_{r+1}\bv_{r+1}+\ldots+\lambda_n\bv_n</m> is an element of the kernel of <m>f</m>. Since the kernel is spanned by <m>\bv_1,\ldots,\bv_r</m>, this means that there are coefficients <m>\mu_1,\ldots,\mu_r</m> such that
+                <me>
+                    \mu_1\bv_1+\ldots+\mu_r\bv_r=\lambda_{r+1}\bv_{r+1}+\ldots+\lambda_n\bv_n
+                </me>.
+                Put differently but equivalently,
+                <me>
+                    \mu_1\bv_1+\ldots+\mu_r\bv_r-\lambda_{r+1}\bv_{r+1}-\ldots-\lambda_n\bv_n=\bz
+                </me>.
+                However, the vectors <m>\bv_1,\ldots,\bv_r,\bv_{r+1},\ldots,\bv_n</m> are linearly independent because they form a basis of <m>\R^n</m>. This means that 
+                <me>
+                    \mu_1=\ldots=\mu_r=\lambda_{r+1}=\ldots=\lambda_n=0
+                </me>.
+                In particular, we conclude that <m>f(\bv_{r+1}),\ldots,f(\bv_n)</m> is a set of linearly independent vectors in <m>\R^m</m>. Since they span <m>\Img(f)</m>, they are a basis for <m>\Img(f)</m>. Therefore, <m>\dim(\Img(f))=n-r=n-\dim(\ker(f))</m>, as we wanted to show.
+            </p>
+        </proof>
+    </theorem>
+    <remark>
+        <p>
+            The dimension of the kernel of a linear map is called the <term>nullity</term> of the linear map, while the dimension of the image is called the <term>rank</term> of the linear map, hence the name of the theorem.
+        </p>
+    </remark>
+    <p>
+        Sometimes the rank of a linear map is called the <term>column rank</term>. This is because if <m>A</m> is the <m>m\times n</m> matrix corresponding to the linear map in question, then the rank is precisely the dimension of the linear subspace of <m>\R^m</m> spanned by the columns of <m>A</m>. The <term>row rank</term> of <m>A</m> refers to the linear subspace of <m>\R^n</m> spanned by the rows of <m>A</m>. These are two different linear subspaces (one lives in the domain and the other in the codomain), but they turn out to have the same dimension, i.e. the row rank equals the column rank. 
+    </p>
+    <corollary xml:id="cor-row-rank-column-rank">
+        <statement>
+            <p>
+                Let <m>A</m> be an <m>m\times n</m> matrix. Then the row rank of <m>A</m> equals its column rank.
+            </p>
+        </statement>
+        <proof>
+            <p>
+                This is a consequence of the rank-nullity theorem and of a fact that we discussed before. First, by the rank-nullity theorem, we know that
+                <me>
+                    \dim(\Img(A))=n-\dim(\ker(A))
+                </me>.
+                In other words, the column rank of <m>A</m> equals <m>n-dim(\ker(A))</m>. We have seen that <m>\ker(A)=\Img(A^T)^{\perp}</m>. Since <m>\R^n=\Img(A^T)\oplus\Img(A^T)^{\perp}</m>, we conclude that <me>\dim(\Img(A^T))=n-\dim(\Img(A^T)^{\perp})=n-\dim(\ker(A))</me>. But <m>\dim(\Img(A^T))</m> is precisely the row rank of <m>A</m>.
+            </p>
+        </proof>
+    </corollary>
+    <p>
+        One important consequence of this result is that we can choose to use column of row operations to calculate the dimension of the image of a linear map.
+    </p>
+    <example>
+        <p>
+            Consider the linear map given by the matrix <m>\begin{pmatrix} 1 \amp -6 \amp 8 \\ 1 \amp -43 \amp 3\end{pmatrix}</m>. Let's calculate the rank of <m>A</m>. Since the row rank equals the column rank, we may as well calculate the row rank. In order to do that, we use elementary row operations until the row rank is clear.
+            <me>
+                \begin{pmatrix} 1 \amp -6 \amp 8 \\ 1 \amp -43 \amp 3\end{pmatrix}\xrightarrow{R_2\to R_2-R_1}\begin{pmatrix} 1 \amp -6 \amp 8 \\ 0 \amp -37 \amp -5\end{pmatrix}
+            </me>,
+            and it is clear from the last matrix that the row rank is <m>2</m>. Therefore, the rank of <m>A</m> is <m>2</m> as well. 
+        </p>
+        <p>
+            Note that the matrix <m>A</m> corresponds to a linear map with domain <m>\R^3</m>. Using the rank-nullity theorem, we can also conclude that the dimension of the kernel is <m>3-2=1</m>.
+        </p>
+    </example>
+    <p>
+        Let's now look at a linear map <m>f:\R^n\rightarrow \R^n</m>, i.e. one whose domain and codomain match. If the kernel of <m>f</m> happens to be <m>0</m>-dimensional (which means that it consists of the zero vector alone), then the image of <m>f</m> must be <m>n</m>-dimensional. But the only <m>n</m>-dimensional linear subspace of <m>\R^n</m> is <m>\R^n</m> itself. What this means is that the image of <m>f</m> is <m>\R^n</m>.
+    </p>
+    <definition xml:id="def-invertible">
+        <statement>
+            <p>
+                A linear map <m>f:\R^n\rightarrow \R^n</m> whose kernel consists only of the zero vector (or equivalently, whose image is <m>\R^n</m>) is called <term>invertible</term>.
+            </p>
+        </statement>
+    </definition>
+    <p>
+        If <m>A</m> is an invertible matrix, then the linear system <m>A\bx=\bb</m> always has a solution (because every vector <m>\bb</m> is in the image) and there is exactly one solution to the system (essentially because the kernel consists of the zero vector). Therefore, each vector in <m>\R^n</m> is the image of exactly one vector under the matrix <m>A</m>. We may then consider the <term>inverse</term> function.
+    </p>
+    <definition xml:id="def-inverse-function">
+        <statement>
+            <p>
+                Let <m>f:\R^n\rightarrow \R^n</m> be an invertible linear map. The <term>inverse</term> of <m>f</m>, which we denote by <m>f^{-1}</m>, is the only function <m>f^{-1}:\R^n\rightarrow \R^n</m> that satisfies <m>f\circ f^{-1}=f^{-1}\circ f=\Id_n</m>.
+            </p>
+        </statement>
+    </definition>
+    <proposition xml:id="prop-inverse-is-linear">
+        <statement>
+            <p>
+                If <m>f</m> is an invertible linear map, then its inverse is a linear map as well.
+            </p>
+        </statement>
+    </proposition>
+    <p>
+        It follows that there is a matrix that corresponds to <m>f^{-1}</m>. If <m>A</m> is the matrix associated with <m>f</m>, then we denote by <m>A^{-1}</m> the one associated with <m>f^{-1}</m>. From the definition of inverse, and the fact that matrix multiplication corresponds to composition of linear maps, it follows that
+        <me>
+            AA^{-1}=A^{-1}A=\Id_n
+        </me>.
     </p>
 </section>
