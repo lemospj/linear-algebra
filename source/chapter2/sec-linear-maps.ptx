@@ -204,7 +204,7 @@
             </p>
         </proof>
     </proposition>
-    <example>
+    <example xml:id="example-inv-3-by-3">
         <p>
             Consider the matrix <m>A=\begin{pmatrix} 1 \amp 2 \amp -1 \\ 1 \amp 3 \amp 2 \\ 0 \amp 1 \amp 0\end{pmatrix}</m>. The determinant of <m>A</m> is <m>-3</m>. Therefore, <m>A</m> is invertible. Let's find its inverse.
             <md>
@@ -285,4 +285,35 @@
             </me>.
         </p>
     </example>
+    <example>
+        <p>
+            If <m>A=\begin{pmatrix}1 \amp 2 \amp -1 \\ 1 \amp 3 \amp 2 \\ 0 \amp 1 \amp 0\end{pmatrix}</m>, we saw in <xref ref="example-inv-3-by-3"/> that its inverse is given by
+            <me>
+                A^{-1}=\begin{pmatrix}16/3 \amp -13/3 \amp 7/3 \\ -2 \amp 2 \amp -1\\ 1/3 \amp -1/3 \amp 1/3\end{pmatrix}
+            </me>.
+            Therefore, if we wish to solve the linear system <m>A\colvec{x \\ y \\ z}=\colvec{-1 \\ 1 \\ 1}</m>, all we need to do is left-multiply the vector <m>\colvec{- 1\\ 1 \\ 1}</m> by the matrix <m>A^{-1}</m>:
+            <me>
+                \colvec{x \\ y \\ z} = \begin{pmatrix}16/3 \amp -13/3 \amp 7/3 \\ -2 \amp 2 \amp -1\\ 1/3 \amp -1/3 \amp 1/3\end{pmatrix}\colvec{-1 \\ 1 \\ 1}=\colvec{-16/3 \\ 11/3 \\ -1/3}
+            </me>.
+        </p>
+    </example>
+    <p>
+        The last thing I would like to touch on in this chapter is the relationship between eigenvalues and the characteristic polynomial that I referred to in the previous section.
+    </p>
+    <theorem xml:id="thm-eigenvalues-char-poly">
+        <statement>
+            <p>
+                Let <m>A</m> be a square matrix, and let <m>p_A(x)</m> be its characteristic polynomial. Then <m>\lambda\in\R</m> is an eigenvalue of <m>A</m> if and only if <m>p_A(\lambda)=0</m>.
+            </p>
+        </statement>
+        <proof>
+            <p>
+                Recall that the characteristic polynomial of an <m>n\times n</m> matrix <m>A</m> is defined as <m>p_A(x)=\det(x\Id_n-A)</m>. So, if <m>p_A(\lambda)=0</m>, this means that <m>\det(\lambda\Id_n-A)=0</m>. Using <xref ref="prop-determinant-invertible"/>, we conclude that the matrix <m>\lambda\Id_n-A</m> is not invertible. This means that its kernel contains non-zero vectors. So, if <m>\bv</m> is a non-zero vector of the kernel of <m>\lambda\Id_n-A</m>, we find <m>(\lambda\Id_n-A)\bv=\bz</m>. Equivalently, <m>A\bv=\lambda\bv</m>. This implies that <m>\lambda</m> is an eigenvalue of <m>A</m>.
+            </p>
+            <p>
+                Conversely, let's suppose that <m>\lambda</m> is an eigenvalue of <m>A</m>. This means that there is a non-zero vector <m>\bv\in\R^n</m> such that <m>A\bv=\lambda\bv</m>. This is equivalent to saying that there is a non-zero vector <m>\bv</m> such that <m>(\lambda\Id_n-A)\bv=0</m>. Therefore, the kernel of <m>\lambda\Id_n-A</m> has dimension at least <m>1</m>. It follows that <m>\lambda\Id_n-A</m> is not invertible, and so, using <xref ref="prop-determinant-invertible"/> again, <m>\det(\lambda\Id_n-A)=0</m>.
+            </p>
+        </proof>
+    </theorem>
+    
 </section>
