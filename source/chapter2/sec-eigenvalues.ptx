@@ -257,6 +257,13 @@
                 </p>
             </statement>
         </exercise>
+        <exercise>
+            <statement>
+                <p>
+                    &#9733; A linear map <m>f:\R^n\rightarrow \R^n</m> such that <m>f(\bv)\cdot \bw=\bv\cdot f(\bw)</m> for every vector <m>\bv, \bw\in\R^n</m> is said to be <term>self-adjoint</term>. Show that any two different eigenspaces of a self-adjoint linear map are orthogonal to each other.
+                </p>
+            </statement>
+        </exercise>
     </exercises>
     
 </section>
