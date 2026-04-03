@@ -91,51 +91,71 @@
     <definition xml:id="def-invertible">
         <statement>
             <p>
-                A linear map <m>f:\R^n\rightarrow \R^n</m> whose kernel consists only of the zero vector (or equivalently, whose image is <m>\R^n</m>) is called <term>invertible</term>.
+                A linear map <m>f:\R^n\rightarrow \R^n</m> for which there exists a linear map <m>g:\R^n\rightarrow \R^n</m> such that <m>f\circ g=g\circ f=\Id_n</m> is called <term>invertible</term>. The linear map <m>g</m> is called the <term>inverse</term> of <m>f</m> and is denoted by <m>f^{-1}</m>.
             </p>
         </statement>
     </definition>
-    <proposition xml:id="prop-linearly-independent-columns">
+    <p>
+        This definition can be made in terms of square matrices, of course. An <m>n\times n</m> matrix <m>A</m> is said to be <term>invertible</term> if there exists an <m>n\times n</m> matrix <m>B</m> such that <m>BA=AB=\Id_n</m>. This matrix <m>B</m> is often denoted by <m>A^{-1}</m>.
+    </p>
+    <proposition xml:id="prop-determinant-invertible">
         <statement>
             <p>
-                A square matrix <m>A</m> is invertible if and only if its columns form a linearly independent set of vectors.
+                Let <m>A</m> be an <m>n\times n</m> matrix. The following statements are equivalent:
+                <ol marker="(a)">
+                    <li>
+                        <p>
+                            <m>A</m> is invertible.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <m>\ker(A)=\{\bz\}</m>
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <m>\Img(A)=\R^n</m>
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            The columns of <m>A</m> are linearly independent.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <m>\det(A)\neq 0</m>
+                        </p>
+                    </li>
+                </ol>
             </p>
         </statement>
         <proof>
             <p>
-                If the columns of <m>A</m> are linearly independent, then it follows immediately that they span the whole of <m>\R^n</m>, which means that the matrix is invertible.
+                The fact that <m>(b)</m> and <m>(c)</m> are equivalent follows from the rank-nullity theorem. Indeed, we know that <m>\dim(\ker(A))+\dim(\Img(A))=n</m>. If <m>\ker(A)=\{\bz\}</m>, then <m>\dim(\ker(A))=0</m>, which means that <m>\dim(\Img(A))=n</m>. Since the codomain of the linear map associated to an <m>n\by n</m> amtrix is <m>\R^n</m>, this means that the image must be the whole of <m>\R^n</m>. Conversely, if <m>\Img(A)=\R^n</m>, then <m>\dim(\Img(A))=n</m>, which means that <m>\dim(\ker(A))=0</m>, and so <m>\ker(A)=\{\bz\}</m>.
             </p>
             <p>
-                Assume now that <m>A</m> is invertible. We want to show that the columns of <m>A</m> form a linearly independent set of vectors. Being invertible means that the kernel consists of the zero vector. Therefore, the only solution to 
-                <me>
-                    A\colvec{x_1 \\ x_2 \\ \vdots \\ x_n}=x_1\colvec{a_{11}\\a_{21}\\ \vdots \\ a_{n1}} + x_2\colvec{a_{12} \\ a_{22} \\ \vdots \\ a_{n2}} + \ldots + x_n\colvec{a_{1n} \\ a_{2n} \\ \vdots \\ a_{nn}}=\bz
-                </me>
-                is <m>x_1=x_2=\ldots=x_n=0</m>. but this means precisely that the columns of <m>A</m> form a linearly independent set of vectors.
+                If <m>A</m> is invertible, then it is easy to see that <m>\ker(A)=\{\bz\}</m>. If <m>\bv\in\R^n</m> is such that <m>A\bv=\bz</m>, then we may multiply both sides on the left by the inverse <m>A^{-1}</m> of <m>A</m> to get <m>A^{-1}A\bv=A^{-1}\bz</m>. Since <m>A^{-1}A=\Id_n</m>, we conclude that <m>\bv=\bz</m>.
+            </p>
+            <p>
+                To prove that statement (b) implies statement (a), one needs to observe that since (b) and (c) are equivalent, statement (b) implies that the linear map associated to <m>A</m> is bijective. We can then use <xref ref="exercise-inverse-linear"/> to show that the inverse of a bijective linear map is a linear map too. This shows that <m>A</m> is invertible (as a linear map).
+            </p>
+            <p>
+                Statements (c) and (d) are easily seen to be equivalent because <m>\Img(A)</m> is precisely the linear subspace of <m>\R^n</m> spanned by the columns of <m>A</m>. So, at this point, we know that statements (a), (b), (c) and (d) are equivalent to each other.
+            </p>
+            <p>
+                Let's show that (a) implies (e). If <m>A</m> is invertible, then it has an inverse <m>A^{-1}</m>, and <m>A^{-1}A=\Id_n</m>. Therefore, <m>\det(A^{-1})\det(A)=\det(\Id_n)=1</m>. In particular, <m>\det(A)\neq 0</m>.
+            </p>
+            <p>
+                Finally, all we need to do is to show that statement (e) implies one of the other statements. Exercise (add reference) is precisely the statement that (e) implies (d).
             </p>
         </proof>
     </proposition>
     <p>
         If <m>A</m> is an invertible matrix, then the linear system <m>A\bx=\bb</m> always has a solution (because every vector <m>\bb</m> is in the image) and there is exactly one solution to the system (essentially because the kernel consists of the zero vector). Therefore, each vector in <m>\R^n</m> is the image of exactly one vector under the matrix <m>A</m>. We may then consider the <term>inverse</term> function.
     </p>
-    <definition xml:id="def-inverse-function">
-        <statement>
-            <p>
-                Let <m>f:\R^n\rightarrow \R^n</m> be an invertible linear map. The <term>inverse</term> of <m>f</m>, which we denote by <m>f^{-1}</m>, is the only function <m>f^{-1}:\R^n\rightarrow \R^n</m> that satisfies <m>f\circ f^{-1}=f^{-1}\circ f=\Id_n</m>.
-            </p>
-        </statement>
-    </definition>
-    <proposition xml:id="prop-inverse-is-linear">
-        <statement>
-            <p>
-                If <m>f</m> is an invertible linear map, then its inverse is a linear map as well.
-            </p>
-        </statement>
-    </proposition>
     <p>
-        It follows that there is a matrix that corresponds to <m>f^{-1}</m>. If <m>A</m> is the matrix associated with <m>f</m>, then we denote by <m>A^{-1}</m> the one associated with <m>f^{-1}</m>. From the definition of inverse, and the fact that matrix multiplication corresponds to composition of linear maps, it follows that
-        <me>
-            AA^{-1}=A^{-1}A=\Id_n
-        </me>.
         One important exercise is to check that if <m>A</m> is an invertible matrix, then the inverse is unique.
     </p>
     <example xml:id="example-inv-2-by-2">
@@ -192,18 +212,7 @@
     <p>
         Before our next example, let me introduce another way of checking whether a matrix is invertible.
     </p>
-    <proposition xml:id="prop-determinant-invertible">
-        <statement>
-            <p>
-                A square matrix <m>A</m> is invertible if and only if <m>\det(A)\neq 0</m>.
-            </p>
-        </statement>
-        <proof>
-            <p>
-                We saw in <xref ref="prop-linearly-independent-columns"/> that a square matrix is invertible precisely when its columns form a linearly independent set of vectors. Therefore, all we need to show is that <m>\det(A)\neq 0</m> precisely when the columns of <m>A</m> form a linearly independent set of vectors. This is left as an exercise.
-            </p>
-        </proof>
-    </proposition>
+    
     <example xml:id="example-inv-3-by-3">
         <p>
             Consider the matrix <m>A=\begin{pmatrix} 1 \amp 2 \amp -1 \\ 1 \amp 3 \amp 2 \\ 0 \amp 1 \amp 0\end{pmatrix}</m>. The determinant of <m>A</m> is <m>-3</m>. Therefore, <m>A</m> is invertible. Let's find its inverse.
@@ -315,5 +324,147 @@
             </p>
         </proof>
     </theorem>
-    
+    <exercises>
+        <exercise>
+            <statement>
+                <p>
+                    Use the rank-nullity theorem to decide whether each of the following statements is true or false. Justify your answer.
+                    <ol marker="(a)">
+                        <li>
+                            <p>
+                                If <m>A</m> is a <m>4\times 3</m> matrix, then there exists a vector <m>\bb</m> in <m>\R^4</m> such that the system
+                                <me>
+                                    A\colvec{x \\ y \\ z} = \bb
+                                </me>
+                                has no solution.
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                If <m>f:\R^3\rightarrow \R^2</m> is a linear map, then there are infinitely many vectors <m>\bx\in\R^3</m> that satisfy <m>f(\bx)=\bz</m>.
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                If <m>A</m> is a <m>3\times 3</m> matrix and <m>\bb\in\R^3</m> is a vector in <m>\R^3</m> for which <me>A\colvec{x \\ y \\ z}=\bb</me> has no solutions, then <me>A\colvec{x \\ y \\ z}=\bz</me> has only one solution.
+                            </p>
+                        </li>
+                    </ol>
+                </p>
+            </statement>
+        </exercise>
+        <exercise>
+            <statement>
+                <p>
+                    Which of the following matrices are invertible?
+                    <ol marker="(a)">
+                        <li>
+                            <p>
+                                <m>\begin{pmatrix} 1 \amp 2 \\ -1 \amp -3 \end{pmatrix}</m>
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                <m>\begin{pmatrix} -1 \amp -3 \\ -2 \amp -6\end{pmatrix}</m>
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                <m>\begin{pmatrix} 1 \amp -1 \amp 1 \\ 2 \amp -3 \amp 0 \\ 1 \amp 1 \amp 1 \end{pmatrix}</m>
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                <m>\begin{pmatrix} -2 \amp 1 \amp -1 \\ 0 \amp 5 \amp 5 \\ 3 \amp 6 \amp 9\end{pmatrix}</m>
+                            </p>
+                        </li>
+                    </ol>
+                </p>
+            </statement>
+        </exercise>
+        <exercise>
+            <statement>
+                <p>
+                    The following matrices are invertible. Calculate their inverses.
+                    <ol marker="(a)">
+                        <li>
+                            <p>
+                                <m>\begin{pmatrix} 1\amp -1 \\ -3 \amp 4\end{pmatrix}</m>
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                <m>\begin{pmatrix} 0 \amp 1 \\ 1 \amp 0\end{pmatrix}</m>
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                <m>\begin{pmatrix} 1 \amp 0 \amp -1 \\ 2 \amp 1 \amp 1\\ -2 \amp 1 \amp 1\end{pmatrix}</m>
+                            </p>
+                        </li>
+                    </ol>
+                </p>
+            </statement>
+        </exercise>
+        <exercise>
+            <statement>
+                <p>
+                    Solve each of the systems of linear equations below by calculating the inverse of the relevant matrix.
+                    <ol marker="(a)">
+                        <li>
+                            <p>
+                                <m>\left\{
+                                    \begin{alignedat}{5}
+                                        2x \ampp + \ampp y \amp = \ampp 1\\
+                                        x \ampp - \ampp y \amp = -\ampp 1
+                                    \end{alignedat}\right.
+                                </m>
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                <m>\left\{
+                                    \begin{alignedat}{7}
+                                        x \ampp + \ampp 2y \ampp - \ampp z \amp = \ampp 1\\
+                                        \ampp \ampp 3x \ampp + \ampp z \amp = \ampp 1 \\
+                                        \ampp \ampp 2x \ampp + \ampp z \amp = \ampp 1
+                                    \end{alignedat}\right.</m>
+                            </p>
+                        </li>
+                    </ol>
+                </p>
+            </statement>
+        </exercise>
+        <exercise>
+            <statement>
+                <p>
+                    Show that the inverse of a <m>2\times 2</m> matrix <m>A=\begin{pmatrix} a \amp b \\ c \amp d\end{pmatrix}</m> is
+                    <me>
+                        A^{-1}=\frac{1}{\det(A)}\begin{pmatrix} d \amp -b \\ -c \amp a\end{pmatrix}
+                    </me>.
+                </p>
+            </statement>
+        </exercise>
+        <exercise>
+            <statement>
+                <p>
+                    A linear map <m>f:\R^n\rightarrow \R^n</m> is said to be <term>orthogonal</term> if <m>f(\bv)\cdot f(\bw)=\bv\cdot\bw</m> for all vectors <m>\bv,\bw\in\R^n</m>. Show that every orthogonal linear map is invertible.
+                </p>
+            </statement>
+        </exercise>
+        <exercise>
+            <statement>
+                <p>
+                    Show that if <m>A</m> and <m>B</m> are <m>n\times n</m> matrices satisfying <m>BA=\Id_n</m>, then <m>AB=\Id_n</m>.
+                </p>
+            </statement>
+        </exercise>
+        <exercise>
+            <statement>
+                <p>
+                    Show that if <m>A, B</m> and <m>C</m> are <m>n\times n</m> matrices satisfying <m>BA=CA=\Id_n</m>, then <m>B=C</m>.
+                </p>
+            </statement>
+        </exercise>
+    </exercises>
 </section>
