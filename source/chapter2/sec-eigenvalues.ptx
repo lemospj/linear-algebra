@@ -204,6 +204,44 @@
         <exercise>
             <statement>
                 <p>
+                    The eigenvalues of the matrix <m>A=\begin{pmatrix} 3 \amp -1 \amp 2 \\ 0 \amp -1 \amp 1 \\ 0 \amp 0 \amp 4\end{pmatrix}</m> are <m>3, -1</m> and <m>4</m>.
+                    <ol marker="(a)">
+                        <li>
+                            <p>
+                                For each eigenvalue of <m>A</m>, find the corresponding eigenspace. (I.e. find a basis for each eigenspace.)
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                For each eigenvalue, find an example of an eigenvector with that given eigenvalue.
+                            </p>
+                        </li>
+                    </ol>
+                </p>
+            </statement>
+        </exercise>
+        <exercise>
+            <statement>
+                <p>
+                    The eigenvalues of the matrix <m>A=\begin{pmatrix} -1 \amp 0 \amp 0 \\ 0 \amp 0 \amp 1 \\ 0 \amp 1 \amp 0 \end{pmatrix}</m> are <m>-1</m> and <m>1</m>.
+                    <ol marker="(a)">
+                        <li>
+                            <p>
+                                For each eigenvalue of <m>A</m>, find the corresponding eigenspace. (I.e. find a basis for each eigenspace.)
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                For each eigenvalue, find an example of an eigenvector with that given eigenvalue.
+                            </p>
+                        </li>
+                    </ol>
+                </p>
+            </statement>
+        </exercise>
+        <exercise>
+            <statement>
+                <p>
                     Calculate the characteristic polynomial of each of the following matrices. Use it to determine the eigenvalues and the eigenspaces (i.e. find a basis for each eigenspace).
                     <ol marker="(a)">
                         <li>
