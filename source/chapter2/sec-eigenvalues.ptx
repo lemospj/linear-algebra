@@ -200,6 +200,29 @@
             We need to find the kernels of <m>A</m> and of <m>A-\Id_3</m>. Both of these can be quickly calculated. The kernel of <m>A</m> is the subspace of <m>\R^3</m> spanned by <m>\colvec{1 \\ 1\\ 0}</m>, which is precisely <m>V^{\perp}</m>, while the kernel of <m>A-\Id_3</m> is precisely <m>V</m>.
         </p>
     </example>
+    <p>
+        In some situations, it is possible to find enough eigenvectors of a square matrix <m>A</m> to form a basis of the ambient space. Here's one particular case when this is true.
+    </p>
+    <theorem xml:id="thm-different-eigenvalues-independent">
+        <statement>
+            <p>
+                Let <m>f:\R^n\rightarrow \R^n</m> be a linear map. Let <m>\bv_1,\bv_2,\ldots,\bv_m</m> be a set of eigenvectors of <m>f</m> associated to the eigenvalues <m>\lambda_1,\lambda_2,\ldots,\lambda_m</m>, respectively. If the eigenvalues are all distinct, then the set formed by the eigenvectors <m>\bv_1,\bv_2,\ldots,\bv_m</m> is linearly independent.
+            </p>
+        </statement>
+        <proof>
+            <p>
+                Let <m>a_1,a_2,\ldots,a_m</m> be real numbers such that 
+                <me>
+                    a_1\bv_1+a_2\bv_2+\ldots+a_m\bv_m=\bz
+                </me>.
+                We want to show that <m>a_1=a_2=\ldots=a_m=0</m>. Applying <m>f</m> to both sides of the equation above we get
+                <me>
+                    a_1\lambda_1\bv_1+a_2\lambda_2\bv_2+\ldots+a_m\lambda_m\bv_m=\bz
+                </me>.
+            </p>
+        </proof>
+    </theorem>
+    
     <exercises>
         <exercise>
             <statement>

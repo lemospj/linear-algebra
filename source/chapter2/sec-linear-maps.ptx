@@ -209,9 +209,6 @@
             It can be readily checked that <m>AA^{-1}=A^{-1}A=\Id_2</m>.
         </p>
     </example>
-    <p>
-        Before our next example, let me introduce another way of checking whether a matrix is invertible.
-    </p>
     
     <example xml:id="example-inv-3-by-3">
         <p>
