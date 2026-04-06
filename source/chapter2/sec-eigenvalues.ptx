@@ -238,6 +238,14 @@
             </p>
         </proof>
     </theorem>
+    <p>
+        An immediate consequence of this result is that if a linear map <m>f:\R^n\rightarrow \R^n</m> admits <m>n</m> distinct eigenvalues, then it is possible to find a basis of <m>\R^n</m> consisting of eigenevectors of <m>f</m>.
+    </p>
+    <example>
+        <p>
+            Let's consider the matrix <m>A=\begin{pmatrix} 1/2 \amp 1/2 \\ 1/2 \amp 1/2\end{pmatrix}</m> again. We have seen that the zeros of the characteristic polynomial of <m>A</m> are <m>0</m> and <m>1</m>, and that the eigenspace associated to <m>1</m> is given by <m>y-x=0</m>, while that associated to <m>0</m> is given by <m>y+x=0</m>. We can find a basis of <m>\R^2</m> consisting solely of eigenvectors of <m>A</m> simply by picking one eigenvectors with eigenvalue <m>1</m> and another with eigenvalue <m>0</m>. For instance, the vector <m>\colvec{1 \\ 1}</m> is an eigenvector with eigenvalue <m>1</m>, and the vector <m>\colvec{-1 \\ 1}</m> is an eigenvector with eigenvalue <m>0</m>. It follows from <xref ref="thm-different-eigenvalues-independent"/> (and the fact that <m>\dim(\R^2)=2</m>) that <m>\colvec{1 \\ 1}, \colvec{-1 \\ 1}</m> is a basis of <m>\R^2</m>.
+        </p>
+    </example>
     
     <exercises>
         <exercise>
@@ -338,6 +346,24 @@
             <statement>
                 <p>
                     &#9733; A linear map <m>f:\R^n\rightarrow \R^n</m> such that <m>f(\bv)\cdot \bw=\bv\cdot f(\bw)</m> for every vector <m>\bv, \bw\in\R^n</m> is said to be <term>self-adjoint</term>. Show that any two different eigenspaces of a self-adjoint linear map are orthogonal to each other.
+                </p>
+            </statement>
+        </exercise>
+        <exercise>
+            <statement>
+                <p>
+                    Consider the matrix <m>A=\begin{pmatrix}5 \amp -3 \amp -2 \\ -1 \amp 7 \amp 2\\ 1 \amp 3 \amp 8\end{pmatrix}</m>. Find a basis of <m>\R^3</m> consisting of eigenvectors of <m>A</m>.
+                </p>
+            </statement>
+        </exercise>
+        <exercise>
+            <statement>
+                <p>
+                    &#9733; Let <m>f:\R^n\rightarrow \R^n</m> be a linear map with eigenvalues <m>\lambda_1,\lambda_2,\ldots,\lambda_m</m>. Denote by <m>V_{i}</m> the eigenspace associated to <m>\lambda_i</m>. Show that if
+                    <me>
+                        \dim(V_1)+\dim(V_2)+\ldots+\dim(V_m)=n
+                    </me>,
+                    then there exists a basis of <m>\R^n</m> consisting of eigenvectors of <m>f</m>.
                 </p>
             </statement>
         </exercise>
