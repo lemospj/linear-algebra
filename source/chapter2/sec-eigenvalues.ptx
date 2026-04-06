@@ -211,14 +211,30 @@
         </statement>
         <proof>
             <p>
-                Let <m>a_1,a_2,\ldots,a_m</m> be real numbers such that 
+                If <m>m=1</m>, the result is obvious. Let's assume, for the sake of contradiction, that the set <m>S=\{\bv_1,\bv_2,\ldots, \bv_m\}</m> are linearly dependent. Upon reordering the vectors if needed, we may assume that <m>\bv_1,\bv_2,\ldots,\bv_r</m> is a minimal linearly dependent subset of <m>S</m>. Obviously, <m>r\geq 2</m>. Therefore, there are non-zero scalars <m>a_1,a_2,\ldots a_r</m> such that
                 <me>
-                    a_1\bv_1+a_2\bv_2+\ldots+a_m\bv_m=\bz
+                    a_1\bv_1+a_2\bv_2+\ldots+a_r\bv_r=\bz
                 </me>.
-                We want to show that <m>a_1=a_2=\ldots=a_m=0</m>. Applying <m>f</m> to both sides of the equation above we get
+                Note that <em>all</em> scalars <m>a_1,a_2,\ldots,a_r</m> must be non-zero, because otherwise the set <m>\bv_1,\bv_2,\ldots,\bv_r</m> would not be a minimal linearly dependent subset of <m>S</m>. We may now apply <m>A</m> to both sides of the equation to obtain
                 <me>
-                    a_1\lambda_1\bv_1+a_2\lambda_2\bv_2+\ldots+a_m\lambda_m\bv_m=\bz
+                    \lambda_1a_1\bv_1+\lambda_2a_2\bv_2+\ldots+\lambda_ra_r\bv_r=\bz
                 </me>.
+                If <m>\lambda_1=0</m>, the we get
+                <me>
+                    \lambda_2a_2\bv_2+\ldots+\lambda_ra_r\bv_r=\bz
+                </me>,
+                where none of the coefficients <m>\lambda_ia_i</m> is zero. But then <m>\bv_2,\ldots, \bv_r</m> is a subset of linearly dependent vectors of <m>S</m> of size <m>r-1 &lt; r</m>, which is a contradiction.
+            </p>
+            <p>
+                If, on the other hand, <m>\lambda_1\neq 0</m>, we then have
+                <me>
+                    \lambda_1a_1\bv_1+\lambda_2a_2\bv_2+\ldots+\lambda_ra_r\bv_r-\lambda_1(a_1\bv_1+a_2\bv_2+\ldots+a_r\bv_r)=\bz
+                </me>.
+                But this is equivalent to
+                <me>
+                    (\lambda_2-\lambda_1)a_2\bv_2+\ldots+(\lambda_r-\lambda_1)a_r\bv_r=\bz
+                </me>,
+                which is again a non-trivial linear relation among a set of vectors of size less than <m>r</m> because the eigenvectors <m>\lambda_i</m> are pairwise distinct. This is a contradiction too. We are led to conclude that the set of vectors <m>\bv_1,\ldots,\bv_m</m> is linearly independent.
             </p>
         </proof>
     </theorem>
