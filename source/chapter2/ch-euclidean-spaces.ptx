@@ -18,6 +18,7 @@
   <xi:include href="sec-least-squares.ptx" />
   <xi:include href="sec-eigenvalues.ptx" />
   <xi:include href="sec-linear-maps.ptx" />
+  <xi:include href="sec-change-basis.ptx" />
 
 
 

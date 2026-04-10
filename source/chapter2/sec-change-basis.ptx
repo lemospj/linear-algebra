@@ -3,6 +3,36 @@
 <section xml:id="sec-change-basis" xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>Change of basis</title>
     <p>
-        
+        The objective of this chapter is to learn how to do linear algebra calculations over different basis. The first question we will be interested in is that of writing a given vector as a linear combination of the vectors in a give basis. We already know how to do this because this is essentially the problem of solving a system of linear equations, but we can streamline the process using inverse matrices.
+    </p>
+    <p>
+        Say that we have a basis <m>B=(\bv_1,\bv_2,\ldots,\bv_n)</m> of <m>\R^n</m> and a vector <m>\bw</m>, also in <m>\R^n</m>. Our goal is to write <m>\bw</m> as a linear combination of the vectors <m>\bv_1,\bv_2,\ldots,\bv_n</m>. In other words, we want to find scalars <m>x_1,x_2,\ldots, x_n</m> such that 
+        <me>
+            \bw=x_1\bv_1+x_2\bv_2+\ldots+x_n\bv_n
+        </me>.
+        If <m>P</m> is the matrix whose columns are the vectors <m>\bv_1,\bv_2,\ldots,\bv_n</m>, then this is equivalent to solving the system
+        <me>
+            \bw=P\colvec{x_1 \\ x_2 \\ \ldots \\ x_n}
+        </me>.
+        The matrix <m>P</m> is called the <term>transition matrix</term> from the standard unit basis to the basis <m>B</m>. Since the columns are linearly independent vectors in <m>\R^n</m>, this matrix is invertible, and so
+        <me>
+            \colvec{x_1 \\ x_2 \\ \ldots \\ x_n}=P^{-1}\bw
+        </me>.
+    </p>
+    <example>
+        <p>
+            Consider the basis <m>\colvec{1 \\ 2}, \colvec{3 \\ -1}</m> of <m>\R^2</m>. Call it <m>B</m>. The transition matrix is <m>P=\begin{pmatrix}1 \amp 3 \\ 2 \amp -1\end{pmatrix}</m>. Its inverse is
+            <me>
+                P^{-1}=\frac{1}{7}\begin{pmatrix} 1 \amp 3 \\ 2 \amp -1\end{pmatrix}
+            </me>.
+            Therefore, the vector <m>\bw=\colvec{-1 \\ 2}</m> in the basis <m>B</m> is
+            <me>
+                [\bw]_B = P^{-1}\colvec{-1 \\ 2} = \colvec{5/7 \\ -4/7}
+            </me>.
+            Recall that what this means is that <m>\bw = \frac{5}{7}\colvec{1 \\ 2} -\frac{4}{7}\colvec{3 \\ -1}</m>. If you work the right-hand side out, you can indeed verify that this is true.
+        </p>
+    </example>
+    <p>
+        The method of finding 
     </p>
 </section>
