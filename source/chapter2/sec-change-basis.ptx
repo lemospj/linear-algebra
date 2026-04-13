@@ -3,20 +3,24 @@
 <section xml:id="sec-change-basis" xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>Change of basis</title>
     <p>
-        The objective of this chapter is to learn how to do linear algebra calculations over different basis. The first question we will be interested in is that of writing a given vector as a linear combination of the vectors in a give basis. We already know how to do this because this is essentially the problem of solving a system of linear equations, but we can streamline the process using inverse matrices.
+        The objective of this chapter is to learn how to do linear algebra calculations over different bases. The first question we will be interested in is that of writing a given vector as a linear combination of the vectors in a given basis. We already know how to do this because this is essentially the problem of solving a system of linear equations, but we can streamline the process using inverse matrices.
     </p>
     <p>
-        Say that we have a basis <m>B=(\bv_1,\bv_2,\ldots,\bv_n)</m> of <m>\R^n</m> and a vector <m>\bw</m>, also in <m>\R^n</m>. Our goal is to write <m>\bw</m> as a linear combination of the vectors <m>\bv_1,\bv_2,\ldots,\bv_n</m>. In other words, we want to find scalars <m>x_1,x_2,\ldots, x_n</m> such that 
+        Say that we have a basis <m>B=(\bv_1,\bv_2,\ldots,\bv_n)</m> of <m>\R^n</m> (the order of the vectors in the basis is important!) and a vector <m>\bw</m>, also in <m>\R^n</m>. Our goal is to write <m>\bw</m> as a linear combination of the vectors <m>\bv_1,\bv_2,\ldots,\bv_n</m>. In other words, we want to find scalars <m>x_1,x_2,\ldots, x_n</m> such that 
         <me>
             \bw=x_1\bv_1+x_2\bv_2+\ldots+x_n\bv_n
         </me>.
         If <m>P</m> is the matrix whose columns are the vectors <m>\bv_1,\bv_2,\ldots,\bv_n</m>, then this is equivalent to solving the system
         <me>
-            \bw=P\colvec{x_1 \\ x_2 \\ \ldots \\ x_n}
+            \bw=P\colvec{x_1 \\ x_2 \\ \vdots \\ x_n}
         </me>.
         The matrix <m>P</m> is called the <term>transition matrix</term> from the standard unit basis to the basis <m>B</m>. Since the columns are linearly independent vectors in <m>\R^n</m>, this matrix is invertible, and so
         <me>
-            \colvec{x_1 \\ x_2 \\ \ldots \\ x_n}=P^{-1}\bw
+            \colvec{x_1 \\ x_2 \\ \vdots \\ x_n}=P^{-1}\bw
+        </me>.
+        The coefficients <m>x_1,\ldots, x_n</m> above are called the coordinates of the vector <m>\bw</m> in the basis <m>B</m>. Because a single vector will have different coordinates depending on which basis we are working, it will be useful to use some sort of notation to keep remind us of the basis. We will write <m>[\bw]_B</m> for the representation of <m>\bw</m> in the basis <m>B</m>, i.e.
+        <me>
+            [\bw]_B=\colvec{x_1 \\ x_2 \\ \vdots \\ x_n}
         </me>.
     </p>
     <example>
@@ -25,14 +29,111 @@
             <me>
                 P^{-1}=\frac{1}{7}\begin{pmatrix} 1 \amp 3 \\ 2 \amp -1\end{pmatrix}
             </me>.
-            Therefore, the vector <m>\bw=\colvec{-1 \\ 2}</m> in the basis <m>B</m> is
+            Therefore, the vector <m>\bw=\colvec{-1 \\ 2}</m> in the basis <m>B</m> has coordinates
             <me>
                 [\bw]_B = P^{-1}\colvec{-1 \\ 2} = \colvec{5/7 \\ -4/7}
             </me>.
             Recall that what this means is that <m>\bw = \frac{5}{7}\colvec{1 \\ 2} -\frac{4}{7}\colvec{3 \\ -1}</m>. If you work the right-hand side out, you can indeed verify that this is true.
         </p>
     </example>
+    <example>
+        <p>
+            Now let <m>B</m> be the basis <m>\colvec{1 \\ 0 \\ -1},\colvec{2 \\ 1 \\ 0}, \colvec{-1 \\ 1 \\ 1}</m> of <m>\R^3</m>. Let's try to write the vector <m>\bw=\colvec{2 \\ 2 \\ -3}</m> in this basis.
+        </p>
+        <p>
+            The transition matrix in this case is <m>P=\begin{pmatrix} 1 \amp 2 \amp -1 \\ 0 \amp 1 \amp 1 \\ -1 \amp 0 \amp 1 \end{pmatrix}</m>. We need to calculate the inverse <m>P^{-1}</m>.
+            <md>
+                <mrow>\left(\begin{array}{ccc|ccc}
+                    1 \amp 2 \amp -1 \amp 1 \amp 0 \amp 0\\
+                    0 \amp 1 \amp 1 \amp 0 \amp 1 \amp 0\\
+                    -1 \amp 0 \amp 1 \amp 0 \amp 0 \amp 1
+                \end{array}\right) \amp \xrightarrow{R_3\to R_3+R1} 
+                \left(\begin{array}{ccc|ccc}
+                    1 \amp 2 \amp -1 \amp 1 \amp 0 \amp 0\\
+                    0 \amp 1 \amp 1 \amp 0 \amp 1 \amp 0\\
+                    0 \amp 2 \amp 0 \amp 1 \amp 0 \amp 1
+                \end{array}\right)</mrow>
+                <mrow> \amp \xrightarrow{R_3\to R_3-2R_2} \left(\begin{array}{ccc|ccc}
+                    1 \amp 2 \amp -1 \amp 1 \amp 0 \amp 0\\
+                    0 \amp 1 \amp 1 \amp 0 \amp 1 \amp 0\\
+                    0 \amp 0 \amp -2 \amp 1 \amp -2 \amp 1
+                \end{array}\right)</mrow>
+                <mrow> \amp \xrightarrow{R_3\to -R_3/2} \left(\begin{array}{ccc|ccc}
+                    1 \amp 2 \amp -1 \amp 1 \amp 0 \amp 0\\
+                    0 \amp 1 \amp 1 \amp 0 \amp 1 \amp 0\\
+                    0 \amp 0 \amp 1 \amp -1/2 \amp 1 \amp -1/2
+                \end{array}\right)</mrow>
+                <mrow> \amp \xrightarrow{R_2\to R_2-R_3} \left(\begin{array}{ccc|ccc}
+                    1 \amp 2 \amp -1 \amp 1 \amp 0 \amp 0\\
+                    0 \amp 1 \amp 0 \amp 1/2 \amp 0 \amp 1/2\\
+                    0 \amp 0 \amp 1 \amp -1/2 \amp 1 \amp -1/2
+                \end{array}\right)</mrow>
+                <mrow> \amp \xrightarrow{R_1\to R_1+R_3} \left(\begin{array}{ccc|ccc}
+                    1 \amp 2 \amp 0 \amp 1/2 \amp 1 \amp -1/2\\
+                    0 \amp 1 \amp 0 \amp 1/2 \amp 0 \amp 1/2\\
+                    0 \amp 0 \amp 1 \amp -1/2 \amp 1 \amp -1/2
+                \end{array}\right)</mrow>
+                <mrow> \amp \xrightarrow{R_1\to R_1-2R_2} \left(\begin{array}{ccc|ccc}
+                    1 \amp 0 \amp 0 \amp -1/2 \amp 1 \amp -3/2\\
+                    0 \amp 1 \amp 0 \amp 1/2 \amp 0 \amp 1/2\\
+                    0 \amp 0 \amp 1 \amp -1/2 \amp 1 \amp -1/2
+                \end{array}\right)</mrow>
+            </md>
+            So, we find that
+            <me>
+                P^{-1}=\begin{pmatrix} -1/2 \amp 1 \amp -3/2 \\ 1/2 \amp 0 \amp 1/2 \\ -1/2 \amp 1 \amp -1/2\end{pmatrix}
+            </me>.
+            Therefore,
+            <me>
+                [\bw]_B=P^{-1}\colvec{2 \\ 2 \\ -3} = \colvec{11/2 \\ -1/2 \\ 5/2}
+            </me>.
+        </p>
+    </example>
     <p>
-        The method of finding 
+        Changing basis is especially useful to understand the action of linear maps on vector spaces. We will focus on the case of linear maps from <m>\R^n</m> to <m>\R^n</m>. (I.e. the case of square matrices.)
     </p>
+    <example>
+        <p>
+            Let's go back to the case where <m>A=\begin{pmatrix} 1/2 \amp 1/2 \\ 1/2 \amp 1/2\end{pmatrix}</m>, which describes the projection of <m>\R^2</m> onto the line <m>y=x</m>. We have seen that <m>A</m> has two eigenvalues: <m>1</m> and <m>0</m>. The eigenspace associated to <m>1</m> is given by <m>y=x</m>, while the eigenspace associated to <m>0</m> is <m>y=-x</m>. A basis for the <m>1</m>-eigenspace is <m>\colvec{1 \\ 1}</m>, while a basis for the <m>0</m>-eigenspace is <m>\colvec{1 \\ -1}</m>. Since they correspond to distinct eigenvalues, the vectors <m>\bv_1=\colvec{1\\1}, \bv_2=\colvec{1 \\ -1}</m> form a basis <m>B</m> of <m>\R^2</m>. This means that <m>\phi_A(\bv_1)=\bv_1</m> and <m>\phi_A(\bv_2)=\bz</m>. We will try to rewrite everything in terms of this new basis <m>B</m>.
+        </p>
+        <p>
+            The transition matrix is <m>P=\begin{pmatrix} 1 \amp 1 \\ 1 \amp -1 \end{pmatrix}</m>. In the basis <m>B</m>, we have
+            <me>
+                [\bv_1]_B=P^{-1}\colvec{1 \\ 1}=\colvec{1 \\ 0}\quad\text{and}\quad [\bv_2]_B=P^{-1}\colvec{1 \\ -1}=\colvec{0 \\ 1}
+            </me>.
+            Consider the matrix <m>[A]_B=\begin{pmatrix} 1 \amp 0 \\ 0 \amp 0\end{pmatrix}</m>. Note that
+            <me>
+                [A]_B[\bv_1]_B=\colvec{1 \\ 0}=[A\bv_1]_B\quad\text{and}\quad[A]_B[\bv_2]_B=\colvec{0 \\ 0}=[A\bv_2]_B
+            </me>.
+            In other words, the matrix <m>[A]_B</m> takes vectors <m>\bw</m> written in the basis <m>B</m> and spits out <m>A\bw</m> written in the basis <m>B</m>. The matrix <m>[A]_B</m> is the matrix corresponding to the linear map <m>\varphi_A</m> with respect to the basis <m>B</m>. I hope that we can agree that it is much simpler than the original matrix. In particular, the eigenvalues and eigenspaces are evident from this matrix.
+        </p>
+    </example>
+    <p>
+        Let's describe the process of writing the matrix of a linear map with respect to a given matrix in a slightly more general form. Let's say that we have a linear map <m>f:\R^n\rightarrow \R^n</m> whose corresponding matrix (with respect to the basis consisting of standard unit vectors) is <m>A</m>. Let <m>B</m> be a basis of <m>\R^n</m>, and let <m>P</m> be the transition matrix from the standard unit basis to the new basis <m>B</m>. We are looking of an <m>n\times n</m> matrix <m>[A]_B</m> such that
+        <me>
+            [A]_B[\bw]_B=[A\bw]_B
+        </me>
+        for every vector <m>\bw\in\R^n</m>. We already know that <m>[\bw]_B=P^{-1}\bw</m> and <m>[A\bw]_B=P^{-1}A\bw</m>. Therefore,
+        <me>
+            [A]_BP^{-1}\bw=P^{-1}A\bw
+        </me>
+        for every vector <m>\bw\in\R^n</m>. Multiplying both sides by <m>P</m>, we get
+        <me>
+            P[A]_BP^{-1}\bw=A\bw
+        </me>
+        for every vector <m>\bw\in\R^n</m>, which is only possible if <m>P[A]_BP^{-1}=A</m>. Solving for <m>[A]_B</m>, we obtain
+        <me>
+            [A]_B=P^{-1}AP
+        </me>.
+        The matrix <m>[A]_B=P^{-1}AP</m> is called the <term>matrix of the linear map <m>f</m> with respect to the basis <m>B</m></term>.
+    </p>
+    <example>
+        <p>
+            Let's go back to the matrix <m>A=\begin{pmatrix} 1/2 \amp 1/2 \\ 1/2 \amp 1/2\end{pmatrix}</m>. In the previous example we found <m>[A]_B</m> for the basis <m>\colvec{1 \\ 1}, \colvec{1\\-1}</m>. Let's use the formula that we just learnt to find <m>[A]_B</m> and compare.
+            <me>
+                [A]_B=P^{-1}AP=\begin{pmatrix}1/2 \amp 1/2 \\ 1/2 \amp -1/2\end{pmatrix}\begin{pmatrix} 1/2 \amp 1/2 \\ 1/2 \amp 1/2\end{pmatrix}\begin{pmatrix} 1 \amp 1 \\ 1 \amp -1\end{pmatrix}=\begin{pmatrix}1 \amp 0 \\ 0 \amp 0\end{pmatrix}
+            </me>.
+        </p>
+
+    </example>
 </section>
