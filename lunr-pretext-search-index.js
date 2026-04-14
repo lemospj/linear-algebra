@@ -2755,6 +2755,69 @@ var ptx_lunr_docs = [
   "body": "  Show that if and are matrices satisfying , then .   "
 },
 {
+  "id": "sec-change-basis",
+  "level": "1",
+  "url": "sec-change-basis.html",
+  "type": "Section",
+  "number": "2.9",
+  "title": "Change of basis",
+  "body": " Change of basis  The objective of this chapter is to learn how to do linear algebra calculations over different bases. The first question we will be interested in is that of writing a given vector as a linear combination of the vectors in a given basis. We already know how to do this because this is essentially the problem of solving a system of linear equations, but we can streamline the process using inverse matrices.  Say that we have a basis of (the order of the vectors in the basis is important!) and a vector , also in . Our goal is to write as a linear combination of the vectors . In other words, we want to find scalars such that . If is the matrix whose columns are the vectors , then this is equivalent to solving the system . The matrix is called the transition matrix from the standard unit basis to the basis . Since the columns are linearly independent vectors in , this matrix is invertible, and so . The coefficients above are called the coordinates of the vector in the basis . Because a single vector will have different coordinates depending on which basis we are working, it will be useful to use some sort of notation to keep remind us of the basis. We will write for the representation of in the basis , i.e. .   Consider the basis of . Call it . The transition matrix is . Its inverse is . Therefore, the vector in the basis has coordinates . Recall that what this means is that . If you work the right-hand side out, you can indeed verify that this is true.    Now let be the basis of . Let's try to write the vector in this basis.  The transition matrix in this case is . We need to calculate the inverse . So, we find that . Therefore, .   Changing basis is especially useful to understand the action of linear maps on vector spaces. We will focus on the case of linear maps from to . (I.e. the case of square matrices.)   Let's go back to the case where , which describes the projection of onto the line . We have seen that has two eigenvalues: and . The eigenspace associated to is given by , while the eigenspace associated to is . A basis for the -eigenspace is , while a basis for the -eigenspace is . Since they correspond to distinct eigenvalues, the vectors form a basis of . This means that and . We will try to rewrite everything in terms of this new basis .  The transition matrix is . In the basis , we have . Consider the matrix . Note that . In other words, the matrix takes vectors written in the basis and spits out written in the basis . The matrix is the matrix corresponding to the linear map with respect to the basis . I hope that we can agree that it is much simpler than the original matrix. In particular, the eigenvalues and eigenspaces are evident from this matrix.   Let's describe the process of writing the matrix of a linear map with respect to a given matrix in a slightly more general form. Let's say that we have a linear map whose corresponding matrix (with respect to the basis consisting of standard unit vectors) is . Let be a basis of , and let be the transition matrix from the standard unit basis to the new basis . We are looking of an matrix such that for every vector . We already know that and . Therefore, for every vector . Multiplying both sides by , we get for every vector , which is only possible if . Solving for , we obtain . The matrix is called the matrix of the linear map with respect to the basis .   Let's go back to the matrix . In the previous example we found for the basis . Let's use the formula that we just learnt to find and compare. .   "
+},
+{
+  "id": "sec-change-basis-3",
+  "level": "2",
+  "url": "sec-change-basis.html#sec-change-basis-3",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "transition matrix "
+},
+{
+  "id": "sec-change-basis-4",
+  "level": "2",
+  "url": "sec-change-basis.html#sec-change-basis-4",
+  "type": "Example",
+  "number": "2.9.1",
+  "title": "",
+  "body": " Consider the basis of . Call it . The transition matrix is . Its inverse is . Therefore, the vector in the basis has coordinates . Recall that what this means is that . If you work the right-hand side out, you can indeed verify that this is true.  "
+},
+{
+  "id": "sec-change-basis-5",
+  "level": "2",
+  "url": "sec-change-basis.html#sec-change-basis-5",
+  "type": "Example",
+  "number": "2.9.2",
+  "title": "",
+  "body": " Now let be the basis of . Let's try to write the vector in this basis.  The transition matrix in this case is . We need to calculate the inverse . So, we find that . Therefore, .  "
+},
+{
+  "id": "sec-change-basis-7",
+  "level": "2",
+  "url": "sec-change-basis.html#sec-change-basis-7",
+  "type": "Example",
+  "number": "2.9.3",
+  "title": "",
+  "body": " Let's go back to the case where , which describes the projection of onto the line . We have seen that has two eigenvalues: and . The eigenspace associated to is given by , while the eigenspace associated to is . A basis for the -eigenspace is , while a basis for the -eigenspace is . Since they correspond to distinct eigenvalues, the vectors form a basis of . This means that and . We will try to rewrite everything in terms of this new basis .  The transition matrix is . In the basis , we have . Consider the matrix . Note that . In other words, the matrix takes vectors written in the basis and spits out written in the basis . The matrix is the matrix corresponding to the linear map with respect to the basis . I hope that we can agree that it is much simpler than the original matrix. In particular, the eigenvalues and eigenspaces are evident from this matrix.  "
+},
+{
+  "id": "sec-change-basis-8",
+  "level": "2",
+  "url": "sec-change-basis.html#sec-change-basis-8",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "matrix of the linear map with respect to the basis "
+},
+{
+  "id": "sec-change-basis-9",
+  "level": "2",
+  "url": "sec-change-basis.html#sec-change-basis-9",
+  "type": "Example",
+  "number": "2.9.4",
+  "title": "",
+  "body": " Let's go back to the matrix . In the previous example we found for the basis . Let's use the formula that we just learnt to find and compare. .  "
+},
+{
   "id": "backmatter-2",
   "level": "1",
   "url": "backmatter-2.html",
