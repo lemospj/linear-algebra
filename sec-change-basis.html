@@ -102,7 +102,7 @@ eBookConfig.allow_pairs = false;
 eBookConfig.enableScratchAC = false;
 eBookConfig.build_info = "";
 eBookConfig.python3 = null;
-eBookConfig.runestone_version = '7.13.3';
+eBookConfig.runestone_version = '7.13.4';
 eBookConfig.jobehost = '';
 eBookConfig.proxyuri_runs = '';
 eBookConfig.proxyuri_files = '';
@@ -399,7 +399,88 @@ P[A]_BP^{-1}\bw=A\bw
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#sec-change-basis-9-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Example 2.9.4"><a href="#sec-change-basis-9" title="Copy heading and permalink for Example 2.9.4" aria-label="Copy heading and permalink for Example 2.9.4">🔗</a></div></article></details><div class="autopermalink" data-description="Section 2.9: Change of basis"><a href="#sec-change-basis" title="Copy heading and permalink for Section 2.9: Change of basis" aria-label="Copy heading and permalink for Section 2.9: Change of basis">🔗</a></div></section></div>
+<div class="autopermalink" data-description="Example 2.9.4"><a href="#sec-change-basis-9" title="Copy heading and permalink for Example 2.9.4" aria-label="Copy heading and permalink for Example 2.9.4">🔗</a></div></article></details><details id="sec-change-basis-10" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.9.5</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3></summary><article class="example example-like knowl__content"><div class="para" id="sec-change-basis-10-1">Of course, the basis we are changing to is not required to be a basis of eigenvectors of a given matrix. For example, let’s consider the linear map <span class="process-math">\(f\)</span> whose matrix in the the standard unit basis is <span class="process-math">\(A=\begin{pmatrix}1 \amp 3 \\ -1 \amp 2\end{pmatrix}\text{.}\)</span> Let <span class="process-math">\(B\)</span> be the basis <span class="process-math">\(\bv_1=\colvec{1 \\ 1}, \bv_2=\colvec{-1 \\ 0}\)</span> of <span class="process-math">\(\R^2\text{.}\)</span> Let’s find the matrix of <span class="process-math">\(f\)</span> in the basis <span class="process-math">\(B\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-change-basis-10-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="sec-change-basis-10-2">
+<div class="para">The transition matrix is <span class="process-math">\(P=\begin{pmatrix}1 \amp -1 \\ 1 \amp 0\end{pmatrix}\text{.}\)</span> The inverse of this matrix is <span class="process-math">\(P^{-1}=\begin{pmatrix} 1\amp -1 \\ 1 \amp 0\end{pmatrix}\text{.}\)</span> Therefore,</div>
+<div class="displaymath process-math" id="sec-change-basis-10-2-3">
+\begin{equation*}
+[f]_B=P^{-1}AP=\begin{pmatrix} -1 \amp 2 \\ -2 \amp -1\end{pmatrix}\text{.}
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-change-basis-10-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Example 2.9.5"><a href="#sec-change-basis-10" title="Copy heading and permalink for Example 2.9.5" aria-label="Copy heading and permalink for Example 2.9.5">🔗</a></div></article></details><div class="para" id="sec-change-basis-11">If a linear map <span class="process-math">\(f:\R^n\rightarrow \R^n\)</span> has eigenvalues <span class="process-math">\(\lambda_1,\lambda_2,\ldots,\lambda_r\)</span> and the sum of the dimensions of the respective eigenspaces is <span class="process-math">\(n\text{,}\)</span> then we can find a basis of eigenvectors for <span class="process-math">\(\R^n\text{.}\)</span> The matrix of <span class="process-math">\(f\)</span> in this basis will then be a diagonal matrix.<div class="autopermalink" data-description="Paragraph"><a href="#sec-change-basis-11" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<details id="sec-change-basis-12" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.9.6</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3></summary><article class="example example-like knowl__content"><div class="para logical" id="sec-change-basis-12-1">
+<div class="para">Consider the linear map <span class="process-math">\(f:\R^3\rightarrow\R^3\)</span> whose matrix in the standard unit basis is <span class="process-math">\(A=\begin{pmatrix} 3 \amp 1 \amp 1 \\ 2 \amp 2 \amp -2 \\ -1 \amp 1 \amp 5\end{pmatrix}\text{.}\)</span> Its characteristic polynomial is</div>
+<div class="displaymath process-math" id="sec-change-basis-12-1-3">
+\begin{equation*}
+p_A(x)=x^3-10x^2+32x-32=(x-4)^2(x-2)\text{.}
+\end{equation*}
+</div>
+<div class="para">So, <span class="process-math">\(f\)</span> has two eigenvalues: <span class="process-math">\(2\)</span> and <span class="process-math">\(4\text{.}\)</span> Let’s find the respective eigenspaces.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-change-basis-12-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="sec-change-basis-12-2">
+<div class="para">The <span class="process-math">\(2\)</span>-eigenspace is the kernel of</div>
+<div class="displaymath process-math" id="sec-change-basis-12-2-2">
+\begin{equation*}
+2\Id_3-A=\begin{pmatrix}-1 \amp -1 \amp -1 \\ -2 \amp 0 \amp 2 \\ 1 \amp -1 \amp -3\end{pmatrix}\text{,}
+\end{equation*}
+</div>
+<div class="para">which is the linear subspace of <span class="process-math">\(\R^3\)</span> generated by <span class="process-math">\(\colvec{1 \\ -2 \\ 1}\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-change-basis-12-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="sec-change-basis-12-3">
+<div class="para">The <span class="process-math">\(4\)</span>-eigenspace is the kernel of</div>
+<div class="displaymath process-math" id="sec-change-basis-12-3-2">
+\begin{equation*}
+4\Id_3-A=\begin{pmatrix} 1 \amp -1 \amp -1 \\ -2 \amp 2 \amp 2 \\ 1 \amp -1 \amp -1\end{pmatrix}\text{.}
+\end{equation*}
+</div>
+<div class="para">This is the <span class="process-math">\(2\)</span>-dimensional subspace of <span class="process-math">\(\R^3\)</span> spanned by the vectors <span class="process-math">\(\colvec{1 \\ 1 \\ 0}\)</span> and <span class="process-math">\(\colvec{1 \\ 0 \\ 1}\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-change-basis-12-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="sec-change-basis-12-4">
+<div class="para">Let’s find the matrix of <span class="process-math">\(f\)</span> with respect to the basis <span class="process-math">\(B\)</span> consisting of <span class="process-math">\(\bv_1=\colvec{1 \\ -2 \\ 1}, \bv_2=\colvec{1 \\ 1 \\ 0}, \bv_3=\colvec{1 \\ 0 \\ 1}\text{.}\)</span> The transition matrix is</div>
+<div class="displaymath process-math" id="sec-change-basis-12-4-4">
+\begin{equation*}
+P=\begin{pmatrix} 1 \amp 1 \amp 1 \\ -2 \amp 1 \amp 0 \\ 1 \amp 0 \amp 1 \end{pmatrix}\text{.}
+\end{equation*}
+</div>
+<div class="para">Its inverse is</div>
+<div class="displaymath process-math" id="sec-change-basis-12-4-5">
+\begin{equation*}
+P^{-1}=\begin{pmatrix} 1/2 \amp -1/2 \amp -1/2\\ 1 \amp 0 \amp -1 \\ -1/2 \amp 1/2 \amp 3/2 \end{pmatrix}\text{.}
+\end{equation*}
+</div>
+<div class="para">A quick calculation yields</div>
+<div class="displaymath process-math" id="sec-change-basis-12-4-6">
+\begin{equation*}
+[f]_B=P^{-1}AP=\begin{pmatrix} 2 \amp 0 \amp 0 \\ 0 \amp 4 \amp 0 \\ 0 \amp 0 \amp 4\end{pmatrix}\text{.}
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-change-basis-12-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Example 2.9.6"><a href="#sec-change-basis-12" title="Copy heading and permalink for Example 2.9.6" aria-label="Copy heading and permalink for Example 2.9.6">🔗</a></div></article></details><div class="para" id="sec-change-basis-13">An <span class="process-math">\(n\times n\)</span> matrix for which there exists an invertible matrix <span class="process-math">\(P\)</span> such that <span class="process-math">\(P^{-1}AP\)</span> is diagonal is called <dfn class="terminology">diagonalizable</dfn>. Not every matrix is diagonalizable.<div class="autopermalink" data-description="Paragraph"><a href="#sec-change-basis-13" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="proposition theorem-like" id="prop-diagonalizable"><h3 class="heading">
+<span class="type">Proposition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.9.7</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para" id="prop-diagonalizable-1-1">An <span class="process-math">\(n\times n\)</span> matrix <span class="process-math">\(A\)</span> is diagonalizable if and only if there exists a basis of <span class="process-math">\(\R^n\)</span> consisting of eigenvectors of <span class="process-math">\(A\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#prop-diagonalizable-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proposition 2.9.7"><a href="#prop-diagonalizable" title="Copy heading and permalink for Proposition 2.9.7" aria-label="Copy heading and permalink for Proposition 2.9.7">🔗</a></div></article><details id="sec-change-basis-15" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.9.8</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3></summary><article class="example example-like knowl__content"><div class="para" id="sec-change-basis-15-1">Consider the matrix <span class="process-math">\(A=\begin{pmatrix} 1 \amp 1 \\ 0 \amp 1\end{pmatrix}\text{.}\)</span> The only eigenvalue of this matrix is <span class="process-math">\(1\text{,}\)</span> and the <span class="process-math">\(1\)</span>-eigenspace is <span class="process-math">\(1\)</span>-dimensional, which means that there is no basis of <span class="process-math">\(\R^2\)</span> consisting of eigenvectors of <span class="process-math">\(A\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-change-basis-15-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Example 2.9.8"><a href="#sec-change-basis-15" title="Copy heading and permalink for Example 2.9.8" aria-label="Copy heading and permalink for Example 2.9.8">🔗</a></div></article></details><div class="autopermalink" data-description="Section 2.9: Change of basis"><a href="#sec-change-basis" title="Copy heading and permalink for Section 2.9: Change of basis" aria-label="Copy heading and permalink for Section 2.9: Change of basis">🔗</a></div></section></div>
 <div id="ptx-content-footer" class="ptx-content-footer">
 <a class="previous-button button" href="sec-linear-maps.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="backmatter.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
