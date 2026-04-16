@@ -203,4 +203,30 @@
             Consider the matrix <m>A=\begin{pmatrix} 1 \amp 1 \\ 0 \amp 1\end{pmatrix}</m>. The only eigenvalue of this matrix is <m>1</m>, and the <m>1</m>-eigenspace is <m>1</m>-dimensional, which means that there is no basis of <m>\R^2</m> consisting of eigenvectors of <m>A</m>.
         </p>
     </example>
+    <exercises>
+        <exercise>
+            <statement>
+                <p>
+                    For each subquestion, write the given vector <m>\bw</m> in the given basis <m>B</m>.
+                    <ol marker="(a)">
+                        <li>
+                            <p>
+                                <m>\bw=\colvec{-2 \\ 1}</m>, <m>B=\left(\colvec{1 \\ -1}, \colvec{3 \\ -1}\right)</m>
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                <m>\bw=\colvec{1 \\ 0}</m>, <m>B=\left(\colvec{-1 \\ 2}, \colvec{1 \\ 2}\right)</m>
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                <m>\bw=\colvec{1 \\ 0 \\ -1}</m>, <m>B=\left(\colvec{1 \\ 1 \\ 1}, \colvec{0 \\ 1 \\ 2}\colvec{0 \\ -1 \\ 0}\right)</m>
+                            </p>
+                        </li>
+                    </ol>
+                </p>
+            </statement>
+        </exercise>
+    </exercises>
 </section>
