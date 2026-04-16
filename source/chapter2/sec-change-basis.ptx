@@ -134,6 +134,18 @@
                 [A]_B=P^{-1}AP=\begin{pmatrix}1/2 \amp 1/2 \\ 1/2 \amp -1/2\end{pmatrix}\begin{pmatrix} 1/2 \amp 1/2 \\ 1/2 \amp 1/2\end{pmatrix}\begin{pmatrix} 1 \amp 1 \\ 1 \amp -1\end{pmatrix}=\begin{pmatrix}1 \amp 0 \\ 0 \amp 0\end{pmatrix}
             </me>.
         </p>
-
+    </example>
+    
+    <example>
+        <p>
+            Of course, the basis we are changing to is not required to be a basis of eigenvectors of a given matrix. For example, let's consider the linear map <m>f</m> whose matrix in the the standard unit basis is <m>A=\begin{pmatrix}1 \amp 3 \\ -1 \amp 2\end{pmatrix}</m>. Let <m>B</m> be the basis <m>\bv_1=\colvec{1 \\ 1}, \bv_2=\colvec{-1 \\ 0}</m> of <m>\R^2</m>. Let's find the matrix of <m>f</m> in the basis <m>B</m>.
+        </p>
+        <p>
+            The transition matrix is <m>P=\begin{pmatrix}1 \amp -1 \\ 1 \amp 0\end{pmatrix}</m>. The inverse of this matrix is <m>P^{-1}=\begin{pmatrix} 1\amp -1 \\ 1 \amp 0\end{pmatrix}</m>.
+            Therefore,
+            <me>
+                [f]_B=P^{-1}AP=\begin{pmatrix} -1 \amp 2 \\ -2 \amp -1\end{pmatrix}
+            </me>.
+        </p>
     </example>
 </section>
