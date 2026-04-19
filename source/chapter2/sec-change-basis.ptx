@@ -197,6 +197,14 @@
                 An <m>n\times n</m> matrix <m>A</m> is diagonalizable if and only if there exists a basis of <m>\R^n</m> consisting of eigenvectors of <m>A</m>.
             </p>
         </statement>
+        <proof>
+            <p>
+                Let's start by assuming that <m>A</m> is a diagonalizable <m>n\times n</m> matrix. By definition, there exists an invertible <m>n\times n</m> matrix <m>P</m> such that <m>B=P^{-1}AP</m> is a diagonal matrix <m>\diag(\lambda_1,\lambda_2,\ldots,\lambda_n)</m>. (The <m>\lambda_i</m> may not be distinct.) Let <m>\bv_1,\bv_2,\ldots,\bv_n</m> be the vectors in <m>\R^n</m> whose coordinates in the standard unit basis are given by the columns of <m>P</m>. These form a basis of <m>\R^n</m> because the matrix <m>P</m> is invertible. Since <m>B\be_i=\lambda_i\be_i</m> for every <m>i</m>, it follows that <m>A\bv_i=\lambda_i\bv_i</m>. Therefore, <m>\bv_1,\bv_2,\ldots,\bv_n</m> is a basis of <m>\R^n</m> consisting of eigenvectors of <m>A</m>.
+            </p>
+            <p>
+                To prove the converse, let's start by assuming that <m>\bv_1,\bv_2,\ldots,\bv_n</m> is a basis of <m>\R^n</m> consisting of eigenvectors of <m>A</m> with eigenvalues <m>\lambda_1,\lambda_2,\ldots,\lambda_n</m>, respectively. Let's take the matrix <m>P</m> to be the one whose columns are the vectors <m>\bv_1,\bv_2,\ldots,\bv_n</m> (written with respect to the standard unit vectors). Then the matrix <m>B=P^{-1}AP</m> is the diagonal matrix <m>\diag(\lambda_1,\lambda_2,\ldots,\lambda_n)</m>.
+            </p>
+        </proof>
     </proposition>
     <example>
         <p>
@@ -222,6 +230,68 @@
                         <li>
                             <p>
                                 <m>\bw=\colvec{1 \\ 0 \\ -1}</m>, <m>B=\left(\colvec{1 \\ 1 \\ 1}, \colvec{0 \\ 1 \\ 2}\colvec{0 \\ -1 \\ 0}\right)</m>
+                            </p>
+                        </li>
+                    </ol>
+                </p>
+            </statement>
+        </exercise>
+        <exercise>
+            <statement>
+                <p>
+                    In each subquestion, consider the linear map defined by the given matrix in the standard unit basis and write it in the given basis <m>B</m>.
+                    <ol marker="(a)">
+                        <li>
+                            <p>
+                                <m>A=\begin{pmatrix} 1 \amp -2 \\ -2 \amp 2\end{pmatrix}</m>, <m>B=\left(\colvec{1 \\ 2}, \colvec{-1 \\ 0}\right)</m>
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                <m>A=\begin{pmatrix} 2 \amp -1 \amp 0 \\ -1 \amp 0 \amp -1 \\ 1 \amp 1 \amp 1\end{pmatrix}</m>, <m>B=\left(\colvec{-2 \\ 1 \\ 1}, \colvec{1 \\ 1 \\ 1}, \colvec{0 \\ 1 \\ 0}\right)</m>
+                            </p>
+                        </li>
+                    </ol>
+                </p>
+            </statement>
+        </exercise>
+        <exercise>
+            <statement>
+                <p>
+                    Determine whether the following matrices are diagonalizable.
+                    <ol marker="(a)">
+                        <li>
+                            <p>
+                                <m>A=\begin{pmatrix} 3 \amp 1 \\ -1 \amp 1\end{pmatrix}</m>
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                <m>A=\begin{pmatrix} 2\amp 4 \amp 0 \\ 4 \amp 2 \amp 0 \\ 0 \amp 0 \amp -2\end{pmatrix}</m>
+                            </p>
+                        </li>
+                    </ol>
+                </p>
+            </statement>
+        </exercise>
+        <exercise>
+            <statement>
+                <p>
+                    Let <m>A</m> be an <m>n\times n</m> matrix, and let <m>P</m> be an <m>n\times n</m> invertible matrix. Show that the following statements hold.
+                    <ol marker="(a)">
+                        <li>
+                            <p>
+                                <m>\det(A)=\det(P^{-1}AP)</m>
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                <m>\Tr(A)=\Tr(P^{-1}AP)</m>
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                The characteristic polynomial of <m>A</m> is the same as the characteristic polynomial of <m>P^{-1}AP</m>.
                             </p>
                         </li>
                     </ol>
