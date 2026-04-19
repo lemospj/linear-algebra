@@ -1,0 +1,14 @@
+<chapter xml:id="ch-general-vector-spaces" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>General vector spaces</title>
+
+  <introduction>
+    <p> 
+      So far, we have only studied a particular case of real vector space, that of <m>\R^n</m>. As I previously mentioned, this is the prototypical example of a vector space. However, there are many more vector spaces than those of this form. While much of the theory that we learnt can be extended to any vector space, there are some aspects that cannot. Notably, vector spaces may not be finite-dimensional or have a natural dot product. In this chapter (which only contains one section), we will go over the definition of a vector space and briefly point out some important examples.
+    </p>
+  </introduction>
+
+  <!-- include sections -->
+  <xi:include href="sec-vector-spaces.ptx" />
+
+
+</chapter>

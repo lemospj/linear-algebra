@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-vector-spaces" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>Vector Spaces</title>
+    <p>
+        Informally, a <term>vector space</term> is a set on which we can perform addition and multiplication by scalars.
+    </p>
+    <definition xml:id="def-vector-space">
+        <statement>
+            <p>
+                A <term>vector space</term> is a non-empty set <m>V</m> equipped with a structure of vector addition (formally, this is a function <m>V\times V\rightarrow V</m>) and scalar multiplication (formally, this is a function <m>\R\times V\rightarrow V</m>) satisfying the following axioms:
+                <ol>
+                    <li>
+                        <p>
+                            <m>\bu+(\bv+\bw)=(\bu+\bv)+\bw</m> for all vectors <m>\bu,\bv,\bw\in V</m>.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <m>\bu+\bv=\bv+\bu</m> for all vectors <m>\bu,\bv\in V</m>.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            There exists an element <m>\bz\in V</m> such that <m>\bv+\bz=\bv</m> for all <m>\bv\in V</m>.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            For every <m>\bv\in V</m>, there exists an element <m>-\bv</m> such that <m>\bv+(-\bv)=\bz</m>.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <m>a(b\bv)=(ab)\bv</m> for all vectors <m>\bv\in V</m> and scalars <m>a,b\in \R</m>.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <m>1\bv=\bv</m> for all vectors <m>\bv\in V</m>.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <m>a(\bu+\bv)=a\bu+a\bv</m> for all vectors <m>\bu,\bv\in V</m> and scalars <m>a\in\R</m>.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <m>(a+b)\bv=a\bv+b\bv</m> for all vectors <m>\bv\in V</m> and scalars <m>a,b\in\R</m>.
+                        </p>
+                    </li>
+                </ol>
+            </p>
+        </statement>
+    </definition>
+    <example>
+        <p>
+            Consider the set <m>\R[x]</m> of polynomials in <m>x</m> with coefficients in the real numbers. This is a vector space. A vector in this vector space is a polynomial with real coefficients. It is also infinite-dimensional. Indeed, if <m>p_1,p_2,\ldots,p_n</m> is any finite collection of polynomials in <m>\R[x]</m>, we may take the maximum from among the set <m>\deg(p_1),\deg(p_2),\ldots,\deg(p_n)</m>. Say that the maximum is <m>m</m>. Any linear combination of <m>\lambda_1 p_1+\lambda_2 p_2+\ldots+\lambda_n p_n</m> will have degree at most <m>m</m>, and so we will never be able to write <m>x^{m+1}</m> as a linear combination of <m>p_1,\ldots,p_n</m>.
+        </p>
+        <p>
+            Note that differentiation <m>\frac{d}{dx}:\R[x]\rightarrow \R[x]</m> is a linear map, and so is definite integration <m>\int_a^b:\R[x]\rightarrow \R</m>.
+        </p>
+    </example>
+    <example>
+        <p>
+            We may also restrict to the set of polynomials <m>\R[x]_{\leq d}</m> of degree less than <m>d</m>. This is a vector space of dimension <m>d+1</m>. A basis for this vector space consists of the polynomials <m>1,x,x^2,\ldots, x^d</m>. 
+        </p>
+        <p>
+            We can use these basis to describe the derivative map. Let's see this in the case of <m>\R[x]_{\leq 3}</m>. This is a <m>4</m>-dimensional vector space with basis <m>1,x,x^2,x^3</m>. To describe the matrix associated to <m>\frac{d}{dx}</m> in this basis, we only need to calculate the derivatives of each one of the elements belonging to the basis and write them as columns vectors in this basis. Since 
+            <me>
+                \frac{d}{dx}[1]=0,\quad\frac{d}{dx}x=1,\quad,\frac{d}{dx}x^2=2x\quad\text{and}\quad \frac{d}{dx}x^3=3x^2
+            </me>,
+            we conclude that the matrix of the derivative <m>\frac{d}{dx}:\R[x]_{\leq 3}\rightarrow \R[x]_{\leq 3}</m> with respect to this basis is
+            <me>\begin{pmatrix} 0 \amp 1 \amp 0 \amp 0 \\ 0 \amp 0 \amp 2 \amp 0 \\ 0 \amp 0 \amp 0 \amp 3 \\ 0 \amp 0 \amp 0 \amp 0\end{pmatrix}</me>.
+            A similar discussion holds for linear maps defined by definite integration.
+        </p>
+    </example>
+    <example>
+        <p>
+            Consider the set <m>C^0(\R,\R)</m> of continuous functions from <m>\R</m> to <m>\R</m>. This is a continuous vector space. A vector in this space is a continuous function. This vector space is infinite-dimensional. Indeed, it contains the infinite-dimensional subspace consisting of all polynomials with real coefficients.
+        </p>
+        <p>
+            We may also consider the set <m>C^1(\R,\R)</m> of differentiable functions from <m>\R</m> to <m>\R</m>. Differentiation provides a linear map <m>\frac{d}{dx}:C^1(\R,\R)\rightarrow C^0(\R,\R)</m>.
+        </p>
+    </example>
+</section>

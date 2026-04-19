@@ -14,6 +14,7 @@
     <!-- Include chapters -->
     <xi:include href="./chapter1/ch-linear-equations.ptx" />
     <xi:include href="./chapter2/ch-euclidean-spaces.ptx" />
+    <xi:include href="./chapter3/ch-general-vector-spaces.ptx" />
 
 
     <!-- Include backmatter -->
