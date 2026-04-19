@@ -2899,6 +2899,60 @@ var ptx_lunr_docs = [
   "body": "  Let be an matrix, and let be an invertible matrix. Show that the following statements hold.             The characteristic polynomial of is the same as the characteristic polynomial of .      "
 },
 {
+  "id": "sec-vector-spaces",
+  "level": "1",
+  "url": "sec-vector-spaces.html",
+  "type": "Section",
+  "number": "3.1",
+  "title": "Vector Spaces",
+  "body": " Vector Spaces  Informally, a vector space is a set on which we can perform addition and multiplication by scalars.    A vector space is a non-empty set equipped with a structure of vector addition (formally, this is a function ) and scalar multiplication (formally, this is a function ) satisfying the following axioms:    for all vectors .     for all vectors .    There exists an element such that for all .    For every , there exists an element such that .     for all vectors and scalars .     for all vectors .     for all vectors and scalars .     for all vectors and scalars .        Consider the set of polynomials in with coefficients in the real numbers. This is a vector space. A vector in this vector space is a polynomial with real coefficients. It is also infinite-dimensional. Indeed, if is any finite collection of polynomials in , we may take the maximum from among the set . Say that the maximum is . Any linear combination of will have degree at most , and so we will never be able to write as a linear combination of .  Note that differentiation is a linear map, and so is definite integration .    We may also restrict to the set of polynomials of degree less than . This is a vector space of dimension . A basis for this vector space consists of the polynomials .  We can use these basis to describe the derivative map. Let's see this in the case of . This is a -dimensional vector space with basis . To describe the matrix associated to in this basis, we only need to calculate the derivatives of each one of the elements belonging to the basis and write them as columns vectors in this basis. Since , we conclude that the matrix of the derivative with respect to this basis is . A similar discussion holds for linear maps defined by definite integration.    Consider the set of continuous functions from to . This is a continuous vector space. A vector in this space is a continuous function. This vector space is infinite-dimensional. Indeed, it contains the infinite-dimensional subspace consisting of all polynomials with real coefficients.  We may also consider the set of differentiable functions from to . Differentiation provides a linear map .   "
+},
+{
+  "id": "sec-vector-spaces-2",
+  "level": "2",
+  "url": "sec-vector-spaces.html#sec-vector-spaces-2",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "vector space "
+},
+{
+  "id": "def-vector-space",
+  "level": "2",
+  "url": "sec-vector-spaces.html#def-vector-space",
+  "type": "Definition",
+  "number": "3.1.1",
+  "title": "",
+  "body": "  A vector space is a non-empty set equipped with a structure of vector addition (formally, this is a function ) and scalar multiplication (formally, this is a function ) satisfying the following axioms:    for all vectors .     for all vectors .    There exists an element such that for all .    For every , there exists an element such that .     for all vectors and scalars .     for all vectors .     for all vectors and scalars .     for all vectors and scalars .      "
+},
+{
+  "id": "sec-vector-spaces-4",
+  "level": "2",
+  "url": "sec-vector-spaces.html#sec-vector-spaces-4",
+  "type": "Example",
+  "number": "3.1.2",
+  "title": "",
+  "body": " Consider the set of polynomials in with coefficients in the real numbers. This is a vector space. A vector in this vector space is a polynomial with real coefficients. It is also infinite-dimensional. Indeed, if is any finite collection of polynomials in , we may take the maximum from among the set . Say that the maximum is . Any linear combination of will have degree at most , and so we will never be able to write as a linear combination of .  Note that differentiation is a linear map, and so is definite integration .  "
+},
+{
+  "id": "sec-vector-spaces-5",
+  "level": "2",
+  "url": "sec-vector-spaces.html#sec-vector-spaces-5",
+  "type": "Example",
+  "number": "3.1.3",
+  "title": "",
+  "body": " We may also restrict to the set of polynomials of degree less than . This is a vector space of dimension . A basis for this vector space consists of the polynomials .  We can use these basis to describe the derivative map. Let's see this in the case of . This is a -dimensional vector space with basis . To describe the matrix associated to in this basis, we only need to calculate the derivatives of each one of the elements belonging to the basis and write them as columns vectors in this basis. Since , we conclude that the matrix of the derivative with respect to this basis is . A similar discussion holds for linear maps defined by definite integration.  "
+},
+{
+  "id": "sec-vector-spaces-6",
+  "level": "2",
+  "url": "sec-vector-spaces.html#sec-vector-spaces-6",
+  "type": "Example",
+  "number": "3.1.4",
+  "title": "",
+  "body": " Consider the set of continuous functions from to . This is a continuous vector space. A vector in this space is a continuous function. This vector space is infinite-dimensional. Indeed, it contains the infinite-dimensional subspace consisting of all polynomials with real coefficients.  We may also consider the set of differentiable functions from to . Differentiation provides a linear map .  "
+},
+{
   "id": "backmatter-2",
   "level": "1",
   "url": "backmatter-2.html",
