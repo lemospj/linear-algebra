@@ -84,4 +84,42 @@
             We may also consider the set <m>C^1(\R,\R)</m> of differentiable functions from <m>\R</m> to <m>\R</m>. Differentiation provides a linear map <m>\frac{d}{dx}:C^1(\R,\R)\rightarrow C^0(\R,\R)</m>.
         </p>
     </example>
+    <example>
+        <p>
+            Let <m>C^2(\R^n,\R)</m> denote the set of twice-differentiable functions from <m>\R</m> to <m>\R</m>. This is again an infinite-dimensional vector space. One important map defined on this vector space is the Laplacian <m>\Delta:C^2(\R^n,\R)\rightarrow C^0(\R^n,\R)</m> given by
+            <me>
+                \Delta(f)=\frac{\partial^2 f}{\partial x_1^2}+\frac{\partial^2 f}{\partial x_2^2}+\ldots+\frac{\partial^2 f}{\partial x_n^2}
+            </me>.
+            For example, when <m>n=2</m>, let's consider the function <m>f(x,y)=x^3y+xy^2+x-y</m>. Then
+            <me>
+                \Delta(f)=6xy+2x
+            </me>.
+            The function in the kernel of <m>\Delta</m> are called <term>harmonic functions</term> and play an important role in both physics and mathematics. A trivial family of examples of harmonic functions are polynomials of degree at most <m>1</m>. The function <m>f(x,y)=e^x\sin(y)</m> offers a less trivial example.
+        </p>
+    </example>
+    <example>
+        <p>
+            A <term>homogeneous linear ordinary differential equation of order <m>n</m></term> is a differential equation of the form
+            <me>
+                y^{(n)}+a_{n-1}(x)y^{(n-1)}(x)+\ldots+ a_1(x)y'+a_0(x)y=0
+            </me>,
+            where the <m>a_i(x)</m> are continuous real functions from <m>\R</m> to <m>\R</m>. It can be easily checked that the solution set is a linear subspace of <m>C^n(\R,\R)</m>, the vector space of <m>n</m>-differentiable functions from <m>\R</m> to <m>\R</m>. What is harder to show, but is true nonetheless, is that the solution set is a vector space of dimension <m>n</m>. This implies that, in order to completely solve a differential system like the one above, all we need to do is to find <m>n</m> linearly independent solutions. All other solutions will then be linear combinations of these.
+        </p>
+        <p>
+            For example, consider the homogeneous linear ODE of order <m>2</m> given by
+            <me>
+                y''+y'+y=0
+            </me>.
+            Note that the functions <m>y_1(x)=e^{-x/2}\cos\left(\frac{\sqrt{3}}{2}x\right)</m> and <m>y_2(x)=e^{-x/2}\sin\left(\frac{\sqrt{3}}{2}x\right)</m> are solutions. It is also easy to see that <m>y_1</m> and <m>y_2</m> are linearly independent. It follows that every solution to the differential equation above is of the form <m>ay_1+by_2</m>, where <m>a</m> and <m>b</m> are real numbers. In other words, the solution set to the that differential equation is spanned by <m>y_1</m> and <m>y_2</m>.
+        </p>
+    </example>
+    <exercises xml:id="exercises-general-vector-spaces">
+        <exercise>
+            <statement>
+                <p>
+                    Show that the solution set of a homogeneous linear ordinary differential equation of order <m>n</m> is a linear subspace of <m>C^n(\R,\R)</m>, the vector space of <m>n</m>-differentiable functions from <m>\R</m> to <m>\R</m>.
+                </p>
+            </statement>
+        </exercise>
+    </exercises>
 </section>
