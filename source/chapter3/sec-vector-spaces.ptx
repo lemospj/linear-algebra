@@ -101,7 +101,7 @@
         <p>
             A <term>homogeneous linear ordinary differential equation of order <m>n</m></term> is a differential equation of the form
             <me>
-                y^{(n)}+a_{n-1}(x)y^{(n-1)}(x)+\ldots+ a_1(x)y'+a_0(x)y=0
+                y^{(n)}+a_{n-1}(x)y^{(n-1)}+\ldots+ a_1(x)y'+a_0(x)y=0
             </me>,
             where the <m>a_i(x)</m> are continuous real functions from <m>\R</m> to <m>\R</m>. It can be easily checked that the solution set is a linear subspace of <m>C^n(\R,\R)</m>, the vector space of <m>n</m>-differentiable functions from <m>\R</m> to <m>\R</m>. What is harder to show, but is true nonetheless, is that the solution set is a vector space of dimension <m>n</m>. This implies that, in order to completely solve a differential system like the one above, all we need to do is to find <m>n</m> linearly independent solutions. All other solutions will then be linear combinations of these.
         </p>
