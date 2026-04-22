@@ -121,5 +121,48 @@
                 </p>
             </statement>
         </exercise>
+        <exercise>
+            <statement>
+                <p>
+                    Consider the linear subspace <m>V</m> of <m>C^{\infty}(\R,\R)</m> spanned by <m>\sin(x)</m> and <m>\cos(x)</m>. (<m>C^{\infty}(\R,\R)</m> is the vector space of infinitely differentiable functions from <m>\R</m> to <m>\R</m>.)
+                    <ol marker="(a)">
+                        <li>
+                            <p>
+                                Show that <m>\sin(x)</m> and <m>\cos(x)</m> are linearly independent, and that therefore they form a basis <m>B</m> of <m>V</m>.
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                Find the matrix of the derivative <m>\frac{d}{dx}:V\rightarrow V</m> in the basis <m>B=(\sin(x),\cos(x))</m>.
+                            </p>
+                        </li>
+                    </ol>
+                </p>
+            </statement>
+        </exercise>
+        <exercise>
+            <statement>
+                <p>
+                    Consider the vector space <m>V</m> of sequences <m>(a_n)_{n\geq 0}</m> of real numbers, where addition of sequences is given by <m>(a_n)_n+(b_n)_n=(a_n+b_n)_n</m> and scalar multiplication by <m>\lambda(a_n)_n=(\lambda a_n)_n</m>.
+                    <ol marker="(a)">
+                        <li>
+                            <p>
+                                Show that the subset <m>W</m> of convergent sequences is a linear subspace of <m>V</m>.
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                Show that <m>\lim_{n\to\infty}:W\rightarrow \R</m> is a linear map.
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                Show that <m>W</m> is infinite dimensional.
+                            </p>
+                        </li>
+                    </ol>
+                </p>
+            </statement>
+        </exercise>
     </exercises>
 </section>
